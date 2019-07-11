@@ -7,9 +7,19 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <com.john.ankotlin.art.CircleView android:layout_width="wrap_content" android:layout_height="100dp"
-                                      android:layout_margin="20dp"
-                                      android:padding="20dp"
-                                      android:background="#000000"/>
+    <!--
+        <com.john.ankotlin.elec.ZXBackGround android:layout_width="match_parent" android:layout_height="200dp"/>
+    -->
+
+    <Button
+            android:id="@+id/bt_wenhao"
+            android:text="？处理"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/bt_gantan"
+            android:text="！！处理"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
