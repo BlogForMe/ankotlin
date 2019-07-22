@@ -25,12 +25,13 @@ class ScrollPickerActivity : AppCompatActivity() {
         bt_right.setOnClickListener {
             horizon.setAnRightOffset()
         }
+
     }
 
     fun initData() {
         stringData = ArrayList()
-        for (i in 0..19) {
-            stringData.add(i.toString() + "00")
+        for (i in 30..100) {
+            stringData.add(i.toString())
         }
     }
 

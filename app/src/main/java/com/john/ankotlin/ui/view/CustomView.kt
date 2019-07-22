@@ -2,6 +2,7 @@ package com.john.ankotlin.ui.view
 
 import android.content.Context
 import android.graphics.Canvas
+import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
 import timber.log.Timber
@@ -10,7 +11,12 @@ class CustomView(context: Context?, attrs: AttributeSet?) : View(context, attrs)
 
     init {
         Timber.i("init")
+        Handler().postDelayed(Runnable {
+            invalidate()
+            Timber.i("init postDelayed")
+        }, 5000)
     }
+
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)

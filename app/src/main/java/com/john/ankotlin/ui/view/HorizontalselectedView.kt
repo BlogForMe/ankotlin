@@ -1,14 +1,13 @@
 package com.john.ankotlin.ui.view
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
+import android.graphics.*
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.john.ankotlin.DisplayUtils
+import com.john.ankotlin.DisplayUtils.dp2px
 import com.john.ankotlin.R
 import timber.log.Timber
 import java.util.*
@@ -18,6 +17,7 @@ import java.util.*
  */
 class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
     View(mContext, attrs) {
+    private lateinit var rectTxt: Rect //文字大小测量
     private var strings: List<String> = ArrayList()//数据源字符串数组
 
     private var seeSize = 5//可见个数
@@ -28,7 +28,7 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
     private var mWidth: Int = 0//控件宽度
     private var mHeight: Int = 0//控件高度
     private var selectedPaint: Paint? = null//被选中文字的画笔
-    private var index: Int = 0
+    private var index: Int = 0 // 被选中的文字
     private var downX: Float = 0.toFloat()
     private var anOffset: Float = 0.toFloat()
     private val selectedTextSize: Float
@@ -41,6 +41,7 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
     private var textHeight = 0
     private var centerTextHeight = 0
 
+    val scaleHeight = dp2px(context, 24f)
 
     init {
         setWillNotDraw(false)
@@ -62,7 +63,6 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
             R.styleable.HorizontalselectedView_HorizontalselectedViewTextColor,
             context.resources.getColor(android.R.color.darker_gray)
         )
-
         initPaint()//初始化画笔
     }
 
@@ -73,21 +73,22 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
         selectedPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
         selectedPaint!!.color = selectedColor
         selectedPaint!!.textSize = selectedTextSize
+
+
+        rectTxt = Rect()
+        textPaint?.getTextBounds("50", 0, "50".length, rect)
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (firstVisible) {
             mWidth = width
-            mHeight = height
+            mHeight = height - 1
             anInt = width / seeSize
             firstVisible = false
         }
         val lPaint = Paint()
-        lPaint.color =/* Color.parseColor("#D8D8D8")*/ Color.BLUE
-
-//        canvas.drawLine(0f, 0f, mWidth.toFloat(), 0f, lPaint)
-//        canvas.drawLine(0f, height.toFloat() - 100, width.toFloat(), height.toFloat(), lPaint)
+        lPaint.color = Color.parseColor("#D8D8D8")
 
         Timber.i("height$height width $mWidth  height $mHeight")
 
@@ -98,12 +99,12 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
             centerTextHeight = rect.height()
             canvas.drawText(
                 strings[index],
-                getWidth() / 2 - centerTextWidth / 2 + anOffset,
-                (getHeight() / 2 + centerTextHeight / 2).toFloat(),
-                selectedPaint!!
+                width / 2 - centerTextWidth / 2 + anOffset,
+                (height / 2 + centerTextHeight / 2).toFloat(),
+                selectedPaint
             )//绘制被选中文字，注意点是y坐标
 
-            for (i in strings.indices) {//遍历strings，把每个地方都绘制出来，
+            for (i in strings.indices) {//遍历strings，把每个数字都绘制出来，
                 if (index > 0 && index < strings.size - 1) {//这里主要是因为strings数据源的文字长度不一样，为了让被选中两边文字距离中心宽度一样，我们取得左右两个文字长度的平均值
                     textPaint!!.getTextBounds(strings[index - 1], 0, strings[index - 1].length, rect)
                     val width1 = rect.width()
@@ -117,22 +118,57 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
                 }
 
                 /**
-                 * getWidth() / 2+(i - index) * anInt - textWidth / 2 + anOffset 每组文字得x坐标, anOffset先不考虑
+                 * getWidth() / 2+(i - index) * anInt - textWidth / 2 + anOffset 每组文字得x坐标,anOffset先不考虑
                  * getWidth() / 2  中心点坐标
-                 * (i - index) * anInt 向左或向右得坐标
+                 * (i - index) * anInt 向左或向右得坐标 , index选中年龄，初始化为0， i从第一个开始绘制,
                  * textWidth / 2   文字得宽度
                  */
 
                 if (i != index) {
                     canvas.drawText(
                         strings[i],
-                        (i - index) * anInt + getWidth() / 2 - textWidth / 2 + anOffset,
+                        (i - index) * anInt + width / 2 - textWidth / 2 + anOffset,
                         (getHeight() / 2 + textHeight / 2).toFloat(),
                         textPaint!!
                     )//画出每组文字
                 }
+
+                /**
+                 * 绘制刻度
+                 */
+                val scalePath = Path()
+                val scalX = (i - index) * anInt + width / 2
+                scalePath.addRect(scalX.toFloat(), 0f, scalX + 5f, scaleHeight, Path.Direction.CW)
+                scalePath.addRect(
+                    scalX.toFloat(),
+                    mHeight - scaleHeight,
+                    scalX + 5f,
+                    mHeight.toFloat(),
+                    Path.Direction.CW
+                )
+                if (i == index) {
+                    canvas.drawPath(scalePath, selectedPaint)
+                } else {
+                    canvas.drawPath(scalePath, textPaint)
+                }
             }
         }
+        canvas.drawLine(0f, 0f, mWidth.toFloat(), 0f, lPaint)
+        canvas.drawLine(0f, mHeight.toFloat(), mWidth.toFloat(), mHeight.toFloat(), lPaint)
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+        val heightSize = MeasureSpec.getSize(heightMeasureSpec)
+        val width = MeasureSpec.getSize(widthMeasureSpec)
+        var height = 0
+        if (heightMode == MeasureSpec.AT_MOST) {
+            height = scaleHeight.toInt()*2 + rectTxt.height() + dp2px(context, 50f).toInt() * 2
+        } else {
+            height = heightSize
+        }
+        setMeasuredDimension(width, height)
     }
 
 

@@ -8,13 +8,13 @@
 
     <com.john.ankotlin.ui.view.HorizontalselectedView
             android:id="@+id/horizon"
-            android:layout_width="match_parent" android:layout_height="350dp"
+            android:layout_width="800dp" android:layout_height="wrap_content"
             app:HorizontalselectedViewSeesize="7"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            app:HorizontalselectedViewSelectedTextColor="@color/colorAccent"
+            app:HorizontalselectedViewSelectedTextColor="#E47A7A"
             app:HorizontalselectedViewSelectedTextSize="60"
-            app:HorizontalselectedViewTextColor="@color/colorPrimary"
+            app:HorizontalselectedViewTextColor="#DDDDDD"
             app:HorizontalselectedViewTextSize="40"/>
 
 
