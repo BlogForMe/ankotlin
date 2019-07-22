@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--属性声明-->
+    <attr name="mText" format="string"></attr>
+    <attr name="mTextColor" format="color"></attr>
+    <attr name="mTextSize" format="dimension"></attr>
+    <!--属性使用-->
+    <declare-styleable name="MyTextView">
+        <attr name="mText"></attr>
+        <attr name="mTextColor"></attr>
+        <attr name="mTextSize"></attr>
+    </declare-styleable>
+
+
     <declare-styleable name="CirArcView">
-        <attr name="circleRadius" format="float" />
-        <attr name="arcWidth" format="float" />
+        <attr name="circleRadius" format="float"/>
+        <attr name="arcWidth" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalselectedView">
+        <!--可见数目-->
+        <attr name="HorizontalselectedViewSeesize" format="integer"></attr>
+        <!--被选择文字的大小和颜色-->
+        <attr name="HorizontalselectedViewSelectedTextSize" format="float"></attr>
+        <attr name="HorizontalselectedViewSelectedTextColor" format="color|reference"></attr>
+
+
+        <!--未被被选择文字的大小和颜色-->
+        <attr name="HorizontalselectedViewTextSize" format="float"></attr>
+        <attr name="HorizontalselectedViewTextColor" format="color|reference"></attr>
+
     </declare-styleable>
 </resources>

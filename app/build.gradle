@@ -38,4 +38,6 @@ dependencies {
     androidTestImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
     androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion
     androidTestImplementation 'org.robolectric:annotations:' + rootProject.robolectricVersion
+    api 'androidx.cardview:cardview:1.0.0'
+
 }

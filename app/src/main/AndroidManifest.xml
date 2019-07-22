@@ -11,11 +11,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".ui.MeasureLearnActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".ui.CircleProgressActivity">
 
@@ -25,6 +21,13 @@
         <activity android:name=".elec.ElecActivity">
         </activity>
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".ui.ScrollPickerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 
