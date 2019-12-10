@@ -3,7 +3,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.john.ankotlin.elec.BasicView
+    <com.john.kot.elec.BasicView
             android:background="#ccc"
             android:layout_width="300dp"
             android:layout_height="300dp"

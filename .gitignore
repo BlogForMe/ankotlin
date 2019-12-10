@@ -15,3 +15,11 @@ app/release/
 .svn/
 */debug/*
 TZdoctor/flavors_cs/
+/ble
+app/src/androidTest/*
+app/src/test/*
+app/src/main/java/com/casanube/medical/dao/*
+app-*
+gradlew.*
+
+

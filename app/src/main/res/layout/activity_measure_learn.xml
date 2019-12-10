@@ -14,8 +14,10 @@
              android:layout_margin="10dp"
              android:background="@android:color/darker_gray"
      />-->
-    <com.john.ankotlin.ui.view.CustomView android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    <com.john.ankotlin.ui.measure.MyTextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <com.john.kot.view.CustomView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <com.john.kot.view.MyTextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
                                              app:mText="I AM FROM CHINA"
                                              app:mTextSize="20sp"
                                              android:padding="40dp"

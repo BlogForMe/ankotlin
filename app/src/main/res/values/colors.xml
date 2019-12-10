@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="elec_color">#23BDC5</color>
 
+    <color name="mainBgColor">#C8E6C9</color>
+    <color name="mainColor">#4CAF50</color>
 </resources>

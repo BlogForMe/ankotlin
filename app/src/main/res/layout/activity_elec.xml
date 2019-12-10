@@ -6,8 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".elec.ElecActivity">
-    <com.john.ankotlin.elec.Electrocardiogram android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    <com.john.ankotlin.elec.ReportView
+    <com.john.kot.elec.Electrocardiogram
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <com.john.kot.elec.ReportView
             android:id="@+id/pathView"
             android:layout_width="match_parent" android:layout_height="wrap_content"
     />
