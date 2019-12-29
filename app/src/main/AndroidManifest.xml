@@ -10,15 +10,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".anim.PropertyActivity"></activity>
-        <activity android:name=".ui.ResultBleActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".anim.MoveViewActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".skin.SkinStaticThemeActivity"></activity>
+        <activity android:name=".anim.PropertyActivity" />
+        <activity android:name=".ui.ResultBleActivity">
+
+        </activity>
+        <activity android:name=".skin.SkinStaticThemeActivity" />
         <activity android:name=".ui.GradientActivity" />
         <activity android:name=".ui.MeasureLearnActivity" />
         <activity android:name=".ui.CircleProgressActivity" />
@@ -26,6 +25,13 @@
         <activity android:name=".elec.ElecActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.ScrollPickerActivity" />
+        <activity android:name=".anim.ViewAnimActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.john.kot.view.widget.XYRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".anim.ViewAnimActivity">
+
+
+    <TextView
+            android:id="@+id/textView5"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_blue_bright"
+            android:text="TextView" />
+
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:layout_toRightOf="@+id/button"
+            android:text="overridePending"
+            app:layout_constraintRight_toRightOf="parent" />
+
+</com.john.kot.view.widget.XYRelativeLayout>

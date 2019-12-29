@@ -6,7 +6,7 @@ import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.john.kot.util.DisplayUtils.dp2px
+import com.comm.util.DisplayUtils.dp2px
 import com.john.kot.R
 import timber.log.Timber
 import java.util.*
@@ -167,14 +167,14 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
                     scalX.toFloat(),
                     scaleDifferHeight,
                     scalX + 5f,
-                    scaleDifferHeight + scaleHeight,
+                    scaleDifferHeight.toFloat() + scaleHeight.toFloat() ,
                     Path.Direction.CW
                 )
                 scalePath.addRect(
                     scalX.toFloat(),
-                    mHeight - scaleHeight - scaleDifferHeight,
+                    mHeight.toFloat()  - scaleHeight.toFloat()  - scaleDifferHeight.toFloat() ,
                     scalX + 5f,
-                    mHeight - scaleDifferHeight,
+                    mHeight.toFloat()  - scaleDifferHeight.toFloat() ,
                     Path.Direction.CW
                 )
                 if (i == index) {
