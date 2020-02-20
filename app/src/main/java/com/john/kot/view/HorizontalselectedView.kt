@@ -206,7 +206,7 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
 
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        Timber.i("action", "onTouchEvent: " + event.action)
+        Timber.i("action onTouchEvent: " + event.action)
         when (event.action) {
             MotionEvent.ACTION_DOWN -> downX = event.x //获得点下去的x坐标
             MotionEvent.ACTION_MOVE -> {
@@ -214,7 +214,7 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
                 if (index != 0 && index != strings.size - 1) {
                     anOffset = scrollX - downX     //滑动时的偏移量，用于计算每个是数据源文字的坐标值
                 } else {
-                    anOffset = ((scrollX - downX) / 1.5).toFloat()
+                    anOffset = ((scrollX - downX) / 1.5).toFloat()  //当滑到两端的时候添加一点阻力
                 }
                 if (scrollX > downX) {
                     //向右滑动，当滑动距离大于每个单元的长度时，则改变被选中的文字。

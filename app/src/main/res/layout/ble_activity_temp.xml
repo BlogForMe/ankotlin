@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#a2cb79"
+        android:padding="25dp">
+
+    <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="13dp"
+            android:src="@mipmap/ble_back_home" />
+
+    <ImageView
+            android:id="@+id/iv_branch"
+            android:layout_width="350dp"
+            android:layout_height="400dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="90dp"
+            android:src="@mipmap/nurse" />
+
+    <TextView
+            android:id="@+id/tv_cs_phone_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dimen_40"
+            android:drawableLeft="@mipmap/ic_custom_service_show"
+            android:drawablePadding="@dimen/dimen_10"
+            android:textColor="#ff666666"
+            android:textSize="24sp" />
+
+    <RelativeLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dimen_10"
+            android:background="@drawable/ble_home_style_round"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@+id/iv_branch">
+
+        <TextView
+                android:id="@+id/tv_txt"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_centerHorizontal="true"
+                android:text="09:41的体温测量结果"
+                android:textColor="#ffa2cb79"
+                android:textSize="37sp"
+                />
+
+        <com.john.kot.view.TermRoundView
+                android:layout_below="@+id/tv_txt"
+                android:id="@+id/trm_rule"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

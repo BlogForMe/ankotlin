@@ -13,6 +13,7 @@
 
     android:toXDelta="500"
     android:toYDelta="500"
+    android:interpolator="@android:anim/cycle_interpolator"
     >
 
   <!--    // 以下参数是4种动画效果的公共属性,即都有的属性

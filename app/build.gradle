@@ -6,9 +6,10 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
+    buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.john.ankotlin"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -32,11 +33,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api "androidx.appcompat:appcompat:$androidxCompatVersion"
 
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
-    implementation 'com.jakewharton.timber:timber:4.6.0'
 
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
@@ -48,7 +46,7 @@ dependencies {
     api 'androidx.cardview:cardview:1.0.0'
     implementation 'com.anggrayudi:android-hidden-api:28.1'
 
-    implementation 'com.comm.util:uploader:'+rootProject.commUtilVersion
+    implementation "com.comm:util:$rootProject.commUtilVersion"
+
 
 }
-

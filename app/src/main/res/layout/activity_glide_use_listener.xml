@@ -4,13 +4,18 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.john.kot.anim.PropertyActivity">
+        tools:context="com.john.kot.sdk.GlideUseListenerActivity">
 
     <Button
-            android:id="@+id/button"
+            android:id="@+id/bt_glide_loadfailed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteX="47dp"
-            tools:layout_editor_absoluteY="43dp" />
+            android:text="加载失败" />
+
+    <ImageView
+            android:id="@+id/iv_scan_tai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

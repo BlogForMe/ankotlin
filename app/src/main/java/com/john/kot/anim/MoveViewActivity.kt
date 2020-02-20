@@ -44,6 +44,9 @@ class MoveViewActivity : AppCompatActivity() {
 
             }
         }
+    }
 
+    override fun finish() {
+        super.finish()
     }
 }
