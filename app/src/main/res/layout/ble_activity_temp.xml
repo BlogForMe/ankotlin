@@ -4,10 +4,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#a2cb79"
-        android:padding="25dp">
+        >
 
-    <ImageView
+   <!-- <ImageView
             android:id="@+id/iv_back"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -17,7 +16,7 @@
 
     <ImageView
             android:id="@+id/iv_branch"
-            android:layout_width="350dp"
+            android:layout_width="280dp"
             android:layout_height="400dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
@@ -41,30 +40,45 @@
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:layout_marginRight="@dimen/dimen_10"
-            android:background="@drawable/ble_home_style_round"
             android:layout_marginBottom="20dp"
-            android:layout_toRightOf="@+id/iv_branch">
+            android:layout_toRightOf="@+id/iv_branch"
+            android:background="@drawable/ble_home_style_round">
 
         <TextView
                 android:id="@+id/tv_txt"
-                android:layout_marginTop="@dimen/dimen_30"
                 android:layout_width="wrap_content"
                 android:layout_height="52dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_30"
                 android:text="09:41的体温测量结果"
                 android:textColor="#ffa2cb79"
-                android:textSize="37sp"
-                />
+                android:textSize="37sp" />-->
 
         <com.john.kot.view.TermRoundView
-                android:layout_below="@+id/tv_txt"
                 android:id="@+id/trm_rule"
-                android:layout_marginTop="@dimen/dimen_30"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp" />
 
+<!--
+        <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_below="@+id/trm_rule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="确认"
+                android:paddingLeft="150dp"
+                android:paddingRight="150dp"
+                android:layout_marginTop="50dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/ble_temp_confirm_round"
+                android:textColor="#ffffffff"
+                android:textSize="37sp" />
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </RelativeLayout>
 
