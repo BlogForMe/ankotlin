@@ -46,7 +46,8 @@ dependencies {
     api 'androidx.cardview:cardview:1.0.0'
     implementation 'com.anggrayudi:android-hidden-api:28.1'
 
-    implementation "com.comm:util:$rootProject.commUtilVersion"
+//    implementation project(path: ':androidUtil')
+    implementation "com.android:util:$rootProject.androidUtilVersion"
 
 
 }

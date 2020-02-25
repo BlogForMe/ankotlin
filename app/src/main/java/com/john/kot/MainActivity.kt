@@ -2,6 +2,7 @@ package com.john.kot
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.android.util.DisplayUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val vs = sdata?.length
         println(vs)
 //        }
+
     }
 
 

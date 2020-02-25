@@ -7,7 +7,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import android.widget.RelativeLayout
-import com.comm.util.DisplayUtils
+import com.android.util.DisplayUtils
 
 class XYRelativeLayout :RelativeLayout{
     var mLinePaint = Paint(Paint.ANTI_ALIAS_FLAG)

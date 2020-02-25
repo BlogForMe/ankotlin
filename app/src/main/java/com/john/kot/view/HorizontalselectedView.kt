@@ -6,7 +6,7 @@ import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.comm.util.DisplayUtils.dp2px
+import com.android.util.DisplayUtils.dp2px
 import com.john.kot.R
 import timber.log.Timber
 import java.util.*

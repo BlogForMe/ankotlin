@@ -25,10 +25,8 @@ allprojects {
 
         google()
         jcenter()
-        maven {
-            url "http://localhost:8081/repository/jhmaven/"
-        }
         maven { url "https://jitpack.io" }
+        maven { url "http://localhost:8081/repository/jhmaven/"}
 
     }
 }
@@ -57,6 +55,7 @@ ext {
     commUtilVersion = "1.0.7"
 
     anko_version='0.10.8'
+    androidUtilVersion = "0.9.0"
 }
 
 

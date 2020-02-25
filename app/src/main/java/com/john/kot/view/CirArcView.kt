@@ -6,7 +6,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
-import com.comm.util.DisplayUtils.sp2px
+import com.android.util.DisplayUtils.sp2px
 import com.john.kot.BuildConfig
 import com.john.kot.R
 

@@ -1,1 +1,1 @@
-include ':app', ':commutil'
+include ':app', ':androidUtil'
