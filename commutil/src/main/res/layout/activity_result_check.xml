@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/ic_top"
+        layout="@layout/ic_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_current_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ic_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:background="@drawable/app_hplan_bg_rectangle_circle_gray"
+        android:paddingLeft="@dimen/dimen_10"
+        android:paddingRight="@dimen/dimen_10"
+        android:textColor="#ff666666"
+        android:textSize="16sp" />
+
+
+    <com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
+        android:id="@+id/pull_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_current_date">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_find_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:layout_marginRight="17dp">
+
+        <ImageView
+            android:id="@+id/tv_find_doc"
+            android:padding="@dimen/dimen_10"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/app_img_find_doctor"
+            />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:layout_marginRight="17dp"
+        android:background="@drawable/bg_rectangle_half_translate">
+
+        <ImageView
+            android:padding="@dimen/dimen_10"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/img_video_white" />
+    </FrameLayout>
+
+</RelativeLayout>

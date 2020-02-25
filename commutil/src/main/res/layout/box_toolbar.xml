@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ic_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_round_box_white"
+    android:paddingTop="@dimen/dimen_16"
+    android:paddingBottom="@dimen/dimen_16"
+    app:elevation="0dp">
+
+    <TextView
+        android:id="@+id/tv_ft_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="27dp"
+        android:drawableLeft="@drawable/ic_back_per"
+        android:drawablePadding="10dp"
+        android:text="返回"
+        android:textColor="#ff999999"
+        android:textSize="19sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_ft_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="远程检查记录"
+        android:textColor="#503C39"
+        android:textSize="32sp" />
+
+
+    <View
+        android:id="@+id/vl_top"
+        style="@style/LineHorizontal"
+        android:layout_below="@+id/tv_ft_title"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible" />
+</RelativeLayout>

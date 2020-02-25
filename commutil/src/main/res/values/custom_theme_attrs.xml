@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="textColorTheme" format="color" />
+    <attr name="bgBackground" format="color" />
+    <attr name="bgShadow" format="color" />
+</resources>

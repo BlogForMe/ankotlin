@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ColorTrackTextView">
+        <attr name="originColor" format="color" />
+        <attr name="changeColor" format="color" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="PieChart">
+        <attr name="showText" format="boolean" />
+        <attr name="lablePosition" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <!--自定义进度条-->
+    <declare-styleable name="CustomProgress">
+        <attr name="radius" format="dimension" /><!--半径-->
+        <attr name="strokeWidth" format="dimension" /><!--画笔宽度-->
+        <attr name="circleColor" format="color" /><!--内圆颜色-->
+        <attr name="ringColor" format="color" /><!--进度条颜色-->
+        <attr name="totalProgress" format="integer" /><!--总进度-->
+        <attr name="textColor" format="color|reference" /><!--字体颜色-->
+        <attr name="bigCircleColor" format="color" /><!--外圆颜色-->
+    </declare-styleable>
+
+
+    <declare-styleable name="BorderTextView">
+        <attr name="contentBackColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="topLeft" format="dimension" />
+        <attr name="topRight" format="dimension" />
+        <attr name="bottomLeft" format="dimension" />
+        <attr name="bottomRight" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="BodyDataView">
+        <attr name="img_body_check" format="reference"/>
+        <attr name="body_value_txt" format="string"/>
+        <attr name="body_value_title" format="string"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="DialKgView">
+        <attr name="ebel_kg" format="float"/>
+        <attr name="dial_radius" format="float"/>
+
+    </declare-styleable>
+
+
+</resources>

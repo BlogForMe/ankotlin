@@ -21,9 +21,7 @@
         <activity android:name=".skin.SkinStaticThemeActivity" />
         <activity android:name=".ui.GradientActivity" />
         <activity android:name=".ui.MeasureLearnActivity" />
-        <activity
-                android:name=".ui.CircleProgressActivity"
-                android:screenOrientation="landscape">
+        <activity android:name=".ui.CircleProgressActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,9 +31,7 @@
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />
         <activity android:name=".MainActivity" />
-        <activity
-                android:name=".ui.ScrollPickerActivity"
-                android:screenOrientation="landscape"></activity>
+        <activity android:name=".ui.ScrollPickerActivity"></activity>
 
 
         <activity android:name=".anim.ViewAnimActivity"></activity>

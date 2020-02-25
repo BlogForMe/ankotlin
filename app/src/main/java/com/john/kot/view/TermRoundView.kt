@@ -29,10 +29,10 @@ class TermRoundView @JvmOverloads constructor(
     private val yellowLightPaint: Paint
     private val yellowRectPaint: Paint
     private val metalPaint: Paint   //黄色矩形线
-    val rulerLength=dp2px(context,730f) //温度计到头部到刻度42总长度
+    val rulerLength=dp2px(context,600f) //温度计到头部到刻度42总长度
     val startX = dp2px(context,126f) //左边距离
     var tempScale =  (rulerLength- startX)/ (2 * 8) //刻度线长度
-    val metalWidth= dp2px(context,40f) //the metal of Thermometer
+    val metalWidth= dp2px(context,25f) //the metal of Thermometer
 
     var scrollX:Float
 
@@ -90,8 +90,12 @@ class TermRoundView @JvmOverloads constructor(
         //中线
         val topF = rulerY-waterHeight/2
         val bottomF = rulerY+waterHeight/2;
-        val metalRect =  RectF(0f,topF-3,metalWidth,bottomF+3)
-        canvas?.drawRoundRect(metalRect,10f,10f,metalPaint)
+
+        val metalHalfCircle =  RectF(0f,topF-1,40f,bottomF+1)
+        canvas?.drawArc(metalHalfCircle,90f,180f,false,metalPaint) //头部圆
+
+        val metalRect =  RectF(20f,topF-1,metalWidth,bottomF+1)
+        canvas?.drawRect(metalRect,metalPaint)
 
         val middleRect =  RectF(metalWidth,topF, dp2px(context,728f),bottomF)
         canvas?.drawRoundRect(middleRect,10f,10f,linePaint)

@@ -42,4 +42,10 @@
         <item name="mainColor">#607D8B</item>
     </style>
 
+
+    <declare-styleable name="DialKgView">
+        <attr name="ebel_kg" format="float"/>
+        <attr name="dial_radius" format="float"/>
+
+    </declare-styleable>
 </resources>

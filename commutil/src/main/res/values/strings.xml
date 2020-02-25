@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="login_title">糖尿病足</string>
+    <string name="login_username">登录账号/手机号</string>
+    <string name="login_validate_code">获取短信验证码</string>
+    <string name="login_signing_in">登录中....</string>
+    <string name="validation_phone_required">请输入正确的手机号</string>
+
+    <string name="login_validate_code_not">没有收到验证码？</string>
+    <string name="login_validate_code_title">输入验证码</string>
+    <string name="login_validate_code_phone">已将验证码发送至%1$s</string>
+    <string name="login_validate_code_resend">重新发送验证码%1$s</string>
+
+    <string name="login_validate_code_timeout">验证码超时</string>
+    <string name="login_validate_code_error">验证码错误</string>
+    <string name="login_validate_code_failure">验证码失效</string>
+
+    <string name="test_press_value">请准备好血压计进行血压检测</string>
+    <string name="start_put_press">请正确戴上臂带\n开始测量</string>
+    <string name="result_press_content_gy">收缩压</string>
+    <string name="result_press_content_dy">舒张压</string>
+    <string name="result_press_content_mb">脉搏</string>
+    <string name="history_press_title_name">血压检测历史</string>
+    <string name="history_show_content">医生暂时没有回复您。</string>
+
+
+    <string name="exit_system">再按一次可退出程序</string>
+
+
+    <string name="permission_get_accounts_hint">没有此权限，无法开启这个功能，请开启权限</string>
+    <string name="permission_read_phone_hint">没有此权限，无法开启这个功能，请开启权限</string>
+    <string name="permission_call_phone_hint">没有此权限，无法开启打电话这个功能，请开启电话权限</string>
+    <string name="permission_camera_hint">没有此权限，无法照相机开启这个功能，请开启照相机权限。</string>
+    <string name="permission_access_fine_location_hint">没有此权限，无法开启这个功能，请开启权限</string>
+    <string name="permission_access_coarse_location_hint">没有此权限，无法开启蓝牙这个功能，请开启位置权限。</string>
+    <string name="permission_read_external_hint">没有此权限，无法使用应用，请开启存储权限。</string>
+    <string name="permission_white_external_hint">没有此权限，无法使用应用，请开启存储权限</string>
+    <string name="permission_recode_audio_hint">没有此权限，无法录音这个功能，请开启录音权限</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="common_name">姓名</string>
+    <string name="common_confirm">确认</string>
+
+    <string name="common_patient_name">患者姓名</string>
+    <string name="common_age">年龄</string>
+    <string name="common_sex">性别</string>
+    <string name="common_adress">住址</string>
+    <string name="common_card_id">身份证号码</string>
+    <string name="common_illness">主要疾病</string>
+    <string name="common_phone">联系电话</string>
+    <string name="common_grade">糖尿病足等级</string>
+    <string name="common_guardian">监护人</string>
+    <string name="common_guardian_phone">监护人手机号</string>
+
+    <string name="doc_department">科室</string>
+    <string name="doc_job">职称</string>
+    <string name="doc_introduction">个人简介</string>
+
+    <string name="doc_introduction_tips">擅长及医学背景介绍</string>
+
+    <string name="doc_detail_title">个人简介</string>
+
+    <string name="doc_center_title">个人中心</string>
+    <string name="start_next">下一步</string>
+
+    <string name="audio_result_check_record">此页面默认显示今天检测数据，向下滑动可查看历史数据。</string>
+
+    <string name="docotor_say">医生回复</string>
+    <string name="sense_button_add">正常</string>
+    <string name="sense_button_slip">减退</string>
+    <string name="sense_button_none">消失</string>
+    <string name="sense_button_part">部位</string>
+    <string name="sense_button_result">结果</string>
+    <string name="sense_button_left">左足</string>
+    <string name="sense_button_right">右足</string>
+    <string name="result_photo_btn">提交结果</string>
+
+    <string name="common_grade_title">并发症</string>
+
+
+    <string name="main_drawer_setting">设置</string>
+    <string name="start_drop_test">确定放弃本次检测？</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+
+
+    <string name="audio_oxy_scan">请夹好手指</string>
+    <string name="ble_location_notice">注意：由于Android系统限制，务必打开位置信息，否则将无法搜索到蓝牙设备, 开启之后会显示为下图红色样式</string>
+    <string name="setting">设置</string>
+
+    <string name="report_notice">选择医生通知</string>
+    <string name="report_describe">请在此输入通知描述</string>
+
+    <string name="load_title_common">健康管理云平台</string>
+
+
+</resources>

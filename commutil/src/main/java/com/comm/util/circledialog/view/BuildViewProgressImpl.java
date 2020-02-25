@@ -1,0 +1,41 @@
+package com.comm.util.circledialog.view;
+
+import android.content.Context;
+
+import com.comm.util.circledialog.CircleParams;
+
+/**
+ * Created by hupei on 2018/8/14.
+ */
+
+public final class BuildViewProgressImpl extends AbsBuildView {
+    private BodyProgressView mBodyProgressView;
+
+    public BuildViewProgressImpl(Context context, CircleParams params) {
+        super(context, params);
+    }
+
+    @Override
+    public void buildBodyView() {
+        buildRootView();
+        buildTitleView();
+
+        if (mBodyProgressView == null) {
+            mBodyProgressView = new BodyProgressView(mContext, mParams.dialogParams, mParams.progressParams,
+                    mParams.createProgressListener);
+            addViewByBody(mBodyProgressView);
+        }
+    }
+
+    @Override
+    public BodyProgressView getBodyView() {
+        return mBodyProgressView;
+    }
+
+    @Override
+    public void refreshContent() {
+        if (mBodyProgressView != null) {
+            mBodyProgressView.refreshProgress();
+        }
+    }
+}
