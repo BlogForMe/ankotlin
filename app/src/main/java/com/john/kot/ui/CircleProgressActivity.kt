@@ -11,8 +11,8 @@ class CircleProgressActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.ble_activity_temp)
-//        setContentView(R.layout.activity_circle_progress)
+//        setContentView(R.layout.ble_activity_temp)
+        setContentView(R.layout.activity_circle_progress)
 
 
 //        tv_confirm.setOnClickListener {

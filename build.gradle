@@ -41,7 +41,7 @@ ext {
 
 
     buildToolsVersion = "28.0.3"
-    androidxCoreVersion = "1.0.0"
+    androidxCoreVersion = "1.0.0q"
     androidxCompatVersion = "1.0.0"
     androidxFragmentVersion = "1.1.0-alpha04"
     coreVersion = "1.2.1-alpha01"
@@ -52,10 +52,10 @@ ext {
     robolectricVersion = "4.3"
     truthVersion = "0.42"
     constraintlayout = "1.1.3"
-    commUtilVersion = "1.0.7"
-
     anko_version='0.10.8'
-    androidUtilVersion = "0.9.0"
+
+
+    androidUtilVersion = "0.9.3"
 }
 
 

@@ -9,7 +9,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.util.window.util.Constants_LM;
 import com.android.util.window.util.SpUtil;
 import com.android.util.window.view.FloatLayout;
@@ -85,7 +84,7 @@ public class FloatWindowManager {
             @Override
             public void onClick(View v) {
                 FloatActionController.getInstance().hide();
-                ARouter.getInstance().build(BOX_MAIN).navigation();
+//                ARouter.getInstance().build(BOX_MAIN).navigation();
             }
         });
     }

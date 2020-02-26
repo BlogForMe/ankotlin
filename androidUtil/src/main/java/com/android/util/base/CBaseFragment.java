@@ -4,16 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.android.util.EventUtil;
-import com.android.util.R;
-
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * @author : John
@@ -28,7 +21,7 @@ public abstract class CBaseFragment extends Fragment {
     public static final String PARAMS_04 = "PARAMS_04";
 
     protected View rootView;
-    private Unbinder unbinder;
+//    private Unbinder unbinder;
 
     @Nullable
     @Override
@@ -45,7 +38,7 @@ public abstract class CBaseFragment extends Fragment {
             }
         }
 
-        unbinder = ButterKnife.bind(this, rootView);
+//        unbinder = ButterKnife.bind(this, rootView);
 
         initView(rootView);
         return rootView;
@@ -55,20 +48,20 @@ public abstract class CBaseFragment extends Fragment {
         if (rootView==null){
             return;
         }
-        TextView tvFtTitle = rootView.findViewById(R.id.tv_ft_title);
-        TextView tvFtBack = rootView.findViewById(R.id.tv_ft_back);
-        if (tvFtBack != null && isShowBack()) {
-            tvFtBack.setVisibility(View.VISIBLE);
-            tvFtBack.setOnClickListener(new EventUtil() {
-                @Override
-                protected void onEventClick(View v) {
-                    getActivity().onBackPressed();
-                }
-            });
-        }
-        if (tvFtTitle != null) {
-            tvFtTitle.setText(ftTxt);
-        }
+//        TextView tvFtTitle = rootView.findViewById(R.id.tv_ft_title);
+//        TextView tvFtBack = rootView.findViewById(R.id.tv_ft_back);
+//        if (tvFtBack != null && isShowBack()) {
+//            tvFtBack.setVisibility(View.VISIBLE);
+//            tvFtBack.setOnClickListener(new EventUtil() {
+//                @Override
+//                protected void onEventClick(View v) {
+//                    getActivity().onBackPressed();
+//                }
+//            });
+//        }
+//        if (tvFtTitle != null) {
+//            tvFtTitle.setText(ftTxt);
+//        }
     }
 
     protected boolean isShowBack() {
@@ -149,9 +142,9 @@ public abstract class CBaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (unbinder != null) {
-            unbinder.unbind();
-        }
+//        if (unbinder != null) {
+//            unbinder.unbind();
+//        }
         //Timber.tag(TAG).i("onDestroy()");
     }
 

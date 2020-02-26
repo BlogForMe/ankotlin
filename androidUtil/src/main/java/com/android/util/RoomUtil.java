@@ -1,8 +1,5 @@
 package com.android.util;
 
-import androidx.room.Room;
-
-import com.android.util.room.AppDatabase;
 import com.android.util.room.BleDao;
 import com.android.util.room.BleEntity;
 
@@ -15,17 +12,17 @@ import static com.android.util.DateUtils.yyyyMMDDHHmmss;
 
 public class RoomUtil {
     private static final RoomUtil ourInstance = new RoomUtil();
-    private final BleDao bledao;
+    private  BleDao bledao;
 
     public static RoomUtil getInstance() {
         return ourInstance;
     }
 
     private RoomUtil() {
-        AppDatabase db = Room.databaseBuilder(AppUtil.getApp(), AppDatabase.class, "bleDb.db")
-//                .addMigrations(MIGRATION_1_2)
-                .build();
-        bledao= db.bleDao();
+//        AppDatabase db = Room.databaseBuilder(AppUtil.getApp(), AppDatabase.class, "bleDb.db")
+////                .addMigrations(MIGRATION_1_2)
+//                .build();
+//        bledao= db.bleDao();
     }
 
 

@@ -12,7 +12,6 @@ import android.text.TextUtils;
 
 import androidx.core.content.FileProvider;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -79,10 +78,10 @@ public class AppUtil {
         AppUtil.myApp = app;
         ToastUtil.register(app);
 //        if (isDebug()) {           // These two lines must be written before init, otherwise these configurations will be invalid in the init process
-            ARouter.openLog();     // Print log
-            ARouter.openDebug();   // Turn on debugging mode (If you are running in InstantRun mode, you must turn on debug mode! Online version needs to be closed, otherwise there is a security risk)
+//            ARouter.openLog();     // Print log
+//            ARouter.openDebug();   // Turn on debugging mode (If you are running in InstantRun mode, you must turn on debug mode! Online version needs to be closed, otherwise there is a security risk)
 //        }
-        ARouter.init(app); // As early as possible, it is recommended to initialize in the Application
+//        ARouter.init(app); // As early as possible, it is recommended to initialize in the Application
 
         app.registerActivityLifecycleCallbacks(mCallbacks);
         if (isDebug()) {

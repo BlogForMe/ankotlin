@@ -10,31 +10,28 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".sdk.GlideUseListenerActivity">
-
-        </activity>
-        <activity android:name=".anim.MoveViewActivity"></activity>
-        <activity android:name=".anim.PropertyAnimActivity">
-
-        </activity>
-        <activity android:name=".ui.ResultBleActivity"></activity>
-        <activity android:name=".skin.SkinStaticThemeActivity" />
-        <activity android:name=".ui.GradientActivity" />
-        <activity android:name=".ui.MeasureLearnActivity" />
-        <activity android:name=".ui.CircleProgressActivity">
+        <activity android:name=".test.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".sdk.GlideUseListenerActivity"></activity>
+        <activity android:name=".anim.MoveViewActivity" />
+        <activity android:name=".anim.PropertyAnimActivity"></activity>
+        <activity android:name=".ui.ResultBleActivity" />
+        <activity android:name=".skin.SkinStaticThemeActivity" />
+        <activity android:name=".ui.GradientActivity" />
+        <activity android:name=".ui.MeasureLearnActivity" />
+        <activity android:name=".ui.CircleProgressActivity">
+
+        </activity>
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ui.ScrollPickerActivity"></activity>
-
-
-        <activity android:name=".anim.ViewAnimActivity"></activity>
+        <activity android:name=".ui.ScrollPickerActivity" />
+        <activity android:name=".anim.ViewAnimActivity" />
     </application>
 
 </manifest>

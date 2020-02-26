@@ -13,17 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.android.util.DrawableUtil;
-import com.android.util.EventUtil;
-import com.android.util.R;
-
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
-import static android.text.TextUtils.isEmpty;
-import static com.android.util.pro.ARouterManager.BOX_MAIN;
-
 /**
  * @author : John
  * @date : 2018/7/15
@@ -38,7 +27,7 @@ public abstract class CBaseActivity extends AppCompatActivity {
     public static final String PARAMS_03 = "PARAMS_03";
     public static final String PARAMS_04 = "PARAMS_04";
 
-    private Unbinder unBinder;
+//    private Unbinder unBinder;
     protected Toolbar mToolbar;
     private TextView mToolBarTitle;
     private ProgressDialog progressDialog;
@@ -51,7 +40,7 @@ public abstract class CBaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        showSystemFull();
         setContentView(setLayoutId());
-        unBinder = ButterKnife.bind(this);
+//        unBinder = ButterKnife.bind(this);
 //        mToolbar = findViewById(R.id.toolbar);
 //        if (mToolbar != null) {
 //            setSupportActionBar(mToolbar);
@@ -135,28 +124,28 @@ public abstract class CBaseActivity extends AppCompatActivity {
     }
 
     protected void setToolBarTitle(final String goHomeTxt) {
-        tvTitleHome = findViewById(R.id.tv_title_home);
-        if (tvTitleHome != null && !isEmpty(goHomeTxt)) {
-            tvTitleHome.setVisibility(View.VISIBLE);
-            tvTitleHome.setText(goHomeTxt);
-            if ("首页".equals(goHomeTxt)) {
-                DrawableUtil.setDrawableLeft(tvTitleHome, getDrawable(R.mipmap.btn_title_bar));
-                tvTitleHome.setOnClickListener(new EventUtil() {
-                    @Override
-                    protected void onEventClick(View v) {
-                        ARouter.getInstance().build(BOX_MAIN).navigation();
-                    }
-                });
-            } else if ("返回".equals(goHomeTxt)) {
-                DrawableUtil.setDrawableLeft(tvTitleHome, getDrawable(R.drawable.ic_page_back));
-                tvTitleHome.setOnClickListener(new EventUtil() {
-                    @Override
-                    protected void onEventClick(View v) {
-                        finish();
-                    }
-                });
-            }
-        }
+//        tvTitleHome = findViewById(R.id.tv_title_home);
+//        if (tvTitleHome != null && !isEmpty(goHomeTxt)) {
+//            tvTitleHome.setVisibility(View.VISIBLE);
+//            tvTitleHome.setText(goHomeTxt);
+//            if ("首页".equals(goHomeTxt)) {
+//                DrawableUtil.setDrawableLeft(tvTitleHome, getDrawable(R.mipmap.btn_title_bar));
+//                tvTitleHome.setOnClickListener(new EventUtil() {
+//                    @Override
+//                    protected void onEventClick(View v) {
+//                        ARouter.getInstance().build(BOX_MAIN).navigation();
+//                    }
+//                });
+//            } else if ("返回".equals(goHomeTxt)) {
+//                DrawableUtil.setDrawableLeft(tvTitleHome, getDrawable(R.drawable.ic_page_back));
+//                tvTitleHome.setOnClickListener(new EventUtil() {
+//                    @Override
+//                    protected void onEventClick(View v) {
+//                        finish();
+//                    }
+//                });
+//            }
+//        }
     }
 
 
@@ -206,7 +195,7 @@ public abstract class CBaseActivity extends AppCompatActivity {
         super.onDestroy();
 
 //        appManager.remove(this);
-        unBinder.unbind();
+//        unBinder.unbind();
     }
 
 //    @Override
