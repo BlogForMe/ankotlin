@@ -20,7 +20,7 @@ import timber.log.Timber;
  * http://blog.csdn.net/student9128/article/details/68932549
  */
 
-public class DateUtils {
+public class DateUtil {
     /**
      * 日期类型 *
      * C代表冒号
@@ -49,7 +49,7 @@ public class DateUtils {
         SimpleDateFormat sdFormat = new SimpleDateFormat(yyyyMMdd);
         try {
             Date date = sdFormat.parse(dateString);
-            String dataString = DateUtils.dateToString(date, yyyy_MM_dd);
+            String dataString = DateUtil.dateToString(date, yyyy_MM_dd);
             return dataString;
         } catch (ParseException e) {
             e.printStackTrace();
@@ -61,7 +61,7 @@ public class DateUtils {
         SimpleDateFormat sdFormat = new SimpleDateFormat(yyyyMMdd);
         try {
             Date date = sdFormat.parse(dateString);
-            String dataString = DateUtils.dateToString(date, MM_dd);
+            String dataString = DateUtil.dateToString(date, MM_dd);
             return dataString;
         } catch (ParseException e) {
             e.printStackTrace();
@@ -74,7 +74,7 @@ public class DateUtils {
         SimpleDateFormat sdFormat = new SimpleDateFormat(yyyyMMdd);
         try {
             Date date = sdFormat.parse(dateString);
-            String dataString = DateUtils.dateToString(date, MMdd);
+            String dataString = DateUtil.dateToString(date, MMdd);
             return dataString;
         } catch (ParseException e) {
             e.printStackTrace();
@@ -194,7 +194,7 @@ public class DateUtils {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         Date dBegin = sdf.parse("20181001");
 
-        String currentDay = DateUtils.dateToString(new Date(), yyyyMMdd);
+        String currentDay = DateUtil.dateToString(new Date(), yyyyMMdd);
         Date dEnd = stringToDate(currentDay, yyyyMMdd);
         ArrayList<String> datas = limitDates(dBegin, dEnd, yyyyMMdd);
         return datas;
@@ -210,7 +210,7 @@ public class DateUtils {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         Date dBegin = sdf.parse("20180901");
 
-        String currentDay = DateUtils.dateToString(new Date(), yyyyMMdd);
+        String currentDay = DateUtil.dateToString(new Date(), yyyyMMdd);
         String fureDay = String.valueOf(formatGetDate(currentDay, 7));
 
 //        Timber.i("fureDay   " + fureDay);
@@ -271,8 +271,8 @@ public class DateUtils {
 
     public static String getCheckDate(String time) {
         try {
-            Date dateCheck = DateUtils.stringToDate(time, yyyyMMDDHHmmss);
-            return DateUtils.dateToString(dateCheck, HHCmmCss);
+            Date dateCheck = DateUtil.stringToDate(time, yyyyMMDDHHmmss);
+            return DateUtil.dateToString(dateCheck, HHCmmCss);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -282,8 +282,8 @@ public class DateUtils {
     public static String formatTime(String time, String formatBefore, String formatAfter) {
         String formateTime = "";
         try {
-            Date das = DateUtils.stringToDate(time, formatBefore);
-            formateTime = DateUtils.dateToString(das, formatAfter);
+            Date das = DateUtil.stringToDate(time, formatBefore);
+            formateTime = DateUtil.dateToString(das, formatAfter);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -352,7 +352,11 @@ public class DateUtils {
     }
 
 
-    public void calculateAge(String dateOrigin) throws Exception {
+    /**
+     * @param dateOrigin pattern 1994/06/23
+     * @throws Exception
+     */
+    public static int calculateAge(String dateOrigin) throws Exception {
         //direct age calculation
 //        LocalDate l = LocalDate.of(1998, 04, 23); //specify year, month, date directly
 //        LocalDate now = LocalDate.now(); //gets localDate
@@ -361,7 +365,7 @@ public class DateUtils {
 
         //using Calendar Object
 //        String dateOrigin = "1994/06/23";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date d = sdf.parse(dateOrigin);
         Calendar c = Calendar.getInstance();
         c.setTime(d);
@@ -371,7 +375,8 @@ public class DateUtils {
         LocalDate l1 = LocalDate.of(year, month, date);
         LocalDate now1 = LocalDate.now();
         Period diff1 = Period.between(l1, now1);
-        System.out.println("age:" + diff1.getYears() + "years");
+//        System.out.println("age:" + diff1.getYears() + "years");
+        return diff1.getYears();
     }
 
 }

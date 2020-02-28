@@ -52,5 +52,9 @@
 
     </declare-styleable>
 
+    <declare-styleable name="TermRoundView">
+        <attr name="isRulerInput" format="boolean"/>
+
+    </declare-styleable>
 
 </resources>

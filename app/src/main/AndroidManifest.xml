@@ -11,11 +11,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".test.TestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".sdk.GlideUseListenerActivity"></activity>
         <activity android:name=".anim.MoveViewActivity" />
@@ -25,7 +21,11 @@
         <activity android:name=".ui.GradientActivity" />
         <activity android:name=".ui.MeasureLearnActivity" />
         <activity android:name=".ui.CircleProgressActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />

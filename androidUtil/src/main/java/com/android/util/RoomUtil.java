@@ -8,7 +8,7 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
-import static com.android.util.DateUtils.yyyyMMDDHHmmss;
+import static com.android.util.DateUtil.yyyyMMDDHHmmss;
 
 public class RoomUtil {
     private static final RoomUtil ourInstance = new RoomUtil();
@@ -30,7 +30,7 @@ public class RoomUtil {
         try{
             if (bledao!=null){
 //                int randomTxt = new Random().nextInt(100);
-                String  time  = DateUtils.dateToString(new Date(),yyyyMMDDHHmmss);
+                String  time  = DateUtil.dateToString(new Date(),yyyyMMDDHHmmss);
                 bledao.insertBle(new BleEntity().setBleCode(bleCode).setBleParam(saveStrData).setCreateDttm(Long.parseLong(time)));
             }
         }catch (Exception e){

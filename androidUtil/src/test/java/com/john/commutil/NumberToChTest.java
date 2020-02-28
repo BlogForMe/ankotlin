@@ -1,4 +1,4 @@
-package com.jonzhou.commutil;
+package com.john.commutil;
 
 import com.android.util.NumberToCH;
 

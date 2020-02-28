@@ -1,4 +1,4 @@
-package com.jonzhou.commutil;
+package com.john.commutil;
 
 import org.junit.Test;
 
@@ -18,9 +18,9 @@ public class ExampleUnitTest {
     @Test
     public void dataTest() {
 //        String dateTime = "20180808";
-//        Object dat = DateUtils.formatGetDate(dateTime, 0, 0);
+//        Object dat = DateUtil.formatGetDate(dateTime, 0, 0);
 //        System.out.println(dat);
-//        Map<String, String> sss = DateUtils.getBirAgeSex("611000198804124836");
+//        Map<String, String> sss = DateUtil.getBirAgeSex("611000198804124836");
 //        System.out.println(sss.get("birthday") + "  " + sss.get("age") +"   "+ sss.get("sexCode"));
 
 //        for (int i=0;i<1000;i++){

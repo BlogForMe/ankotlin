@@ -48,4 +48,6 @@
         <attr name="dial_radius" format="float"/>
 
     </declare-styleable>
+
+
 </resources>
