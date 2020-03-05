@@ -18,7 +18,7 @@ class TermRoundView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private var isRulerInput: Boolean = false
-    private var showTxtX: Float=0.0f
+    private var showTxtX: Float = 0.0f
     private var degreeValue = 0.0f
     private var scaleUnit: Float = 0.0f
     private val srcPaint: Paint //外圆环
@@ -41,8 +41,11 @@ class TermRoundView @JvmOverloads constructor(
     val ruleTop = 120f //尺子高度
 
 
+    var tempScale = ruleLength / (2 * 8) //刻度线长度
 
     init {
+        scaleUnit = tempScale / 5f; //0.1对应的长度
+
         val a = context?.theme?.obtainStyledAttributes(attrs, R.styleable.TermRoundView, 0, 0)
         try {
             isRulerInput = a!!.getBoolean(R.styleable.TermRoundView_isRulerInput, false)
@@ -100,7 +103,6 @@ class TermRoundView @JvmOverloads constructor(
         }
 
 
-
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -133,9 +135,7 @@ class TermRoundView @JvmOverloads constructor(
 
         //Timber.i("rulerBitmap?.width    ${rulerBitmap?.width}")
 //        var tempScale = (rulerBitmap?.width.toFloat() - 30f - 42f) / (2 * 9) //刻度线长度
-        var tempScale = ruleLength / (2 * 8) //刻度线长度
 
-        scaleUnit = tempScale / 5f; //0.1对应的长度
 
         val longHScale = 20
 
@@ -143,8 +143,20 @@ class TermRoundView @JvmOverloads constructor(
         //刻度
         for (i in 0..16) {
             if ((i + 1) % 2 == 0) {
-                canvas?.drawLine(startX + tempScale * i, topF - 5, startX + tempScale * i, topF, linePaint)
-                canvas?.drawLine(startX + tempScale * i, bottomF, startX + tempScale * i, bottomF + 5, linePaint)
+                canvas?.drawLine(
+                    startX + tempScale * i,
+                    topF - 5,
+                    startX + tempScale * i,
+                    topF,
+                    linePaint
+                )
+                canvas?.drawLine(
+                    startX + tempScale * i,
+                    bottomF,
+                    startX + tempScale * i,
+                    bottomF + 5,
+                    linePaint
+                )
             }
 
             val drawTxt = (34 + i / 2).toString()
@@ -152,15 +164,37 @@ class TermRoundView @JvmOverloads constructor(
             txtPaint.getTextBounds(drawTxt, 0, drawTxt.length, txtRect)
             //底部长线
             if (i % 4 == 0) {
-                canvas?.drawLine(startX + tempScale * i, bottomF, startX + tempScale * i, bottomF + longHScale, linePaint)
+                canvas?.drawLine(
+                    startX + tempScale * i,
+                    bottomF,
+                    startX + tempScale * i,
+                    bottomF + longHScale,
+                    linePaint
+                )
 
-                canvas?.drawText(drawTxt, startX + tempScale * i - txtRect.width() / 2, bottomF + longHScale + txtRect.height(), txtPaint)
+                canvas?.drawText(
+                    drawTxt,
+                    startX + tempScale * i - txtRect.width() / 2,
+                    bottomF + longHScale + txtRect.height(),
+                    txtPaint
+                )
             }
 
             //头部长线
             if ((i + 2) % 4 == 0) {
-                canvas?.drawLine(startX + tempScale * i, topF - longHScale, startX + tempScale * i, topF, linePaint)
-                canvas?.drawText(drawTxt, startX + tempScale * i - txtRect.width() / 2, topF - longHScale, txtPaint)
+                canvas?.drawLine(
+                    startX + tempScale * i,
+                    topF - longHScale,
+                    startX + tempScale * i,
+                    topF,
+                    linePaint
+                )
+                canvas?.drawText(
+                    drawTxt,
+                    startX + tempScale * i - txtRect.width() / 2,
+                    topF - longHScale,
+                    txtPaint
+                )
             }
         }
 
@@ -168,13 +202,18 @@ class TermRoundView @JvmOverloads constructor(
         val srcRadius: Float = (innerRadius + 8)
 //        //Timber.i("scrollX   $scrollX   centerY  $centerY")
 
-        if (isRulerInput){
+        if (isRulerInput) {
             canvas?.drawCircle(scrollX, centerY, srcRadius, srcPaint);
             canvas?.drawCircle(scrollX, centerY, innerRadius, innnerPaint);
 
             var rectCircleFirstX = (scrollX - innerRadius + 10) //第一个圆柱坐标
             for (i in 0..2) {
-                val rectF = RectF(rectCircleFirstX + (10 * i), centerY - 20f, rectCircleFirstX + 10f + (10 * i), centerY + 20);
+                val rectF = RectF(
+                    rectCircleFirstX + (10 * i),
+                    centerY - 20f,
+                    rectCircleFirstX + 10f + (10 * i),
+                    centerY + 20
+                );
                 rectCircleFirstX = (rectCircleFirstX + 10);
                 canvas?.drawRoundRect(rectF, 10f, 10f, srcPaint)
             }
@@ -191,8 +230,13 @@ class TermRoundView @JvmOverloads constructor(
         val showTxtRect = Rect()
         yellowColorPaint.getTextBounds(showDegreeTxt, 0, showDegreeTxt.length, showTxtRect)
 
-        val rf = RectF(showTxtX -20-150, txtTop - 20 - showTxtRect.height(), showTxtX + 20+ 150+ showTxtRect.width(), txtTop + 20)
-        canvas?.drawRoundRect(rf, 10f,10f,yellowLightPaint) //度数背景边框
+        val rf = RectF(
+            showTxtX - 20 - 150,
+            txtTop - 20 - showTxtRect.height(),
+            showTxtX + 20 + 150 + showTxtRect.width(),
+            txtTop + 20
+        )
+        canvas?.drawRoundRect(rf, 10f, 10f, yellowLightPaint) //度数背景边框
 
         Timber.i("showTxtRect.width()   ${showTxtRect.width()}")
         //Timber.i(" onDraw degree  $   startX  $startX")
@@ -205,17 +249,45 @@ class TermRoundView @JvmOverloads constructor(
         } else if (degreeValue > 38) {
             yellowColorPaint.color = Color.parseColor("#EC4736")
         }
-        canvas?.drawText(showDegreeTxt,showTxtX , txtTop, yellowColorPaint) //度数显示
+        canvas?.drawText(showDegreeTxt, showTxtX, txtTop, yellowColorPaint) //度数显示
 
         val btCircle = 30f
-        if (isRulerInput){
-            canvas?.drawCircle(showTxtX-100,txtTop -showTxtRect.height()/2  ,btCircle,yellowBtPaint)
-            canvas?.drawLine(showTxtX-100 - btCircle+5,txtTop -showTxtRect.height()/2,showTxtX-100+btCircle-5,txtTop -showTxtRect.height()/2,whiteBtPaint)
+        if (isRulerInput) {
+            canvas?.drawCircle(
+                showTxtX - 100,
+                txtTop - showTxtRect.height() / 2,
+                btCircle,
+                yellowBtPaint
+            )
+            canvas?.drawLine(
+                showTxtX - 100 - btCircle + 5,
+                txtTop - showTxtRect.height() / 2,
+                showTxtX - 100 + btCircle - 5,
+                txtTop - showTxtRect.height() / 2,
+                whiteBtPaint
+            )
 
-            val addCircleY=showTxtX+showTxtRect.width()+100
-            canvas?.drawCircle(addCircleY,txtTop -showTxtRect.height()/2  ,btCircle,yellowBtPaint)
-            canvas?.drawLine(addCircleY- btCircle+5,txtTop -showTxtRect.height()/2,addCircleY+btCircle-5,txtTop -showTxtRect.height()/2,whiteBtPaint)
-            canvas?.drawLine(addCircleY,txtTop -showTxtRect.height()/2-btCircle+5,addCircleY,txtTop -showTxtRect.height()/2+btCircle-5,whiteBtPaint)
+            val addCircleY = showTxtX + showTxtRect.width() + 100
+            canvas?.drawCircle(
+                addCircleY,
+                txtTop - showTxtRect.height() / 2,
+                btCircle,
+                yellowBtPaint
+            )
+            canvas?.drawLine(
+                addCircleY - btCircle + 5,
+                txtTop - showTxtRect.height() / 2,
+                addCircleY + btCircle - 5,
+                txtTop - showTxtRect.height() / 2,
+                whiteBtPaint
+            )
+            canvas?.drawLine(
+                addCircleY,
+                txtTop - showTxtRect.height() / 2 - btCircle + 5,
+                addCircleY,
+                txtTop - showTxtRect.height() / 2 + btCircle - 5,
+                whiteBtPaint
+            )
         }
 
     }
@@ -224,7 +296,7 @@ class TermRoundView @JvmOverloads constructor(
     //    var anOffset :Float = 0.toFloat()
     override fun onTouchEvent(event: MotionEvent): Boolean {
         //Timber.i("action onTouchEvent: " + event.action)
-        if (!isRulerInput){
+        if (!isRulerInput) {
             return false
         }
         if (event.x >= startX - 5 && event.x <= (startX + ruleLength)) //-5更好的拖动到34 返回
@@ -239,7 +311,7 @@ class TermRoundView @JvmOverloads constructor(
 //                //向右滑动
 //                //Timber.i("onTouchEvent ACTION_MOVE    scrollX   $scrollX    downX   $downX")
                     //Timber.i("onTouchEvent ACTION_MOVE    Math.abs(scrollX-downX) ${Math.abs(scrollX-downX)}  scaleUnit  $scaleUnit ")
-                    if (event.y> ruleTop){
+                    if (event.y > ruleTop) {
                         scrollX = event.x
                         if (Math.abs(scrollX - downX) >= (scaleUnit / 3)) {
                             //Timber.i("onTouchEvent ACTION_MOVE    invalidate()")
@@ -247,13 +319,13 @@ class TermRoundView @JvmOverloads constructor(
                         }
                     }
                 }
-                MotionEvent.ACTION_UP->{
-                    if (event.y<ruleTop){
-                        if (event.x<showTxtX){
-                            scrollX-=scaleUnit
-                        }else if (event.x>showTxtX+150){
-                            Timber.i("scrollX   $scrollX" )
-                            scrollX+=scaleUnit
+                MotionEvent.ACTION_UP -> {
+                    if (event.y < ruleTop) {
+                        if (event.x < showTxtX) {
+                            scrollX -= scaleUnit
+                        } else if (event.x > showTxtX + 150) {
+                            Timber.i("scrollX   $scrollX")
+                            scrollX += scaleUnit
                         }
                         invalidate()
                     }
@@ -267,11 +339,13 @@ class TermRoundView @JvmOverloads constructor(
         return degreeValue.toString()
     }
 
-    fun setDegree(valueDegree:String){
-        if (!valueDegree.isNullOrBlank()){
-               scrollX = (valueDegree.toFloat()-34)*(scaleUnit * 10)+startX
+    fun setDegree(valueDegree: String) {
+        if (!valueDegree.isNullOrBlank()) {
+            var ddf = (valueDegree.toFloat() - 34)
+            var mmm = ddf * (scaleUnit * 10)
+            scrollX = (mmm + startX)
 //            val degreeOrigin = ((scrollX - startX) / (scaleUnit * 10) + 34).toString()
-            if (scrollX>= startX - 5 && scrollX<= (startX + ruleLength)){
+            if (scrollX >= startX - 5 && scrollX <= (startX + ruleLength)) {
                 invalidate()
             }
 

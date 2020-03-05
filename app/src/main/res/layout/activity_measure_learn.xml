@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/ll_cvm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.MeasureLearnActivity">
 
     <!-- <com.john.ankotlin.ui.measure.CustomViewOnMeasure
@@ -14,12 +14,39 @@
              android:layout_margin="10dp"
              android:background="@android:color/darker_gray"
      />-->
-    <com.john.kot.view.CustomView
+    <!--<com.john.kot.view.CustomView
             android:layout_width="wrap_content" android:layout_height="wrap_content"/>
     <com.john.kot.view.MyTextView
             android:layout_width="wrap_content" android:layout_height="wrap_content"
                                              app:mText="I AM FROM CHINA"
                                              app:mTextSize="20sp"
                                              android:padding="40dp"
-                                             app:mTextColor="@android:color/holo_blue_bright"/>
+                                             app:mTextColor="@android:color/holo_blue_bright"/>-->
+
+    <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher" />
+
+    <View
+            android:layout_width="391.8dp"
+            android:layout_height="10dp"
+            android:background="@color/bgGreenColor" />
+
+    <View
+            android:layout_width="411.4dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@color/bgGreenColor" />
+    <View
+            android:layout_width="72dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@color/bgGreenColor" />
+    <View
+            android:layout_width="152dp"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:layout_height="10dp"
+            android:background="@color/bgGreenColor" />
 </LinearLayout>

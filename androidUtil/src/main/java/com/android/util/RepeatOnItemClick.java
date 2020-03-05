@@ -3,10 +3,11 @@ package com.android.util;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemLongClickListener;
 
 import timber.log.Timber;
 
-public abstract class RepeatOnItemClick implements BaseQuickAdapter.OnItemClickListener {
+public abstract class RepeatOnItemClick implements OnItemLongClickListener {
     // 两次点击按钮之间的点击间隔不能少于1000毫秒
     private static final int MIN_CLICK_DELAY_TIME = 300;
     private static long lastClickTime;
@@ -23,7 +24,6 @@ public abstract class RepeatOnItemClick implements BaseQuickAdapter.OnItemClickL
     }
 
 
-    @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         boolean isFatt = isFastClick();
         Timber.i("isFatt    " + isFatt);

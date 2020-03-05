@@ -17,11 +17,20 @@ class CircleProgressActivity : AppCompatActivity() {
 //            Timber.i("degree    "+trm_rule.getDegree())
 //        }
 
-        var degree= 34.0f
         val scaleUnit =0.1f
-        bt_add.setOnClickListener {
-//            degree+=scaleUnit
-//            trm_rule.setDegree(degree.toString())
-        }
+//        bt_add.setOnClickListener {
+//        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        var degree= "37.0"
+        trm_rule.setDegree(degree)
     }
 }

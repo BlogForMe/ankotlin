@@ -17,4 +17,10 @@
         <item>患者</item>
         <item>我的</item>
     </string-array>
+
+    <string-array name="colors_array">
+        <item>红色</item>
+        <item>绿色</item>
+        <item>蓝色</item>
+    </string-array>
 </resources>

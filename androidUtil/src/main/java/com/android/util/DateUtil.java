@@ -11,7 +11,6 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import timber.log.Timber;
 
 /**
  * Created by A on 2018/2/6.
@@ -259,7 +258,6 @@ public class DateUtil {
 
 
             if (fir && sed) {
-                Timber.i("times   " + times);
                 return times;
             }
         } catch (Exception ex) {
