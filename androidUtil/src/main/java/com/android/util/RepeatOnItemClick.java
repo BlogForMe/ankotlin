@@ -1,13 +1,14 @@
 package com.android.util;
 
 import android.view.View;
+import android.widget.AdapterView;
+
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemLongClickListener;
 
 import timber.log.Timber;
 
-public abstract class RepeatOnItemClick implements OnItemLongClickListener {
+public abstract class RepeatOnItemClick implements AdapterView.OnItemClickListener {
     // 两次点击按钮之间的点击间隔不能少于1000毫秒
     private static final int MIN_CLICK_DELAY_TIME = 300;
     private static long lastClickTime;

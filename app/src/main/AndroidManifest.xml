@@ -19,11 +19,7 @@
         <activity android:name=".skin.SkinStaticThemeActivity" />
         <activity android:name=".ui.GradientActivity" />
         <activity android:name=".ui.MeasureLearnActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.CircleProgressActivity"></activity>
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
@@ -31,6 +27,15 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
+
+        <activity android:name=".ui.MessageActivityFragment">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
