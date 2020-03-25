@@ -69,7 +69,7 @@ class CircleImageView(context: Context?, attrs: AttributeSet?) : AppCompatImageV
             srcPath?.addRect(srcRectF, Path.Direction.CCW)
             // 计算tempPath和path的差集
             srcPath?.op(path, Path.Op.DIFFERENCE)
-            canvas?.drawPath(srcPath, sPaint)
+            srcPath?.let { canvas?.drawPath(it, sPaint) }
         }
         sPaint.xfermode = null
     }

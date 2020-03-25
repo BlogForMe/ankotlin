@@ -89,7 +89,7 @@ class TermRoundImgView @JvmOverloads constructor(
 
         val ruleTop = 100f
         var rulerBitmap = bitmapWeak.get()
-        canvas?.drawBitmap(rulerBitmap,0f,ruleTop,Paint())
+        rulerBitmap?.let { canvas?.drawBitmap(it,0f,ruleTop,Paint()) }
 //        Timber.i("bitmap width ${rulerBitmap?.width}  height ${rulerBitmap?.height}")
         val imgHeight = rulerBitmap?.height!!.toFloat()
 //       val medleRect = RectF(0f,0f,rulerBitmap.width.toFloat(),20f);

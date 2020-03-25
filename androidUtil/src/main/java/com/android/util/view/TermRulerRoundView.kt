@@ -12,7 +12,7 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 
 
-class TermRoundView @JvmOverloads constructor(
+class TermRulerRoundView @JvmOverloads constructor(
     context: Context?, attrs: AttributeSet?,
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
@@ -46,9 +46,9 @@ class TermRoundView @JvmOverloads constructor(
     init {
         scaleUnit = tempScale / 5f; //0.1对应的长度
 
-        val a = context?.theme?.obtainStyledAttributes(attrs, R.styleable.TermRoundView, 0, 0)
+        val a = context?.theme?.obtainStyledAttributes(attrs, R.styleable.TermRulerRoundView, 0, 0)
         try {
-            isRulerInput = a!!.getBoolean(R.styleable.TermRoundView_isRulerInput, false)
+            isRulerInput = a!!.getBoolean(R.styleable.TermRulerRoundView_isRulerInput, false)
         } finally {
             a?.recycle()
         }
@@ -118,8 +118,10 @@ class TermRoundView @JvmOverloads constructor(
         )
 
 
-        var rulerBitmap = bitmapWeak.get()
-        canvas?.drawBitmap(rulerBitmap, 0f, ruleTop, Paint())
+        val rulerBitmap = bitmapWeak.get()
+        if (rulerBitmap != null) {
+            canvas?.drawBitmap(rulerBitmap, 0f, ruleTop, Paint())
+        }
 //        //Timber.i("bitmap width ${rulerBitmap?.width}  height ${rulerBitmap?.height}")
         val imgHeight = rulerBitmap?.height!!.toFloat()
 //       val medleRect = RectF(0f,0f,rulerBitmap.width.toFloat(),20f);

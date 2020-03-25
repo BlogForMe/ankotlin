@@ -1,14 +1,12 @@
-package com.john.kot.view
+package com.android.util.view
 
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import com.android.util.DisplayUtils.sp2px
-import com.john.kot.BuildConfig
-import com.john.kot.R
+import com.android.util.R
 
 
 /**
@@ -24,8 +22,8 @@ class CirArcView : View {
     val mTxtTotalPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     private var mContext: Context? = null
-    var balanceTxt = "2000"
-    var totalTxt = "5000"
+    var balanceTxt = "0"
+    var totalTxt = "0"
 
 
     constructor(context: Context?) : this(context, null)
@@ -38,7 +36,7 @@ class CirArcView : View {
         mContext = context
         val a = context?.theme?.obtainStyledAttributes(attrs, R.styleable.CirArcView, 0, 0)
         try {
-            mRadius = a!!.getFloat(R.styleable.CirArcView_circleRadius, 70f)
+            mRadius = a!!.getFloat(R.styleable.CirArcView_circleCRadius, 70f)
             arcWidth = a!!.getFloat(R.styleable.CirArcView_arcWidth, 10f)
         } finally {
             a?.recycle()
@@ -74,8 +72,6 @@ class CirArcView : View {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-
-
         val centerX = width / 2.0f
         val centerY = height / 2.0f
         val rectF = RectF()
@@ -97,7 +93,7 @@ class CirArcView : View {
 
         mTxtPaint.apply {
             color = Color.parseColor("#4E6550")
-            textSize = sp2px(mContext, 30f)
+            textSize = sp2px(mContext, 20f)
         }
         mLinePaint.apply {
             color = Color.parseColor("#DDDDDD")
@@ -106,7 +102,7 @@ class CirArcView : View {
 
         mTxtTotalPaint.apply {
             color = Color.parseColor("#999999")
-            textSize = sp2px(mContext, 20f)
+            textSize = sp2px(mContext, 25f)
         }
 
         canvas?.drawCircle(centerX, centerY, mRadius, mPaint)
@@ -115,25 +111,33 @@ class CirArcView : View {
         canvas?.drawArc(rectF, -90f, mIncludedAngle, false, mPaint)
 
 
-        val rect = Rect()
-        mTxtPaint.getTextBounds(balanceTxt, 0, balanceTxt.length, rect)
 
-        canvas?.drawText(balanceTxt, (centerX - rect.width() / 2), (centerY - 10), mTxtPaint)
-
-
-        canvas?.drawLine(centerX - mRadius + arcWidth, centerY, centerX + mRadius - arcWidth, centerY, mLinePaint)
+        var totalShowTxt = ""
         val rectTotal = Rect()
-        val totalTxt = "共$totalTxt"
-        mTxtTotalPaint?.getTextBounds(totalTxt, 0, totalTxt.length, rectTotal)
-        canvas?.drawText(
-            totalTxt,
-            (centerX - rectTotal.width() / 2),
-            (centerY + rect.height() / 2 + 20),
-            mTxtTotalPaint
-        )
+        if (totalTxt.toInt() > 99999) {
+            totalShowTxt = "不限"
+            mTxtTotalPaint?.getTextBounds(totalShowTxt, 0, totalShowTxt.length, rectTotal)
+            canvas?.drawText(totalShowTxt, (centerX - rectTotal.width() / 2), centerY + rectTotal.height()/2, mTxtTotalPaint)
+            return
+        } else {
+            totalShowTxt = balanceTxt
+        }
+        val rect = Rect()
+        mTxtTotalPaint?.getTextBounds(totalShowTxt, 0, totalShowTxt.length, rectTotal)
+        canvas?.drawText(totalShowTxt, (centerX - rectTotal.width() / 2), (centerY + rectTotal.height() / 2 + 20), mTxtTotalPaint)
+
+        var showUse = ""
+        if (balanceTxt.toInt() > 99999) {
+            showUse = "不限"
+        } else {
+            showUse = "剩余"
+        }
+        mTxtPaint.getTextBounds(showUse, 0, showUse.length, rect)
+        canvas?.drawText(showUse, (centerX - rect.width() / 2), (centerY - 10), mTxtPaint)
+//        canvas?.drawLine(centerX - mRadius + arcWidth, centerY, centerX + mRadius - arcWidth, centerY, mLinePaint)
     }
 
-     fun progress(bTxt: String, tTxt: String) {
+    open fun progress(bTxt: String, tTxt: String) {
         balanceTxt = bTxt
         totalTxt = tTxt
 //        mIncludedAngle = balanceTxt.toFloat()
@@ -151,27 +155,12 @@ class CirArcView : View {
             override fun onAnimationUpdate(animation: ValueAnimator?) {
                 mIncludedAngle = animation?.getAnimatedValue() as Float
                 postInvalidate()
-                if (BuildConfig.DEBUG) {
-                    Log.d("CircleView", "onAnimationUpdate: percent = $mIncludedAngle")
-                }
+//                if (BuildConfig.DEBUG) {
+//                    Log.d("CircleView", "onAnimationUpdate: percent = $mIncludedAngle")
+//                }
             }
         })
         animator.start()
     }
 
-//    private fun getMySize(defaultSize: Int, measureSpec: Int): Int {
-//        var mySize = defaultSize
-//        val mode = View.MeasureSpec.getMode(measureSpec)
-//        val size = View.MeasureSpec.getSize(measureSpec)
-//        when (mode) {
-//            View.MeasureSpec.UNSPECIFIED //如果没有指定大小，就设置为默认大小
-//            -> mySize = defaultSize
-//            View.MeasureSpec.AT_MOST//如果测量模式是最大取值为size
-//            ->
-//                //我们将大小取最大值,你也可以取其他值
-//                mySize = size
-//            View.MeasureSpec.EXACTLY -> mySize = size
-//        }
-//        return mySize
-//    }
 }

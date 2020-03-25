@@ -52,7 +52,7 @@
 
     </declare-styleable>
 
-    <declare-styleable name="TermRoundView">
+    <declare-styleable name="TermRulerRoundView">
         <attr name="isRulerInput" format="boolean"/>
 
     </declare-styleable>

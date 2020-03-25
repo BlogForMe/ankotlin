@@ -118,7 +118,7 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
                 strings[index],
                 width / 2 - centerTextWidth / 2 + anOffset,
                 (height / 2 + centerTextHeight / 2).toFloat(),
-                selectedPaint
+                selectedPaint!!
             )//绘制被选中文字，注意点是y坐标
 
             for (i in strings.indices) {//遍历strings，把每个数字都绘制出来，
@@ -178,9 +178,9 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
                     Path.Direction.CW
                 )
                 if (i == index) {
-                    canvas.drawPath(scalePath, selectedPaint)
+                    canvas.drawPath(scalePath, selectedPaint!!)
                 } else {
-                    canvas.drawPath(scalePath, textPaint)
+                    textPaint?.let { canvas.drawPath(scalePath, it) }
                 }
             }
         }

@@ -12,12 +12,6 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.android.util.SharedPrefsUtils.CONFIG_USER;
-import static com.android.util.SharedPrefsUtils.CONSTANT_URL;
-import static com.android.util.SharedPrefsUtils.DEFAULT_URL;
-import static com.android.util.SharedPrefsUtils.INFORMATION_URL;
-import static com.android.util.SharedPrefsUtils.KEY_HOST;
-import static com.android.util.SharedPrefsUtils.SPEANK_ADDR_SOUTHERN_FUJIAN_DIALECT;
 
 
 /**
@@ -71,14 +65,14 @@ public class RetrofitFactory {
         return mOkHttpClient;
     }
 
-    public static String getUrl() {
-        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
-        String baseUrl = (spUtil.getString(KEY_HOST, DEFAULT_URL));
-//        if (BuildConfig.DEBUG){
-//            return  DEV_URL;
-//        }
-        return baseUrl;
-    }
+//    public static String getUrl() {
+////        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
+////        String baseUrl = (spUtil.getString(KEY_HOST, DEFAULT_URL));
+//////        if (BuildConfig.DEBUG){
+//////            return  DEV_URL;
+//////        }
+//        return baseUrl;
+//    }
 
 
     /**
@@ -86,48 +80,48 @@ public class RetrofitFactory {
      *
      * @return
      */
-    public static String getInfoUrl() {
-        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
-        String baseUrl = (spUtil.getString(INFORMATION_URL, DEFAULT_URL) + CONSTANT_URL);
-        return baseUrl;
-
-    }
-
-    /**
-     * 咨询Web页面
-     *
-     * @return
-     */
-    public static String getInfoWeb() {
-        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
-        String baseUrl = spUtil.getString(INFORMATION_URL, DEFAULT_URL);
-        return baseUrl;
-    }
-
-
-    public static String getMinanUrl() {
-        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
-        String baseUrl = spUtil.getString(SPEANK_ADDR_SOUTHERN_FUJIAN_DIALECT, MINAN_URL);
-        return baseUrl;
-    }
-
-    /**
-     * 获取Service
-     * 血糖足是不用 COMMON_PATH，放在地址里面
-     *
-     * @param clazz
-     * @param <T>
-     * @return
-     */
-    public static <T> T create(Class<T> clazz) {
-        String baseUrl = (getUrl() + CONSTANT_URL);
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl) //geturl其他地方用
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(getOkHttpClient())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
-        return retrofit.create(clazz);
-    }
+//    public static String getInfoUrl() {
+//        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
+//        String baseUrl = (spUtil.getString(INFORMATION_URL, DEFAULT_URL) + CONSTANT_URL);
+//        return baseUrl;
+//
+//    }
+//
+//    /**
+//     * 咨询Web页面
+//     *
+//     * @return
+//     */
+//    public static String getInfoWeb() {
+//        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
+//        String baseUrl = spUtil.getString(INFORMATION_URL, DEFAULT_URL);
+//        return baseUrl;
+//    }
+//
+//
+//    public static String getMinanUrl() {
+//        SharedPrefsUtils spUtil = new SharedPrefsUtils(CONFIG_USER);
+//        String baseUrl = spUtil.getString(SPEANK_ADDR_SOUTHERN_FUJIAN_DIALECT, MINAN_URL);
+//        return baseUrl;
+//    }
+//
+//    /**
+//     * 获取Service
+//     * 血糖足是不用 COMMON_PATH，放在地址里面
+//     *
+//     * @param clazz
+//     * @param <T>
+//     * @return
+//     */
+//    public static <T> T create(Class<T> clazz) {
+//        String baseUrl = (getUrl() + CONSTANT_URL);
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(baseUrl) //geturl其他地方用
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(getOkHttpClient())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
+//        return retrofit.create(clazz);
+//    }
 
     /**
      * 咨询使用
@@ -138,7 +132,7 @@ public class RetrofitFactory {
      */
     public static <T> T createNew(Class<T> clazz) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl((getInfoUrl()))
+//                .baseUrl((getInfoUrl()))
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getOkHttpClient())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
@@ -147,7 +141,7 @@ public class RetrofitFactory {
 
     public static <T> T createMinan(Class<T> clazz) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(getMinanUrl())
+//                .baseUrl(getMinanUrl())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getOkHttpClient())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();

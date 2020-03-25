@@ -2,13 +2,11 @@ package com.john.kot.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.android.util.ItemPickDialog
+import com.android.util.sysdialog.ItemPickDialog
 import com.android.util.ToastUtil
 import com.john.kot.R
 import com.john.kot.ui.fragment.DialogShowFragment
 import kotlinx.android.synthetic.main.actiivty_framgent_message.*
-import kotlinx.android.synthetic.main.activity_measure_learn.*
-import timber.log.Timber
 
 class MessageActivityFragment : AppCompatActivity(), ItemPickDialog.ISelectListener {
 

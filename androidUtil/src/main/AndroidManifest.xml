@@ -52,6 +52,12 @@
     <!-- MeiZu 配置结束 < -->
 
 
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
   <!--  <application>
         <provider
             android:name="BuglyFileProvider"

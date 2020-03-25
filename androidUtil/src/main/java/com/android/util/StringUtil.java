@@ -145,32 +145,31 @@ public class StringUtil {
      * 和两个数比较
      *
      * @param dataValue
-     * @param array
      * @return
      */
-    public static String twoDoubleRange(Double dataValue, double[] array) {
-        String conclusion = "";
-        if (dataValue < array[0]) {
-            conclusion = com.android.util.pro.StringUtil.RESULT_LOW;
-        } else if (dataValue >= array[0] && dataValue < array[1]) {
-            conclusion = com.android.util.pro.StringUtil.RESULT_NORMAL;
-        } else if (dataValue > array[1]) {
-            conclusion = com.android.util.pro.StringUtil.RESULT_HIGH;
-        }
-        return conclusion;
-    }
-
-    public static String getTwoIntRange(int dataValue, int[] array) {
-        String conclusion = "";
-        if (dataValue < array[0]) {
-            conclusion = com.android.util.pro.StringUtil.RESULT_LOW;
-        } else if (dataValue >= array[0] && dataValue < array[1]) {
-            conclusion = com.android.util.pro.StringUtil.RESULT_NORMAL;
-        } else if (dataValue > array[1]) {
-            conclusion = com.android.util.pro.StringUtil.RESULT_HIGH;
-        }
-        return conclusion;
-    }
+//    public static String twoDoubleRange(Double dataValue, double[] array) {
+//        String conclusion = "";
+//        if (dataValue < array[0]) {
+//            conclusion = com.android.util.pro.StringUtil.RESULT_LOW;
+//        } else if (dataValue >= array[0] && dataValue < array[1]) {
+//            conclusion = com.android.util.pro.StringUtil.RESULT_NORMAL;
+//        } else if (dataValue > array[1]) {
+//            conclusion = com.android.util.pro.StringUtil.RESULT_HIGH;
+//        }
+//        return conclusion;
+//    }
+//
+//    public static String getTwoIntRange(int dataValue, int[] array) {
+//        String conclusion = "";
+//        if (dataValue < array[0]) {
+//            conclusion = com.android.util.pro.StringUtil.RESULT_LOW;
+//        } else if (dataValue >= array[0] && dataValue < array[1]) {
+//            conclusion = com.android.util.pro.StringUtil.RESULT_NORMAL;
+//        } else if (dataValue > array[1]) {
+//            conclusion = com.android.util.pro.StringUtil.RESULT_HIGH;
+//        }
+//        return conclusion;
+//    }
 
     public static String getCheckDateConclusion(String mealStatus, Double dataValue, int timeInterval) {
         String conclusion = "";

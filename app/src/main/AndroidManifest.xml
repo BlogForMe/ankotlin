@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.john.kot">
 
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true" />
+
     <application
             android:name=".MyApp"
             android:allowBackup="true"
@@ -10,32 +14,47 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".BleRestartActivity"></activity>
-        <activity android:name=".test.TestActivity"></activity>
-        <activity android:name=".sdk.GlideUseListenerActivity" />
-        <activity android:name=".anim.MoveViewActivity" />
-        <activity android:name=".anim.PropertyAnimActivity" />
-        <activity android:name=".ui.ResultBleActivity" />
-        <activity android:name=".skin.SkinStaticThemeActivity" />
-        <activity android:name=".ui.GradientActivity" />
-        <activity android:name=".ui.MeasureLearnActivity">
-
-        </activity>
-        <activity android:name=".ui.CircleProgressActivity"></activity>
-        <activity android:name=".ui.ConstraintPlaceholderActivity" />
-        <activity android:name=".elec.ElecActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ui.ScrollPickerActivity" />
-        <activity android:name=".anim.ViewAnimActivity" />
-
-        <activity android:name=".ui.MessageActivityFragment">
-
+        <activity android:name=".tool.location.LocationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".tool.image.ImageHandleActivity"></activity>
+        <activity android:name=".tool.image.ScreenPhotoActivity" />
+        <activity android:name=".tool.image.PhotoBasicsActivity">
+
+        </activity>
+        <activity android:name=".anim.TextViewBigActivity" />
+        <activity android:name=".BleRestartActivity" />
+        <activity android:name=".test.TestActivity" />
+        <activity android:name=".anim.MoveViewActivity" />
+        <activity android:name=".anim.PropertyAnimActivity" />
+        <activity android:name=".ui.ResultBleActivity" />
+        <activity android:name=".skin.SkinStaticThemeActivity" />
+        <activity android:name=".ui.GradientActivity" />
+        <activity android:name=".ui.MeasureLearnActivity" />
+        <activity android:name=".ui.CircleProgressActivity" />
+        <activity android:name=".ui.ConstraintPlaceholderActivity" />
+        <activity android:name=".elec.ElecActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.ScrollPickerActivity" />
+        <activity android:name=".anim.ViewAnimActivity" />
+        <activity android:name=".ui.MessageActivityFragment" />
+
+        <provider
+                android:name=".CameraProvider"
+                android:authorities="${applicationId}.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+
+            <!--             grantUriPermissions: 设置允许获取访问uri的临时权限 exported:设置允许获取访问uri的临时权限 -->
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/camera_path" />
+            <!--             用于设置FileProvider的文件访问路径 -->
+        </provider>
     </application>
 
 </manifest>

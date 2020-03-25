@@ -97,5 +97,9 @@
     </style>
 
 
+    <declare-styleable name="CirArcView">
+        <attr name="circleCRadius" format="float" />
+        <attr name="arcWidth" format="float" />
+    </declare-styleable>
 
 </resources>

@@ -37,6 +37,7 @@ public class DateUtil {
     public static final String LOCALE_DATE_FORMAT = "yyyy年M月d日 HH:mm:ss";
     public static final String DB_DATA_FORMAT = "yyyy-MM-dd HH:mm:ss";
     public static final String yyyyMMDDHHmmss = "yyyyMMddHHmmss";
+    public static final String yyyyMMDD_HHmmss = "yyyyMMdd_HHmmss";
 
 
     /**

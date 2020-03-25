@@ -19,8 +19,8 @@ class ViewAnimActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_anim)
         button.setOnClickListener {
-            anim(R.anim.view_anim_translate) //平移动画
-//            anim(R.anim.view_anim_scale)   //缩放动画
+//            anim(R.anim.view_anim_translate) //平移动画
+            anim(R.anim.view_anim_scale)   //缩放动画
 //            anim(R.anim.view_anim_rotate)  // rotate
 //              anim(R.anim.view_anim_alpha)
 //            alphaAnimUseCode()

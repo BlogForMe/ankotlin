@@ -53,7 +53,7 @@
                  android:textColor="#ffa2cb79"
                  android:textSize="37sp" />-->
 
-    <com.comm.util.view.TermRoundView
+    <com.comm.util.view.TermRulerRoundView
             android:id="@+id/trm_rule"
             android:layout_width="850dp"
             android:layout_height="250dp"

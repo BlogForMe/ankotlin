@@ -15,7 +15,6 @@ import com.android.util.window.view.FloatLayout;
 
 import timber.log.Timber;
 
-import static com.android.util.pro.ARouterManager.BOX_MAIN;
 
 /**
  * Author:xishuang

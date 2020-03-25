@@ -45,7 +45,7 @@ class PathView : View {
                 Timber.i("stepx     $stepx  getPx    ${datas?.get(i)}")
             }
         }
-        canvas?.drawPath(path,mPaint)
+        mPaint?.let { canvas?.drawPath(path, it) }
     }
 
     fun gethPx(data: Float): Float {

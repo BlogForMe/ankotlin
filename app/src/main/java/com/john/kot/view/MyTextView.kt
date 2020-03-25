@@ -29,7 +29,7 @@ class MyTextView : View {
 
     private fun init(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
         val a = context.obtainStyledAttributes(attrs, R.styleable.MyTextView, 0, defStyleAttr)
-        mText = a.getString(R.styleable.MyTextView_mText);
+        mText = a.getString(R.styleable.MyTextView_mText)!!;
         mTextColor = a.getColor(R.styleable.MyTextView_mTextColor, Color.BLACK);
         mTextSize = a.getDimension(R.styleable.MyTextView_mTextSize, 100f);
         a?.recycle()

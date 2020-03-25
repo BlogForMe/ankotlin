@@ -2,13 +2,14 @@ package com.john.kot.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.android.util.ItemPickDialog
+import com.android.util.sysdialog.ItemPickDialog
 import com.android.util.ToastUtil
 import com.android.util.base.CBaseFragment
 import com.john.kot.R
 import kotlinx.android.synthetic.main.fragment_stack_two.*
 
-class DialogShowFragment : CBaseFragment() ,ItemPickDialog.ISelectListener{
+class DialogShowFragment : CBaseFragment() ,
+    ItemPickDialog.ISelectListener{
 
 
     companion object {
