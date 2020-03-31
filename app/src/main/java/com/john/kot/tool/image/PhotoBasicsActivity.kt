@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.android.util.PictureCompassUtil
 import com.android.util.StorageUtil.Companion.createImageFile
 import com.john.kot.MainActivity
 import com.john.kot.R
@@ -44,12 +45,17 @@ class PhotoBasicsActivity : AppCompatActivity() {
 
 
         bt_basic_show.setOnClickListener {
-            dispatchBasicTakePictureIntent()
 //            dispatchBasicTakePictureIntent()
+            dispatchBasicTakePictureIntent()
         }
 
-        bt_add_gallery.setOnClickListener {
+        bt_basic_path.setOnClickListener {
             dispatchTakePictureGalleryIntent()
+        }
+
+        bt_compass_path.setOnClickListener {
+            PictureCompassUtil.getInstance().compass()
+
         }
     }
 
@@ -93,7 +99,6 @@ class PhotoBasicsActivity : AppCompatActivity() {
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
                 }
-//                photoFile?.let { galleryAddPic(it.path)}
             }
         }
     }
@@ -113,7 +118,7 @@ class PhotoBasicsActivity : AppCompatActivity() {
                   )
               })
 //              photoURI?.let { galleryAddPic(it) }
-              galleryAddPic(mImageUriFromFile)
+//              galleryAddPic(mImageUriFromFile)
               img_show.setImageBitmap(imageBitmap)
 
           }

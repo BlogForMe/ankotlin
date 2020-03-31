@@ -1,7 +1,7 @@
 //package com.android.util;
 //
-//import com.android.util.room.BleDao;
-//import com.android.util.room.BleEntity;
+//import com.android.util.room.box.BleDao;
+//import com.android.util.room.box.BleEntity;
 //
 //import java.util.Date;
 //import java.util.List;

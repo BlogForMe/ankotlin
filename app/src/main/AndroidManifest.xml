@@ -6,6 +6,12 @@
             android:name="android.hardware.camera"
             android:required="true" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <application
             android:name=".MyApp"
             android:allowBackup="true"
@@ -14,18 +20,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".tool.location.LocationActivity">
+        <activity android:name=".tool.screenshot.ScreenShortActivity"></activity>
+        <activity android:name=".permission.PermissionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tool.image.ImageHandleActivity"></activity>
+        <activity android:name=".tool.location.GpsActivity"></activity>
+        <activity android:name=".tool.location.LocationActivity" />
+        <activity android:name=".tool.image.ImageHandleActivity" />
         <activity android:name=".tool.image.ScreenPhotoActivity" />
-        <activity android:name=".tool.image.PhotoBasicsActivity">
-
-        </activity>
+        <activity android:name=".tool.image.PhotoBasicsActivity" />
         <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".BleRestartActivity" />
         <activity android:name=".test.TestActivity" />
@@ -49,11 +56,11 @@
                 android:exported="false"
                 android:grantUriPermissions="true">
 
-            <!--             grantUriPermissions: 设置允许获取访问uri的临时权限 exported:设置允许获取访问uri的临时权限 -->
+            <!-- grantUriPermissions: 设置允许获取访问uri的临时权限 exported:设置允许获取访问uri的临时权限 -->
             <meta-data
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/camera_path" />
-            <!--             用于设置FileProvider的文件访问路径 -->
+            <!-- 用于设置FileProvider的文件访问路径 -->
         </provider>
     </application>
 

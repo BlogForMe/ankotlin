@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId "com.john.kot"
         minSdkVersion 24
-        targetSdkVersion 25
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -45,7 +45,7 @@ dependencies {
 
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
+    implementation 'com.blankj:utilcode:1.22.10'
 
     implementation project(path: ':androidUtil')
 //    implementation "com.android:util:$rootProject.androidUtilVersion"
