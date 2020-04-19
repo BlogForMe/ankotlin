@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel;
 import java.util.List;
 
 public class RecycleViewModel extends ViewModel {
+    private static final int DATASET_COUNT = 60;
+//    protected String[] mDataset;
 
     private MutableLiveData<String[]> recycleLiveData;
 
@@ -18,7 +20,20 @@ public class RecycleViewModel extends ViewModel {
     }
 
     public void requestRecycleData(){
-//        recycleLiveData.setValue();
+        String[] data = initDataset();
+        recycleLiveData.setValue(data);
+    }
+
+    /**
+     * Generates Strings for RecyclerView's adapter. This data would usually come
+     * from a local content provider or remote server.
+     */
+    private String[] initDataset() {
+        String[] mDataset = new String[DATASET_COUNT];
+        for (int i = 0; i < DATASET_COUNT; i++) {
+            mDataset[i] = "This is element #" + i;
+        }
+        return mDataset;
     }
 
 

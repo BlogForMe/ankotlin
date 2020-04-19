@@ -40,7 +40,7 @@ public class RecyclerViewFragment extends Fragment {
     private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
-    private static final int DATASET_COUNT = 60;
+
     private RecycleViewModel mRecyclerViewModel;
 
 
@@ -57,7 +57,6 @@ public class RecyclerViewFragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected CustomAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected String[] mDataset;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,14 +67,9 @@ public class RecyclerViewFragment extends Fragment {
 
         mRecyclerViewModel = new ViewModelProvider(this).get(RecycleViewModel.class);
 
-        initDataset();
+//        initDataset();
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-//        mRecyclerViewModel.getRequestData()
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,7 +94,7 @@ public class RecyclerViewFragment extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new CustomAdapter(mDataset);
+        mAdapter = new CustomAdapter();
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -120,6 +114,17 @@ public class RecyclerViewFragment extends Fragment {
                 setRecyclerViewLayoutManager(LayoutManagerType.GRID_LAYOUT_MANAGER);
             }
         });
+
+
+
+        mRecyclerViewModel.getRequestData().observe(getViewLifecycleOwner(), data -> {
+            if (data != null) {
+                mAdapter.setList(data);
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+        mRecyclerViewModel.requestRecycleData();
+
 
         return rootView;
     }
@@ -163,14 +168,5 @@ public class RecyclerViewFragment extends Fragment {
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    /**
-     * Generates Strings for RecyclerView's adapter. This data would usually come
-     * from a local content provider or remote server.
-     */
-    private void initDataset() {
-        mDataset = new String[DATASET_COUNT];
-        for (int i = 0; i < DATASET_COUNT; i++) {
-            mDataset[i] = "This is element #" + i;
-        }
-    }
+
 }
