@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <TextClock
+            android:id="@+id/txtClok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="70dp"
+            android:format12Hour="hh:mm:ss a"
+            android:textColor="#F1912F"
+            android:textSize="30dp"
+            android:textStyle="italic"/>
+
+    <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txtClok"
+            android:layout_below="@+id/txtClok"
+            android:layout_marginLeft="40dp"
+            android:text="Show Time"/>
+
+    <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/btn"
+            android:layout_below="@+id/btn"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="-50dp"
+            android:textSize="25dp"
+            android:textStyle="normal"/>
+</RelativeLayout>

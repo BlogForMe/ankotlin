@@ -48,7 +48,10 @@ class GpsActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onDenied(permissionsDeniedForever: List<String>, permissionsDenied: List<String>) {
+                override fun onDenied(
+                    permissionsDeniedForever: List<String>,
+                    permissionsDenied: List<String>
+                ) {
                     Toast.makeText(this@GpsActivity, "未获得地理位置权限", Toast.LENGTH_LONG).show()
                 }
             })

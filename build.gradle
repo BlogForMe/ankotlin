@@ -49,6 +49,8 @@ ext {
     roomVersion = "2.2.0"
     robolectricVersion = "4.3"
 
+    archLifecycleVersion = '2.2.0'
+
 
     buildToolsVersion = "28.0.3"
     androidxCoreVersion = "1.0.0q"

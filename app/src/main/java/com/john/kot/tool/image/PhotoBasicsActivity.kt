@@ -15,7 +15,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.android.util.PictureCompassUtil
 import com.android.util.StorageUtil.Companion.createImageFile
-import com.john.kot.MainActivity
 import com.john.kot.R
 import kotlinx.android.synthetic.main.activity_photo_basics.*
 import timber.log.Timber

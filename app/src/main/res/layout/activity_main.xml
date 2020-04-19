@@ -11,7 +11,7 @@
         <com.john.ankotlin.elec.ZXBackGround android:layout_width="match_parent" android:layout_height="200dp"/>
     -->
 
-    <Button
+<!--    <Button
             android:id="@+id/bt_wenhao"
             android:text="？处理"
             android:layout_width="wrap_content" android:layout_height="wrap_content"/>
@@ -19,7 +19,10 @@
     <Button
             android:id="@+id/bt_gantan"
             android:text="！！处理"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>-->
+    <FrameLayout
+            android:id="@+id/sample_content_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 </LinearLayout>

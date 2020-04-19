@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.custom.CustomViewActivity">
+
+    <com.android.util.view.SpreadView
+            android:id="@+id/spread_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:spread_center_color="#99ebf3f3"
+            app:spread_delay_milliseconds="35"
+            app:spread_distance="5"
+            app:spread_max_radius="250"
+            app:spread_radius="200"
+            app:spread_spread_color="#66ebf3f3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
