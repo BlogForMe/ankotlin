@@ -13,7 +13,7 @@
 //import com.bumptech.glide.request.transition.Transition;
 //import com.android.util.R;
 //
-////https://daihanglin.github.io/2017/10/13/imageGetter/
+//  https://daihanglin.github.io/2017/10/13/imageGetter/
 //public class MyImageGetter implements Html.ImageGetter {
 //    private Context mContext;
 //    private TextView tv;

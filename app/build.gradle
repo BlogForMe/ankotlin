@@ -31,6 +31,7 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testApi 'junit:junit:4.12'
     androidTestApi 'androidx.test.espresso:espresso-core:3.1.0'
     androidTestApi 'androidx.test.ext:junit:1.1.1'
@@ -60,5 +61,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.archLifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$rootProject.archLifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata:$rootProject.archLifecycleVersion"
+
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
+
 
 }

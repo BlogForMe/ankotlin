@@ -20,11 +20,21 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".tool.LogActivity">
+        <activity android:name=".tool.date.DateActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
+        <activity android:name=".ui.viewpager.ScreenSlidePagerActivity">
+
+        </activity>
+        <activity android:name=".tool.LogActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
-        <activity android:name=".arch.viewmodel.ViewModelActivity"></activity>
+        <activity android:name=".arch.viewmodel.ViewModelActivity" />
         <activity android:name=".time.TextClockActivity" />
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />
@@ -44,13 +54,7 @@
         <activity android:name=".ui.CircleProgressActivity" />
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />
-        <activity android:name=".arch.recyclerview.MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".arch.recyclerview.MainActivity"></activity>
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />

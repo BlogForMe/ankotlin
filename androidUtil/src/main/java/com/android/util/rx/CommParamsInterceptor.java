@@ -1,5 +1,6 @@
 package com.android.util.rx;
 
+import com.android.util.DisplayUtils;
 import com.android.util.SharedPreferencesUtils;
 import com.android.util.AppUtil;
 
@@ -23,6 +24,9 @@ public class CommParamsInterceptor implements Interceptor {
         String s = AppUtil.getApp().getPackageName();
         if (s != null)
             builder.addHeader("version", s);
+
+        if (AppUtil.getApp() != null)
+            builder.addHeader("appVersion", DisplayUtils.getLocalVersionName(AppUtil.getApp()));
 //        String boxId = (String) SharedPreferencesUtils.getParam(AppUtil.getApp(), Constant.SHARE_BOXID, "");
 //
 //        if (boxId != null) {

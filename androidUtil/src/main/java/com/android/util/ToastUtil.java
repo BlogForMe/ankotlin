@@ -26,10 +26,11 @@ public class ToastUtil {
         }
     }
 
-//    public static void showBiggerText(String message) {
-//        check();
-//        Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
-//    }
+    public static void showShort(String message) {
+        check();
+        Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+    }
+
 
     public static void showBiggerText(String message){
         check();

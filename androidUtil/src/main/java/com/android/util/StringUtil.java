@@ -1,18 +1,21 @@
 package com.android.util;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringUtil {
 
-   /* public static void main(String[] args) {
-        System.out.println(getPatientTitleName("周互", 1));
-        System.out.println(getPatientTitleName("000022", 1));
-        System.out.println(getPatientSpeak("周互", 1));
-        System.out.println(getPatientSpeak("000022", 1));
+    /* public static void main(String[] args) {
+         System.out.println(getPatientTitleName("周互", 1));
+         System.out.println(getPatientTitleName("000022", 1));
+         System.out.println(getPatientSpeak("周互", 1));
+         System.out.println(getPatientSpeak("000022", 1));
 
-    }
-*/
+     }
+ */
     public static String PatternEdit = "[\\u4e00-\\u9fa5]+"; //匹配汉字
     public static String PattrenInteger = "^[1-9]\\d*|0$";//匹配整数
 
@@ -65,31 +68,6 @@ public class StringUtil {
     }
 
 
-    public static String getRemoteTxt(int rmStates) {
-        String txt = "";
-        switch (rmStates) {
-            case 0:
-                txt = "未开始";
-                break;
-            case 1:
-                txt = "问卷准备";
-                break;
-            case 2:
-                txt = "检查进行中";
-                break;
-            case 3:
-                txt = "报告编辑";
-                break;
-            case 4:
-                txt = "检查完毕";
-                break;
-            case 5:
-                txt = "已取消";
-                break;
-        }
-        return txt;
-    }
-
     /**
      * 保留两位小数
      *
@@ -125,96 +103,31 @@ public class StringUtil {
         return dti;
     }
 
-    public String getDateRange(String mealStatus, Double dataValue, int timeInterval) {
-        String conclusion = "";
-        if ("BLOOD_GLUCOSE_AM".equals(mealStatus) || "SLEEP_AM".equals(mealStatus)) {
-            if (dataValue <= 3.9) {
-                conclusion = "rel_low";
-            } else if (dataValue <= 7.0 && dataValue > 3.9) {
-                conclusion = "normal";
-            } else if (dataValue > 7.0 && dataValue <= 8.4) {
-                conclusion = "rel_high";
-            } else if (dataValue > 8.4) {
-                conclusion = "very_high";
-            }
-        }
-        return conclusion;
-    }
-
-    /**
-     * 和两个数比较
-     *
-     * @param dataValue
-     * @return
-     */
-//    public static String twoDoubleRange(Double dataValue, double[] array) {
-//        String conclusion = "";
-//        if (dataValue < array[0]) {
-//            conclusion = com.android.util.pro.StringUtil.RESULT_LOW;
-//        } else if (dataValue >= array[0] && dataValue < array[1]) {
-//            conclusion = com.android.util.pro.StringUtil.RESULT_NORMAL;
-//        } else if (dataValue > array[1]) {
-//            conclusion = com.android.util.pro.StringUtil.RESULT_HIGH;
-//        }
-//        return conclusion;
-//    }
-//
-//    public static String getTwoIntRange(int dataValue, int[] array) {
-//        String conclusion = "";
-//        if (dataValue < array[0]) {
-//            conclusion = com.android.util.pro.StringUtil.RESULT_LOW;
-//        } else if (dataValue >= array[0] && dataValue < array[1]) {
-//            conclusion = com.android.util.pro.StringUtil.RESULT_NORMAL;
-//        } else if (dataValue > array[1]) {
-//            conclusion = com.android.util.pro.StringUtil.RESULT_HIGH;
-//        }
-//        return conclusion;
-//    }
-
-    public static String getCheckDateConclusion(String mealStatus, Double dataValue, int timeInterval) {
-        String conclusion = "";
-        if ("BLOOD_GLUCOSE_AM".equals(mealStatus) || "SLEEP_AM".equals(mealStatus)) {
-            if (dataValue <= 3.9) {
-                conclusion = "rel_low";
-            } else if (dataValue <= 7.0 && dataValue > 3.9) {
-                conclusion = "normal";
-            } else if (dataValue > 7.0 && dataValue <= 8.4) {
-                conclusion = "rel_high";
-            } else if (dataValue > 8.4) {
-                conclusion = "very_high";
-            }
-        } else {
-            if (timeInterval == 1) {
-                if (dataValue <= 3.9) {
-                    conclusion = "rel_low";
-                } else if (dataValue <= 9.4 && dataValue > 3.9) {
-                    conclusion = "normal";
-                } else if (dataValue > 9.4 && dataValue <= 11.1) {
-                    conclusion = "rel_high";
-                } else if (dataValue > 11.1) {
-                    conclusion = "very_high";
-                }
-            } else if (timeInterval == 2) {
-                if (dataValue <= 3.9) {
-                    conclusion = "rel_low";
-                } else if (dataValue <= 7.8 && dataValue > 3.9) {
-                    conclusion = "normal";
-                } else if (dataValue > 7.8 && dataValue <= 11.1) {
-                    conclusion = "rel_high";
-                } else if (dataValue > 11.1) {
-                    conclusion = "very_high";
-                }
-            }
-        }
-        return conclusion;
-    }
-
 
     public static boolean isListEmpty(List<?> list) {
         if (list != null && !list.isEmpty()) {
             return true;
         }
         return false;
+    }
+
+
+    /**
+     * 中文转码
+     * @param url
+     * @param chartSet
+     * @return
+     */
+    public static String encodeChinese(String url, String chartSet) {
+        try {
+            Matcher matcher = Pattern.compile("[^\\x00-\\xff]").matcher(url);//双字节,包括中文和中文符号[^\x00-\xff]  中文[\u4e00-\u9fa5]
+            while (matcher.find()) {
+                String tmp = matcher.group();
+                url = url.replaceAll(tmp, java.net.URLEncoder.encode(tmp, chartSet));
+            }
+        } catch (UnsupportedEncodingException e) {
+        }
+        return url;
     }
 
 

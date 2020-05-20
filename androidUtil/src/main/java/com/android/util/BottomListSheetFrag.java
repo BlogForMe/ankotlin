@@ -46,14 +46,12 @@ public class BottomListSheetFrag extends BottomSheetFrag {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         BottomAdapter bottomAdapter = new BottomAdapter(R.layout.adapter_bottom_sheet, list);
         recyclerView.setAdapter(bottomAdapter);
-//        bottomAdapter.setOnItemClickListener(new OnItemClickListener() {
-//            @Override
-//            public void onItemClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
-//                itemPosition.selectIndex(position, role);
-//            }
-//
-//
-//        });
+        bottomAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+                itemPosition.selectIndex(position, role);
+            }
+        });
     }
 
     @Override
