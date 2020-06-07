@@ -9,7 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.android.util.window.util.Constants_LM;
+import com.android.util.Constant;
 import com.android.util.window.util.SpUtil;
 import com.android.util.window.view.FloatLayout;
 
@@ -130,12 +130,12 @@ public class FloatWindowManager {
      * 添加小红点
      */
     public static void addObtainNumer(Context context) {
-        int number = (int) SpUtil.get(context, Constants_LM.OBTAIN_NUMBER, 0);
+        int number = (int) SpUtil.get(context, Constant.OBTAIN_NUMBER, 0);
         if (number < 0) {
             number = 0;
         }
         number = number + 1;
-        SpUtil.put(context, Constants_LM.OBTAIN_NUMBER, number);
+        SpUtil.put(context, Constant.OBTAIN_NUMBER, number);
         if (mFloatLayout != null) {
             mFloatLayout.setDragFlagViewVisibility(View.VISIBLE);
             mFloatLayout.setDragFlagViewText(number);
@@ -146,7 +146,7 @@ public class FloatWindowManager {
      * 获取小红点展示的数量
      */
     private static int getObtainNumber(Context context) {
-        return (int) SpUtil.get(context, Constants_LM.OBTAIN_NUMBER, 0);
+        return (int) SpUtil.get(context, Constant.OBTAIN_NUMBER, 0);
     }
 
     /**
@@ -156,7 +156,7 @@ public class FloatWindowManager {
         if (number < 0) {
             number = 0;
         }
-        SpUtil.put(context, Constants_LM.OBTAIN_NUMBER, number);
+        SpUtil.put(context, Constant.OBTAIN_NUMBER, number);
         FloatWindowManager.checkRedDot(context);
     }
 

@@ -1,11 +1,11 @@
-package com.android.util.window.util;
+package com.android.util;
 
 /**
  * Author:xishuang
  * Date:2017.08.01
  * Des:常量类
  */
-public class Constants_LM {
+public class Constant {
     /**
      * 可领取数量的key
      */

@@ -20,44 +20,6 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".tool.date.DateActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-        <activity android:name=".ui.viewpager.ScreenSlidePagerActivity">
-
-        </activity>
-        <activity android:name=".tool.LogActivity" />
-        <activity android:name=".ui.custom.CustomViewActivity" />
-        <activity android:name=".arch.viewmodel.ViewModelActivity" />
-        <activity android:name=".time.TextClockActivity" />
-        <activity android:name=".tool.screenshot.ScreenShortActivity" />
-        <activity android:name=".permission.PermissionActivity" />
-        <activity android:name=".tool.location.GpsActivity" />
-        <activity android:name=".tool.image.ImageHandleActivity" />
-        <activity android:name=".tool.image.ScreenPhotoActivity" />
-        <activity android:name=".tool.image.PhotoBasicsActivity" />
-        <activity android:name=".anim.TextViewBigActivity" />
-        <activity android:name=".BleRestartActivity" />
-        <activity android:name=".test.TestActivity" />
-        <activity android:name=".anim.MoveViewActivity" />
-        <activity android:name=".anim.PropertyAnimActivity" />
-        <activity android:name=".ui.ResultBleActivity" />
-        <activity android:name=".skin.SkinStaticThemeActivity" />
-        <activity android:name=".ui.GradientActivity" />
-        <activity android:name=".ui.MeasureLearnActivity" />
-        <activity android:name=".ui.CircleProgressActivity" />
-        <activity android:name=".ui.ConstraintPlaceholderActivity" />
-        <activity android:name=".elec.ElecActivity" />
-        <activity android:name=".arch.recyclerview.MainActivity"></activity>
-        <activity android:name=".ui.ScrollPickerActivity" />
-        <activity android:name=".anim.ViewAnimActivity" />
-        <activity android:name=".ui.MessageActivityFragment" />
 
         <provider
                 android:name=".CameraProvider"
@@ -71,6 +33,52 @@
                     android:resource="@xml/camera_path" />
             <!-- 用于设置FileProvider的文件访问路径 -->
         </provider>
+
+        <activity android:name=".custom.DrawPathActivity">
+
+        </activity>
+        <activity android:name=".custom.StrapSleepActivity">
+
+        </activity>
+        <activity android:name=".tool.date.DateActivity"></activity>
+        <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
+        <activity android:name=".tool.LogActivity" />
+        <activity android:name=".ui.custom.CustomViewActivity" />
+        <activity android:name=".arch.viewmodel.ViewModelActivity" />
+        <activity android:name=".time.TextClockActivity" />
+        <activity android:name=".tool.screenshot.ScreenShortActivity" />
+        <activity android:name=".permission.PermissionActivity" />
+        <activity android:name=".tool.location.GpsActivity" />
+        <activity android:name=".tool.image.ImageHandleActivity" />
+        <activity android:name=".tool.image.ScreenPhotoActivity" />
+        <activity android:name=".tool.image.PhotoBasicsActivity" />
+        <activity android:name=".anim.TextViewBigActivity" />
+        <activity android:name=".BleRestartActivity" />
+        <activity android:name=".test.TestActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".anim.MoveViewActivity" />
+        <activity android:name=".anim.PropertyAnimActivity" />
+        <activity android:name=".ui.ResultBleActivity" />
+        <activity android:name=".skin.SkinStaticThemeActivity" />
+        <activity android:name=".ui.GradientActivity" />
+        <activity android:name=".ui.MeasureLearnActivity" />
+        <activity android:name=".ui.CircleProgressActivity" />
+        <activity android:name=".ui.ConstraintPlaceholderActivity" />
+        <activity android:name=".elec.ElecActivity" />
+        <activity android:name=".arch.recyclerview.MainActivity" />
+        <activity android:name=".ui.ScrollPickerActivity" />
+        <activity android:name=".anim.ViewAnimActivity" />
+        <activity android:name=".ui.MessageActivityFragment" />
+
+
+        <activity android:name=".mvvm.StrapCheckActivity">
+
+        </activity>
     </application>
 
 </manifest>

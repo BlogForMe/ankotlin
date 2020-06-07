@@ -29,8 +29,10 @@ public class DateUtil {
     public static final String MMdd = "MM:dd";
     public static final String HHCmm = "HH:mm";
     public static final String HHCmmCss = "HH:mm:ss";
+    public static final String PP_yyyy_MM_dd = "yyyy.MM.dd";
 
     public static final String yyyyMMdd = "yyyyMMdd";
+    public static final String yyyyPMMPdd = "yyyy.MM.dd";
     public static final String HHmmss = "HHmmss";
     public static final String HHmm = "HHmm";
     public static final String yyyyMMddCHHmmss = "yyyyMMddHH:mm:ss";
@@ -377,5 +379,37 @@ public class DateUtil {
 //        System.out.println("age:" + diff1.getYears() + "years");
         return diff1.getYears();
     }
+
+
+    /**
+     * 分钟转小时分钟
+     *
+     * @param minute
+     * @return 6h2’
+     */
+    public static String minuteToHour(int minute) {
+        if (minute == 0) {
+            return "";
+        }
+        if (minute < 60) {
+            return minute % 60 + "’";
+        }
+        return minute / 60 + "h" + minute % 60 + "’";
+    }
+
+    public static String minuteToHourCN(int minute) {
+        if (minute == 0) {
+            return "";
+        }
+        if (minute < 60) {
+            return minute % 60 + "’";
+        }
+        return minute / 60 + "小时" + minute % 60 + "分";
+    }
+
+
+
+
+
 
 }

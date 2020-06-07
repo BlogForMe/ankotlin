@@ -10,7 +10,9 @@ import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 
-
+/**
+ * 体重表盘
+ */
 class DialKgView @JvmOverloads constructor(context: Context?, attrs: AttributeSet?,
                                            defStyleAttr: Int=0):View(context, attrs, defStyleAttr){
 

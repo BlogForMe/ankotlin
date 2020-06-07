@@ -21,6 +21,9 @@ import timber.log.Timber
 import java.io.File
 import java.io.IOException
 
+/**
+ * 拍照上传
+ */
 class PhotoBasicsActivity : AppCompatActivity() {
     private val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 267
     override fun onCreate(savedInstanceState: Bundle?) {

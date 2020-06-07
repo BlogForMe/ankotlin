@@ -43,6 +43,7 @@
         <attr name="img_body_check" format="reference"/>
         <attr name="body_value_txt" format="string"/>
         <attr name="body_value_title" format="string"/>
+        <attr name="body_value_text_size" format="dimension"/>
 
     </declare-styleable>
 
@@ -52,7 +53,8 @@
 
     </declare-styleable>
 
-    <declare-styleable name="TermRulerRoundView">
+
+    <declare-styleable name="TermRoundView">
         <attr name="isRulerInput" format="boolean"/>
 
     </declare-styleable>

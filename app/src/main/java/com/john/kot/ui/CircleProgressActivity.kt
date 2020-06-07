@@ -6,7 +6,6 @@ import com.android.util.ToastUtil
 import com.android.util.sysdialog.FireMissilesDialogFragment
 import com.john.kot.R
 import kotlinx.android.synthetic.main.activity_circle_progress.*
-import kotlinx.android.synthetic.main.ble_activity_temp.*
 
 class CircleProgressActivity : AppCompatActivity() , FireMissilesDialogFragment.IConfirmListener {
 

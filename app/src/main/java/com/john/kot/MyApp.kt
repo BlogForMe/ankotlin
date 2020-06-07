@@ -4,7 +4,7 @@ import android.app.Application
 import com.android.util.AppUtil
 import com.android.util.ToastUtil
 import timber.log.Timber
-
+import timber.log.Timber.DebugTree
 
 
 class MyApp : Application() {
@@ -13,5 +13,6 @@ class MyApp : Application() {
         super.onCreate()
         ToastUtil.register(this)
         AppUtil.init(this)
+        Timber.plant(DebugTree())
     }
 }

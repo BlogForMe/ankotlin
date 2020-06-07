@@ -12,6 +12,9 @@ import com.android.util.base.CBaseActivity;
 import com.john.kot.R;
 
 
+/**
+ * 上传照片
+ */
 public class ScreenPhotoActivity extends CBaseActivity implements View.OnClickListener {
 //
 //    @BindView(R2.id.iv_left_instep)

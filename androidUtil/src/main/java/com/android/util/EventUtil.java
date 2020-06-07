@@ -26,12 +26,6 @@ public abstract class EventUtil implements View.OnClickListener {
     }
 
 
-    public static boolean isPatient() {
-        if ("com.casanube.patient".equals(AppUtil.getApp().getPackageName())) {
-            return true;
-        }
-        return false;
-    }
 
     @Override
     public void onClick(View v) {

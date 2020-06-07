@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,13 +11,10 @@ import android.text.TextUtils;
 
 import androidx.core.content.FileProvider;
 
-
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.List;
-
-import timber.log.Timber;
 
 import static android.os.Process.killProcess;
 
@@ -76,22 +72,9 @@ public class AppUtil {
 
     public static void init(Application app) {
         AppUtil.myApp = app;
-        ToastUtil.register(app);
-//        if (isDebug()) {           // These two lines must be written before init, otherwise these configurations will be invalid in the init process
-//            ARouter.openLog();     // Print log
-//            ARouter.openDebug();   // Turn on debugging mode (If you are running in InstantRun mode, you must turn on debug mode! Online version needs to be closed, otherwise there is a security risk)
-//        }
-//        ARouter.init(app); // As early as possible, it is recommended to initialize in the Application
-
         app.registerActivityLifecycleCallbacks(mCallbacks);
-        if (isDebug()) {
-            Timber.plant(new Timber.DebugTree());
-        }
     }
 
-    static boolean isDebug() {
-        return BuildConfig.DEBUG;
-    }
 
     /**
      * 获取Application
@@ -124,39 +107,7 @@ public class AppUtil {
         return false;
     }
 
-    /**
-     * 当前版本Code
-     *
-     * @param context
-     * @return
-     */
-    public static int getVerCode(Context context) {
-        int verCode = -1;
-        try {
-            String packageName = context.getPackageName();
-            verCode = context.getPackageManager().getPackageInfo(packageName, 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        return verCode;
-    }
 
-    /**
-     * 得到软件显示版本信息
-     *
-     * @param context
-     * @return
-     */
-    public static String getVerName(Context context) {
-        String verName = "";
-        String packageName = context.getPackageName();
-        try {
-            verName = context.getPackageManager().getPackageInfo(packageName, 0).versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        return verName;
-    }
 
 
     /**
@@ -211,19 +162,4 @@ public class AppUtil {
         }
     }
 
-
-    /**
-     * Token过期
-     *
-     * @param statusCode
-     */
-    public static void isTokenExpire(String statusCode) {
-        if (myApp == null) {
-            Timber.i("myApp  null");
-            return;
-        }
-//        Intent intent = new Intent(myApp.getApplicationContext(), LoginActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-//        myApp.startActivity(intent);
-    }
 }

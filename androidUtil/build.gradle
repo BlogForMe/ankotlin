@@ -14,18 +14,15 @@ android {
     compileSdkVersion 29
     buildToolsVersion '28.0.3'
 
-
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         minSdkVersion 21
         flavorDimensions "versionCode"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-//        ndk {
-//            //设置支持的SO库架构
-//            abiFilters 'armeabi', 'armeabi-v7a'
-//            //, 'x86_64', 'arm64-v8a','x86',
-//        }
-        versionName "1.0.18"
+        versionName "1.0.32"
     }
 
 
@@ -61,15 +58,6 @@ android {
 }
 
 dependencies {
-    def room_version = "2.2.5"
-
-
-//    testApi 'junit:junit:4.12'
-//    androidTestApi 'androidx.test.espresso:espresso-core:3.1.0'
-//    androidTestApi 'androidx.test.ext:junit:1.1.1'
-//    androidTestApi 'androidx.test:runner:1.1.0'
-//    androidTestApi 'androidx.test:rules:1.1.0'
-
 
     api 'androidx.appcompat:appcompat:1.1.0'
     api 'androidx.core:core:1.1.0'
@@ -92,6 +80,16 @@ dependencies {
 
     compile group: 'org.apache.mina', name: 'mina-core', version: '2.0.19'
 
+
+    /**
+     * mvvm
+     */
+    api 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    api 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    api 'androidx.navigation:navigation-runtime:2.2.0'
 }
 
 ext{

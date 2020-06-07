@@ -1,4 +1,4 @@
-package com.comm.util.view
+package com.android.util.view
 
 import android.content.Context
 import android.graphics.*
@@ -12,9 +12,9 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 
 
-class TermRulerRoundView @JvmOverloads constructor(
-    context: Context?, attrs: AttributeSet?,
-    defStyleAttr: Int = 0
+class TermRoundView @JvmOverloads constructor(
+        context: Context?, attrs: AttributeSet?,
+        defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
     private var isRulerInput: Boolean = false
@@ -107,21 +107,19 @@ class TermRulerRoundView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        showTxtX = width / 2f - 200f
+        showTxtX = width / 2f - 100f
 
 
         val bitmapWeak = WeakReference<Bitmap>(
-            BitmapFactory.decodeResource(
-                context.resources,
-                R.mipmap.bg_temprature
-            )
+                BitmapFactory.decodeResource(
+                        context.resources,
+                        R.mipmap.bg_temprature
+                )
         )
 
 
-        val rulerBitmap = bitmapWeak.get()
-        if (rulerBitmap != null) {
-            canvas?.drawBitmap(rulerBitmap, 0f, ruleTop, Paint())
-        }
+        var rulerBitmap = bitmapWeak.get()
+        rulerBitmap?.let { canvas?.drawBitmap(it, 0f, ruleTop, Paint()) }
 //        //Timber.i("bitmap width ${rulerBitmap?.width}  height ${rulerBitmap?.height}")
         val imgHeight = rulerBitmap?.height!!.toFloat()
 //       val medleRect = RectF(0f,0f,rulerBitmap.width.toFloat(),20f);
@@ -146,18 +144,18 @@ class TermRulerRoundView @JvmOverloads constructor(
         for (i in 0..16) {
             if ((i + 1) % 2 == 0) {
                 canvas?.drawLine(
-                    startX + tempScale * i,
-                    topF - 5,
-                    startX + tempScale * i,
-                    topF,
-                    linePaint
+                        startX + tempScale * i,
+                        topF - 5,
+                        startX + tempScale * i,
+                        topF,
+                        linePaint
                 )
                 canvas?.drawLine(
-                    startX + tempScale * i,
-                    bottomF,
-                    startX + tempScale * i,
-                    bottomF + 5,
-                    linePaint
+                        startX + tempScale * i,
+                        bottomF,
+                        startX + tempScale * i,
+                        bottomF + 5,
+                        linePaint
                 )
             }
 
@@ -167,35 +165,35 @@ class TermRulerRoundView @JvmOverloads constructor(
             //底部长线
             if (i % 4 == 0) {
                 canvas?.drawLine(
-                    startX + tempScale * i,
-                    bottomF,
-                    startX + tempScale * i,
-                    bottomF + longHScale,
-                    linePaint
+                        startX + tempScale * i,
+                        bottomF,
+                        startX + tempScale * i,
+                        bottomF + longHScale,
+                        linePaint
                 )
 
                 canvas?.drawText(
-                    drawTxt,
-                    startX + tempScale * i - txtRect.width() / 2,
-                    bottomF + longHScale + txtRect.height(),
-                    txtPaint
+                        drawTxt,
+                        startX + tempScale * i - txtRect.width() / 2,
+                        bottomF + longHScale + txtRect.height(),
+                        txtPaint
                 )
             }
 
             //头部长线
             if ((i + 2) % 4 == 0) {
                 canvas?.drawLine(
-                    startX + tempScale * i,
-                    topF - longHScale,
-                    startX + tempScale * i,
-                    topF,
-                    linePaint
+                        startX + tempScale * i,
+                        topF - longHScale,
+                        startX + tempScale * i,
+                        topF,
+                        linePaint
                 )
                 canvas?.drawText(
-                    drawTxt,
-                    startX + tempScale * i - txtRect.width() / 2,
-                    topF - longHScale,
-                    txtPaint
+                        drawTxt,
+                        startX + tempScale * i - txtRect.width() / 2,
+                        topF - longHScale,
+                        txtPaint
                 )
             }
         }
@@ -211,10 +209,10 @@ class TermRulerRoundView @JvmOverloads constructor(
             var rectCircleFirstX = (scrollX - innerRadius + 10) //第一个圆柱坐标
             for (i in 0..2) {
                 val rectF = RectF(
-                    rectCircleFirstX + (10 * i),
-                    centerY - 20f,
-                    rectCircleFirstX + 10f + (10 * i),
-                    centerY + 20
+                        rectCircleFirstX + (10 * i),
+                        centerY - 20f,
+                        rectCircleFirstX + 10f + (10 * i),
+                        centerY + 20
                 );
                 rectCircleFirstX = (rectCircleFirstX + 10);
                 canvas?.drawRoundRect(rectF, 10f, 10f, srcPaint)
@@ -233,10 +231,10 @@ class TermRulerRoundView @JvmOverloads constructor(
         yellowColorPaint.getTextBounds(showDegreeTxt, 0, showDegreeTxt.length, showTxtRect)
 
         val rf = RectF(
-            showTxtX - 20 - 150,
-            txtTop - 20 - showTxtRect.height(),
-            showTxtX + 20 + 150 + showTxtRect.width(),
-            txtTop + 20
+                showTxtX - 20 - 150,
+                txtTop - 20 - showTxtRect.height(),
+                showTxtX + 20 + 150 + showTxtRect.width(),
+                txtTop + 20
         )
         canvas?.drawRoundRect(rf, 10f, 10f, yellowLightPaint) //度数背景边框
 
@@ -256,39 +254,39 @@ class TermRulerRoundView @JvmOverloads constructor(
         val btCircle = 30f
         if (isRulerInput) {
             canvas?.drawCircle(
-                showTxtX - 100,
-                txtTop - showTxtRect.height() / 2,
-                btCircle,
-                yellowBtPaint
+                    showTxtX - 100,
+                    txtTop - showTxtRect.height() / 2,
+                    btCircle,
+                    yellowBtPaint
             )
             canvas?.drawLine(
-                showTxtX - 100 - btCircle + 5,
-                txtTop - showTxtRect.height() / 2,
-                showTxtX - 100 + btCircle - 5,
-                txtTop - showTxtRect.height() / 2,
-                whiteBtPaint
+                    showTxtX - 100 - btCircle + 5,
+                    txtTop - showTxtRect.height() / 2,
+                    showTxtX - 100 + btCircle - 5,
+                    txtTop - showTxtRect.height() / 2,
+                    whiteBtPaint
             )
 
             val addCircleY = showTxtX + showTxtRect.width() + 100
             canvas?.drawCircle(
-                addCircleY,
-                txtTop - showTxtRect.height() / 2,
-                btCircle,
-                yellowBtPaint
+                    addCircleY,
+                    txtTop - showTxtRect.height() / 2,
+                    btCircle,
+                    yellowBtPaint
             )
             canvas?.drawLine(
-                addCircleY - btCircle + 5,
-                txtTop - showTxtRect.height() / 2,
-                addCircleY + btCircle - 5,
-                txtTop - showTxtRect.height() / 2,
-                whiteBtPaint
+                    addCircleY - btCircle + 5,
+                    txtTop - showTxtRect.height() / 2,
+                    addCircleY + btCircle - 5,
+                    txtTop - showTxtRect.height() / 2,
+                    whiteBtPaint
             )
             canvas?.drawLine(
-                addCircleY,
-                txtTop - showTxtRect.height() / 2 - btCircle + 5,
-                addCircleY,
-                txtTop - showTxtRect.height() / 2 + btCircle - 5,
-                whiteBtPaint
+                    addCircleY,
+                    txtTop - showTxtRect.height() / 2 - btCircle + 5,
+                    addCircleY,
+                    txtTop - showTxtRect.height() / 2 + btCircle - 5,
+                    whiteBtPaint
             )
         }
 

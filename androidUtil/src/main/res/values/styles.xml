@@ -68,49 +68,8 @@
     </style>
 
 
-    <style name="BtnNextMeasure">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:drawablePadding">70dp</item>
-        <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:drawableRight">@mipmap/mem_ic_ble_next</item>
-        <item name="android:background">@drawable/mem_bg_bt</item>
-        <item name="android:paddingTop">@dimen/dimen_10</item>
-        <item name="android:paddingBottom">@dimen/dimen_10</item>
-        <item name="android:paddingRight">@dimen/dimen_20</item>
-        <item name="android:textSize">@dimen/text_size_20</item>
-        <item name="android:text">返回</item>
-        <item name="android:paddingLeft">110dp</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
 
 
-    <style name="BtnMeasureReturn">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:drawablePadding">70dp</item>
-        <item name="android:drawableLeft">@mipmap/mem_ic_ble_return</item>
-        <item name="android:background">@drawable/mem_bg_bt</item>
-        <item name="android:paddingTop">@dimen/dimen_10</item>
-        <item name="android:paddingBottom">@dimen/dimen_10</item>
-        <item name="android:paddingLeft">@dimen/dimen_20</item>
-        <item name="android:textSize">@dimen/text_size_20</item>
-        <item name="android:text">返回</item>
-        <item name="android:paddingRight">110dp</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
-
-    <style name="GreenAppTheme" parent="AppTheme">
-        <item name="textColorTheme">@color/textGreenColor</item>
-        <item name="bgBackground">@color/bgGreenColor</item>
-        <item name="bgShadow">@color/bgGreenShadowColor</item>
-    </style>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
 
     <declare-styleable name="CirArcView">
