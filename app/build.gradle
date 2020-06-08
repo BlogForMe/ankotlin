@@ -53,8 +53,7 @@ dependencies {
     implementation 'com.blankj:utilcode:1.22.10'
 
     implementation project(path: ':androidUtil')
-//    implementation "com.android:util:$rootProject.androidUtilVersion"
-
+//    api "com.android:util:1.0.32"
 
     // Lifecycle components
 

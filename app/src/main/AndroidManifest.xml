@@ -55,11 +55,7 @@
         <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".BleRestartActivity" />
         <activity android:name=".test.TestActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".anim.MoveViewActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
@@ -71,7 +67,13 @@
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />
         <activity android:name=".arch.recyclerview.MainActivity" />
-        <activity android:name=".ui.ScrollPickerActivity" />
+        <activity android:name=".ui.ScrollPickerActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
 

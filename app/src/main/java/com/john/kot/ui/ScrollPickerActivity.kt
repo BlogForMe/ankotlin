@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_scorll_picker.*
 
 class ScrollPickerActivity : AppCompatActivity() {
 
-    private lateinit var stringData: ArrayList<String>
+    private  lateinit var stringData: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +30,8 @@ class ScrollPickerActivity : AppCompatActivity() {
 
     fun initData() {
         stringData = ArrayList()
-        for (i in 30..100) {
-            stringData.add(i.toString())
+        for (i in 350..1000) {
+            stringData.add((i/10.0).toString())
         }
     }
 

@@ -1,39 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".ui.ScrollPickerActivity">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ScrollPickerActivity">
 
-    <com.john.kot.view.HorizontalselectedView
+    <!--    <com.john.kot.view.HorizontalselectedView
+                android:id="@+id/horizon"
+                android:visibility="invisible"
+                android:layout_width="800dp" android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:HorizontalselectedViewSeesize="7"
+                android:layout_centerHorizontal="true"
+                app:HorizontalselectedViewSelectedTextColor="#E47A7A"
+                app:HorizontalselectedViewSelectedTextSize="60"
+                app:HorizontalselectedViewTextColor="#DDDDDD"
+                app:HorizontalselectedViewTextSize="40"/>-->
+
+    <com.john.kot.view.HorizontalselectedViewFloat
             android:id="@+id/horizon"
-            android:layout_width="800dp" android:layout_height="wrap_content"
+            android:layout_width="800dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             app:HorizontalselectedViewSeesize="7"
-            android:layout_centerHorizontal="true"
             app:HorizontalselectedViewSelectedTextColor="#E47A7A"
             app:HorizontalselectedViewSelectedTextSize="60"
             app:HorizontalselectedViewTextColor="#DDDDDD"
-            app:HorizontalselectedViewTextSize="40"/>
+            app:HorizontalselectedViewTextSize="40" />
 
 
     <RelativeLayout
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent" android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
         <Button
                 android:id="@+id/bt_left"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="向左"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="向左" />
+
         <Button
                 android:id="@+id/bt_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="底部显示"/>
+                android:text="底部显示" />
+
         <Button
                 android:id="@+id/bt_right"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="向右"/>
+                android:text="向右" />
     </RelativeLayout>
 </RelativeLayout>
