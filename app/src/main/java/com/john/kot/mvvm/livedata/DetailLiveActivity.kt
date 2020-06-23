@@ -1,19 +1,12 @@
-package com.john.kot.custom
+package com.john.kot.mvvm.livedata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.john.kot.R
 
-/**
- * 手环的睡眠数据图
- */
-class StrapSleepActivity : AppCompatActivity() {
-
+class DetailLiveActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_strap_sleep)
-
+        setContentView(R.layout.activity_detail_live)
     }
-
-
 }

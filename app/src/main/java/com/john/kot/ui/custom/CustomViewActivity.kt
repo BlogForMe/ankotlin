@@ -11,6 +11,7 @@ class CustomViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_custom_view)
 
-        spread_view.setSpreadImg(R.mipmap.mem_ic_yuyue_presure)
+//        spread_view.setSpreadImg(R.mipmap.mem_ic_yuyue_presure)
+        rlr.setTime(100,300)
     }
 }

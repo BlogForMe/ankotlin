@@ -6,7 +6,7 @@
 
         <variable
                 name="vmBodyFragment"
-                type="com.john.kot.mvvm.BodyDataModel" />
+                type="com.john.kot.mvvm.scrap.BodyDataModel" />
 
     </data>
 

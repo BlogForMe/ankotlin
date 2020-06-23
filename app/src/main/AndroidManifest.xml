@@ -20,6 +20,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ui.dbdraw.DatabindingDrawableActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".mvvm.LiveDataActivity"></activity>
+        <activity android:name=".mvvm.livedata.DetailLiveActivity" />
+        <activity android:name=".mvvm.livedata.LiveDataTestActivity"></activity>
+        <activity android:name=".mvvm.demo.UseDemoActivity" />
 
         <provider
                 android:name=".CameraProvider"
@@ -34,16 +46,12 @@
             <!-- 用于设置FileProvider的文件访问路径 -->
         </provider>
 
-        <activity android:name=".custom.DrawPathActivity">
-
-        </activity>
-        <activity android:name=".custom.StrapSleepActivity">
-
-        </activity>
-        <activity android:name=".tool.date.DateActivity"></activity>
-        <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
+        <activity android:name=".custom.DrawPathActivity" />
+        <activity android:name=".custom.StrapSleepActivity" />
+        <activity android:name=".tool.date.DateActivity" />
+        <activity android:name=".ui.viewpager.ScreenSlidePagerActivity"></activity>
         <activity android:name=".tool.LogActivity" />
-        <activity android:name=".ui.custom.CustomViewActivity" />
+        <activity android:name=".ui.custom.CustomViewActivity"></activity>
         <activity android:name=".arch.viewmodel.ViewModelActivity" />
         <activity android:name=".time.TextClockActivity" />
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
@@ -54,9 +62,7 @@
         <activity android:name=".tool.image.PhotoBasicsActivity" />
         <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".BleRestartActivity" />
-        <activity android:name=".test.TestActivity" >
-
-        </activity>
+        <activity android:name=".test.TestActivity" />
         <activity android:name=".anim.MoveViewActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
         <activity android:name=".ui.ResultBleActivity" />
@@ -67,18 +73,10 @@
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />
         <activity android:name=".arch.recyclerview.MainActivity" />
-        <activity android:name=".ui.ScrollPickerActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
-
-
-        <activity android:name=".mvvm.StrapCheckActivity">
+        <activity android:name=".mvvm.scrap.StrapCheckActivity">
 
         </activity>
     </application>

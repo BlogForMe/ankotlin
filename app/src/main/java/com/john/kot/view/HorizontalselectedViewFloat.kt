@@ -19,7 +19,7 @@ class HorizontalselectedViewFloat(mContext: Context?, attrs: AttributeSet?) :
     private lateinit var rectTxt: Rect //文字大小测量
     private var strings: List<String> = ArrayList()//数据源字符串数组
 
-    private var seeSize = 5//可见个数
+    private var seeSize = 8//可见个数
 
     private var anInt: Int = 0//每个字母所占的大小；
     private var textPaint: TextPaint? = null

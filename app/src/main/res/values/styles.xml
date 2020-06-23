@@ -9,7 +9,6 @@
     </style>
 
 
-
     <style name="AppThemeGreen">
         <item name="colorPrimary">#4CAF50</item>
         <item name="colorPrimaryDark">#388E3C</item>
@@ -44,10 +43,30 @@
 
 
     <declare-styleable name="DialKgView">
-        <attr name="ebel_kg" format="float"/>
-        <attr name="dial_radius" format="float"/>
+        <attr name="ebel_kg" format="float" />
+        <attr name="dial_radius" format="float" />
 
     </declare-styleable>
 
+
+    <style name="PauseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/anim_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_hide</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

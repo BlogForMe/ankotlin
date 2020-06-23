@@ -8,5 +8,5 @@ import androidx.core.content.FileProvider;
  * @date : 2018/10/16
  */
 public class CameraProvider extends FileProvider {
-
+    
 }

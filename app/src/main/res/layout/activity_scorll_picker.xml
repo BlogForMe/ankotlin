@@ -6,19 +6,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.ScrollPickerActivity">
 
-    <!--    <com.john.kot.view.HorizontalselectedView
-                android:id="@+id/horizon"
-                android:visibility="invisible"
-                android:layout_width="800dp" android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                app:HorizontalselectedViewSeesize="7"
-                android:layout_centerHorizontal="true"
-                app:HorizontalselectedViewSelectedTextColor="#E47A7A"
-                app:HorizontalselectedViewSelectedTextSize="60"
-                app:HorizontalselectedViewTextColor="#DDDDDD"
-                app:HorizontalselectedViewTextSize="40"/>-->
-
-    <com.john.kot.view.HorizontalselectedViewFloat
+    <com.john.kot.view.HorizontalselectedView
             android:id="@+id/horizon"
             android:layout_width="800dp"
             android:layout_height="wrap_content"

@@ -31,7 +31,7 @@ class ScrollPickerActivity : AppCompatActivity() {
     fun initData() {
         stringData = ArrayList()
         for (i in 350..1000) {
-            stringData.add((i/10.0).toString())
+            stringData.add(((i/10.0).toString()+"0"))
         }
     }
 

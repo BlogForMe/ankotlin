@@ -29,7 +29,7 @@ class ScreenSlidePagerActivity : FragmentActivity() {
         val pagerAdapter = ScreenSlidePageAdapter(this);
         viewPager.adapter = pagerAdapter
 
-        viewPager.setPageTransformer(ZoomOutPageTransformer())
+//        viewPager.setPageTransformer(ZoomOutPageTransformer())
 
 
     }
