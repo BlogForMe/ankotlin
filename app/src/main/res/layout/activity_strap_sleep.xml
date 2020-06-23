@@ -71,8 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_txt"
                     android:paddingLeft="55dp"
-                    android:paddingRight="48dp"
-                    app:setSleepData="@{vmBodyFragment.spData}" />
+                    android:paddingRight="48dp" />
 
 
         </RelativeLayout>

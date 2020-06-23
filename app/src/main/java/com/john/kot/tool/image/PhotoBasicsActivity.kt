@@ -14,7 +14,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.android.util.PictureCompassUtil
-import com.android.util.StorageUtil.Companion.createImageFile
 import com.john.kot.R
 import kotlinx.android.synthetic.main.activity_photo_basics.*
 import timber.log.Timber
@@ -79,14 +78,14 @@ class PhotoBasicsActivity : AppCompatActivity() {
             // Ensure that there's a camera activity to handle the intent
             takePictureIntent.resolveActivity(packageManager)?.also {
                 //                 Create the File where the photo should go
-                photoFile = try {
-                    createImageFile(this)
-                } catch (ex: IOException) {
-                    Timber.e("createImageFile ${ex.message}")
-                    // Error occurred while creating the File
-//                    throw  IOException(ex.message)
-                    null
-                }
+//                photoFile = try {
+//                    createImageFile(this)
+//                } catch (ex: IOException) {
+//                    Timber.e("createImageFile ${ex.message}")
+//                    // Error occurred while creating the File
+////                    throw  IOException(ex.message)
+//                    null
+//                }
 
                 val fileProviderName = "$packageName.fileprovider";
                 photoFile?.also {

@@ -49,9 +49,9 @@ class BodyDataFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        mBodyDataModel?.spData?.observe(
-            requireActivity(),
-            Observer<String> { Timber.i("activityTime $it") })
+//        mBodyDataModel?.spData?.observe(
+//            requireActivity(),
+//            Observer<String> { Timber.i("activityTime $it") })
 
 //        tv_sport_title.setOnClickListener {
 ////            mBodyDataModel?.activityTime?.value = 28

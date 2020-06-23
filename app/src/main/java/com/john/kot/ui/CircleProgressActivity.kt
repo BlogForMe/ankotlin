@@ -14,7 +14,7 @@ class CircleProgressActivity : AppCompatActivity() , FireMissilesDialogFragment.
 //        setContentView(R.layout.ble_activity_temp)
         setContentView(R.layout.activity_circle_progress)
 
-        cav.progress("9999","100")
+//        cav.progress("9999","100")
 //        tv_confirm.setOnClickListener {
 //            Timber.i("degree    "+trm_rule.getDegree())
 //        }

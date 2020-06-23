@@ -2,7 +2,6 @@ package com.john.kot.mvvm.scrap
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.android.util.mvvm.SingleLiveEvent
 
 
 class BodyDataModel : ViewModel() {
@@ -15,7 +14,7 @@ class BodyDataModel : ViewModel() {
     val costs = MutableLiveData<Int>()          //全天消耗卡路里
     var heatNow = MutableLiveData<String>()          //当前心率
 
-    var spData = SingleLiveEvent<String>()
+//    var spData = SingleLiveEvent<String>()
 
     var sleepTime = MutableLiveData<String>() //睡眠时间
 }

@@ -96,7 +96,6 @@
                     android:layout_marginTop="20dp"
                     android:paddingLeft="55dp"
                     android:paddingRight="48dp"
-                    app:setSleepData="@{String.valueOf(vmBodyFragment.spData)}"
                     app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@ class StrapCheckActivity :AppCompatActivity() {
         mBodyDataModel = ViewModelProvider(this).get(BodyDataModel::class.java)
 
         iv_back.setOnClickListener {
-            mBodyDataModel.spData.value  = "333333333333222222222222222222222323233333332222222233232232222223333333"
+//            mBodyDataModel.spData.value  = "333333333333222222222222222222222323233333332222222233232232222223333333"
 //            Timber.i("mBodyDataModel.activityTime.value ${mBodyDataModel.spData.value}")
             resultFragment()
         }
