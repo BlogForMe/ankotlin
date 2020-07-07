@@ -15,8 +15,8 @@
             app:HorizontalselectedViewSeesize="7"
             app:HorizontalselectedViewSelectedTextColor="#E47A7A"
             app:HorizontalselectedViewSelectedTextSize="60"
-            app:HorizontalselectedViewTextColor="#DDDDDD"
-            app:HorizontalselectedViewTextSize="40" />
+            app:HorizontalunselectedViewTextColor="#DDDDDD"
+            app:HorizontalunselectedViewTextSize="40" />
 
 
     <RelativeLayout

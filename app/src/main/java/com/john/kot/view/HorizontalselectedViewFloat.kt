@@ -57,9 +57,9 @@ class HorizontalselectedViewFloat(mContext: Context?, attrs: AttributeSet?) :
             R.styleable.HorizontalselectedView_HorizontalselectedViewSelectedTextColor,
             context.resources.getColor(android.R.color.black)
         )
-        textSize = tta.getFloat(R.styleable.HorizontalselectedView_HorizontalselectedViewTextSize, 40f)
+        textSize = tta.getFloat(R.styleable.HorizontalselectedView_HorizontalunselectedViewTextSize, 40f)
         textColor = tta.getColor(
-            R.styleable.HorizontalselectedView_HorizontalselectedViewTextColor,
+            R.styleable.HorizontalselectedView_HorizontalunselectedViewTextColor,
             context.resources.getColor(android.R.color.darker_gray)
         )
         initPaint()//初始化画笔

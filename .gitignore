@@ -21,5 +21,6 @@ app/src/test/*
 app/src/main/java/com/casanube/medical/dao/*
 app-*
 gradlew.*
-
-
+*.git
+*.DS_Store
+*._img_mirror_origin.png

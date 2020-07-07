@@ -11,6 +11,6 @@ fun setViewBackground(view: View?, color: Int, radius: Int) {
     val drawable = GradientDrawable()
     drawable.setColor(color)
     drawable.cornerRadius = radius.toFloat()
-    view?.background = drawable
+    view?.setBackground(drawable)
 }
 

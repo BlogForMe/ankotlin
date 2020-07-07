@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
 import kotlinx.android.synthetic.main.activity_scorll_picker.*
+import timber.log.Timber
 
 
 class ScrollPickerActivity : AppCompatActivity() {
@@ -30,6 +31,9 @@ class ScrollPickerActivity : AppCompatActivity() {
 
     fun initData() {
         stringData = ArrayList()
+//        for (i in 1 ..  100) {
+//            stringData.add(i.toString())
+//        }
         for (i in 350..1000) {
             stringData.add(((i/10.0).toString()+"0"))
         }
