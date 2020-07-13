@@ -18,16 +18,5 @@
         <attr name="arcWidth" format="float"/>
     </declare-styleable>
 
-    <declare-styleable name="HorizontalselectedView">
-        <!--可见数目-->
-        <attr name="HorizontalselectedViewSeesize" format="integer"></attr>
-        <!--被选择文字的大小和颜色-->
-        <attr name="HorizontalselectedViewSelectedTextSize" format="float"></attr>
-        <attr name="HorizontalselectedViewSelectedTextColor" format="color|reference"></attr>
 
-        <!--未被被选择文字的大小和颜色-->
-        <attr name="HorizontalunselectedViewTextSize" format="float"></attr>
-        <attr name="HorizontalunselectedViewTextColor" format="color|reference"></attr>
-
-    </declare-styleable>
 </resources>
