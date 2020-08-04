@@ -20,12 +20,20 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.scroll.ScrollViewActivity">
+        <activity android:name=".tool.wechat.Activity.LoginNewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".tool.SharedPreferencesActivity">
 
         </activity>
-        <activity android:name=".ui.dbdraw.DatabindingDrawableActivity"></activity>
+        <activity android:name=".ui.scroll.ScrollViewActivity" />
+        <activity android:name=".ui.dbdraw.DatabindingDrawableActivity" />
         <activity android:name=".mvvm.LiveDataActivity" />
-        <activity android:name=".mvvm.livedata.DetailLiveActivity" />
+        <activity android:name=".mvvm.livedata.DetailLiveActivity"></activity>
         <activity android:name=".mvvm.livedata.LiveDataTestActivity" />
         <activity android:name=".mvvm.demo.UseDemoActivity" />
 
@@ -69,16 +77,10 @@
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />
         <activity android:name=".arch.recyclerview.MainActivity" />
-        <activity android:name=".ui.ScrollPickerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
-        <activity android:name=".mvvm.scrap.StrapCheckActivity"></activity>
+        <activity android:name=".mvvm.scrap.StrapCheckActivity" />
     </application>
 
 </manifest>

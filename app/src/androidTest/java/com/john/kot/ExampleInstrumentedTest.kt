@@ -25,41 +25,41 @@ import org.junit.Rule
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
 
-    @Rule
-    @JvmField
-    val rule = ActivityTestRule(TestActivity::class.java)
-
-
-    @Test
-    fun useAppContext() {
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.john.kot", appContext.packageName)
-    }
-
-
-
-
-
-
-    @Test
-    fun user_can_enter_first_name(){
-        onView(withId(R.id.firstName)).perform(typeText("Daniel"))
-    }
-
-
-    @Test
-    fun user_can_enter_last_name(){
-        onView(withId(R.id.lastName)).perform(typeText("Malone"))
-    }
-
-
-    @Test
-    fun when_user_enters_first_and_last_name_check_to_confirm_that_message_is_correct(){
-        onView(withId(R.id.firstName)).perform(typeText("Jake"))
-        onView(withId(R.id.lastName)).perform(typeText("Smith"))
-        onView(withId(R.id.button)).perform(click())
-        onView(withId(R.id.message)).check(matches(withText("Welcome,Jake Smith")))
-    }
+//    @Rule
+//    @JvmField
+//    val rule = ActivityTestRule(TestActivity::class.java)
+//
+//
+//    @Test
+//    fun useAppContext() {
+//        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+//        assertEquals("com.john.kot", appContext.packageName)
+//    }
+//
+//
+//
+//
+//
+//
+//    @Test
+//    fun user_can_enter_first_name(){
+////        onView(withId(R.id.firstName)).perform(typeText("Daniel"))
+//    }
+//
+//
+//    @Test
+//    fun user_can_enter_last_name(){
+//        onView(withId(R.id.lastName)).perform(typeText("Malone"))
+//    }
+//
+//
+//    @Test
+//    fun when_user_enters_first_and_last_name_check_to_confirm_that_message_is_correct(){
+//        onView(withId(R.id.firstName)).perform(typeText("Jake"))
+//        onView(withId(R.id.lastName)).perform(typeText("Smith"))
+//        onView(withId(R.id.button)).perform(click())
+//        onView(withId(R.id.message)).check(matches(withText("Welcome,Jake Smith")))
+//    }
 
 
 //

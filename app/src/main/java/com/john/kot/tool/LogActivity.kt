@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.android.util.LogUtil
 import com.blankj.utilcode.util.LogUtils
 import com.john.kot.R
+import com.tencent.mm.opensdk.diffdev.IDiffDevOAuth
 import kotlinx.android.synthetic.main.activity_log.*
 
 class LogActivity : AppCompatActivity() {
@@ -19,6 +20,9 @@ class LogActivity : AppCompatActivity() {
 
         bt_logUtils.setOnClickListener {
             LogUtils.i("logutils打印")
+
+//            IDiffDevOAuth.
         }
+
     }
 }

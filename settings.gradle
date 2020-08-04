@@ -1,4 +1,5 @@
 
-include ':app',':androidUtil'
-project(':androidUtil').projectDir = new File('../CasanubeHealth/androidUtil')
+include ':app'
+//,':androidUtil'
+//project(':androidUtil').projectDir = new File('../CasanubeHealth/androidUtil')
 

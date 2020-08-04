@@ -15,17 +15,17 @@ class ScrollPickerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scorll_picker)
         initData()
-        horizon.setData(stringData)
-        bt_bottom.setOnClickListener {
-        }
-
-        bt_left.setOnClickListener {
-            horizon.setAnLeftOffset()
-        }
-
-        bt_right.setOnClickListener {
-            horizon.setAnRightOffset()
-        }
+//        horizon.setData(stringData)
+//        bt_bottom.setOnClickListener {
+//        }
+//
+//        bt_left.setOnClickListener {
+//            horizon.setAnLeftOffset()
+//        }
+//
+//        bt_right.setOnClickListener {
+//            horizon.setAnRightOffset()
+//        }
 
     }
 

@@ -7,7 +7,37 @@
         tools:context=".mvvm.livedata.DetailLiveActivity">
 
     <Button
+            android:id="@+id/bt_show"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LiveData详情页"/>
+
+   <!-- <com.android.util.view.BorderTextView
+            android:id="@+id/main_palying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:minHeight="200dp"
+            app:layout_constraintTop_toBottomOf="@+id/bt_show"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:paddingLeft="50dp"
+            android:text="文字显示"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            app:cornerRadius="15dp" />-->
+
+    <com.android.util.view.BorderRelativeLayout
+            android:id="@+id/main_palying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:minHeight="200dp"
+            app:layout_constraintTop_toBottomOf="@+id/bt_show"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:paddingLeft="50dp"
+            android:textSize="30sp"
+            app:cornerRadius="15dp" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
