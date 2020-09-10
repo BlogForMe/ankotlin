@@ -18,11 +18,11 @@ class StrapCheckActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ble_activity_temp)
         mBodyDataModel = ViewModelProvider(this).get(BodyDataModel::class.java)
-
+        resultFragment()
         iv_back.setOnClickListener {
-//            mBodyDataModel.spData.value  = "333333333333222222222222222222222323233333332222222233232232222223333333"
+            mBodyDataModel.activityTime.value  = "333333333333222222222222222222222323233333332222222233232232222223333333"
 //            Timber.i("mBodyDataModel.activityTime.value ${mBodyDataModel.spData.value}")
-            resultFragment()
+
         }
     }
 
@@ -37,5 +37,5 @@ class StrapCheckActivity :AppCompatActivity() {
 
 
 
-    fun obtainViewModel(): BodyDataModel = mBodyDataModel
+//    fun obtainViewModel(): BodyDataModel = mBodyDataModel
 }

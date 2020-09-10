@@ -89,14 +89,14 @@
 
         </RelativeLayout>
 
-            <com.android.util.view.ViewBodySleep
-                    android:id="@+id/view_body_sleep"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:paddingLeft="55dp"
-                    android:paddingRight="48dp"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <com.android.util.view.ViewBodySleep
+                android:id="@+id/view_body_sleep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="55dp"
+                android:paddingRight="48dp"
+                app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

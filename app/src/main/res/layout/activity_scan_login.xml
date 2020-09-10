@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".tool.wechat.scanlogin.ScanLoginActivity">
+        tools:context=".tool.wechat.Activity.LoginNewActivity">
 
     <Button
             android:id="@+id/bt_start"
@@ -12,11 +12,48 @@
             android:layout_height="wrap_content"
             android:text="发起调用" />
 
+
+    <Button
+
+            android:id="@+id/bt_re_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="复用发起调用"
+            app:layout_constraintLeft_toRightOf="@+id/bt_start" />
+
+
     <ImageView
             android:id="@+id/iv_show"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/bt_start"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/bt_start" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/iv_show">
+
+        <View
+                android:id="@+id/view_1"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/bgGreenColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/view_2" />
+
+        <View
+                android:id="@+id/view_2"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@+id/view_1"
+                android:background="@color/cardview_dark_background"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@+id/view_1"
+                app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

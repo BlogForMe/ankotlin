@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.john.kot.R
 import com.john.kot.databinding.FragmentBodyDataBinding
 import timber.log.Timber
@@ -41,7 +42,7 @@ class BodyDataFragment : Fragment() {
             inflater,
             R.layout.fragment_body_data, container, false
         )
-        mBodyDataModel = (activity as StrapCheckActivity).obtainViewModel()
+        mBodyDataModel = ViewModelProvider(requireActivity()).get(BodyDataModel::class.java)
         binding.vmBodyFragment = mBodyDataModel
         binding.lifecycleOwner = this.viewLifecycleOwner
         return binding.root
@@ -49,9 +50,8 @@ class BodyDataFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-//        mBodyDataModel?.spData?.observe(
-//            requireActivity(),
-//            Observer<String> { Timber.i("activityTime $it") })
+        mBodyDataModel?.activityTime?.observe(requireActivity(),
+            Observer{ Timber.i("activityTime $it") })
 
 //        tv_sport_title.setOnClickListener {
 ////            mBodyDataModel?.activityTime?.value = 28
