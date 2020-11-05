@@ -20,18 +20,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".mvvm.fragment.MvvMFragmentActivity">
-
-        </activity>
-        <activity android:name=".tool.rx.RxJavaActivity">
-
-        </activity>
-        <activity android:name=".tool.wechat.Activity.LoginNewActivity">
+        <activity android:name=".permission.PemissionxUseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".tool.audio.AudioRecordActivity">
+
+        </activity>
+        <activity android:name=".mvvm.fragment.MvvMFragmentActivity" />
+        <activity android:name=".tool.rx.RxJavaActivity" />
+        <activity android:name=".tool.wechat.Activity.LoginNewActivity"></activity>
         <activity android:name=".tool.SharedPreferencesActivity" />
         <activity android:name=".ui.scroll.ScrollViewActivity" />
         <activity android:name=".ui.dbdraw.DatabindingDrawableActivity" />

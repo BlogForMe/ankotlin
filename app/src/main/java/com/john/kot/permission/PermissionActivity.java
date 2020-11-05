@@ -19,6 +19,9 @@ import com.john.kot.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 悬浮窗口权限
+ */
 public class PermissionActivity extends AppCompatActivity {
 
     @Override
