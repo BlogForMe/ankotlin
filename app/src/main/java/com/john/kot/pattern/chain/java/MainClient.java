@@ -1,6 +1,6 @@
 package com.john.kot.pattern.chain.java;
 
-public class Client {
+public class MainClient {
     public static void main(String[] args) {
         Group group = new Group();
         Director director = new Director();
