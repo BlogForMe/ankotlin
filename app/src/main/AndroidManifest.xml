@@ -20,19 +20,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".net.OkhtttpActivity"></activity>
         <activity android:name=".permission.PemissionxUseActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".tool.audio.AudioRecordActivity">
 
         </activity>
+        <activity android:name=".tool.audio.AudioRecordActivity"></activity>
         <activity android:name=".mvvm.fragment.MvvMFragmentActivity" />
         <activity android:name=".tool.rx.RxJavaActivity" />
-        <activity android:name=".tool.wechat.Activity.LoginNewActivity"></activity>
+        <activity android:name=".tool.wechat.Activity.LoginNewActivity" />
         <activity android:name=".tool.SharedPreferencesActivity" />
         <activity android:name=".ui.scroll.ScrollViewActivity" />
         <activity android:name=".ui.dbdraw.DatabindingDrawableActivity" />
@@ -54,11 +49,20 @@
             <!-- 用于设置FileProvider的文件访问路径 -->
         </provider>
 
-        <activity android:name=".custom.DrawPathActivity" />
-        <activity android:name=".custom.StrapSleepActivity" />
+
+        <activity android:name=".customview.DrawPathActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".customview.StrapSleepActivity" />
         <activity android:name=".tool.date.DateActivity" />
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
-        <activity android:name=".tool.LogActivity" />
+        <activity android:name=".tool.LogActivity" >
+
+        </activity>
         <activity android:name=".ui.custom.CustomViewActivity" />
         <activity android:name=".arch.viewmodel.ViewModelActivity" />
         <activity android:name=".time.TextClockActivity" />
@@ -69,8 +73,6 @@
         <activity android:name=".tool.image.ScreenPhotoActivity" />
         <activity android:name=".tool.image.PhotoBasicsActivity" />
         <activity android:name=".anim.TextViewBigActivity" />
-        <activity android:name=".BleRestartActivity" />
-        <activity android:name=".test.TestActivity" />
         <activity android:name=".anim.MoveViewActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
         <activity android:name=".ui.ResultBleActivity" />

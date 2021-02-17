@@ -21,7 +21,6 @@ class LogActivity : AppCompatActivity() {
         bt_logUtils.setOnClickListener {
             LogUtils.i("logutils打印")
 
-//            IDiffDevOAuth.
         }
 
     }

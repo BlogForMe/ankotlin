@@ -59,8 +59,9 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.blankj:utilcode:1.22.10'
-//    api project(path: ':androidUtil')
-    api("com.android:util:1.0.36")
+    api project(path: ':androidUtil')
+//    api("com.android:util:1.1.1")
+    implementation("com.squareup.okhttp3:okhttp:4.1.0")
 
     implementation "androidx.core:core-ktx:1.2.0"
 

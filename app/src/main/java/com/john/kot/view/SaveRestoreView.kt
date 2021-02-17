@@ -19,19 +19,13 @@ class SaveRestoreView @JvmOverloads constructor(
 ) :
     View(context, attrs, defStyleAttr) {
 
-    private val bgPaint: Paint  //背景
-    private val linePaint: Paint
+    private val gryayPaint: Paint = Paint().apply {
+        color = Color.GRAY;
+    }
 
-    init {
-
-        bgPaint = Paint().apply {
-            color = Color.GRAY;
-        }
-
-        linePaint = Paint().apply {
-            color = Color.RED;
-            strokeWidth = 4f
-        }
+    private val redPaint: Paint = Paint().apply {
+        color = Color.RED;
+        strokeWidth = 4f
     }
 
 
@@ -40,12 +34,13 @@ class SaveRestoreView @JvmOverloads constructor(
         val px = 500f
         val py = 500f
 
-        canvas?.drawLine(0f,200f,700f,200f,linePaint)
+
+        canvas?.drawLine(0f,200f,700f,200f,gryayPaint)
         canvas?.save()  //将画布状态保存
 
         canvas?.rotate(90f, px / 2, py / 2);
-        canvas?.restore();//恢复画布状态
-        canvas?.drawLine(0f,400f,700f,400f,bgPaint)
+        canvas?.restore();//恢复画布状态  这个操作能撤销到 上次保存的画布状态
+        canvas?.drawLine(0f,400f,700f,400f,redPaint)
 
 
     }

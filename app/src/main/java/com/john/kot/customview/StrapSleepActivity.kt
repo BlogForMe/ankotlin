@@ -1,4 +1,4 @@
-package com.john.kot.custom
+package com.john.kot.customview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

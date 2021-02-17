@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import com.android.util.base.CMvpActivity
-import com.android.util.bean.BaseCount
 import com.google.gson.Gson
 import com.john.kot.IApiStore
 import com.john.kot.R
@@ -50,9 +49,9 @@ class LoginNewActivity : CMvpActivity<LoginPresenter>(), OAuthListener, LoginCon
 //            Timber.i("now ${System.currentTimeMillis() - 1597230490223}")
 //            Timber.i("compare ${convertSecondsToHMmSs((System.currentTimeMillis() - 1597212472777))}")
 
-            val response : BaseCount<WeChatSecond>? =null
-            var eee = response?.data?.errmsg
-            Timber.i("eee $eee response?.data  ${response?.data}")
+//            val response : BaseCount<WeChatSecond>? =null
+//            var eee = response?.data?.errmsg
+//            Timber.i("eee $eee response?.data  ${response?.data}")
         }
     }
 
@@ -111,7 +110,7 @@ class LoginNewActivity : CMvpActivity<LoginPresenter>(), OAuthListener, LoginCon
                 call: Call,
                 response: Response
             ) {
-                val result = response.body()!!.string()
+                val result = response.body!!.string()
                 val gson = Gson()
                 val resultdata =
                     gson.fromJson(result, WeChatSecond::class.java)
@@ -214,7 +213,7 @@ class LoginNewActivity : CMvpActivity<LoginPresenter>(), OAuthListener, LoginCon
                 response: Response
             ) {
                 //微信平台返回的登录者信息
-                val result = response.body()!!.string()
+                val result = response.body!!.string()
                 Timber.i("result $result")
                 val gson = Gson()
                 val resultdata =
