@@ -1,0 +1,116 @@
+<resources>
+
+
+    <style name="BtnNext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_btn_rect_select</item>
+        <item name="android:paddingLeft">@dimen/dimen_40</item>
+        <item name="android:paddingRight">@dimen/dimen_40</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@drawable/bg_btn_txt_select</item>
+        <item name="android:textSize">@dimen/text_size_28</item>
+        <item name="android:text">@string/start_next</item>
+    </style>
+
+
+    <!--
+        <item name="android:background">@drawable/bg_btn_rect_select</item>
+    -->
+    <style name="LineHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/line_color</item>
+    </style>
+
+    <style name="LineVertical">
+        <item name="android:layout_width">0.5dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/line_color</item>
+    </style>
+
+
+    <style name="TextLineOne">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <style name="transparentInputDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+    <style name="anim_dialog_slide_from_bottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_bottom_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_bottom_fade_out</item>
+    </style>
+
+
+    <style name="BtnNextMeasure">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">70dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:drawableRight">@mipmap/mem_ic_ble_next</item>
+        <item name="android:background">@drawable/mem_bg_bt</item>
+        <item name="android:paddingTop">@dimen/dimen_10</item>
+        <item name="android:paddingBottom">@dimen/dimen_10</item>
+        <item name="android:paddingRight">@dimen/dimen_20</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:text">返回</item>
+        <item name="android:paddingLeft">110dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="BtnMeasureReturn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">70dp</item>
+        <item name="android:drawableLeft">@mipmap/mem_ic_ble_return</item>
+        <item name="android:background">@drawable/mem_bg_bt</item>
+        <item name="android:paddingTop">@dimen/dimen_10</item>
+        <item name="android:paddingBottom">@dimen/dimen_10</item>
+        <item name="android:paddingLeft">@dimen/dimen_20</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:text">返回</item>
+        <item name="android:paddingRight">110dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="GreenAppTheme" parent="AppTheme">
+        <item name="textColorTheme">@color/textGreenColor</item>
+        <item name="bgBackground">@color/bgGreenColor</item>
+        <item name="bgShadow">@color/bgGreenShadowColor</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+
+    <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowMenuStyle</item>
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
+        <item name="android:paddingRight">@dimen/dimen_15</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+
+
+
+</resources>
