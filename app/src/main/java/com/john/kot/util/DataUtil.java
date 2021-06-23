@@ -1,6 +1,7 @@
 package com.john.kot.util;
 
 import android.content.Context;
+import android.util.ArrayMap;
 
 import com.john.kot.R;
 
@@ -23,6 +24,7 @@ public class DataUtil {
             for (String str : data0s) {
                 datas.add(Float.parseFloat(str));
             }
+
 //            data1Q.addAll(datas);
         } catch (Exception e) {
             e.printStackTrace();

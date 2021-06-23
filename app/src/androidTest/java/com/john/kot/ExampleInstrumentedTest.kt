@@ -1,6 +1,10 @@
 package com.john.kot
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.rule.ActivityTestRule
+import junit.framework.Assert.assertEquals
+import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
@@ -14,14 +18,16 @@ class ExampleInstrumentedTest {
 //    @Rule
 //    @JvmField
 //    val rule = ActivityTestRule(TestActivity::class.java)
-//
-//
-//    @Test
-//    fun useAppContext() {
-//        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-//        assertEquals("com.john.kot", appContext.packageName)
-//    }
-//
+
+
+    @Test
+    fun useAppContext() {
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.john.kot", appContext.packageName)
+
+    }
+
+
 //
 //
 //
