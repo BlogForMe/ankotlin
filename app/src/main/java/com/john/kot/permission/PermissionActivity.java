@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * guolin
  * 悬浮窗口权限
  */
 public class PermissionActivity extends AppCompatActivity {

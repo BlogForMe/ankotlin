@@ -1,6 +1,10 @@
 package com.android.util;
 //https://blog.csdn.net/A_Runner/article/details/78655650
-public class NumberToCH {
+
+/**
+ * 数字转汉字
+ */
+public class NumberToCN {
     public static String numberToCH(int intInput) {
         String si = String.valueOf(intInput);
         String sd = "";

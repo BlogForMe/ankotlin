@@ -13,6 +13,9 @@ import androidx.core.app.ActivityCompat
 import com.john.kot.R
 import kotlinx.android.synthetic.main.activity_pemissionx_use.*
 
+/**
+ * guolin 库
+ */
 class PemissionxUseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

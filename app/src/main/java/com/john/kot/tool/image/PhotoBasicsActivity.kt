@@ -13,12 +13,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.android.util.PictureCompassUtil
 import com.john.kot.R
 import kotlinx.android.synthetic.main.activity_photo_basics.*
-import timber.log.Timber
 import java.io.File
-import java.io.IOException
 
 /**
  * 拍照上传
@@ -55,7 +52,6 @@ class PhotoBasicsActivity : AppCompatActivity() {
         }
 
         bt_compass_path.setOnClickListener {
-            PictureCompassUtil.getInstance().compass()
 
         }
     }
