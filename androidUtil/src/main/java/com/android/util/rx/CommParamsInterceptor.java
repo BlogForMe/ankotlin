@@ -1,9 +1,5 @@
 package com.android.util.rx;
 
-import com.android.util.pro.Constant;
-import com.android.util.pro.SharedPreferencesUtils;
-import com.android.util.AppUtil;
-
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -16,19 +12,19 @@ public class CommParamsInterceptor implements Interceptor {
         Request requestPre = chain.request();
         Request.Builder builder = requestPre.newBuilder()
                 .addHeader("operate_way", "0");
-        String mSessionId = (String) SharedPreferencesUtils.getParam(AppUtil.getApp(), Constant.SHARE_TOKEN_KEY, "");
+//        String mSessionId = (String) SharedPreferencesUtils.getParam(AppUtil.getApp(), Constant.SHARE_TOKEN_KEY, "");
 //        Timber.i("mSessionId    " + mSessionId);
 //        if (!isEmpty(mSessionId)) {
 //            requestPre.url().newBuilder().addQueryParameter("token", CertificationEntrance.generateDynamicTokenToApp(mSessionId));
 //        }
-        String s = AppUtil.getApp().getPackageName();
-        if (s != null)
-            builder.addHeader("version", s);
-        String boxId = (String) SharedPreferencesUtils.getParam(AppUtil.getApp(), Constant.SHARE_BOXID, "");
+//        String s = AppUtil.getApp().getPackageName();
+//        if (s != null)
+//            builder.addHeader("version", s);
+//        String boxId = (String) SharedPreferencesUtils.getParam(AppUtil.getApp(), Constant.SHARE_BOXID, "");
 
-        if (boxId != null) {
-            builder.addHeader("box_id", boxId);
-        }
+//        if (boxId != null) {
+//            builder.addHeader("box_id", boxId);
+//        }
         return chain.proceed(builder.build());
     }
 }

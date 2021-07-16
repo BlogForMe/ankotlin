@@ -2,6 +2,7 @@ package com.john.kot.tool.rx
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.john.kot.IApiStore
 import com.john.kot.R
 import com.john.kot.tool.wechat.Activity.RetrofitWeChatFactory
@@ -19,6 +20,7 @@ class RxJavaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rx_java)
+
 
         bt_rx.setOnClickListener {
             Observable.interval(1,TimeUnit.SECONDS)
@@ -61,5 +63,6 @@ class RxJavaActivity : AppCompatActivity() {
                 Consumer { throwable: Throwable? -> }
             )
     }
+
 
 }
