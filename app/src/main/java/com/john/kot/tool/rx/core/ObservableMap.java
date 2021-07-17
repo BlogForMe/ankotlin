@@ -11,8 +11,8 @@ public class ObservableMap<T, U> extends AbstractObservableWithUpStream<T, U> {
     }
 
     @Override
-    protected void subscribeActual(Observer observer) {
-        source.subscribe(new MapObserver(observer, function));
+    protected void subscribeActual(Observer observer) {         // source上层Observable,
+        source.subscribe(new MapObserver(observer, function)); //传入的observer一直都是是下层的observer
     }
 
     /**
@@ -40,6 +40,7 @@ public class ObservableMap<T, U> extends AbstractObservableWithUpStream<T, U> {
 
         @Override
         public void onSubscribe() {
+            downStream.onSubscribe();
         }
 
         @Override
