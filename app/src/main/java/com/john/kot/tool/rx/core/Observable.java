@@ -3,8 +3,6 @@ package com.john.kot.tool.rx.core;
 
 import com.john.kot.tool.rx.core.scheduler.Scheduler;
 
-import timber.log.Timber;
-
 /**
  * 把绑定和发消息分离出来 留给子类实现
  */

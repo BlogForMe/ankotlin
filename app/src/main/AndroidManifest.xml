@@ -21,14 +21,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".tool.rx.WriteRxjavaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".net.OkhtttpActivity" />
-        <activity android:name=".permission.PemissionxUseActivity"></activity>
+        <activity android:name=".permission.PemissionxUseActivity" />
         <activity android:name=".tool.audio.AudioRecordActivity" />
         <activity android:name=".mvvm.fragment.MvvMFragmentActivity" />
         <activity android:name=".tool.rx.RxJavaActivity" />
@@ -54,13 +50,11 @@
             <!-- 用于设置FileProvider的文件访问路径 -->
         </provider>
 
-        <activity android:name=".customview.DrawPathActivity">
-
-        </activity>
+        <activity android:name=".customview.DrawPathActivity"></activity>
         <activity android:name=".customview.StrapSleepActivity" />
         <activity android:name=".tool.date.DateActivity" />
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
-        <activity android:name=".tool.LogActivity"></activity>
+        <activity android:name=".tool.LogActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
         <activity android:name=".arch.viewmodel.ViewModelActivity" />
         <activity android:name=".time.TextClockActivity" />
@@ -80,7 +74,13 @@
         <activity android:name=".ui.CircleProgressActivity" />
         <activity android:name=".ui.ConstraintPlaceholderActivity" />
         <activity android:name=".elec.ElecActivity" />
-        <activity android:name=".arch.recyclerview.MainActivity" />
+        <activity android:name=".arch.recyclerview.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
