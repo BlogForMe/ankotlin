@@ -22,6 +22,8 @@ class RxJavaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_rx_java)
 
 
+
+
         bt_rx.setOnClickListener {
             Observable.interval(1,TimeUnit.SECONDS)
                 .subscribe{

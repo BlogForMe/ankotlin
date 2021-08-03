@@ -12,7 +12,6 @@ kapt {
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '28.0.3'
 
 
     dataBinding {
@@ -20,7 +19,6 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 23
         flavorDimensions "versionCode"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -81,7 +79,6 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.3.0'
     api 'com.squareup.retrofit2:converter-gson:2.3.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-//    api "io.reactivex.rxjava2:rxkotlin:2.3.0"
     api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     api 'com.jakewharton.timber:timber:4.6.0'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
