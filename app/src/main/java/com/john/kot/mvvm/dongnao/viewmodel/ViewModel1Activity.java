@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.john.kot.R;
 
-public class VIewModel1Activity extends AppCompatActivity {
+public class ViewModel1Activity extends AppCompatActivity {
 
     private TextView textView;
     private MyViewModel viewModel;
