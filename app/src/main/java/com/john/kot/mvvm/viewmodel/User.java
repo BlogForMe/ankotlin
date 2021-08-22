@@ -1,4 +1,4 @@
-package com.john.kot.arch.viewmodel;
+package com.john.kot.mvvm.viewmodel;
 
 public class User {
     private String name;

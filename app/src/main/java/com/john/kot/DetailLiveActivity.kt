@@ -1,4 +1,4 @@
-package com.john.kot.mvvm.livedata
+package com.john.kot
 
 import android.graphics.Color
 import android.os.Bundle

@@ -21,9 +21,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".mvvm.dongnao.viewmodel.VIewModel1Activity"
+                android:name=".viewGroup.ViewGroupActivity"
                 android:exported="true" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,11 +30,24 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".mvvm.dongnao.lifecycle.Step2Activity"
+                android:name=".tool.glide.lifecycle.GlideActivity"
                 android:exported="true">
 
         </activity>
-        <activity android:name=".tool.rx.WriteRxjavaActivity"></activity>
+        <activity
+                android:name=".mvvm.lifecycle.LifeCycleActivity"
+                android:exported="true"></activity>
+        <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
+        <activity
+                android:name=".mvvm.livedata.xiangxue.LiveData1Activity"
+                android:exported="true" />
+        <activity
+                android:name=".mvvm.dongnao.viewmodel.ViewModel1Activity"
+                android:exported="true" />
+        <activity
+                android:name=".mvvm.dongnao.lifecycle.Step2Activity"
+                android:exported="true" />
+        <activity android:name=".tool.rx.WriteRxjavaActivity" />
         <activity android:name=".net.OkhtttpActivity" />
         <activity android:name=".permission.PemissionxUseActivity" />
         <activity android:name=".tool.audio.AudioRecordActivity" />
@@ -46,7 +58,7 @@
         <activity android:name=".ui.scroll.ScrollViewActivity" />
         <activity android:name=".ui.dbdraw.DatabindingDrawableActivity" />
         <activity android:name=".mvvm.LiveDataActivity" />
-        <activity android:name=".mvvm.livedata.DetailLiveActivity" />
+        <activity android:name=".DetailLiveActivity" />
         <activity android:name=".mvvm.livedata.LiveDataTestActivity" />
         <activity android:name=".mvvm.demo.UseDemoActivity" />
 
@@ -69,7 +81,7 @@
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".tool.LogActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
-        <activity android:name=".arch.viewmodel.ViewModelActivity" />
+        <activity android:name=".mvvm.viewmodel.ViewModelActivity" />
         <activity android:name=".time.TextClockActivity" />
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />

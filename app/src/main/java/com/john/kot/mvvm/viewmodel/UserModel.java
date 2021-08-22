@@ -1,16 +1,15 @@
-package com.john.kot.arch.viewmodel;
+package com.john.kot.mvvm.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class UserModel extends ViewModel {
 
     private final MutableLiveData userLiveData = new MutableLiveData();
-    List<User> userList = new LinkedList<>();
+    private final LinkedList<User> userList = new LinkedList<>();
 
     public LiveData getUser() {
         return userLiveData;

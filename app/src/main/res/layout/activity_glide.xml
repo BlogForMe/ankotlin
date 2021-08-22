@@ -4,11 +4,10 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mvvm.viewmodel.ViewModelActivity">
-
-    <Button
-            android:id="@+id/bt_do_action"
+        tools:context=".tool.glide.lifecycle.GlideActivity">
+    <TextView
+            android:id="@+id/tv_thread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DoAction"/>
+            android:text="开始刷新"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

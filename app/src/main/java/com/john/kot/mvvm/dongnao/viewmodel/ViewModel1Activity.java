@@ -2,6 +2,7 @@ package com.john.kot.mvvm.dongnao.viewmodel;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +21,11 @@ public class ViewModel1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_view_model1);
 
         viewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(MyViewModel.class);
+
+
         textView = (TextView) findViewById(R.id.textview);
         textView.setText(String.valueOf(viewModel.number));
+
     }
 
     public void plusNumber(View view) {

@@ -1,11 +1,11 @@
-package com.john.kot.arch.viewmodel
+package com.john.kot.mvvm.viewmodel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.john.kot.R
+import com.john.kot.mvvm.demo.User
 import kotlinx.android.synthetic.main.activity_view_model.*
 import timber.log.Timber
 

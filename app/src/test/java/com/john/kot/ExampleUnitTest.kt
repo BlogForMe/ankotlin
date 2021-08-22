@@ -55,13 +55,5 @@ class ExampleUnitTest {
         println(data.toCharArray().filter { ch -> ch == dark.toChar() }.count())
     }
 
-    @Test
-    fun stat() {
-
-        println("欢迎使用家云健康! 家云极为重视您的个人隐私，并尊重您对个人隐私各种权利，我们将严格在国家法律允许范围内，且只以为您提供服务为目的，收集必要的相关信息，我们将尽力保障这些信息的安全,".length)
-        println("欢迎使用家云健康".length)
-
-
-    }
 
 }
