@@ -66,7 +66,7 @@ class CircleImageView(context: Context?, attrs: AttributeSet?) : AppCompatImageV
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1) {
             canvas?.drawPath(path, sPaint)
         } else {
-            srcPath?.addRect(srcRectF, Path.Direction.CCW)
+            srcRectF?.let { srcPath?.addRect(it, Path.Direction.CCW) }
             // 计算tempPath和path的差集
             srcPath?.op(path, Path.Op.DIFFERENCE)
             srcPath?.let { canvas?.drawPath(it, sPaint) }

@@ -15,6 +15,18 @@ object RegistrationUtil {
         password: String,
         confirmedPassword: String
     ):Boolean{
-        return false
+        if (userName.isEmpty()||password.isEmpty()){
+            return false
+        }
+        if (userName in exitingUsers){
+            return false
+        }
+        if (password!=confirmedPassword){
+            return false
+        }
+        if (password.count{it.isDigit()}<2){
+            return false
+        }
+        return true
     }
 }

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.util.R
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import kotlinx.android.synthetic.main.dialog_alert.*
 
 /**
  * 弹出选择dialog
@@ -36,26 +35,26 @@ class ItemPickDialog : DialogFragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        val title = arguments?.getString(PARAMS_PICK_TITLE)
-        val contentArr = arguments?.getStringArrayList(PARAMS_PICK_CONTENT)
-//        var recycleView = view.findViewById<RecyclerView>(R.id.recycle_view)
-        val mAdapter = DialogAdapter(
-            R.layout.dialog_item_content,
-            contentArr
-        )
-        recycle_view.layoutManager = LinearLayoutManager(context)
-        recycle_view.adapter = mAdapter
-        tv_title.text = "请选择测量项"
-        mAdapter.setOnItemClickListener { adapter, view, position ->
-//            Toast.makeText(context," $position ",Toast.LENGTH_SHORT).show()
-            mListener?.let {
-                it.getItemPosition(position)
-                dismiss()
-            }
-        }
-    }
+//    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//        super.onActivityCreated(savedInstanceState)
+//        val title = arguments?.getString(PARAMS_PICK_TITLE)
+//        val contentArr = arguments?.getStringArrayList(PARAMS_PICK_CONTENT)
+////        var recycleView = view.findViewById<RecyclerView>(R.id.recycle_view)
+//        val mAdapter = DialogAdapter(
+//            R.layout.dialog_item_content,
+//            contentArr
+//        )
+//        recycle_view.layoutManager = LinearLayoutManager(context)
+//        recycle_view.adapter = mAdapter
+//        tv_title.text = "请选择测量项"
+//        mAdapter.setOnItemClickListener { adapter, view, position ->
+////            Toast.makeText(context," $position ",Toast.LENGTH_SHORT).show()
+//            mListener?.let {
+//                it.getItemPosition(position)
+//                dismiss()
+//            }
+//        }
+//    }
 
 
     interface ISelectListener {

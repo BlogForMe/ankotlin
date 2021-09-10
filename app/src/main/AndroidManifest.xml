@@ -21,7 +21,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".viewGroup.ViewGroupActivity"
+                android:name=".hilt.HiltActivity"
                 android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,13 +30,16 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".tool.glide.lifecycle.GlideActivity"
+                android:name=".viewGroup.ViewGroupActivity"
                 android:exported="true">
 
         </activity>
         <activity
-                android:name=".mvvm.lifecycle.LifeCycleActivity"
+                android:name=".tool.glide.lifecycle.GlideActivity"
                 android:exported="true"></activity>
+        <activity
+                android:name=".mvvm.lifecycle.LifeCycleActivity"
+                android:exported="true" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
         <activity
                 android:name=".mvvm.livedata.xiangxue.LiveData1Activity"
