@@ -194,8 +194,8 @@ class ViewBodySleep : View {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        val widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        val widthSize = MeasureSpec.getSize(widthMeasureSpec); //widthSize父控件留个子空间的最大宽度
+//        val widthMode = MeasureSpec.getMode(widthMeasureSpec);
+//        val widthSize = MeasureSpec.getSize(widthMeasureSpec); //widthSize父控件留个子空间的最大宽度
 
         val heightMode = MeasureSpec.getMode(heightMeasureSpec);
         val heightSize = MeasureSpec.getSize(heightMeasureSpec);

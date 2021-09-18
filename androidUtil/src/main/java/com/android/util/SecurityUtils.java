@@ -1,7 +1,11 @@
 package com.android.util;
 
+import android.net.Uri;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
+
+import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -30,6 +34,7 @@ public class SecurityUtils {
 	
 	public static final String PASSWORD_CONFIG_KEY = "casanube_!@#$%^&";
 
+	@RequiresApi(api = Build.VERSION_CODES.FROYO)
 	public static String AESEncode(String passwd, String content) {
 		try {
 			// 1.构造密钥生成器，指定为AES算法,不区分大小写

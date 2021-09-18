@@ -5,16 +5,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".tool.glide.lifecycle.GlideActivity">
-    <TextView
-            android:id="@+id/tv_thread"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="开始刷新"/>
+        tools:context=".test.robolec.MyActivity">
+
 
     <Button
-            android:id="@+id/bt_input"
+            android:id="@+id/press_me_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="输入"/>
+            android:text="click"/>
+
+    <TextView
+            android:id="@+id/results_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wating show"/>
 </LinearLayout>

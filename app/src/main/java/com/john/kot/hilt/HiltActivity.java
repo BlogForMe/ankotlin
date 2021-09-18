@@ -23,5 +23,10 @@ public class HiltActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hilt);
         Log.i(TAG, "user: " + user);
+
+
     }
+
+
+
 }
