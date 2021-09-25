@@ -21,8 +21,14 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".hilt.SecondActivity"
+                android:exported="true" />
+        <activity
                 android:name=".test.robolec.MyActivity"
-                android:exported="true" >
+                android:exported="true"></activity>
+        <activity
+                android:name=".hilt.HiltActivity"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,16 +36,11 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".hilt.HiltActivity"
-                android:exported="true"></activity>
-        <activity
                 android:name=".viewGroup.ViewGroupActivity"
-                android:exported="true"></activity>
+                android:exported="true" />
         <activity
                 android:name=".tool.glide.lifecycle.GlideActivity"
-                android:exported="true">
-
-        </activity>
+                android:exported="true"></activity>
         <activity
                 android:name=".mvvm.lifecycle.LifeCycleActivity"
                 android:exported="true" />

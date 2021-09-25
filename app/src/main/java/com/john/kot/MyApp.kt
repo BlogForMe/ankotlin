@@ -7,7 +7,7 @@ import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
-@HiltAndroidApp
+@HiltAndroidApp // 1.  HiltAndroidApp注解
 class MyApp : Application() {
 
     override fun onCreate() {

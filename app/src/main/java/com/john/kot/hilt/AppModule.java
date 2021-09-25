@@ -14,12 +14,13 @@ import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ApplicationComponent;
 
-//Module装载到ApplicationComponent中
-@InstallIn(ApplicationComponent.class) //通过这种方式和组件关联
-@Module
-public class AppModule {
-    @Provides
-    User provideUser(){
-        return new User();
-    }
-}
+////Module装载到ApplicationComponent中
+//@InstallIn(ApplicationComponent.class) //通过这种方式和组件关联
+//@Module
+//public class AppModule {
+//      //ApplicationComponent对应的作用域 @Singleton
+//    @Provides
+//    User1 provideUser() {
+//        return new User1();
+//    }
+//}

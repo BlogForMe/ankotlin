@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-parcelize'
+//apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 
 kapt {
@@ -18,44 +18,15 @@ android {
         enabled = true
     }
 
-    defaultConfig {
-//        flavorDimensions "versionCode"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-//        ndk {
-//            //设置支持的SO库架构
-//            abiFilters 'armeabi', 'armeabi-v7a'
-//            //, 'x86_64', 'arm64-v8a','x86',
-//        }
-    }
 
 
-    lintOptions {
-        checkReleaseBuilds false
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
-        abortOnError false
-    }
-    dexOptions {
-        preDexLibraries = false
-    }
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
 
-    packagingOptions {
-        exclude 'META-INF/proguard/androidx-annotations.pro'
-        exclude 'META-INF/atomicfu.kotlin_module'
-    }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
