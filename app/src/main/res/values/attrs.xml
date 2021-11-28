@@ -14,7 +14,7 @@
 
 
     <declare-styleable name="CirArcView">
-        <attr name="circleRadius" format="float"/>
+        <attr name="circleNRadius" format="float"/>
         <attr name="arcWidth" format="float"/>
     </declare-styleable>
 

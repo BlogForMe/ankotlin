@@ -12,7 +12,7 @@ import android.os.Build
 /**
  * https://juejin.im/post/5b305f73f265da59b653b08d
  */
-class CircleImageView(context: Context?, attrs: AttributeSet?) : AppCompatImageView(context, attrs) {
+class CircleImageView(context: Context?, attrs: AttributeSet?) : AppCompatImageView(context!!, attrs) {
     private var srcPath: Path? = null
     private var srcRectF: RectF? = null
     private var fermode: PorterDuffXfermode

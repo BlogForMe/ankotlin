@@ -8,7 +8,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.john.kot.R
 import com.john.kot.databinding.ActivityLiveDataBindingImpl
-import com.john.kot.DetailLiveActivity
 import com.john.kot.mvvm.livedata.ListViewModel
 import kotlinx.android.synthetic.main.activity_live_data.*
 import timber.log.Timber
@@ -46,7 +45,7 @@ class LiveDataActivity : AppCompatActivity() {
         super.onResume()
         myViewModel.navigateToDetails.observe(this, Observer {
             Timber.i("navigateToDetails $it")
-            if (it) startActivity(Intent(this, DetailLiveActivity::class.java))
+//            if (it) startActivity(Intent(this, DetailLiveActivity::class.java))
         })
 
     }

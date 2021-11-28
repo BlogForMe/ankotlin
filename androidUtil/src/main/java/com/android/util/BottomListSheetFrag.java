@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -76,5 +77,8 @@ public class BottomListSheetFrag extends BottomSheetFrag {
         protected void convert(BaseViewHolder helper, String item) {
             helper.setText(R.id.tv_adapter_bottom_sheet_name, item);
         }
+        
+       
     }
+    
 }

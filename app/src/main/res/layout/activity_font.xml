@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.FontActivity">
+
+    <TextView
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanssc_regular"
+            android:text="RM 59,000.00"
+            android:textSize="20sp" />
+
+    <TextView
+            android:background="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="RM 59,000.00"
+            android:textSize="28sp" />
+
+    <TextView
+            android:background="@android:color/holo_blue_bright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alibaba_puhuiti_regular"
+            android:text="RM 59,000.00"
+            android:textSize="28sp" />
+
+
+</LinearLayout>

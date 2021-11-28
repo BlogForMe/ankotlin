@@ -1,6 +1,10 @@
 package com.john.kot.hilt;
 
+import static com.android.util.DisplayUtils.getScreenH;
+import static com.android.util.DisplayUtils.getScreenW;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,6 +50,13 @@ public class HiltActivity extends AppCompatActivity {
 
 //        viewModel.test();
 //        viewModel1.test();
-        viewModel3.test();
+//        viewModel3.test();
+
+
+        MainViewModel viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        viewModel.test();
+
+        Log.i(TAG, "onCreate:  "+ getScreenW(this) +" " + getScreenH(this));
+
     }
 }

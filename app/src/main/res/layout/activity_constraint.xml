@@ -1,51 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.ConstraintPlaceholderActivity">
 
-    <android.support.constraint.Placeholder
+    <androidx.constraintlayout.widget.Placeholder
             android:id="@+id/place_holder"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
             android:layout_marginTop="30dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content" android:layout_height="300dp"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     <ImageView
             android:id="@+id/iv_girl1"
-            android:layout_width="200dp" android:layout_height="200dp"
-            android:src="@mipmap/place_holder1"/>
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/place_holder1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
             android:id="@+id/iv_girl2"
-            app:layout_constraintLeft_toRightOf="@+id/iv_girl1"
-            android:layout_width="200dp" android:layout_height="200dp"
-            android:src="@mipmap/place_holder2"/>
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/place_holder2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_girl1" />
 
     <Button
             android:id="@+id/bt_one"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btOne"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="btOne"/>
+            app:layout_constraintStart_toStartOf="parent" />
+
     <Button
             android:id="@+id/bt_two"
-            app:layout_constraintLeft_toRightOf="@+id/bt_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/bt_one"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="btTwo"
-    />
+            app:layout_constraintBaseline_toBaselineOf="@+id/bt_one"
+            app:layout_constraintLeft_toRightOf="@+id/bt_one" />
 
-    <android.support.constraint.Group
-            app:constraint_referenced_ids="iv_girl1,iv_girl2"
-            android:visibility="invisible"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:id="@+id/group"
-    />
+    <androidx.constraintlayout.widget.Group
+            android:id="@+id/group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="iv_girl1" />
+
+    <androidx.constraintlayout.widget.Group
+            android:id="@+id/group2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="iv_girl2" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
