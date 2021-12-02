@@ -16,17 +16,31 @@ class ConstraintPlaceholderActivity : AppCompatActivity() {
         binding = ActivityConstraintBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        binding.btOne.setOnClickListener {
+//            group1.visibility = View.VISIBLE
+//        }
+//
+//        binding.btTwo.setOnClickListener {
+//            group2.visibility = View.INVISIBLE
+//        }
+//
+//        binding.ivGirl1.setOnClickListener {
+////            binding.placeHolder.setContentId(R.id.iv_girl1)
+//            binding.group1.visibility = View.INVISIBLE
+//        }
+
         binding.btOne.setOnClickListener {
-            group1.visibility = View.VISIBLE
+            binding.placeHolder1.setContentId(R.id.rl_1)
         }
 
         binding.btTwo.setOnClickListener {
-            group2.visibility = View.INVISIBLE
+            binding.placeHolder2.setContentId(R.id.rl_1)
+        }
+        binding.btThree.setOnClickListener {
+            binding.placeHolder3.setContentId(R.id.rl_1)
         }
 
-        binding.ivGirl1.setOnClickListener {
-            binding.placeHolder.setContentId(R.id.iv_girl1)
-        }
+
 
     }
 }

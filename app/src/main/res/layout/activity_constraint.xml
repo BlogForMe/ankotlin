@@ -7,30 +7,62 @@
         tools:context=".ui.ConstraintPlaceholderActivity">
 
     <androidx.constraintlayout.widget.Placeholder
-            android:id="@+id/place_holder"
+            android:id="@+id/place_holder1"
             android:layout_width="0dp"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_marginTop="30dp"
+            app:content="@id/rl_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-
-    <ImageView
-            android:id="@+id/iv_girl1"
-            android:layout_width="200dp"
+    <androidx.constraintlayout.widget.Placeholder
+            android:id="@+id/place_holder2"
+            android:layout_width="0dp"
             android:layout_height="200dp"
-            android:src="@mipmap/place_holder1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/place_holder1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/place_holder2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.Placeholder
+                android:id="@+id/place_holder3"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <RelativeLayout
+            android:id="@+id/rl_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/iv_girl1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@mipmap/place_holder1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
 
     <ImageView
             android:id="@+id/iv_girl2"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@mipmap/place_holder2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_girl1" />
+            android:src="@mipmap/place_holder2" />
 
     <Button
             android:id="@+id/bt_one"
@@ -49,12 +81,21 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/bt_one"
             app:layout_constraintLeft_toRightOf="@+id/bt_one" />
 
+    <Button
+            android:id="@+id/bt_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="btTwo"
+            app:layout_constraintBaseline_toBaselineOf="@+id/bt_one"
+            app:layout_constraintLeft_toRightOf="@+id/bt_two" />
+
     <androidx.constraintlayout.widget.Group
             android:id="@+id/group1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:constraint_referenced_ids="iv_girl1" />
+            app:constraint_referenced_ids="rl_1" />
 
     <androidx.constraintlayout.widget.Group
             android:id="@+id/group2"
@@ -62,6 +103,8 @@
             android:layout_height="wrap_content"
             android:visibility="visible"
             app:constraint_referenced_ids="iv_girl2" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
