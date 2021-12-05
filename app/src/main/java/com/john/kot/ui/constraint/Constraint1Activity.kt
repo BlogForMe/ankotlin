@@ -1,4 +1,4 @@
-package com.john.kot.ui
+package com.john.kot.ui.constraint
 
 import android.os.Bundle
 import android.view.View
