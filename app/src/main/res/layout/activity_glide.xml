@@ -6,15 +6,22 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".tool.glide.lifecycle.GlideActivity">
+
     <TextView
             android:id="@+id/tv_thread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="开始刷新"/>
+            android:text="开始刷新" />
 
     <Button
             android:id="@+id/bt_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="输入"/>
+            android:text="输入" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:round="4dp"
+            android:src="@mipmap/sevirl_400_400_southern_africa_septemberpng" />
 </LinearLayout>

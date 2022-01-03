@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.util.sysdialog.ItemPickDialog
 import com.android.util.ToastUtil
 import com.john.kot.R
-import com.john.kot.ui.fragment.DialogShowFragment
+import com.john.kot.ui.dialog.DialogShowFragment
 import kotlinx.android.synthetic.main.actiivty_framgent_message.*
 
 class MessageActivityFragment : AppCompatActivity(), ItemPickDialog.ISelectListener {

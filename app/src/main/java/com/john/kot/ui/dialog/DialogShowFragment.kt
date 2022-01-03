@@ -1,4 +1,4 @@
-package com.john.kot.ui.fragment
+package com.john.kot.ui.dialog
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

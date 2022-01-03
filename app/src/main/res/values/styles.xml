@@ -6,6 +6,23 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="alertDialogTheme">@style/AppAlertDialogStyle</item>
+        <item name="android:alertDialogTheme">@style/AppAlertDialogStyle</item>
+    </style>
+
+    <style name="AppAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!--        &lt;!&ndash; 标题、正文的文字颜色 &ndash;&gt;-->
+        <!--        <item name="android:textColorPrimary">@android:color/holo_blue_light</item>-->
+        <!--        &lt;!&ndash; window background color &ndash;&gt;-->
+        <!--        <item name="android:windowBackground">@android:color/holo_purple</item>-->
+        <!-- SingleChoiceDialog icon color -->
+        <!--        <item name="colorAccent">@color/heroblue</item>-->
+        <!-- button & checkbox color -->
+        <item name="android:colorAccent">@color/heroblue</item>
+    </style>
+
+    <style name="HomeTheme" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
 
 
