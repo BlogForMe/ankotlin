@@ -22,8 +22,7 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".ui.dialog.DialogStateBarActivity"
-                android:exported="true"
-                android:theme="@style/HomeTheme">
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
