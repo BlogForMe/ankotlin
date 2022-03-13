@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+' 箭头的多样性
+
+Alice --> Bob : 认证申请
+
+' 表示信息丢失
+Alice --x Bob
+
+'只要上半部分 或者下半部分
+Alice -\\ Bob
+Alice -// Bob
+
+'细一点的箭头
+Alice ->> Bob
+Alice ->o Bob
+
+
+
+@enduml

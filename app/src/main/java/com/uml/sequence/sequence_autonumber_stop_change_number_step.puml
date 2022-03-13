@@ -1,0 +1,19 @@
+@startuml autonumber_stop
+' 10开始， step 10
+autonumber 10 10 "<b>[000]"
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+' 停止
+autonumber stop
+Bob -> Alice : dummy
+' 需要恢复增长
+autonumber resume "<font color=red><b>Message 0 "
+Bob -> Alice : Yet another authentication Request
+Bob <- Alice : Yet another authentication Response
+autonumber stop
+Bob -> Alice : dummy
+' step 改为1
+autonumber resume 1 "<font color=blue><b>Message 0  "
+Bob -> Alice : Yet another authentication Request
+Bob <- Alice : Yet another authentication Response
+@enduml

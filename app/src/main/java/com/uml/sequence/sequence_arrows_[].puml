@@ -1,0 +1,16 @@
+@startuml  arrows_sss
+
+' [表示来着未知, 一个消息发出去
+[-> Bob
+[o-> Bob
+[o->o Bob
+[x-> Bob
+[<- Bob
+[x<- Bob
+Bob ->]
+Bob ->o]
+Bob o->o]
+Bob ->x]
+Bob <-]
+Bob x<-]
+@enduml

@@ -2,7 +2,9 @@ package com.john.kot.tool.date
 
 import android.graphics.Color
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -12,26 +14,64 @@ import com.bigkoo.pickerview.listener.CustomListener
 import com.bigkoo.pickerview.listener.OnTimeSelectListener
 import com.bigkoo.pickerview.view.TimePickerView
 import com.john.kot.R
+import com.john.kot.databinding.ActivityDateBinding
 import kotlinx.android.synthetic.main.activity_date.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class DateActivity : AppCompatActivity() {
-
+    val TAG = "DateActivity"
     private var pvCustomLunar: TimePickerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_date)
+        val biding = ActivityDateBinding.inflate(layoutInflater)
+        setContentView(biding.root)
         initLunarPicker()
-        bt_date.setOnClickListener {
+        biding.btDate.setOnClickListener {
             pvCustomLunar?.show()
         }
+
+        biding.getCurrentTime.setOnClickListener {
+//            Log.i(TAG, "onCreate: ${Calendar.getInstance().timeInMillis}")
+            val apply = Calendar.getInstance().apply {
+                1642948984495
+            }
+//
+
+//
+//            val convertDate = convertDate("1642948984495", "dd/MM/yyyy hh:mm:ss")
+//            val convertDate1 = convertDate("1642948984496", "dd/MM/yyyy hh:mm:ss");
+//
+//            Log.i(TAG, "onCreate: $convertDate")
+//            Log.i(TAG, "onCreate: $convertDate1")
+
+            val time = Calendar.getInstance().time
+            Log.i(TAG, "onCreate: $time")
+
+            val dateCondition = Calendar.getInstance().apply {
+                add(Calendar.DAY_OF_MONTH, -7)
+            }
+            val time1 = dateCondition.timeInMillis
+
+            Log.i(TAG, "onCreate: $time1 ")
+//            Log.i(TAG, "onCreate: ${dateCondition.after(apply)}")
+        }
+
+        biding.getCurrentTimeHms.setOnClickListener {
+//            val sevenDaysCondition = Calendar.getInstance().apply {
+//                add(Calendar.DAY_OF_MONTH, -7)
+//            }
+            Log.i(TAG, "onCreate Calendar.getInstance().timeInMillis : ${Calendar.getInstance().timeInMillis}")
+        }
+
     }
 
-    fun showPicker(){
+    fun convertDate(dateInMilliseconds: String, dateFormat: String?): String? {
+        return DateFormat.format(dateFormat, dateInMilliseconds.toLong()).toString()
     }
+
 
     private fun initLunarPicker() {
         val selectedDate = Calendar.getInstance() //系统当前时间

@@ -35,7 +35,7 @@ class TempCircleView @JvmOverloads constructor(
         val centerY = height / 2f
         val srcRadius: Float = (innerRadius + 8)
 
-        Timber.i("centerX   $centerX   centerY  $centerY")
+//        Timber.i("centerX   $centerX   centerY  $centerY")
         canvas?.drawCircle(centerX, centerY, srcRadius, srcPaint);
         canvas?.drawCircle(centerX, centerY, innerRadius, innnerPaint);
 

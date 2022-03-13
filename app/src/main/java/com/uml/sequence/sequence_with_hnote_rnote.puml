@@ -1,0 +1,12 @@
+@startuml rnote_hnote
+' 你可以使用 hnote 和 rnote 这两个关键字来修改备注框的形状
+caller -> server : conReq
+' hnote声明六边形
+hnote over caller : idle
+caller <- server : conConf
+' rnote声明矩形
+rnote over server
+"r" as rectangle
+"h" as hexagon
+end rnote
+@enduml

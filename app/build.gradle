@@ -69,6 +69,10 @@ dependencies {
     testImplementation "org.robolectric:robolectric:4.7-SNAPSHOT"
 
 
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+
+
+
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'

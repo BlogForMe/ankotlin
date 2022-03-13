@@ -1,0 +1,9 @@
+@startuml as_alias
+' 参与者的名字比较长的时候
+' "This is very\nlong" 取别名  Long
+Alice -> "Bob()" : Hello
+"Bob()" -> "This is very\nlong" as Long
+' You can also declare:
+' "Bob()" -> Long as "This is very\nlong"
+Long --> "Bob()" : ok
+@enduml

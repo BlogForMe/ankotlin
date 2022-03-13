@@ -4,13 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import my.com.tngdigital.ewallet.library.utils.dp
 import java.util.*
 
 class HistoryFlowLayout : ViewGroup {
     var TAG = "HistoryFlowLayout"
-    private val mHorizontalSpacing = 8.dp// 每个item横向间接
-    private val mVerticalSpacing = 8.dp
+    private val mHorizontalSpacing = 8// 每个item横向间接
+    private val mVerticalSpacing = 8
     private var allLines
             : MutableList<List<View>>? = null
     var lineHeights: MutableList<Int> = ArrayList() //记录每一行的行高,用于layout

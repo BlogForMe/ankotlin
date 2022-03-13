@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.john.kot">
-
-    <uses-feature
-            android:name="android.hardware.camera"
-            android:required="true" />
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    package="com.john.kot">
 
     <application
-            android:name=".MyApp"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
         <activity
-                android:name=".ui.dialog.DialogStateBarActivity"
-                android:exported="true">
+            android:name=".ColorIntActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,53 +20,48 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".ui.constraint.ConstraintLayerActivity"
-                android:exported="true">
-
-        </activity>
+            android:name=".ui.dialog.DialogStateBarActivity"
+            android:exported="true"></activity>
         <activity
-                android:name=".ui.constraint.ConstraintAngerActivity"
-                android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".ui.constraint.ConstraintLayerActivity"
+            android:exported="true"></activity>
         <activity
-                android:name=".ui.TriangleActivity"
-                android:exported="true" />
+            android:name=".ui.constraint.ConstraintAngerActivity"
+            android:exported="true"></activity>
         <activity
-                android:name=".ui.FontActivity"
-                android:exported="true" />
+            android:name=".ui.TriangleActivity"
+            android:exported="true" />
         <activity
-                android:name=".hilt.SecondActivity"
-                android:exported="true" />
+            android:name=".ui.FontActivity"
+            android:exported="true" />
         <activity
-                android:name=".test.robolec.MyActivity"
-                android:exported="true" />
+            android:name=".hilt.SecondActivity"
+            android:exported="true" />
         <activity
-                android:name=".hilt.HiltActivity"
-                android:exported="true" />
+            android:name=".test.robolec.MyActivity"
+            android:exported="true" />
         <activity
-                android:name=".viewGroup.ViewGroupActivity"
-                android:exported="true" />
+            android:name=".hilt.HiltActivity"
+            android:exported="true" />
         <activity
-                android:name=".tool.glide.lifecycle.GlideActivity"
-                android:exported="true" />
+            android:name=".viewGroup.ViewGroupActivity"
+            android:exported="true" />
         <activity
-                android:name=".mvvm.lifecycle.LifeCycleActivity"
-                android:exported="true" />
+            android:name=".tool.glide.lifecycle.GlideActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mvvm.lifecycle.LifeCycleActivity"
+            android:exported="true" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
         <activity
-                android:name=".mvvm.livedata.xiangxue.LiveData1Activity"
-                android:exported="true" />
+            android:name=".mvvm.livedata.xiangxue.LiveData1Activity"
+            android:exported="true" />
         <activity
-                android:name=".mvvm.dongnao.viewmodel.ViewModel1Activity"
-                android:exported="true" />
+            android:name=".mvvm.dongnao.viewmodel.ViewModel1Activity"
+            android:exported="true" />
         <activity
-                android:name=".mvvm.dongnao.lifecycle.Step2Activity"
-                android:exported="true" />
+            android:name=".mvvm.dongnao.lifecycle.Step2Activity"
+            android:exported="true" />
         <activity android:name=".tool.rx.WriteRxjavaActivity" />
         <activity android:name=".net.OkhtttpActivity" />
         <activity android:name=".permission.PemissionxUseActivity" />
@@ -91,22 +76,11 @@
         <activity android:name=".mvvm.livedata.LiveDataTestActivity" />
         <activity android:name=".mvvm.demo.UseDemoActivity" />
 
-        <provider
-                android:name=".CameraProvider"
-                android:authorities="${applicationId}.fileprovider"
-                android:exported="false"
-                android:grantUriPermissions="true">
-
-            <!-- grantUriPermissions: 设置允许获取访问uri的临时权限 exported:设置允许获取访问uri的临时权限 -->
-            <meta-data
-                    android:name="android.support.FILE_PROVIDER_PATHS"
-                    android:resource="@xml/camera_path" />
-            <!-- 用于设置FileProvider的文件访问路径 -->
-        </provider>
-
         <activity android:name=".customview.DrawPathActivity" />
+
         <activity android:name=".customview.StrapSleepActivity" />
-        <activity android:name=".tool.date.DateActivity" />
+        <activity android:name=".tool.date.DateActivity">
+        </activity>
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".tool.LogActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
@@ -134,6 +108,28 @@
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
+        <provider
+            android:name=".CameraProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- grantUriPermissions: 设置允许获取访问uri的临时权限 exported:设置允许获取访问uri的临时权限 -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/camera_path" />
+            <!-- 用于设置FileProvider的文件访问路径 -->
+        </provider>
     </application>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>
