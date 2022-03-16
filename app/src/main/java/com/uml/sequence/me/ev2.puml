@@ -1,0 +1,141 @@
+@startuml
+
+title: TNG EV2 Card
+legend top
+Card Management - Card Add
+end legend
+
+actor USER as "User"
+participant CARD as "EV2 Card"
+participant APP as "App"
+participant UAPSDK as "UAP SDK"
+participant TNGSDK as "TNG SDK"
+participant MPAAS as "App Server"
+participant TNG as "TNG Server"
+
+autonumber 2.1.0
+
+== Card List Screen ==
+USER -> APP: Click add a new card
+USER <-- APP: Show add screen
+
+== Card Add Screen ==
+APP -> APP: Check EKYC status
+alt #pink status == Non-EKYC
+USER <-- APP: Show complete EKYC popup
+USER -> APP: Click maybe later button in popup
+USER <-- APP: Close add screen
+end
+APP -> MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.check}</i>\nRequest: {LinkCheckRequest}
+MPAAS -> TNG: check link TNG card
+MPAAS <-- TNG: return result
+APP <-- MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.check}</i>\nResponse: {LinkCheckResponse}
+alt #lightyellow resultStatus == 1002
+USER <-- APP: Show rate limit in popup screen
+USER -> APP: Click ok button in popup
+USER <-- APP: Close add screen
+else #pink statusCode != '00'
+USER <-- APP: Show error popup
+USER -> APP: Click ok button in popup
+USER <-- APP: Close add screen
+end
+APP -> APP: Get cache transportation_card_ev2_add_use_nfc
+alt #e1f5fe (transportation_card_ev2_add_use_nfc == false) AND NFC supported
+USER <-- APP: Show use NFC popup
+APP -> APP: Store cache transportation_card_ev2_add_use_nfc = true
+else #b3e5fc CDP TNG_CARD_ADD_CARD_POPUP enabled
+USER <-- APP: Show CDP TNG_CARD_ADD_CARD_POPUP
+end
+alt #e8f5e9 NFC supported
+USER -> APP: Click scan
+alt #fff3e0 iOS only
+APP -> APP: Get cache transportation_card_ev2_tutorial_use_nfc
+alt #e1f5fe transportation_card_ev2_tutorial_use_nfc == false
+USER <-- APP: Show use NFC tutorial screen
+APP -> APP: Store cache transportation_card_ev2_tutorial_use_nfc = true
+end
+end
+USER <-- APP: Show tap card prompt
+APP -> TNGSDK: CheckCardOTA
+CARD -> TNGSDK: Tap card
+APP <-- TNGSDK: return scanned mfgNumber
+USER <-- APP: Close tap card prompt
+USER <-- APP: Show card serial no in add screen
+APP -> MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.validate}</i>\nRequest: {LinkValidateRequest}
+MPAAS -> TNG: validate TNG card
+MPAAS <-- TNG: return result
+APP <-- MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.validate}</i>\nResponse: {LinkValidateResponse}
+alt #lightyellow resultStatus == 1002
+USER <-- APP: Show rate limit in popup screen
+USER -> APP: Click ok button in popup
+USER <-- APP: Close add screen
+else #white otherwise
+USER <-- APP: Show validated success/fail
+end
+end
+USER -> APP: Keyin card serial no
+APP -> MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.validate}</i>\nRequest: {LinkValidateRequest}
+MPAAS -> TNG: validate TNG card
+MPAAS <-- TNG: return result
+APP <-- MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.validate}</i>\nResponse: {LinkValidateResponse}
+alt #lightyellow resultStatus == 1002
+USER <-- APP: Show rate limit in popup screen
+USER -> APP: Click ok button in popup
+USER <-- APP: Close add screen
+else #white otherwise
+USER <-- APP: Show validated success/fail
+end
+alt #lightyellow optional
+USER -> APP: Keyin preferred card name
+end
+USER -> APP: Click add
+alt #f1f8e9 Face Verification enabled
+APP -> UAPSDK: SecVIEngine.envDataWithOption()\nParameters {option:'SecVIEnvOptionZolozBio'}
+APP <-- UAPSDK: return metaInfo
+APP -> MPAAS: RPC: <i>{ap.tngdwallet.biz.basics.risk.init.verify}</i>\nRequest: {RiskInitVerifyRequest}\nParameters {metaInfo,sceneType='TNG_CARD_LINK'}
+else #dcedc8 Face Verification disabled
+APP -> MPAAS: RPC: <i>{ap.tngdwallet.biz.basics.risk.init.verify}</i>\nRequest: {RiskInitVerifyRequest}\nParameters {sceneType='TNG_CARD_LINK'}
+end
+APP <-- MPAAS: RPC: <i>{ap.tngdwallet.biz.basics.risk.init.verify}</i>\nResponse: {RiskInitVerifyResponse}\nParameters: {verifiedId:'biz123'}
+alt #lightyellow resultStatus == 1002
+USER <-- APP: Show rate limit in popup screen
+else #white verifiedId isNotEmpty
+APP -> UAPSDK: SecVIEngine.verify()\nParameters {verifyId:'biz123'}
+USER <-- UAPSDK: Show risk product screen (example: face verification/6 digits pin/SMS OTP)
+USER -> UAPSDK: Answer risk product
+UAPSDK -> MPAAS: verification request
+UAPSDK <-- MPAAS: return verification result
+APP <-- UAPSDK: callback
+end
+APP -> MPAAS: RPC: <i>{com.abl.wallet.tngcard.consentUpdate}</i>\nRequest: {ConsentUpdateRequest}\nParameters {tollAutoDeductConsent=true,tngCardDataSharingConsent=true}
+APP <-- MPAAS: RPC: <i>{com.abl.wallet.tngcard.consentUpdate}</i>\nResponse: {ConsentUpdateResponse}
+APP -> MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.v2}</i>\nRequest: {LinkRequest}\nParameters: {bizSecurityId='biz123'}
+APP <-- MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.v2}</i>\nResponse: {LinkResponse}\nParameters: {statusCode='00/RJ/RC',securityId='sid87683b6b4fe80ecf17107095bfa0b2b2_pdc',eventLinkId='xyz987'}
+alt #lightyellow resultStatus == 1002
+USER <-- APP: Show rate limit in popup screen
+else #pink statusCode == 'RJ'
+USER <-- APP: Show risk reject error screen
+else #white statusCode == 'RC'
+APP -> UAPSDK: SecVIEngine.verify()\nParameters {verifyId:'sid87683b6b4fe80ecf17107095bfa0b2b2_pdc'}
+USER <-- UAPSDK: Show risk product screen (example: face verification/6 digits pin/SMS OTP)
+USER -> UAPSDK: Answer risk product
+UAPSDK -> MPAAS: verification request
+UAPSDK <-- MPAAS: return verification result
+APP <-- UAPSDK: callback
+APP -> MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.v2}</i>\nRequest: {LinkRequest}\nParameters: {bizSecurityId='biz123',securityId='sid87683b6b4fe80ecf17107095bfa0b2b2_pdc',eventLinkId='xyz987'}
+MPAAS -> TNG: link TNG card
+MPAAS <-- TNG: return result
+APP <-- MPAAS: RPC: <i>{com.abl.wallet.tngcard.link.v2}</i>\nResponse: {LinkResponse}\nParameters: {statusCode:'00/RJ'}
+alt #lightyellow resultStatus == 1002
+USER <-- APP: Show rate limit in popup screen
+else #white statusCode == '00'
+APP -> APP: Store cache transportation_card_ev2_add_coach_mark = false
+USER <-- APP: Show list screen
+else #pink statusCode == 'RJ'
+USER <-- APP: Show risk reject error screen
+else #ffebee otherwise
+USER <-- APP: Show error popup
+end
+end
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+' autonumber basenum ""显示的格式"  1 10 "<b>(<u>##</u>)
+
+
+' 添加标头
+header Page Header
+' 添加页脚
+footer Page %page% of %LatPage%
+'添加标题
+title Example Title
+
+'[000]填充位
+autonumber 1 "<b>[000]"
+Bob -> Alice: Authentication Request
+Bob <- Alice: Authentication Response
+autonumber stop
+Bob <- Alice: Authentication Response
+
+autonumber 15 "<b>(<u>##</u>)"
+Bob -> Alice: Authentication Request
+Bob <- Alice: Authentication Response
+
+' 10 指定步长
+autonumber 4 10 "<font color=red><b> Message 000"
+Alice -> Bob: Another authentication Request
+Alice <- Bob: another authentication Response
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor Foo1
+boundary Foo2
+control Foo3
+
+entity Foo4
+database Food5
+' 这个是什么意思
+collections Food6
+
+Foo1 -> Foo2
+Foo1 -->> Foo3
+Foo1 -> Foo4
+Foo1 -> Food5
+Foo1 -> Food6
+
+@enduml
