@@ -5,16 +5,16 @@ title: RFID  - termination
 
 actor USER as "User"
 participant APP as "App"
-participant UAPSDK as "UAP SDK"
+participant UAPSDK as "RISK SDK"
 participant MPAAS as "App Server"
 participant TNG as "TNG Server"
 
 == RFID Tag List Screen==
 autonumber 5.0.0
-USER -> APP: Click Terminate Now CTA
+USER -> APP: Click Terminate Now Button
 USER <-- APP: show termination screen
 
-== Close terminate screen ==
+== RFID Tag Terminate Screen ==
 APP -> MPAAS: RPC: <i>{com.abl.wallet.balance.reminder}</i>\nRequest: {WalletReminder}
 APP <-- MPAAS: RPC: <i>{com.abl.wallet.balance.reminder}</i>\nResponse: {WalletReminder}
 alt #lightyellow resultStatus == 1002
@@ -51,23 +51,24 @@ end
 
 USER ->  APP: Click Reason for Termination
 USER <-- APP: Show termination reasons Dialog
-USER -> APP : Click one of item in termination reasons
-alt #lightyellow reasons == other
-    USER <-- APP: fill reason for termination  \n show Remarks input textview
+USER -> APP: Click one of item in termination reasons
+USER <- APP: fill reason in edit Textview
+alt #lightyellow reason == other
+    USER <-- APP:  show Remarks input textview
 else #white otherwise
+    USER <-- APP: - hide Remarks input textview
 end
 
-USER -> APP: click Submit CTA
-APP  -> APP: check reason is empty
-alt #lightyellow  reason input textview is empty
-    USER <-- APP: show what????
-end
+USER -> APP: click Submit Button
+'APP  -> APP: Reason is compulsory
+'alt #lightyellow  reason input textview is empty
+'    USER <-- APP: show what????
+'end
 
-APP -> APP: check item reasons
-alt #lightyellow reasons == other
-    APP -> APP: check Remarks input text is empty
-else #white otherwise
-end
+'APP -> APP: check  selected reason
+'alt #lightyellow reasons == other
+'    APP -> APP: check Remarks input text is empty
+'end
 
 'newpage risk verify
 
@@ -83,20 +84,20 @@ alt #lightyellow  No
     else #dcedc8 Face Verification disabled
         APP -> MPAAS: RPC: <i>{ap.tngdwallet.biz.basics.risk.init.verify}</i>\nRequest: {RiskInitVerifyRequest}\nParameters {sceneType='RFID_TAG_TERMINATION'}
     end
-        APP <-- MPAAS: RPC: <i>{ap.tngdwallet.biz.basics.risk.init.verify}</i>\nResponse: {RiskInitVerifyResponse}\nParameters: {verifiedId:'？？？'}
+        APP <-- MPAAS: RPC: <i>{ap.tngdwallet.biz.basics.risk.init.verify}</i>\nResponse: {RiskInitVerifyResponse}\nParameters: {verifiedId:'abc123'}
     alt #lightyellow resultStatus == 1002
         USER <-- APP: Show rate limit in popup screen
+    else #pink success==false
+    USER <-- APP: Show error Popup
     else #white verifiedId isNotEmpty
-        APP -> UAPSDK: SecVIEngine.verify()\nParameters {verifyId:'？？？'}
+        APP -> UAPSDK: SecVIEngine.verify()\nParameters {verifyId:'abc123'}
         USER <-- UAPSDK: Show risk product screen (example: face verification/6 digits pin/SMS OTP)
         USER -> UAPSDK: Answer risk product
         UAPSDK -> MPAAS: verification request
         UAPSDK <-- MPAAS: return verification result
         APP <-- UAPSDK: callback
     end
-        APP -> MPAAS: RPC: <i>{com.abl.wallet.tngcard.consentUpdate}</i>\nRequest: {ConsentUpdateRequest}\nParameters {tollAutoDeductConsent=true,tngCardDataSharingConsent=true}
-        APP <-- MPAAS: RPC: <i>{com.abl.wallet.tngcard.consentUpdate}</i>\nResponse: {ConsentUpdateResponse}
-        APP -> MPAAS: RPC: <i>{com.abl.wallet.rfid.tag.terminate}</i>\nRequest: {Terminate}\nParameters: {bizSecurityId='？？？'}
+        APP -> MPAAS: RPC: <i>{com.abl.wallet.rfid.tag.terminate}</i>\nRequest: {Terminate}\nParameters: {bizSecurityId='abc123'}
         APP <-- MPAAS: RPC: <i>{com.abl.wallet.rfid.tag.terminate}</i>\nResponse: {Terminate}\nParameters: {statusCode='00',message: 'APPROVED / OK}
     alt #lightyellow resultStatus == 1002
         USER <-- APP: Show rate limit in popup screen

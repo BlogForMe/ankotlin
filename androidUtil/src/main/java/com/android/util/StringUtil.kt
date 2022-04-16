@@ -1,6 +1,7 @@
 package com.android.util
 
 import java.util.*
+import java.util.regex.Pattern
 
 //百捷
 const val RESULT_LOW = "low"
@@ -8,7 +9,17 @@ const val RESULT_NORMAL = "normal"
 const val RESULT_HIGH = "high"
 const val RESULT_VERY_HIGH = "very_high"
 
+class StringUtil {
+    companion object{
+        //正则校验
+        fun validation(pattern: String?, str: String?): Boolean {
+            return if (str.isNullOrEmpty()) {
+                false
+            } else Pattern.compile(pattern).matcher(str).matches()
+        }
+    }
 
+}
 fun getRandomString(length: Int): String {
     val str =
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

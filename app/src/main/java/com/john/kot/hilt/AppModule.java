@@ -12,7 +12,6 @@ package com.john.kot.hilt;
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
-import dagger.hilt.android.components.ApplicationComponent;
 
 ////Module装载到ApplicationComponent中
 //@InstallIn(ApplicationComponent.class) //通过这种方式和组件关联

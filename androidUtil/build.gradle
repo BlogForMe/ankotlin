@@ -36,6 +36,9 @@ android {
 }
 
 dependencies {
+    testImplementation "junit:junit:4.13"
+
+
     api 'androidx.appcompat:appcompat:1.1.0'
     api 'androidx.core:core:1.1.0'
     api 'androidx.legacy:legacy-support-v4:1.0.0'

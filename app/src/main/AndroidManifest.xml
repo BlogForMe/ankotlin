@@ -9,25 +9,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/HomeTheme">
+        <activity
+            android:name=".test.ui.EspressoActivity"
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".ColorIntActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.dialog.DialogStateBarActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.constraint.ConstraintLayerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.constraint.ConstraintAngerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.TriangleActivity"
             android:exported="true" />
@@ -70,17 +70,20 @@
         <activity android:name=".tool.rx.RxJavaActivity" />
         <activity android:name=".tool.wechat.Activity.LoginNewActivity" />
         <activity android:name=".tool.SharedPreferencesActivity" />
-        <activity android:name=".ui.scroll.ScrollViewActivity" />
+        <activity android:name=".ui.scroll.ScrollViewActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.dbdraw.DatabindingDrawableActivity" />
         <activity android:name=".mvvm.LiveDataActivity" />
         <activity android:name=".mvvm.livedata.LiveDataTestActivity" />
         <activity android:name=".mvvm.demo.UseDemoActivity" />
-
         <activity android:name=".customview.DrawPathActivity" />
-
         <activity android:name=".customview.StrapSleepActivity" />
-        <activity android:name=".tool.date.DateActivity">
-        </activity>
+        <activity android:name=".tool.date.DateActivity"></activity>
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".tool.LogActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
@@ -108,6 +111,7 @@
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
+
         <provider
             android:name=".CameraProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -125,11 +129,11 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

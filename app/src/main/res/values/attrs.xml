@@ -19,4 +19,12 @@
     </declare-styleable>
 
 
+    <declare-styleable name="TNGDInput">
+        <attr name="input_icon_right" format="reference" />
+        <attr name="input_hint" format="string" />
+
+        <attr name="android:inputType" />
+        <attr name="android:imeOptions" />
+    </declare-styleable>
+
 </resources>
