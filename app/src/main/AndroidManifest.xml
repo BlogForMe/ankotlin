@@ -101,8 +101,7 @@
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
         <activity android:name=".elec.ElecActivity" />
-        <activity
-            android:name=".arch.recyclerview.MainActivity"
+        <activity android:name=".arch.recyclerview.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
