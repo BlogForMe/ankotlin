@@ -1,20 +1,17 @@
 package com.android.util;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 
 public class BottomListSheetFrag extends BottomSheetFrag {
@@ -45,7 +42,7 @@ public class BottomListSheetFrag extends BottomSheetFrag {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         BottomAdapter bottomAdapter = new BottomAdapter(R.layout.adapter_bottom_sheet, list);
         recyclerView.setAdapter(bottomAdapter);
-        bottomAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        bottomAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 itemPosition.selectIndex(position, role);

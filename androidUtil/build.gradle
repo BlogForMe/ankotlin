@@ -36,7 +36,7 @@ dependencies {
     api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     api 'com.jakewharton.timber:timber:4.6.0'
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
     api files('libs/mina-core-2.0.19.jar')
     implementation 'org.slf4j:slf4j-api:1.7.32'
@@ -45,14 +45,12 @@ dependencies {
     api "androidx.room:room-ktx:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
 
-
     api "androidx.navigation:navigation-fragment-ktx:2.4.2"
     api "androidx.navigation:navigation-ui-ktx:2.4.2"
     // https://mvnrepository.com/artifact/org.jooq/joor-java-8
     api group: 'org.jooq', name: 'joor-java-8', version: '0.9.7'
     api group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
-
-    api "androidx.paging:paging-runtime:3.1.1"
+    api "androidx.paging:paging-runtime-ktx:3.1.1"
 }
 
 ext {

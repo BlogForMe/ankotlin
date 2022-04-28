@@ -36,7 +36,7 @@ import com.john.kot.util.viewBinding
  * Demonstrates the use of [RecyclerView] with a [LinearLayoutManager] and a
  * [GridLayoutManager].
  */
-open class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
+class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
     private var mRecyclerViewModel: RecycleViewModel? = null
 
     enum class LayoutManagerType {
