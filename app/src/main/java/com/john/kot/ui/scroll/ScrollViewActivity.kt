@@ -1,6 +1,7 @@
 package com.john.kot.ui.scroll
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
 import com.john.kot.databinding.ActivityScrollViewBinding
@@ -13,7 +14,6 @@ class ScrollViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_scroll_view)
         binding.scrollToBtn.setOnClickListener {
 //            binding.scrollToBtn.scrollTo(0, -100)
 //            binding.scrollView.scrollTo(0, 500)
@@ -23,8 +23,10 @@ class ScrollViewActivity : AppCompatActivity() {
         binding.scrollByBtn.setOnClickListener {
             binding.scrollByBtn.scrollBy(0, -100);
         }
+        binding.tvTextEllipsize.setLines(1)
+        binding.tvTextEllipsize.ellipsize = TextUtils.TruncateAt.END
+        binding.tvTextEllipsize.text="val binding by viewBinding(ActivityScrollViewBinding::inflate)"
     }
-
 
 
     private fun getImpl(stringExtra: String?): String {
@@ -33,7 +35,7 @@ class ScrollViewActivity : AppCompatActivity() {
             rfidTerminalI18n = if (stringExtra == "0") {
                 "1"
             } else if (stringExtra == "1") {
-               "2"
+                "2"
             } else {
                 throw RuntimeException("Terminal impl init failed")
             }

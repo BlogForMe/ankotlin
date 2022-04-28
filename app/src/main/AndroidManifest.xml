@@ -11,14 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/HomeTheme">
         <activity
-            android:name=".test.ui.EspressoActivity"
-            android:exported="true">
+            android:name=".ui.fragment.TabFragmentActivity"
+            android:exported="true"
+            android:label="@string/title_activity_tab_fragment"
+            android:theme="@style/HomeTheme.NoActionBar">
 
         </activity>
         <activity
+            android:name=".anim.LottieAnimActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test.ui.EspressoActivity"
+            android:exported="true" />
+        <activity
             android:name=".ColorIntActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ui.dialog.DialogStateBarActivity"
             android:exported="true" />
@@ -35,13 +42,7 @@
             android:name=".ui.FontActivity"
             android:exported="true" />
         <activity
-            android:name=".hilt.SecondActivity"
-            android:exported="true" />
-        <activity
             android:name=".test.robolec.MyActivity"
-            android:exported="true" />
-        <activity
-            android:name=".hilt.HiltActivity"
             android:exported="true" />
         <activity
             android:name=".viewGroup.ViewGroupActivity"
@@ -70,20 +71,14 @@
         <activity android:name=".tool.rx.RxJavaActivity" />
         <activity android:name=".tool.wechat.Activity.LoginNewActivity" />
         <activity android:name=".tool.SharedPreferencesActivity" />
-        <activity android:name=".ui.scroll.ScrollViewActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.scroll.ScrollViewActivity" />
         <activity android:name=".ui.dbdraw.DatabindingDrawableActivity" />
         <activity android:name=".mvvm.LiveDataActivity" />
         <activity android:name=".mvvm.livedata.LiveDataTestActivity" />
         <activity android:name=".mvvm.demo.UseDemoActivity" />
         <activity android:name=".customview.DrawPathActivity" />
         <activity android:name=".customview.StrapSleepActivity" />
-        <activity android:name=".tool.date.DateActivity"></activity>
+        <activity android:name=".tool.date.DateActivity" />
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".tool.LogActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
@@ -106,7 +101,15 @@
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
         <activity android:name=".elec.ElecActivity" />
-        <activity android:name=".arch.recyclerview.MainActivity" />
+        <activity
+            android:name=".arch.recyclerview.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
@@ -129,11 +132,12 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 </manifest>
