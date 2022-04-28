@@ -34,25 +34,15 @@ import com.john.kot.R;
  * on other devices it's visibility is controlled by an item on the Action Bar.
  */
 public class MainActivity extends AppCompatActivity {
-
-    public static final String TAG = "MainActivity";
-
-    // Whether the Log Fragment is currently shown
-    private boolean mLogShown;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             RecyclerViewFragment fragment = new RecyclerViewFragment();
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }
-
-
     }
 }

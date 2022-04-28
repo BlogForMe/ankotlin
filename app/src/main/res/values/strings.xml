@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ankotlin</string>
+    <string name="app_name">Antolin</string>
 
     <string name="element_text">Element</string>
     <string name="grid_layout_manager">Grid Layout Manager</string>
