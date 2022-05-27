@@ -26,7 +26,7 @@ class LottieAnimActivity : AppCompatActivity(), ItemPickDialog.ISelectListener {
         super.onCreate(savedInstanceState)
         val animationView = binding.homeServiceImg
 
-        lifecycle.addObserver(AnimServiceListener())
+//        lifecycle.addObserver(AnimServiceListener())
 
         binding.btDialogShow.setOnClickListener {
             ItemPickDialog.newInstance("请选择测量项",dArr).show(supportFragmentManager,"")

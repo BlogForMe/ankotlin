@@ -13,7 +13,7 @@ class SharedPreferencesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shareprefence)
         bt_save.setOnClickListener {
-//            DelegateSharedPreferencesUtils.User.name = "john"
+            DelegateSharedPreferencesUtils.User.name = "john"
 
             SpBase.contentSomething = "显示"
         }

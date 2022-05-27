@@ -58,7 +58,6 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
         mRecyclerViewModel = ViewModelProvider(this).get(
             RecycleViewModel::class.java
         )
-        lifecycle.addObserver(AnimServiceListener())
     }
 
     override fun onCreateView(
@@ -87,6 +86,8 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType)
         mAdapter = CustomAdapter()
+//        lifecycle.addObserver(AnimServiceListener(mAdapter))
+
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView!!.adapter = mAdapter
         // END_INCLUDE(initializeRecyclerView)

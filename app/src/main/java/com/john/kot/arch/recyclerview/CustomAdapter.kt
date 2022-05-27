@@ -15,6 +15,7 @@
  */
 package com.john.kot.arch.recyclerview
 
+import android.animation.Animator
 import android.animation.ValueAnimator
 import android.util.Log
 import android.view.LayoutInflater
@@ -26,59 +27,36 @@ import com.airbnb.lottie.LottieAnimationView
 import com.john.kot.R
 import com.john.kot.anim.animationUrl1
 import com.john.kot.anim.animationUrl2
+import com.john.kot.anim.model.AnimServiceListener
 
 /**
  * Provide views to RecyclerView with data from mDataSet.
  */
 class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
-    private var mDataSet: Array<String?>? = null
-    // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
-    /**
-     * Provide a reference to the type of views that you are using (custom ViewHolder)
-     */
-    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val textView: TextView
-        val lottieAnimView: LottieAnimationView
+    private val TAG_CLASS = "CustomAdapter"
+    private val TAG_LIFE = "LIFECYCLE"
 
-        init {
-            // Define click listener for the ViewHolder's View.
-            v.setOnClickListener { Log.d(TAG, "Element $adapterPosition clicked.") }
-            textView = v.findViewById<View>(R.id.textView) as TextView
-            lottieAnimView = v.findViewById<View>(R.id.home_service_img) as LottieAnimationView
-        }
+    private var mDataSet: Array<String?>? = null
+
+    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+        val textView: TextView = v.findViewById(R.id.textView)
+        val lottieAnimView: LottieAnimationView = v.findViewById(R.id.home_service_img)
     }
-    // END_INCLUDE(recyclerViewSampleViewHolder)
-    /**
-     * Initialize the dataset of the Adapter.
-     *
-     * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
-     */
-    //    public CustomAdapter(String[] dataSet) {
-    //        mDataSet = dataSet;
-    //    }
+
     fun setList(dataSet: Array<String?>?) {
         mDataSet = dataSet
     }
 
-    // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
-    // Create new views (invoked by the layout manager)
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        // Create a new view.
         val v = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.text_row_item, viewGroup, false)
-        Log.i(TAG, "onViewAttachedToWindow: ${viewGroup}")
-        return ViewHolder(v)
+        val viewHolder = ViewHolder(v)
+        Log.i(TAG_CLASS, "onCreateViewHolder: $viewHolder")
+        return viewHolder
     }
 
-    // END_INCLUDE(recyclerViewOnCreateViewHolder)
-    // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
-    // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        Log.d(TAG, "Element $position set.")
-
-        Log.i(TAG, "onViewDetachedFromWindow: ${viewHolder.adapterPosition}  Element $position set.")
-        // Get element from your dataset at this position and replace the contents of the view
-        // with that element
+        Log.i(TAG_CLASS, "onBindViewHolder: $viewHolder")
         viewHolder.textView.text = mDataSet!![position]
         val animationView = viewHolder.lottieAnimView
         when (position) {
@@ -86,10 +64,27 @@ class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
             2 -> playAnim(animationView, animationUrl2)
             else -> animationView.setImageResource(R.mipmap.ic_launcher)
         }
+        if (position == 1 || position == 2) {
+            animationView.addAnimatorListener(object : Animator.AnimatorListener {
+                override fun onAnimationStart(p0: Animator?) {
+                    Log.i(TAG_LIFE, " onAnimationStart: $animationView ")
+                }
+
+                override fun onAnimationEnd(p0: Animator?) {
+                    Log.i(TAG_LIFE, "onAnimationEnd: $animationView")
+                }
+
+                override fun onAnimationCancel(p0: Animator?) {
+                    Log.i(TAG_LIFE, "onAnimationCancel: $animationView")
+                }
+
+                override fun onAnimationRepeat(p0: Animator?) {
+                    Log.i(TAG_LIFE, "onAnimationRepeat: $animationView")
+                }
+            })
+        }
     }
 
-    // END_INCLUDE(recyclerViewOnBindViewHolder)
-    // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount(): Int {
         return if (mDataSet == null) {
             0
@@ -99,19 +94,25 @@ class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     override fun onViewDetachedFromWindow(holder: ViewHolder) {
         super.onViewDetachedFromWindow(holder)
-        Log.i(TAG, "onViewDetachedFromWindow: ${holder.adapterPosition}")
+        Log.i(TAG_CLASS, "onViewDetachedFromWindow: $holder")
+        val animationView = holder.lottieAnimView
+        when (holder.absoluteAdapterPosition) {
+            1,2 -> animationView.pauseAnimation()
+        }
     }
 
-    override fun onViewAttachedToWindow(holder: ViewHolder) {
-        super.onViewAttachedToWindow(holder)
-        Log.i(TAG, "onViewAttachedToWindow: ${holder.adapterPosition}")
-    }
+//    override fun onViewAttachedToWindow(holder: ViewHolder) {
+//        super.onViewAttachedToWindow(holder)
+//        Log.i(TAG, "onViewAttachedToWindow: $holder")
+//        val animationView = holder.lottieAnimView
+//        when (holder.absoluteAdapterPosition) {
+//            2 -> animationView.resumeAnimation()
+//        }
+//    }
 
-    companion object {
-        private const val TAG = "CustomAdapter"
-    }
 
     private fun playAnim(animationView: LottieAnimationView, animationUrl: String) {
+        Log.i(TAG_CLASS, "playAnim: ")
         animationView.setFailureListener {
             animationView.setImageResource(R.drawable.ic_go_pinjam)
         }

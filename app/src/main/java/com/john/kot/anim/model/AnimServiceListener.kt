@@ -3,6 +3,7 @@ package com.john.kot.anim.model
 import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import com.john.kot.arch.recyclerview.CustomAdapter
 
 /**
  *
@@ -15,7 +16,7 @@ import androidx.lifecycle.LifecycleOwner
  * UpdateRemark:   Modify the description
  */
 
-class AnimServiceListener : DefaultLifecycleObserver {
+class AnimServiceListener(val adapter: CustomAdapter) : DefaultLifecycleObserver {
     private val TAG = "AnimServiceListener"
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
@@ -35,6 +36,7 @@ class AnimServiceListener : DefaultLifecycleObserver {
     override fun onPause(owner: LifecycleOwner) {
         super.onPause(owner)
         Log.i(TAG, "onPause: ")
+//        adapter.findRelativeAdapterPositionIn(1,)
     }
 
     override fun onStop(owner: LifecycleOwner) {

@@ -4,25 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.android.util.GPSUtils
 import com.blankj.utilcode.constant.PermissionConstants
 import com.blankj.utilcode.util.PermissionUtils
 import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_location.*
+import com.john.kot.databinding.ActivityLocationBinding
+import com.john.kot.databinding.ActivityLottieAnimBinding
+import com.john.kot.util.viewBinding
 
 class GpsActivity : AppCompatActivity() {
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_location)
-//
-//        bt_location.setOnClickListener {
-//
-//
-//        }
-//    }
+    val binding by viewBinding(ActivityLocationBinding::inflate)
 
 
     private val REQUEST_LOCATION_PERMISSION_CODE = 100
@@ -30,10 +24,18 @@ class GpsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location)
-        //        getLocationBtn.setOnClickListener { showLocation() }
 
-        bt_location.setOnClickListener {
+        binding.btLocation.setOnClickListener {
             showLocation()
+        }
+        binding.btNetwork.setOnClickListener {
+            val locationByNetwork = GPSUtils.getInstance(this).locationByNetwork
+            if (locationByNetwork != null) {
+                Log.i(
+                    "GpsActivity",
+                    "onCreate:   地理位置：lon:${locationByNetwork.longitude};lat:${locationByNetwork.latitude}"
+                )
+            }
         }
     }
 

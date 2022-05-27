@@ -1,6 +1,7 @@
 package com.android.util;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -82,6 +83,35 @@ public class GPSUtils {
         }
         return location;
     }
+    public Location getLocationNew() {
+        Location location = null;
+        try {
+            if (mContext == null) {
+                return null;
+            }
+            LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+            if (locationManager == null) {
+                return null;
+            }
+            Criteria criteria = new Criteria();
+            criteria.setAccuracy(Criteria.ACCURACY_FINE);           // 设置定位精准度
+            criteria.setAltitudeRequired(false);                    // 是否要求海拔
+            criteria.setBearingRequired(true);                      // 是否要求方向
+            criteria.setCostAllowed(true);                          // 是否要求收费
+            criteria.setSpeedRequired(true);                        // 是否要求速度
+            criteria.setPowerRequirement(Criteria.POWER_LOW);       // 设置相对省电
+            criteria.setBearingAccuracy(Criteria.ACCURACY_HIGH);    // 设置方向精确度
+            criteria.setSpeedAccuracy(Criteria.ACCURACY_HIGH);      // 设置速度精确度
+            criteria.setHorizontalAccuracy(Criteria.ACCURACY_HIGH); // 设置水平方向精确度
+            criteria.setVerticalAccuracy(Criteria.ACCURACY_HIGH);   // 设置垂直方向精确度
+
+            String bestProvider = locationManager.getBestProvider(criteria, true);
+            location = locationManager.getLastKnownLocation(bestProvider);
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return location;
+    }
 
     /**
      * 判断是否开启了GPS或网络定位开关
@@ -106,7 +136,7 @@ public class GPSUtils {
      * @return
      */
     @SuppressLint("MissingPermission")
-    private Location getLocationByNetwork() {
+    public Location getLocationByNetwork() {
         Location location = null;
         LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
         try {
