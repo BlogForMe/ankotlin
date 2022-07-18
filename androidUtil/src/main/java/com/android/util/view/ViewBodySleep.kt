@@ -61,7 +61,7 @@ class ViewBodySleep : View {
         var paleCount = 0
         var darkCount = 0
         var notCheckCount = 0
-        for ((index, value) in sleepData?.withIndex()) {
+        for ((index, value) in sleepData?.withIndex()!!) {
             println("$index: $value")
             //0代表清醒，1代表浅睡，2代表深睡，3代表未检测
             val startX = paddingLeft.toFloat() + unitWidth * index

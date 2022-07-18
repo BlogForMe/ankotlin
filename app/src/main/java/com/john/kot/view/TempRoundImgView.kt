@@ -97,13 +97,13 @@ class TermRoundImgView @JvmOverloads constructor(
         val waterHeight  = 15
         val topF =(ruleTop+imgHeight/2)-waterHeight/2;
         val bottomF = waterHeight/2+(ruleTop+imgHeight/2);
-        val middleRect =  RectF(45f,topF,rulerBitmap?.width.toFloat()-10,bottomF)
+        val middleRect =  RectF(45f,topF,rulerBitmap.width.toFloat()-10,bottomF)
         canvas?.drawRoundRect(middleRect,10f,10f,linePaint)
 
         val yellowRect =  RectF(45f,topF,scrollX,bottomF)
         canvas?.drawRect(yellowRect,yellowColorPaint)
 
-        Timber.i("rulerBitmap?.width    ${rulerBitmap?.width}")
+        Timber.i("rulerBitmap?.width    ${rulerBitmap.width}")
 //        var tempScale = (rulerBitmap?.width.toFloat() - 30f - 42f) / (2 * 9) //刻度线长度
         var tempScale = 870f / (2 * 8) //刻度线长度
 

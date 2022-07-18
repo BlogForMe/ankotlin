@@ -1,26 +1,35 @@
 package com.john.kot.tool
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
-import com.john.kot.util.DelegateSharedPreferencesUtils
-import com.john.kot.util.SpBase
-import kotlinx.android.synthetic.main.activity_shareprefence.*
-import timber.log.Timber
+import com.john.kot.databinding.ActivityShareprefenceBinding
+import com.john.kot.util.viewBinding
 
 class SharedPreferencesActivity : AppCompatActivity() {
+    private val TAG = "SharedPreferencesActivity"
+    val binding by viewBinding(ActivityShareprefenceBinding::inflate)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shareprefence)
-        bt_save.setOnClickListener {
-            DelegateSharedPreferencesUtils.User.name = "john"
-
-            SpBase.contentSomething = "显示"
+        val spSource = getSharedPreferences("SpSourceCode", Context.MODE_PRIVATE);
+        val edit = spSource.edit()
+        binding.btSave.setOnClickListener {
+//            DelegateSharedPreferencesUtils.User.name = "john"
+//            SpBase.contentSomething = "显示"
+            edit.putInt("KEY_SP1", 111).commit()
+            edit.putInt("KEY_SP2", 222).commit()
         }
 
-        bt_get.setOnClickListener {
+        binding.btGet.setOnClickListener {
 //            Timber.i("bt_get    "+DelegateSharedPreferencesUtils.User.name)
-            Timber.i("bt_get    "+SpBase.contentSomething)
+//            Timber.i("bt_get    "+SpBase.contentSomething)
+            val int = spSource.getInt("KEY_SP1", 0)
+            Log.i(TAG, "onCreate: ")
         }
+
+
     }
 }

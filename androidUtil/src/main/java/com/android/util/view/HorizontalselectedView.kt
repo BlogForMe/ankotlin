@@ -112,7 +112,9 @@ class HorizontalselectedView(mContext: Context?, attrs: AttributeSet?) :
 
         val bitmapWeak = WeakReference<Bitmap>(BitmapFactory.decodeResource(context.resources, R.mipmap.scrolle_ruler))
 
-        val resizeBitmapWeak = WeakReference<Bitmap>(bitmapWeak.get()?.let { Bitmap.createScaledBitmap(it, mWidth?.toInt(), mHeight?.toInt(), true) })
+        val resizeBitmapWeak = WeakReference<Bitmap>(bitmapWeak.get()?.let { mWidth?.toInt()
+            ?.let { it1 -> mHeight?.toInt()
+                ?.let { it2 -> Bitmap.createScaledBitmap(it, it1, it2, true) } } })
 
         val src = Rect(0, 0, mWidth.toInt(), mHeight.toInt())
         resizeBitmapWeak.get()?.let { canvas.drawBitmap(it, src, src, Paint()) }

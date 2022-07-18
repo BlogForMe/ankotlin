@@ -40,7 +40,7 @@ class MyTextView : View {
             typeface = Typeface.DEFAULT_BOLD
         }
         mBound = Rect()
-        mPaint.getTextBounds(mText, 0, mText?.length, mBound)
+        mText.length.let { mPaint.getTextBounds(mText, 0, it, mBound) }
     }
 
 

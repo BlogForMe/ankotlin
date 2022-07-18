@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 31
+
     dataBinding {
         enabled = true
     }
@@ -37,7 +38,7 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     api 'com.jakewharton.timber:timber:4.6.0'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0"
     api files('libs/mina-core-2.0.19.jar')
     implementation 'org.slf4j:slf4j-api:1.7.32'
 

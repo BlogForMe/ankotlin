@@ -11,58 +11,38 @@
         android:supportsRtl="true"
         android:theme="@style/HomeTheme">
         <activity
-            android:name=".ui.fragment.TabFragmentActivity"
-            android:exported="true"
-            android:label="@string/title_activity_tab_fragment"
-            android:theme="@style/HomeTheme.NoActionBar">
+            android:name=".tool.lbs.LBSFirebaseActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
-            android:name=".anim.LottieAnimActivity"
-            android:exported="true" />
+            android:name=".coroutine.CoroutinesActivity"
+            android:exported="true">
+        </activity>
         <activity
-            android:name=".test.ui.EspressoActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ColorIntActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.dialog.DialogStateBarActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.constraint.ConstraintLayerActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.constraint.ConstraintAngerActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.TriangleActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.FontActivity"
-            android:exported="true" />
-        <activity
-            android:name=".test.robolec.MyActivity"
-            android:exported="true" />
-        <activity
-            android:name=".viewGroup.ViewGroupActivity"
-            android:exported="true" />
-        <activity
-            android:name=".tool.glide.lifecycle.GlideActivity"
-            android:exported="true" />
-        <activity
-            android:name=".mvvm.lifecycle.LifeCycleActivity"
-            android:exported="true" />
+            android:name=".ui.fragment.TabFragmentActivity"
+            android:label="@string/title_activity_tab_fragment"
+            android:theme="@style/HomeTheme.NoActionBar" />
+        <activity android:name=".anim.LottieAnimActivity" />
+        <activity android:name=".test.ui.EspressoActivity" />
+        <activity android:name=".ColorIntActivity" />
+        <activity android:name=".ui.dialog.DialogStateBarActivity" />
+        <activity android:name=".ui.constraint.ConstraintLayerActivity" />
+        <activity android:name=".ui.constraint.ConstraintAngerActivity" />
+        <activity android:name=".ui.TriangleActivity" />
+        <activity android:name=".ui.FontActivity" />
+        <activity android:name=".test.robolec.MyActivity" />
+        <activity android:name=".viewGroup.ViewGroupActivity" />
+        <activity android:name=".tool.glide.lifecycle.GlideActivity" />
+        <activity android:name=".mvvm.lifecycle.LifeCycleActivity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
-        <activity
-            android:name=".mvvm.livedata.xiangxue.LiveData1Activity"
-            android:exported="true" />
-        <activity
-            android:name=".mvvm.dongnao.viewmodel.ViewModel1Activity"
-            android:exported="true" />
-        <activity
-            android:name=".mvvm.dongnao.lifecycle.Step2Activity"
-            android:exported="true" />
+        <activity android:name=".mvvm.livedata.xiangxue.LiveData1Activity" />
+        <activity android:name=".mvvm.dongnao.viewmodel.ViewModel1Activity" />
+        <activity android:name=".mvvm.dongnao.lifecycle.Step2Activity" />
         <activity android:name=".tool.rx.WriteRxjavaActivity" />
         <activity android:name=".net.OkhtttpActivity" />
         <activity android:name=".permission.PemissionxUseActivity" />
@@ -86,15 +66,10 @@
         <activity android:name=".time.TextClockActivity" />
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />
-
-        <activity android:name=".tool.location.GpsActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".tool.location.GpsActivity"
+            android:exported="true"
+            android:launchMode="singleTop"></activity>
         <activity android:name=".tool.image.ImageHandleActivity" />
         <activity android:name=".tool.image.ScreenPhotoActivity" />
         <activity android:name=".tool.image.PhotoBasicsActivity" />
@@ -109,11 +84,7 @@
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
         <activity android:name=".elec.ElecActivity" />
-        <activity
-            android:name=".arch.recyclerview.MainActivity"
-            android:exported="true">
-
-        </activity>
+        <activity android:name=".arch.recyclerview.MainActivity" />
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
@@ -136,7 +107,6 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -146,6 +116,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

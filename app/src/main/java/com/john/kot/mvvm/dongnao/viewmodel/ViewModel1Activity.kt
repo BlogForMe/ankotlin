@@ -1,34 +1,27 @@
-package com.john.kot.mvvm.dongnao.viewmodel;
+package com.john.kot.mvvm.dongnao.viewmodel
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.john.kot.R
+import java.lang.String
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
-import com.john.kot.R;
-
-public class ViewModel1Activity extends AppCompatActivity {
-
-    private TextView textView;
-    private MyViewModel viewModel;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_model1);
-
-        viewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(MyViewModel.class);
-
-
-        textView = (TextView) findViewById(R.id.textview);
-        textView.setText(String.valueOf(viewModel.number));
-
+class ViewModel1Activity : AppCompatActivity() {
+    private var textView: TextView? = null
+    private var viewModel: MyViewModel? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_view_model1)
+        viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        textView = findViewById<View>(R.id.textview) as TextView
+        textView!!.text = String.valueOf(viewModel!!.number)
     }
 
-    public void plusNumber(View view) {
-        textView.setText(String.valueOf(++viewModel.number));
+    fun plusNumber(view: View?) {
+        textView?.text = viewModel!!.number.toString()
+
+        viewModel?.getName()
     }
 }

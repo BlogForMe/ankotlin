@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.android.util">
 
 
@@ -49,28 +48,5 @@
     <!-- 兼容 flyme3.0 配置权限 -->
     <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
 
-    <!-- MeiZu 配置结束 < -->
 
-
-  <!--  <application>
-        <provider
-            android:name="BuglyFileProvider"
-            android:authorities="${applicationId}.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true"
-            tools:replace="name,authorities,exported,grantUriPermissions">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"
-                tools:replace="name,resource" />
-        </provider>
-
-        <activity
-            android:name="com.tencent.bugly.beta.ui.BetaActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale"
-            android:theme="@android:style/Theme.Translucent" />
-
-
-    </application>
--->
 </manifest>

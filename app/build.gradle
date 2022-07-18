@@ -19,7 +19,7 @@ android {
     defaultConfig {
         applicationId "com.john.kot"
         minSdkVersion 24
-        targetSdkVersion 31
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -41,6 +41,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.3.0'
 
 
     // Local Unit Tests
@@ -68,7 +69,6 @@ dependencies {
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.blankj:utilcode:1.22.10'
     api project(path: ':androidUtil')
 //    api("com.android:util:1.1.1")

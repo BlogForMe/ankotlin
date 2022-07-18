@@ -1,24 +1,22 @@
-package com.john.kot.mvvm.dongnao.viewmodel;
+package com.john.kot.mvvm.dongnao.viewmodel
 
-import android.app.Application;
+import android.util.Log
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
 
-import androidx.lifecycle.AndroidViewModel;
+class MyViewModel(val savedState: SavedStateHandle) : ViewModel() {
+    val TAG = "MyViewModel"
 
-import com.android.util.base.ViewModel;
-
-//public class MyViewModel  extends ViewModel {
-//    public MyViewModel(Application application){
-//        super();
-//    }
-//
-//    public int number;
-//
-//}
-
-public class MyViewModel extends AndroidViewModel {
-    public MyViewModel(Application application) {
-        super(application);
+    companion object {
+        val NAME_KEY = "name"
     }
 
-    public int number;
+    var number = 0
+
+    fun getName() {
+        val get = savedState.get<String>(NAME_KEY)
+        Log.i(TAG, "getName: $get")
+    }
+
+
 }
