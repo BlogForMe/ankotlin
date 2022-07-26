@@ -9,13 +9,13 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0'
+        classpath 'com.android.tools.build:gradle:7.0.4'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 //        classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
 //        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.39.1'
 
 
     }
@@ -25,8 +25,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-
-
         jcenter()
         maven { url "https://jitpack.io" }
 //        maven { url "http://localhost:8081/repository/jhmaven/"}
@@ -40,10 +38,7 @@ task clean(type: Delete) {
 
 ext {
     roomVersion = "2.2.5"
-
     archLifecycleVersion = '2.2.0'
-
-
     buildToolsVersion = "28.0.3"
     androidxCoreVersion = "1.0.0q"
     androidxCompatVersion = "1.0.0"
