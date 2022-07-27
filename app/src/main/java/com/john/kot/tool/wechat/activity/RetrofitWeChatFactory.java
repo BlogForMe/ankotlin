@@ -1,4 +1,4 @@
-package com.john.kot.tool.wechat.Activity;
+package com.john.kot.tool.wechat.activity;
 
 
 import java.util.concurrent.TimeUnit;

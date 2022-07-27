@@ -3,7 +3,6 @@ package com.john.kot.coroutine
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.bean.BaseMeta
-import com.blankj.utilcode.util.LogUtils
 import com.john.kot.databinding.ActivityCoroutinesBinding
 
 class CoroutinesActivity : AppCompatActivity() {
@@ -16,7 +15,6 @@ class CoroutinesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.btCoroutines01.setOnClickListener {
-            LogUtils.d(baseMeta)
         }
     }
 }

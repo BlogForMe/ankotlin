@@ -10,6 +10,7 @@ import com.john.kot.mvvm.dongnao.viewmodel.MyViewModel.Companion.NAME_KEY
 import com.john.kot.mvvm.dongnao.viewmodel.ViewModel1Activity
 import com.john.kot.util.lbs.LBSLocationManagerProxy
 import com.john.kot.util.lbs.LBSLocationRequest
+import kotlinx.coroutines.flow.Flow
 import java.lang.Exception
 
 class LBSFirebaseActivity : AppCompatActivity() {
@@ -39,6 +40,7 @@ class LBSFirebaseActivity : AppCompatActivity() {
             }
 
         }
+
 
     }
 

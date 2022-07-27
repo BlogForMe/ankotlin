@@ -1,18 +1,15 @@
 package com.john.kot.tool.location
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.android.util.GPSUtils
-import com.blankj.utilcode.constant.PermissionConstants
-import com.blankj.utilcode.util.PermissionUtils
 import com.john.kot.R
 import com.john.kot.databinding.ActivityLocationBinding
-import com.john.kot.databinding.ActivityLottieAnimBinding
 import com.john.kot.util.viewBinding
 
 class GpsActivity : AppCompatActivity() {
@@ -40,24 +37,24 @@ class GpsActivity : AppCompatActivity() {
     }
 
     private fun showLocation() {
-        PermissionUtils.permission(PermissionConstants.LOCATION)
-            .callback(object : PermissionUtils.FullCallback {
-                override fun onGranted(permissionsGranted: List<String>) {
-                    if (GPSUtils.getInstance(this@GpsActivity).isLocationProviderEnabled) {
-                        showLocationWithToast()
-                    } else {
-                        requestLocation()
-                    }
-                }
-
-                override fun onDenied(
-                    permissionsDeniedForever: List<String>,
-                    permissionsDenied: List<String>
-                ) {
-                    Toast.makeText(this@GpsActivity, "未获得地理位置权限", Toast.LENGTH_LONG).show()
-                }
-            })
-            .request()
+//        PermissionUtils.permission(PermissionConstants.LOCATION)
+//            .callback(object : PermissionUtils.FullCallback {
+//                override fun onGranted(permissionsGranted: List<String>) {
+//                    if (GPSUtils.getInstance(this@GpsActivity).isLocationProviderEnabled) {
+//                        showLocationWithToast()
+//                    } else {
+//                        requestLocation()
+//                    }
+//                }
+//
+//                override fun onDenied(
+//                    permissionsDeniedForever: List<String>,
+//                    permissionsDenied: List<String>
+//                ) {
+//                    Toast.makeText(this@GpsActivity, "未获得地理位置权限", Toast.LENGTH_LONG).show()
+//                }
+//            })
+//            .request()
     }
 
     private fun showLocationWithToast() {

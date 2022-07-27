@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.john.kot.R;
-import com.permissionx.guolindev.PermissionX;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -63,15 +62,15 @@ public class AudioRecordActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_record);
-        PermissionX.init(this).permissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.RECORD_AUDIO)
-                .request((allGranted, grantedList, deniedList) -> {
-                            if (allGranted) {
-                                Toast.makeText(this, "All permissions are granted", Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(this, "These permissions are denied: $deniedList", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                );
+        //PermissionX.init(this).permissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.RECORD_AUDIO)
+        //        .request((allGranted, grantedList, deniedList) -> {
+        //                    if (allGranted) {
+        //                        Toast.makeText(this, "All permissions are granted", Toast.LENGTH_LONG).show();
+        //                    } else {
+        //                        Toast.makeText(this, "These permissions are denied: $deniedList", Toast.LENGTH_LONG).show();
+        //                    }
+        //                }
+        //        );
 
 
         startButton = (Button) findViewById(R.id.btnStart);

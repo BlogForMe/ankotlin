@@ -2,13 +2,11 @@ package com.john.kot.tool.rx
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.john.kot.IApiStore
 import com.john.kot.R
-import com.john.kot.tool.wechat.Activity.RetrofitWeChatFactory
+import com.john.kot.tool.wechat.activity.RetrofitWeChatFactory
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
