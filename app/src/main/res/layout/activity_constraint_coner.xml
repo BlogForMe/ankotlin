@@ -22,7 +22,7 @@
                 android:id="@+id/home_service_img"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@mipmap/place_holder1"
+                android:src="@drawable/place_holder1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

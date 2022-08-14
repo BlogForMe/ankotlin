@@ -6,22 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.image.RoundImageActivity">
 
-    <ImageView
+    <com.john.kot.view.RoundImageShaderView
         android:id="@+id/iv_girl1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/meitu122822234759011"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.john.kot.view.BitmapShaderView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_girl1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

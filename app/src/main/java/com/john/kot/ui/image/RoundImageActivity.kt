@@ -6,10 +6,13 @@ import com.john.kot.R
 import com.john.kot.databinding.ActivityRoundImageBinding
 
 class RoundImageActivity : AppCompatActivity() {
-    val biding by lazy { ActivityRoundImageBinding.inflate(layoutInflater) }
+//    val biding by lazy { ActivityRoundImageBinding.inflate(layoutInflater) }
+//    val biding by lazy { ActivityRoundImageBinding.inflate(layoutInflater) }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(biding.root)
+//        setContentView(biding.root)
+        setContentView(R.layout.activity_round_image1)
     }
 }

@@ -53,7 +53,7 @@
                 android:id="@+id/iv_girl1"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@mipmap/place_holder1"
+                android:src="@drawable/place_holder1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
@@ -62,7 +62,7 @@
             android:id="@+id/iv_girl2"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@mipmap/place_holder2" />
+            android:src="@drawable/place_holder2" />
 
     <Button
             android:id="@+id/bt_one"

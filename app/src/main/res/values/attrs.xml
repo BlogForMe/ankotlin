@@ -14,8 +14,8 @@
 
 
     <declare-styleable name="CirArcView">
-        <attr name="circleNRadius" format="float"/>
-        <attr name="arcWidth" format="float"/>
+        <attr name="circleNRadius" format="float" />
+        <attr name="arcWidth" format="float" />
     </declare-styleable>
 
 
@@ -26,5 +26,15 @@
         <attr name="android:inputType" />
         <attr name="android:imeOptions" />
     </declare-styleable>
+
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" format="dimension" />
+        <attr name="type">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+    </declare-styleable>
+
 
 </resources>
