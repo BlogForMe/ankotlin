@@ -11,8 +11,10 @@ import android.os.Build
 
 /**
  * https://juejin.im/post/5b305f73f265da59b653b08d
+ *
+ * 这个只能 4周同时设置圆角， 或者圆形的
  */
-class CircleImageView(context: Context?, attrs: AttributeSet?) : AppCompatImageView(context!!, attrs) {
+class CircleImageView(context: Context, attrs: AttributeSet?) : AppCompatImageView(context, attrs) {
     private var srcPath: Path? = null
     private var srcRectF: RectF? = null
     private var fermode: PorterDuffXfermode
