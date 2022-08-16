@@ -20,7 +20,7 @@ import androidx.lifecycle.ViewModel;
 import dagger.hilt.android.qualifiers.ApplicationContext;
 
 // 已经绑定的类
-public class MainViewModel extends ViewModel {
+public class HiltViewModel extends ViewModel {
     String TAG = "MainViewModel";
 
     User3 user;
@@ -30,7 +30,7 @@ public class MainViewModel extends ViewModel {
     Context context;
 
     @ViewModelInject
-    public MainViewModel(User3 user, Application application, Activity activity,@ApplicationContext  Context context) {
+    public HiltViewModel(User3 user, Application application, Activity activity,@ApplicationContext  Context context) {
         this.user = user;
         this.application = application;
         this.activity = activity;

@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.john.kot">
+    package="com.john.kot" >
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyApp"
@@ -9,10 +24,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/HomeTheme">
+        android:theme="@style/HomeTheme" >
         <activity
-            android:name=".ui.image.RoundImageActivity"
-            android:exported="true">
+            android:name=".mvvm.livedata.LivedataStickActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,11 +35,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".p16MainScopeActivity"
-            android:exported="false" />
+            android:name=".ui.image.RoundImageActivity"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".tool.lbs.LBSFirebaseActivity"
-            android:exported="true">
+            android:exported="true" >
         </activity>
         <activity
             android:name=".coroutine.CoroutinesActivity"
@@ -55,18 +72,14 @@
         <activity android:name=".tool.audio.AudioRecordActivity" />
         <activity android:name=".mvvm.fragment.MvvMFragmentActivity" />
         <activity android:name=".tool.rx.RxJavaActivity" />
-        <activity android:name=".tool.wechat.activity.LoginNewActivity" />
         <activity android:name=".tool.SharedPreferencesActivity" />
         <activity android:name=".ui.scroll.ScrollViewActivity" />
-        <activity android:name=".ui.dbdraw.DatabindingDrawableActivity" />
-        <activity android:name=".mvvm.LiveDataActivity" />
+        <activity android:name=".mvvm.livedata.LiveDataActivity" />
         <activity android:name=".mvvm.livedata.LiveDataTestActivity" />
         <activity android:name=".mvvm.demo.UseDemoActivity" />
         <activity android:name=".customview.DrawPathActivity" />
         <activity android:name=".customview.StrapSleepActivity" />
-        <activity android:name=".tool.date.DateActivity" />
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
-        <activity android:name=".tool.LogActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
         <activity android:name=".mvvm.viewmodel.ViewModelActivity" />
         <activity android:name=".time.TextClockActivity" />
@@ -100,7 +113,7 @@
             android:name=".CameraProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true" >
 
             <!-- grantUriPermissions: 设置允许获取访问uri的临时权限 exported:设置允许获取访问uri的临时权限 -->
             <meta-data
@@ -109,20 +122,5 @@
             <!-- 用于设置FileProvider的文件访问路径 -->
         </provider>
     </application>
-
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

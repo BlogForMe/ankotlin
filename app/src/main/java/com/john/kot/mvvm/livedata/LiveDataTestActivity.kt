@@ -5,6 +5,7 @@ import android.os.Handler
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.john.kot.R
 
@@ -16,7 +17,7 @@ class LiveDataTestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live_data)
-        mViewModel = ViewModelProviders.of(this).get(CustomViewModel::class.java)
+        mViewModel = ViewModelProvider(this).get(CustomViewModel::class.java)
         val liveData = mViewModel!!.liveData
         liveData.observe(this, object : Observer<Int> {
             override fun onChanged(integer: Int) {
@@ -30,11 +31,8 @@ class LiveDataTestActivity : AppCompatActivity() {
         super.onResume()
         Handler().postDelayed(Runnable {
             val liveData = mViewModel!!.liveData
-            liveData.observe(this, object : Observer<Int>{
-                override fun onChanged(integer: Int) {
-                    Log.e(TAG, "参数返回： $integer")
-                }
-            })
+            liveData.observe(this
+            ) { integer -> Log.e(TAG, "参数返回： $integer") }
         }, 5000)
     }
 
