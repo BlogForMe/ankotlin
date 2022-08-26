@@ -66,9 +66,9 @@ class RoundBottomBitmapShaderView @JvmOverloads constructor(
      */
     private fun setUpShader() {
         val drawable: Drawable = drawable ?: return
-        val bmp = drawableToBitamp(drawable)
+        val bmp = drawableToBitmap(drawable)
         // 将bmp作为着色器，就是在指定区域内绘制bmp
-        mBitmapShader = BitmapShader(bmp!!, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
+        mBitmapShader = BitmapShader(bmp, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
         // 如果图片的宽或者高与view的宽高不匹配，计算出需要缩放的比例；缩放后的图片的宽高，一定要大于我们view的宽高；所以我们这里取大值；
         val scale = Math.max(width / bmp.width.toFloat(), height / bmp.height.toFloat())
         // shader的变换矩阵，我们这里主要用于放大或者缩小
@@ -86,7 +86,7 @@ class RoundBottomBitmapShaderView @JvmOverloads constructor(
      * @param drawable
      * @return
      */
-    private fun drawableToBitamp(drawable: Drawable): Bitmap? {
+    private fun drawableToBitmap(drawable: Drawable): Bitmap {
         if (drawable is BitmapDrawable) {
             val bd: BitmapDrawable = drawable
             return bd.bitmap
