@@ -1,15 +1,14 @@
 package com.john.kot.mvvm.livedata.stick
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import com.john.kot.R
 
 /**
@@ -23,8 +22,9 @@ import com.john.kot.R
  * UpdateRemark:   Modify the description
  */
 
-class StickFragment : Fragment() {
+private const val TAG = "StickFragment"
 
+class StickFragment : Fragment() {
     companion object {
         fun newInstance() = StickFragment()
     }
@@ -38,13 +38,14 @@ class StickFragment : Fragment() {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[StickViewModel::class.java]
+        Log.i(TAG, "onViewCreated: $viewModel")
         val text1 = "初始文字被改变"
         val message = requireView().findViewById<TextView>(R.id.message)
         message.setOnClickListener {
-            //未使用LiveData
+//            未使用LiveData
 //            message.text = text1
 //            message.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
             //使用LiveData
@@ -56,5 +57,4 @@ class StickFragment : Fragment() {
             message.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
         }
     }
-
 }

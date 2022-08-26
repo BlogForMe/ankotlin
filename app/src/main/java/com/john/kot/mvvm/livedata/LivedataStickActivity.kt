@@ -1,11 +1,11 @@
 package com.john.kot.mvvm.livedata
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.john.kot.BaseActivity
 import com.john.kot.R
 import com.john.kot.mvvm.livedata.stick.StickFragment
 
-class LivedataStickActivity : AppCompatActivity() {
+class LivedataStickActivity : BaseActivity() {
     //    val binding by lazy { ActivityLivedataStickBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,27 +1,23 @@
 package com.john.kot.mvvm.viewmodel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.john.kot.R
-import com.john.kot.mvvm.demo.User
 import kotlinx.android.synthetic.main.activity_view_model.*
-import timber.log.Timber
 
 class ViewModelActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_model)
-        val viewModel = ViewModelProvider(this).get(UserModel::class.java)
-        viewModel.user.observe(this,
-            Observer<List<User>> {
-                //                    t -> Timber.i(t.toString())
-                it.forEach { tmp ->
-                    Timber.i(tmp.toString())
-                }
-            })
+        val viewModel = ViewModelProvider(this)[UserModel::class.java]
+        viewModel.user.observe(
+            this
+        ) {
+            Log.i("ViewModelActivity", "onCreate: $it")
+        }
 
         bt_do_action.setOnClickListener {
             viewModel.doAction()

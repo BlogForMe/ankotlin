@@ -25,4 +25,8 @@
     <dimen name="appbar_padding">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
 
+
+    <dimen name="round_bitmap_width">100dp</dimen>
+    <dimen name="round_bitmap_height">100dp</dimen>
+    <dimen name="round_bitmap_radius">10dp</dimen>
 </resources>

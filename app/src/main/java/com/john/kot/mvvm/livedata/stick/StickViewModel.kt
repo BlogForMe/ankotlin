@@ -16,9 +16,7 @@ import androidx.lifecycle.ViewModel
 
 class StickViewModel : ViewModel() {
     //默认粘性效果
-    val textLiveData: MutableLiveData<String> by lazy {
-        MutableLiveData<String>()
-    }
+    val textLiveData = MutableLiveData<String>()
     //去除粘性效果
 //    val text: CleanLiveData<String> by lazy {
 //        CleanLiveData<String>()

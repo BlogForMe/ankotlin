@@ -20,4 +20,13 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="title_activity_tab_fragment">TabFragmentActivity</string>
+
+
+    <string name="duitnow_first_copy_account_no">Copy the account no. below:$$$0,4::::::#004CA1:::1:::0$$$9,11::::::#004CA1:::1:::0</string>
+    <string name="duitnow_second_login_banking_app">Open and login to your selected banking app$$$0,14::::::#004CA1:::1:::0$$$23,20::::::#004CA1:::1:::0</string>
+    <string name="duitnow_third_select_transfer_type">Select your Transfer Type as "DuitNow Transfer"$$$12,13::::::#004CA1:::1:::0$$$29,18::::::#004CA1:::1:::0</string>
+    <string name="duitnow_fourth_select_touch_go">Then, select your Bank as "Touch n Go eWallet"$$$18,4::::::#004CA1:::1:::0$$$26,20::::::#004CA1:::1:::0</string>
+    <string name="duitnow_fifth_verify_recipient_name">Lastly, verify the recipient name and you\'re good to go!$$$8,25::::::#004CA1:::1:::0</string>
+    <string name="duitnow_bottom_transfer_service_introduction">DuitNow Transfer is a real-time money transfer service by PayNet, and is supported by ALL banks in Malaysia. $$$86,3::::::#004CA1:::1:::0 </string>
+
 </resources>

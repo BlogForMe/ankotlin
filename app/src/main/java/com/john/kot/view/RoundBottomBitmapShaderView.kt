@@ -6,6 +6,8 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
+import com.john.kot.R
+import kotlin.properties.Delegates
 
 
 /**
@@ -19,27 +21,43 @@ import androidx.appcompat.widget.AppCompatImageView
  * UpdateRemark:   Modify the description
  */
 // https://blog.csdn.net/lmj623565791/article/details/41967509
-class RoundImageShaderView @JvmOverloads constructor(
+class RoundBottomBitmapShaderView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet?,
     defStyleAttr: Int = 0
 ) : AppCompatImageView(context, attrs, defStyleAttr) {
     private val TAG = "RoundImageShaderView"
 
-    private lateinit var mRoundRect: RectF
     private lateinit var mBitmapShader: BitmapShader
     private val mMatrix = Matrix()
     private val mBitmapPaint = Paint();
 
+    val outHeight = resources.getDimension(R.dimen.round_bitmap_height).toInt()
+    val radius = resources.getDimension(R.dimen.round_bitmap_radius)
 
+    var outWidth by Delegates.notNull<Int>()
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         setUpShader()
-        mRoundRect = RectF(0f, 0f, width.toFloat(), height.toFloat())
+        outWidth = w
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        canvas?.drawRoundRect(mRoundRect, 20f, 20f, mBitmapPaint)
+
+        //绘制圆角
+        canvas?.drawRoundRect(
+            RectF(
+                0f,
+                (outHeight - 2 * radius), outWidth.toFloat(), outHeight.toFloat()
+            ), radius, radius, mBitmapPaint
+        )
+//         利用画笔绘制顶部上面直角部分
+        canvas?.drawRect(
+            RectF(
+                0f, 0f, outWidth.toFloat(),
+                (outHeight - radius)
+            ), mBitmapPaint
+        )
     }
 
 
@@ -77,4 +95,6 @@ class RoundImageShaderView @JvmOverloads constructor(
         val h = drawable.intrinsicHeight
         return Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
     }
+
+
 }
