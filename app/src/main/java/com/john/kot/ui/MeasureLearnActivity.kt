@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.util.sysdialog.ItemPickDialog
 import com.john.kot.R
 import com.john.kot.ui.dialog.DialogShowFragment
-import kotlinx.android.synthetic.main.activity_measure_learn.*
 import timber.log.Timber
 
 class MeasureLearnActivity : AppCompatActivity(), ItemPickDialog.ISelectListener {
@@ -14,10 +13,6 @@ class MeasureLearnActivity : AppCompatActivity(), ItemPickDialog.ISelectListener
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_measure_learn)
 
-        iv_img.setOnClickListener {
-//            Timber.i("img width ${iv_img.width}     img height  ${iv_img.height}")
-
-        }
         val scale = getResources().getDisplayMetrics().density
         Timber.i("scale $scale")
 

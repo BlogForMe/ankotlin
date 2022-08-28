@@ -3,6 +3,7 @@ package com.john.kot.ui.image
 import android.graphics.*
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.john.kot.R
 import com.john.kot.databinding.ActivityRoundImage1Binding
 
 class RoundImageActivity : AppCompatActivity() {
@@ -14,9 +15,9 @@ class RoundImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(biding.root)
 
-//        val bitmap = BitmapFactory.decodeResource(
-//            resources, R.drawable.meitu110468869
-//        )
+        val bitmap = BitmapFactory.decodeResource(
+            resources, R.drawable.meitu110468869
+        )
 //        val recBitmap = BitmapFactory.decodeResource(
 //            resources, R.drawable.meituimages1
 //        )

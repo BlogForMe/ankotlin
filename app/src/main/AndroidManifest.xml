@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.john.kot" >
+    package="com.john.kot">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -24,14 +24,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/HomeTheme" >
+        android:theme="@style/HomeTheme">
         <activity
-            android:name=".mvvm.livedata.LivedataStickActivity"
-            android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".ui.image.RoundImageActivity"
+            android:name=".ui.image.XfermodesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,9 +35,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".mvvm.livedata.LivedataStickActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".ui.image.RoundImageActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".tool.lbs.LBSFirebaseActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".coroutine.CoroutinesActivity"
             android:exported="true" />
@@ -98,7 +98,7 @@
         <activity android:name=".ui.ResultBleActivity" />
         <activity android:name=".skin.SkinStaticThemeActivity" />
         <activity android:name=".ui.GradientActivity" />
-        <activity android:name=".ui.MeasureLearnActivity" />
+        <activity android:name=".ui.MeasureLearnActivity"></activity>
         <activity android:name=".ui.CircleProgressActivity" />
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
@@ -113,7 +113,7 @@
             android:name=".CameraProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
-            android:grantUriPermissions="true" >
+            android:grantUriPermissions="true">
 
             <!-- grantUriPermissions: 设置允许获取访问uri的临时权限 exported:设置允许获取访问uri的临时权限 -->
             <meta-data

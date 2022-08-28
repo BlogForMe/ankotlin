@@ -21,7 +21,7 @@ import kotlin.properties.Delegates
  * UpdateRemark:   Modify the description
  */
 // https://blog.csdn.net/lmj623565791/article/details/41967509
-class RoundBottomBitmapShaderView @JvmOverloads constructor(
+class RoundSingleBitmapShaderView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet?,
     defStyleAttr: Int = 0
 ) : AppCompatImageView(context, attrs, defStyleAttr) {
@@ -29,7 +29,7 @@ class RoundBottomBitmapShaderView @JvmOverloads constructor(
     private val mMatrix = Matrix()
     private val mBitmapPaint = Paint();
 
-    val radius = resources.getDimension(R.dimen.round_bitmap_radius)
+    val mRadius = resources.getDimension(R.dimen.round_bitmap_radius)
 
     private var outHeight by Delegates.notNull<Int>()
     private var outWidth by Delegates.notNull<Int>()
@@ -43,18 +43,20 @@ class RoundBottomBitmapShaderView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
 //        super.onDraw(canvas)  //否则Canvas又会在ImageView中重新绘制，将我们之前的操作都覆盖了
 
-        //绘制圆角
+        //绘制圆
         canvas?.drawRoundRect(
-            RectF(
-                0f,
-                (outHeight - 2 * radius), outWidth.toFloat(), outHeight.toFloat()
-            ), radius, radius, mBitmapPaint
+            RectF(0f, 0f, 2 * mRadius, 2 * mRadius),
+            mRadius,
+            mRadius,
+            mBitmapPaint
         )
-//         利用画笔绘制顶部上面直角部分
+        //绘制矩形竖线
+        canvas?.drawRect(RectF(0f, mRadius, mRadius, height.toFloat()), mBitmapPaint)
+
         canvas?.drawRect(
             RectF(
-                0f, 0f, outWidth.toFloat(),
-                (outHeight - radius)
+                mRadius, 0f, width.toFloat(),
+                height.toFloat()
             ), mBitmapPaint
         )
 

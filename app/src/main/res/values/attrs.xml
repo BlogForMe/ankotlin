@@ -36,5 +36,19 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="CustomView">
+        <attr name="attr_boolean" format="boolean" />
+        <attr name="attr_color" format="color" />
+        <attr name="attr_dimension" format="dimension" />
+        <attr name="attr_float" format="float" />
+        <attr name="attr_fraction" format="fraction" />
+        <attr name="attr_string" format="string" />
+        <attr name="attr_reference" format="reference" />
+        <attr name="attr_enum" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
 
 </resources>

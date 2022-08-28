@@ -38,7 +38,7 @@ class RoundImageShaderView @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
+//        super.onDraw(canvas) 要删除 super.onDraw(canvas)：否则Canvas又会在ImageView中重新绘制，将我们之前的操作都覆盖了
         canvas?.drawRoundRect(mRoundRect, 20f, 20f, mBitmapPaint)
     }
 
