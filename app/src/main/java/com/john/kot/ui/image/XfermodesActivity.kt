@@ -20,7 +20,7 @@ class XfermodesActivity : AppCompatActivity() {
         private val mBG // background checker-board pattern
                 : Shader
 
-        private val modeIndex = 0 // 模式
+        private val modeIndex = 1 // 模式
         override fun onDraw(canvas: Canvas) {
             canvas.drawColor(Color.WHITE)
             val labelP = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -30,40 +30,40 @@ class XfermodesActivity : AppCompatActivity() {
             canvas.translate(15F, 35F)
             var x = 0f
             var y = 0f
-            for (modeIndex in sModes.indices) {
-                // draw the border
-                paint.style = Paint.Style.STROKE
-                paint.shader = null
-                canvas.drawRect(
-                    x - 0.5f, y - 0.5f,
-                    x + W + 0.5f, y + H + 0.5f, paint
-                )
-                // draw the checker-board pattern
-                paint.style = Paint.Style.FILL
-                paint.shader = mBG
-                canvas.drawRect(x, y, x + W, y + H, paint)
-                // draw the src/dst example into our offscreen bitmap
-                val sc: Int = canvas.saveLayer(
-                    x, y, x + W, y + H, null,
-                )
-                canvas.translate(x, y)
-                canvas.drawBitmap(mDstB, 0f, 0f, paint)
-                paint.xfermode = sModes[modeIndex]
-                canvas.drawBitmap(mSrcB, 0f, 0f, paint)
-                paint.xfermode = null // 我猜否则下次循环会用到
-                canvas.restoreToCount(sc)
-                // draw the label
-                canvas.drawText(
-                    sLabels[modeIndex],
-                    x + W / 2, y - labelP.getTextSize() / 2, labelP
-                )
-                x += W + 10
-                // wrap around when we've drawn enough for one row
-                if ((modeIndex % ROW_MAX) == ROW_MAX - 1) {
+//            for (modeIndex in sModes.indices) {
+            // draw the border
+            paint.style = Paint.Style.STROKE
+            paint.shader = null
+            canvas.drawRect(
+                x - 0.5f, y - 0.5f,
+                x + W + 0.5f, y + H + 0.5f, paint
+            ) // 外层正方形黑色框框
+            // draw the checker-board pattern
+            paint.style = Paint.Style.FILL
+            paint.shader = mBG
+            canvas.drawRect(x, y, x + W, y + H, paint) // 正方形框框里的灰色小格子
+            // draw the src/dst example into our offscreen bitmap
+            val sc: Int = canvas.saveLayer(
+                x, y, x + W, y + H, null,
+            ) // 保存 图层
+            canvas.translate(x, y)
+            canvas.drawBitmap(mDstB, 0f, 0f, paint) // 绘制黄色的圆
+            paint.xfermode = sModes[modeIndex]
+            canvas.drawBitmap(mSrcB, 0f, 0f, paint) //绘制蓝色正方形
+            paint.xfermode = null // 我猜否则下次循环会用到
+            canvas.restoreToCount(sc)
+            // draw the label
+            canvas.drawText(
+                sLabels[modeIndex],
+                x + W / 2, y - labelP.textSize / 2, labelP
+            )
+            x += W + 10
+            // wrap around when we've drawn enough for one row
+            if ((modeIndex % ROW_MAX) == ROW_MAX - 1) {
                     x = 0f
                     y += H + 30
                 }
-            }
+//            }
         }
 
         companion object {
