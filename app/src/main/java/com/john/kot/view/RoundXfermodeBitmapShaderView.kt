@@ -44,17 +44,19 @@ class RoundXfermodeBitmapShaderView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
 //        super.onDraw(canvas)  //否则Canvas又会在ImageView中重新绘制，将我们之前的操作都覆盖了
 
-        val newBt = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, mMatrix, true)
+        val newBt = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+
+
         // 初始化目标bitmap
         val targetBitmap = Bitmap.createBitmap(outWidth, outHeight, Bitmap.Config.ARGB_8888)
 
-
-//        val rectF = RectF(0f, 0f, outWidth.toFloat(), outHeight.toFloat())
-//
+        val canvas = Canvas(targetBitmap)
+        canvas.drawARGB(0, 0, 0, 0)
+        val rectF = RectF(0f, 0f, outWidth.toFloat(), outHeight.toFloat())
 //        // 在画布上绘制圆角图
-//        canvas?.drawBitmap(targetBitmap,null, rectF, paint)
+        canvas?.drawBitmap(targetBitmap, null, rectF, paint)
 //        // 设置叠加模式
-//        paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
+        paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
         // 在画布上绘制原图片
         val ret = Rect(0, 0, outWidth, outHeight)
         canvas?.drawBitmap(newBt, ret, ret, paint)

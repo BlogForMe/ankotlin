@@ -10,35 +10,37 @@ import androidx.appcompat.app.AppCompatActivity
 class XfermodesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(SampleView(this))
+        setContentView(SampleXfermodeView(this))
+//        setContentView(R.layout.activity_xfermode_view)
     }
 
-    private class SampleView(context: Context?) : View(context) {
+    private class SampleXfermodeView(context: Context?) : View(context) {
         private val mSrcB: Bitmap
         private val mDstB: Bitmap
         private val mBG // background checker-board pattern
                 : Shader
 
+        private val modeIndex = 0 // 模式
         override fun onDraw(canvas: Canvas) {
             canvas.drawColor(Color.WHITE)
             val labelP = Paint(Paint.ANTI_ALIAS_FLAG)
-            labelP.setTextAlign(Paint.Align.CENTER)
+            labelP.textAlign = Paint.Align.CENTER
             val paint = Paint()
-            paint.setFilterBitmap(false)
+            paint.isFilterBitmap = false
             canvas.translate(15F, 35F)
             var x = 0f
             var y = 0f
-            for (i in sModes.indices) {
+            for (modeIndex in sModes.indices) {
                 // draw the border
-                paint.setStyle(Paint.Style.STROKE)
-                paint.setShader(null)
+                paint.style = Paint.Style.STROKE
+                paint.shader = null
                 canvas.drawRect(
                     x - 0.5f, y - 0.5f,
                     x + W + 0.5f, y + H + 0.5f, paint
                 )
                 // draw the checker-board pattern
-                paint.setStyle(Paint.Style.FILL)
-                paint.setShader(mBG)
+                paint.style = Paint.Style.FILL
+                paint.shader = mBG
                 canvas.drawRect(x, y, x + W, y + H, paint)
                 // draw the src/dst example into our offscreen bitmap
                 val sc: Int = canvas.saveLayer(
@@ -46,18 +48,18 @@ class XfermodesActivity : AppCompatActivity() {
                 )
                 canvas.translate(x, y)
                 canvas.drawBitmap(mDstB, 0f, 0f, paint)
-                paint.setXfermode(sModes[i])
+                paint.xfermode = sModes[modeIndex]
                 canvas.drawBitmap(mSrcB, 0f, 0f, paint)
-                paint.setXfermode(null)
+                paint.xfermode = null // 我猜否则下次循环会用到
                 canvas.restoreToCount(sc)
                 // draw the label
                 canvas.drawText(
-                    sLabels[i],
+                    sLabels[modeIndex],
                     x + W / 2, y - labelP.getTextSize() / 2, labelP
                 )
                 x += W + 10
                 // wrap around when we've drawn enough for one row
-                if ((i % ROW_MAX) == ROW_MAX - 1) {
+                if ((modeIndex % ROW_MAX) == ROW_MAX - 1) {
                     x = 0f
                     y += H + 30
                 }
@@ -122,7 +124,7 @@ class XfermodesActivity : AppCompatActivity() {
             val bm: Bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
             val c = Canvas(bm)
             val p = Paint(Paint.ANTI_ALIAS_FLAG)
-            p.setColor(-0x33bc)
+            p.color = -0x33bc
             c.drawOval(RectF(0f, 0f, w * 3f / 4, h * 3f / 4), p)
             return bm
         }
@@ -132,7 +134,7 @@ class XfermodesActivity : AppCompatActivity() {
             val bm: Bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
             val c = Canvas(bm)
             val p = Paint(Paint.ANTI_ALIAS_FLAG)
-            p.setColor(-0x995501)
+            p.color = -0x995501
             c.drawRect(w / 3f, h / 3f, w * 19f / 20, h * 19f / 20, p)
             return bm
         }
