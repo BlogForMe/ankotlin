@@ -6,19 +6,14 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.ToastUtil
 import com.john.kot.R
-import com.john.kot.mvvm.dongnao.viewmodel.MyViewModel.Companion.NAME_KEY
-import com.john.kot.mvvm.dongnao.viewmodel.ViewModel1Activity
-import com.john.kot.util.lbs.LBSLocationManagerProxy
-import com.john.kot.util.lbs.LBSLocationRequest
-import kotlinx.coroutines.flow.Flow
-import java.lang.Exception
 
 class LBSFirebaseActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lbsfirebase)
 
-        val ss :String? = null
+        val ss: String? = null
         findViewById<Button>(R.id.testCatch).setOnClickListener {
 //            try {
 //                getLocation()
@@ -35,12 +30,20 @@ class LBSFirebaseActivity : AppCompatActivity() {
 //            }catch (e:Exception){
 //                e.printStackTrace()
 //            }
-            if(ss=="null"){
+            if (ss == "null") {
                 ToastUtil.showShort("i am null")
             }
-
         }
 
+        findViewById<Button>(R.id.opengoogle).setOnClickListener {
+            val i = Intent()
+            i.action = "com.google.android.payments.standard.TOPUP_V1"
+            startActivity(i)
+        }
+
+        findViewById<Button>(R.id.openstyle).setOnClickListener {
+            startActivity(Intent(this, GoogleTopUpActivity::class.java))
+        }
 
     }
 

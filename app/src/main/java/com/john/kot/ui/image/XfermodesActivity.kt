@@ -5,13 +5,14 @@ import android.graphics.*
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.john.kot.R
 
 
 class XfermodesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(SampleXfermodeView(this))
-//        setContentView(R.layout.activity_xfermode_view)
+//        setContentView(SampleXfermodeView(this))
+        setContentView(R.layout.activity_xfermode_view)
     }
 
     private class SampleXfermodeView(context: Context?) : View(context) {

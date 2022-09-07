@@ -17,6 +17,8 @@ import com.john.kot.R
  * UpdateRemark:   Modify the description
  */
 
+private const val TYPE_CIRCLE = 0
+private const val TYPE_ROUND = 1
 
 class XfermodeView @JvmOverloads constructor(
     context: Context?,
@@ -28,15 +30,11 @@ class XfermodeView @JvmOverloads constructor(
 
     private var mWidth = 0
     private var mHeight = 0
-    private var type = 0
-
+    private var type = TYPE_ROUND  //设置类型，是圆角图片还是圆角矩形
 
     init {
         // 禁止硬件加速，硬件加速会有一些问题，这里禁用掉
         setLayerType(LAYER_TYPE_SOFTWARE, null)
-        src = BitmapFactory.decodeResource(resources, R.drawable.meitu110468869)
-        //设置类型，是圆角图片还是圆角矩形
-        type = TYPE_ROUND
     }
 
 
@@ -80,7 +78,6 @@ class XfermodeView @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
         xmodeImage()
         //把画好画的画布放到自定义的画板上面
         canvas.drawBitmap(out!!, 0f, 0f, null)
@@ -89,6 +86,7 @@ class XfermodeView @JvmOverloads constructor(
     private fun xmodeImage() {
         //根据原始的图片创建一个画布
         out = Bitmap.createBitmap(mWidth, mHeight, Bitmap.Config.ARGB_8888)
+
         //创建一个画板，在画布的基础上
         val canvas = Canvas(out!!)
         //创建一个画笔
@@ -113,15 +111,26 @@ class XfermodeView @JvmOverloads constructor(
                 )
             }
         }
+        src = BitmapFactory.decodeResource(resources, R.drawable.meitu110468869)
         //设置Xfermode画笔模式为SRC_IN
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
         //然后有画了一个图片，最终实现两个图像的叠加
-        canvas.drawBitmap(src!!, 0f, 0f, paint)
+
+        val zoomImg = zoomImg(src!!, mWidth, mHeight)
+        canvas.drawBitmap(zoomImg!!, 0f, 0f, paint)
     }
 
-    companion object {
-        private const val TYPE_CIRCLE = 0
-        private const val TYPE_ROUND = 1
+    fun zoomImg(bm: Bitmap, newWidth: Int, newHeight: Int): Bitmap? {
+        // 获得图片的宽高
+        val width = bm.width
+        val height = bm.height
+        // 计算缩放比例
+        val scaleWidth = newWidth.toFloat() / width
+        val scaleHeight = newHeight.toFloat() / height
+        // 取得想要缩放的matrix参数
+        val matrix = Matrix()
+        matrix.postScale(scaleWidth, scaleHeight)
+        // 得到新的图片
+        return Bitmap.createBitmap(bm, 0, 0, width, height, matrix, true)
     }
-
 }

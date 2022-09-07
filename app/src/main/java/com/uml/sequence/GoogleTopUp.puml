@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+actor USER as "User"
+participant AMerchant as "A+ merchant/ACQP"
+participant ASDK as "A+ Sdk"
+participant backend as "Tngd Backend"
+participant App as "App"
+autonumber
+ AMerchant -> ASDK : pay
+ ASDK -> backend : pay
+ AMerchant <-- backend : user balance not enough
+ alt #lightyellow user not install "Tngd App"
+ AMerchant ->x AMerchant: don't need resolve , confirm again
+ end
+ AMerchant -> AMerchant : pop up error message and top up button
+ USER -> AMerchant : Click top up button
+ AMerchant -> ASDK : Open "Tngd App"
+ ASDK -> App : topUp Spi
+ alt #lightyellow topup_googleplay_switch = false
+ App ->x App : not resolved
+ end
+ App <-- App : DeepLink[tngdwallet://client/dl/reload] open reload home page
+ USER -> App : reload action
+ alt #lightyellow succuss
+ USER <-- App :  show reload succuss page
+ ASDK <-- App :  eventbus sendcallback  [onSuccess(succuss)]
+ else pending
+  USER <-- App : show pending page [onFailure(FAILED)]
+  ASDK <-- App :eventbus sendcallback [onFailure(FAILED)]
+ else failed
+  USER <-- App : show failed page
+  ASDK <-- App : click back eventbus sendcallback [onFailure(FAILED)]
+ end
+ USER -> App : User close reload Home page
+ ASDK <-- App : clickback eventbus sendcallback [onFailure(ABANDON)]
+
+@enduml

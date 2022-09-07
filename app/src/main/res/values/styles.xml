@@ -86,4 +86,13 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="gspTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- To prevent Android from terminating Play in the background during the top up, the integrator needs to include the following in the activity theme.. -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="MyTransparent" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item> <!-- 背景色透明度 -->
+        <item name="android:windowNoTitle">true</item><!-- 无标题 -->
+    </style>
 </resources>
