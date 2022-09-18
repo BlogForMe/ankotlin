@@ -33,13 +33,17 @@ class CircleProgressActivity : BaseActivity(), FireMissilesDialogFragment.IConfi
 
             Handler(Looper.getMainLooper()).postDelayed({
                 FireMissilesDialogFragment.newInstance().showWithLifecycle(this)
-
             }, 3000)
         }
 
 //        FireMissilesDialogFragment.newInstance()
 //            .show(supportFragmentManager, javaClass.toString())
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        FireMissilesDialogFragment.newInstance().showWithLifecycle(this)
     }
 
 

@@ -27,7 +27,6 @@ import com.airbnb.lottie.LottieAnimationView
 import com.john.kot.R
 import com.john.kot.anim.animationUrl1
 import com.john.kot.anim.animationUrl2
-import com.john.kot.anim.model.AnimServiceListener
 
 /**
  * Provide views to RecyclerView with data from mDataSet.
@@ -66,21 +65,22 @@ class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
         }
         if (position == 1 || position == 2) {
             animationView.addAnimatorListener(object : Animator.AnimatorListener {
-                override fun onAnimationStart(p0: Animator?) {
+                override fun onAnimationStart(animation: Animator) {
                     Log.i(TAG_LIFE, " onAnimationStart: $animationView ")
                 }
 
-                override fun onAnimationEnd(p0: Animator?) {
+                override fun onAnimationEnd(animation: Animator) {
                     Log.i(TAG_LIFE, "onAnimationEnd: $animationView")
                 }
 
-                override fun onAnimationCancel(p0: Animator?) {
+                override fun onAnimationCancel(animation: Animator) {
                     Log.i(TAG_LIFE, "onAnimationCancel: $animationView")
                 }
 
-                override fun onAnimationRepeat(p0: Animator?) {
+                override fun onAnimationRepeat(animation: Animator) {
                     Log.i(TAG_LIFE, "onAnimationRepeat: $animationView")
                 }
+
             })
         }
     }

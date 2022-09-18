@@ -6,7 +6,6 @@ import android.os.PersistableBundle;
 import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import timber.log.Timber;
 
 /**
  * Created by Administrator on 2017/12/8 0008.
@@ -26,13 +25,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Timber.i("onRestoreInstanceState()");
+        Log.d(TAG, "onRestoreInstanceState()");
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
-        Timber.i("onSaveInstanceState()");
+        Log.d(TAG, "onSaveInstanceState()");
     }
 
     @Override

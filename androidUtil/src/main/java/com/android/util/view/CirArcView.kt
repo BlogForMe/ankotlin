@@ -7,7 +7,6 @@ import android.graphics.*
 import android.os.Build
 import android.util.AttributeSet
 import android.view.View
-import androidx.annotation.RequiresApi
 import com.android.util.DisplayUtils.sp2px
 import com.android.util.R
 
@@ -163,17 +162,18 @@ class CirArcView : View {
         animator.duration = 2000
 
         animator.setTarget(mIncludedAngle)
-        animator.addUpdateListener(@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
-        object : ValueAnimator.AnimatorUpdateListener {
-            override fun onAnimationUpdate(animation: ValueAnimator?) {
-                mIncludedAngle = animation?.getAnimatedValue() as Float
-                postInvalidate()
+//        animator.addUpdateListener(@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
+//        object : ValueAnimator.AnimatorUpdateListener {
+//            override fun onAnimationUpdate(animation: ValueAnimator?) {
+//                mIncludedAngle = animation?.getAnimatedValue() as Float
+//                postInvalidate()
 //                if (BuildConfig.DEBUG) {
 //                    Log.d("CircleView", "onAnimationUpdate: percent = $mIncludedAngle")
 //                }
-            }
-        })
-        animator.start()
     }
+
+//        })
+//        animator.start()
+//    }
 
 }

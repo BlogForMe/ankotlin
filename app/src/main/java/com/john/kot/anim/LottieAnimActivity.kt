@@ -3,13 +3,10 @@ package com.john.kot.anim
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.sysdialog.ItemPickDialog
 import com.john.kot.R
-import com.john.kot.anim.model.AnimServiceListener
 import com.john.kot.databinding.ActivityLottieAnimBinding
-import com.john.kot.ui.dialog.DialogShowFragment
 import com.john.kot.ui.dialog.dArr
 import com.john.kot.util.viewBinding
 
@@ -43,20 +40,20 @@ class LottieAnimActivity : AppCompatActivity(), ItemPickDialog.ISelectListener {
         }
 
         animationView.addAnimatorListener(object : Animator.AnimatorListener {
-            override fun onAnimationStart(animation: Animator?) {
-                Log.i(TAG, "onAnimationStart: ")
+            override fun onAnimationStart(animation: Animator) {
+                TODO("Not yet implemented")
             }
 
-            override fun onAnimationEnd(animation: Animator?) {
-                Log.i(TAG, "onAnimationEnd: ")
+            override fun onAnimationEnd(animation: Animator) {
+                TODO("Not yet implemented")
             }
 
-            override fun onAnimationCancel(animation: Animator?) {
-                Log.i(TAG, "onAnimationCancel: ")
+            override fun onAnimationCancel(animation: Animator) {
+                TODO("Not yet implemented")
             }
 
-            override fun onAnimationRepeat(animation: Animator?) {
-                Log.i(TAG, "onAnimationRepeat: ")
+            override fun onAnimationRepeat(animation: Animator) {
+                TODO("Not yet implemented")
             }
 
         })
