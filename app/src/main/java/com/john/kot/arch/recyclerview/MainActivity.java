@@ -18,13 +18,8 @@
 package com.john.kot.arch.recyclerview;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ViewAnimator;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.john.kot.R;
 
 /**
@@ -42,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             RecyclerViewFragment fragment = new RecyclerViewFragment();
             transaction.replace(R.id.sample_content_fragment, fragment);
-            transaction.commit();
+            transaction.commitAllowingStateLoss();
         }
     }
 }

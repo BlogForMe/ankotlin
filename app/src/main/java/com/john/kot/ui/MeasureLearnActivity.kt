@@ -9,13 +9,13 @@ import timber.log.Timber
 
 class MeasureLearnActivity : AppCompatActivity(), ItemPickDialog.ISelectListener {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_measure_learn)
 
         val scale = getResources().getDisplayMetrics().density
         Timber.i("scale $scale")
-
 
     }
 

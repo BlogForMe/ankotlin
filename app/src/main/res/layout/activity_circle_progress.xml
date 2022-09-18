@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.CircleProgressActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CircleProgressActivity">
 
-        <com.android.util.view.CirArcView
-                android:id="@+id/cav"
-                android:layout_width="110dp" android:layout_height="110dp"/>
+    <com.android.util.view.CirArcView
+        android:id="@+id/cav"
+        android:layout_width="110dp"
+        android:layout_height="110dp" />
+
+    <Button
+        android:id="@+id/bt_show_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- <com.john.kot.view.OnTouchEventView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
+ -->
+    <!--
+        <com.john.kot.view.TermRoundView
+                android:id="@+id/trm_rule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
 
-   <!-- <com.john.kot.view.OnTouchEventView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
--->
-<!--
-    <com.john.kot.view.TermRoundView
-            android:id="@+id/trm_rule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-    <com.john.kot.view.TempCircleView
-            android:layout_below="@+id/trm_rule"
-            android:layout_width="51dp"
-            android:layout_height="51dp" />
--->
+        <com.john.kot.view.TempCircleView
+                android:layout_below="@+id/trm_rule"
+                android:layout_width="51dp"
+                android:layout_height="51dp" />
+    -->
 
 
 </RelativeLayout>

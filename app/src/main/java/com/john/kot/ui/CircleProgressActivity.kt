@@ -1,13 +1,15 @@
 package com.john.kot.ui
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.android.util.ToastUtil
+import android.os.Handler
+import android.os.Looper
+import android.widget.Button
+import android.widget.Toast
 import com.android.util.sysdialog.FireMissilesDialogFragment
+import com.john.kot.BaseActivity
 import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_circle_progress.*
 
-class CircleProgressActivity : AppCompatActivity() , FireMissilesDialogFragment.IConfirmListener {
+class CircleProgressActivity : BaseActivity(), FireMissilesDialogFragment.IConfirmListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +21,27 @@ class CircleProgressActivity : AppCompatActivity() , FireMissilesDialogFragment.
 //            Timber.i("degree    "+trm_rule.getDegree())
 //        }
 
-        val scaleUnit =0.1f
 //        bt_add.setOnClickListener {
 //            FireMissilesDialogFragment.newInstance().show(supportFragmentManager,javaClass.toString())
 //        }
+
+        findViewById<Button>(R.id.bt_show_1).setOnClickListener {
+//            Handler(Looper.getMainLooper()).postDelayed({
+//                FireMissilesDialogFragment.newInstance()
+//                    .show(supportFragmentManager,null)
+//            }, 3000)
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                FireMissilesDialogFragment.newInstance().showWithLifecycle(this)
+
+            }, 3000)
+        }
+
+//        FireMissilesDialogFragment.newInstance()
+//            .show(supportFragmentManager, javaClass.toString())
+
     }
+
 
 //    override fun onResume() {
 //        super.onResume()
@@ -32,10 +50,10 @@ class CircleProgressActivity : AppCompatActivity() , FireMissilesDialogFragment.
 //    }
 
     override fun positiveBt() {
-        ToastUtil.showBiggerText("确定")
+        Toast.makeText(this, "确定", Toast.LENGTH_SHORT).show()
     }
 
     override fun negativeBt() {
-        ToastUtil.showBiggerText("取消")
+        Toast.makeText(this, "取消", Toast.LENGTH_SHORT).show()
     }
 }
