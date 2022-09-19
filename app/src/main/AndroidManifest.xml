@@ -15,9 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!--悬浮窗权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 悬浮窗权限 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
@@ -28,19 +26,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/HomeTheme">
+        <activity android:name=".tool.PlayStoreActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".ui.image.XfermodesActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".mvvm.livedata.LivedataStickActivity"
             android:exported="true"></activity>
         <activity
+            android:name=".mvvm.livedata.LivedataStickActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.image.RoundImageActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".tool.lbs.LBSFirebaseActivity"
             android:exported="true">
@@ -101,33 +103,23 @@
         <activity android:name=".ui.ResultBleActivity" />
         <activity android:name=".skin.SkinStaticThemeActivity" />
         <activity android:name=".ui.GradientActivity" />
-        <activity android:name=".ui.MeasureLearnActivity">
-
-        </activity>
-        <activity android:name=".ui.CircleProgressActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.MeasureLearnActivity"></activity>
+        <activity android:name=".ui.CircleProgressActivity"></activity>
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
         <activity android:name=".elec.ElecActivity" />
         <activity android:name=".arch.recyclerview.MainActivity" />
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
-        <activity android:name=".ui.MessageActivityFragment">
-
-        </activity>
+        <activity android:name=".ui.MessageActivityFragment"></activity>
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
-
         <activity
             android:name=".tool.lbs.GoogleTopUpActivity"
             android:exported="true"
             android:theme="@style/MyTransparent">
             <intent-filter>
                 <action android:name="com.google.android.payments.standard" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
