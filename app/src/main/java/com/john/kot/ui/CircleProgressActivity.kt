@@ -53,7 +53,7 @@ class CircleProgressActivity : BaseActivity(), FireMissilesDialogFragment.IConfi
 
     override fun onStop() {
         super.onStop()
-        FireMissilesDialogFragment.newInstance().show(supportFragmentManager, null)
+//        FireMissilesDialogFragment.newInstance().show(supportFragmentManager, null)
     }
 
 

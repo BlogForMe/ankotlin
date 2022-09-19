@@ -1,78 +1,63 @@
-package com.john.kot;
+package com.john.kot
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.Log;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Created by Administrator on 2017/12/8 0008.
  */
-
-public abstract class BaseActivity extends AppCompatActivity {
-    public String TAG = getClass().getSimpleName() + " LaunchMode   ";
-
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate()");
+abstract class BaseActivity : AppCompatActivity() {
+    var TAG = javaClass.simpleName + " LaunchMode   "
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate() " + savedInstanceState?.getString("params"))
     }
 
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        Log.d(TAG, "onRestoreInstanceState()");
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.d(TAG, "onRestoreInstanceState()" + savedInstanceState.getString("params"))
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
-        Log.d(TAG, "onSaveInstanceState()");
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("params", " 一个outState参数的方法")
+        Log.d(TAG, "onSaveInstanceState() ")
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(TAG, "onRestart()");
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart()")
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart()");
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart()")
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume()");
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume()")
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause()");
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause()")
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop()");
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop()")
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Log.d(TAG, " onNewIntent(Intent intent)");
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        Log.d(TAG, " onNewIntent(Intent intent)")
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy()");
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy()")
     }
 }
