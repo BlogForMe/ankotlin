@@ -10,13 +10,6 @@ import my.com.tngdigital.common.viewbinding.FragmentViewBindingDelegate
 
 /**
  *
- * ClassName:      ActivityViewBinding
- * Description:    Description
- * Author:         SongLei
- * CreateDate:     7/1/21 1:35 PM
- * UpdateUser:     SongLei
- * UpdateDate:     7/1/21 1:35 PM
- * UpdateRemark:   Modify the description
  */
 
 inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
