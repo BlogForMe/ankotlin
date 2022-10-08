@@ -33,4 +33,11 @@ class PlayStoreActivity : AppCompatActivity() {
         }
 
 
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if ("e" == "e") {
+
+        }
+        super.onBackPressed()
+    }
 }
