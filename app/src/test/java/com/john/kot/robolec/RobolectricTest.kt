@@ -22,7 +22,7 @@ class RobolectricTest {
     @Test
     fun arrayMapTest() {
         val arrayMap = ArrayMap<Int, Int>()
-        arrayMap[1] = 1
+        arrayMap.put(1, 1)
         println(arrayMap)
     }
 }

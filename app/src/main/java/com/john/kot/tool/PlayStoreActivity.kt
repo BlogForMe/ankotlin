@@ -16,7 +16,7 @@ class PlayStoreActivity : AppCompatActivity() {
         setContentView(binding.root)
         val intent = Intent()
         binding.opengoogle.setOnClickListener {
-            intent.action = "com.google.android.payments.standard.TOPUP_V1"
+            intent.action = "com.google.android.payments.standard.TOPUP_V2"
             intent.putExtra("gspTopUpRequest", resources.getString(R.string.secret_key))
             resultLauncher.launch(intent)
         }
@@ -33,11 +33,11 @@ class PlayStoreActivity : AppCompatActivity() {
         }
 
 
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        if ("e" == "e") {
-
-        }
-        super.onBackPressed()
-    }
+//    @Deprecated("Deprecated in Java")
+//    override fun onBackPressed() {
+//        if ("e" == "e") {
+//
+//        }
+//        super.onBackPressed()
+//    }
 }

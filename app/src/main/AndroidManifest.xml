@@ -121,10 +121,6 @@
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
-        <activity
-            android:name=".tool.lbs.GoogleTopUpActivity"
-            android:exported="true"
-            android:theme="@style/MyTransparent" />
 
         <provider
             android:name=".CameraProvider"

@@ -1,6 +1,5 @@
 package com.john.kot.tool.lbs
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +36,6 @@ class LBSFirebaseActivity : AppCompatActivity() {
 
 
         findViewById<Button>(R.id.openstyle).setOnClickListener {
-            startActivity(Intent(this, GoogleTopUpActivity::class.java))
         }
     }
 
