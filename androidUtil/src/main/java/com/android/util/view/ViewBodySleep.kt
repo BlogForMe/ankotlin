@@ -7,7 +7,6 @@ import android.view.View
 import com.android.util.DateUtil.minuteToHour
 import com.android.util.DisplayUtils.dp2px
 import com.android.util.DisplayUtils.sp2px
-import com.android.util.R
 import timber.log.Timber
 
 

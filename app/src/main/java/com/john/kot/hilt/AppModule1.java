@@ -9,12 +9,12 @@
  */
 package com.john.kot.hilt;
 
-import javax.inject.Singleton;
-
-import dagger.Module;
-import dagger.Provides;
-import dagger.hilt.InstallIn;
-import dagger.hilt.android.components.ActivityComponent;
+//import javax.inject.Singleton;
+//
+//import dagger.Module;
+//import dagger.Provides;
+//import dagger.hilt.InstallIn;
+//import dagger.hilt.android.components.ActivityComponent;
 
 ////Module装载到ApplicationComponent中
 //@InstallIn(ActivityComponent.class) //通过这种方式和组件关联

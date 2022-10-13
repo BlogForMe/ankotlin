@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.john.kot.R
-import com.john.kot.databinding.FragmentBodyDataBinding
 import timber.log.Timber
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,14 +35,14 @@ class BodyDataFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val binding: FragmentBodyDataBinding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_body_data, container, false
-        )
+//        val binding: FragmentBodyDataBinding = DataBindingUtil.inflate(
+//            inflater,
+//            R.layout.fragment_body_data, container, false
+//        )
         mBodyDataModel = ViewModelProvider(requireActivity()).get(BodyDataModel::class.java)
-        binding.vmBodyFragment = mBodyDataModel
-        binding.lifecycleOwner = this.viewLifecycleOwner
-        return binding.root
+//        binding.vmBodyFragment = mBodyDataModel
+//        binding.lifecycleOwner = this.viewLifecycleOwner
+        return null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

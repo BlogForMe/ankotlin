@@ -9,11 +9,8 @@
  */
 package com.john.kot.hilt;
 
-
-import javax.inject.Inject;
-
-public class User {
-    @Inject //方式一
-    public User() {
-    }
-}
+//public class User {
+//    @Inject //方式一
+//    public User() {
+//    }
+//}

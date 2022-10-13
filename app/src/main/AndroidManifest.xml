@@ -38,11 +38,7 @@
         </activity>
 
         <activity android:name=".tool.PlayStoreActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.image.XfermodesActivity"
@@ -121,6 +117,13 @@
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
+        <activity android:name=".hilt.HiltActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <provider
             android:name=".CameraProvider"

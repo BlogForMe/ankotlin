@@ -9,9 +9,9 @@
  */
 package com.john.kot.hilt;
 
-import dagger.Module;
-import dagger.Provides;
-import dagger.hilt.InstallIn;
+//import dagger.Module;
+//import dagger.Provides;
+//import dagger.hilt.InstallIn;
 
 ////Module装载到ApplicationComponent中
 //@InstallIn(ApplicationComponent.class) //通过这种方式和组件关联

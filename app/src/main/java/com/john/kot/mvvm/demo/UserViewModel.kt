@@ -6,10 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class UserViewModel : ViewModel() {
-    var userData: MutableLiveData<User> = MutableLiveData()
+    var userData: MutableLiveData<UserDemo> = MutableLiveData()
 
     init {
-        userData.value = User("张三", 24, "杭州")
+        userData.value = UserDemo("张三", 24, "杭州")
 
         // 延迟3秒后修改数据，UI自动更新
         Thread{

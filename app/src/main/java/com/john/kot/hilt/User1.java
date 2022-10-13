@@ -9,5 +9,10 @@
  */
 package com.john.kot.hilt;
 
+import javax.inject.Inject;
+
 public class User1 {
+    @Inject
+    public User1() {
+    }
 }
