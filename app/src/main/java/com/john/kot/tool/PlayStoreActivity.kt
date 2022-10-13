@@ -16,7 +16,7 @@ class PlayStoreActivity : AppCompatActivity() {
         setContentView(binding.root)
         val intent = Intent()
         binding.opengoogle.setOnClickListener {
-            intent.action = "com.google.android.payments.standard.TOPUP_V2"
+            intent.action = "com.google.android.payments.standard.TOPUP_V1"
             intent.putExtra("gspTopUpRequest", resources.getString(R.string.secret_key))
             resultLauncher.launch(intent)
         }

@@ -22,7 +22,9 @@ class RobolectricTest {
     @Test
     fun arrayMapTest() {
         val arrayMap = ArrayMap<Int, Int>()
-        arrayMap.put(1, 1)
-        println(arrayMap)
+        for (i in 0 until 4) {
+            arrayMap.put(i, i)
+        }
+        arrayMap[4] = 4
     }
 }
