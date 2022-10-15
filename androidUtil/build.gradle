@@ -19,9 +19,9 @@ android {
 dependencies {
     testImplementation "junit:junit:4.13.2"
 
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    api 'androidx.appcompat:appcompat:1.5.1'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
     api 'androidx.cardview:cardview:1.0.0'
     // RxJava 2
@@ -36,15 +36,15 @@ dependencies {
     api files('libs/mina-core-2.0.19.jar')
     implementation 'org.slf4j:slf4j-api:1.7.32'
 
-    api "androidx.room:room-runtime:2.4.2"
-    api "androidx.room:room-ktx:2.4.2"
-    kapt "androidx.room:room-compiler:2.4.2"
+    api "androidx.room:room-runtime:2.4.3"
+    api "androidx.room:room-ktx:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
 
-    api "androidx.navigation:navigation-fragment-ktx:2.5.0"
-    api "androidx.navigation:navigation-ui-ktx:2.5.0"
+    api "androidx.navigation:navigation-fragment-ktx:2.5.2"
+    api "androidx.navigation:navigation-ui-ktx:2.5.2"
     // https://mvnrepository.com/artifact/org.jooq/joor-java-8
     api group: 'org.jooq', name: 'joor-java-8', version: '0.9.7'
-    api group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
+    api group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
     api "androidx.paging:paging-runtime-ktx:3.1.1"
 }
 

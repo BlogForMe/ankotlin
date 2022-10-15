@@ -1,24 +1,22 @@
-package com.john.kot.hilt;
+package com.john.kot.hilt
 
-import javax.inject.Inject;
-
-import android.os.Bundle;
-import android.util.Log;
-import androidx.appcompat.app.AppCompatActivity;
-import com.john.kot.R;
-import dagger.hilt.android.AndroidEntryPoint;
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import com.john.kot.R
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
-public class HiltActivity extends AppCompatActivity {
-
-    String TAG = "HiltActivity";
+class HiltActivity : AppCompatActivity() {
+    var TAG = "HiltActivity"
 
     @Inject
-    User1 user1; // 方式2
+    lateinit var user1: User1 // 方式2
+
 
     //@Inject
     //User1 user2;
-
     //@Inject
     //ViewModel viewModel;
     //
@@ -27,13 +25,11 @@ public class HiltActivity extends AppCompatActivity {
     //
     //@Inject
     //ViewModel3 viewModel3;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hilt);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_hilt)
         //测试  ActivityComponent
-        Log.i(TAG, "user1: " + user1);
+        Log.i(TAG, "user1: $user1")
         //Log.i(TAG, "user2: " + user2);
         //startActivity(new Intent(this, SecondActivity.class));
 
@@ -45,6 +41,5 @@ public class HiltActivity extends AppCompatActivity {
         //viewModel.test();
         //
         //Log.i(TAG, "onCreate:  "+ getScreenW(this) +" " + getScreenH(this));
-
     }
 }
