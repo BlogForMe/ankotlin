@@ -1,7 +1,5 @@
 package com.john.kot.hilt.model
 
-import javax.inject.Inject
-
 /**
  *
  * ClassName:      UserParam
@@ -14,4 +12,4 @@ import javax.inject.Inject
  */
 
 
-class UserParam5 @Inject constructor(var user5: User5)
+class UserParam5 constructor(var user5: User5)
