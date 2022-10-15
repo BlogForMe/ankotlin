@@ -14,4 +14,4 @@ import javax.inject.Inject
  */
 
 
-class UserParam5 @Inject constructor(var user5: UserHilt5)
+class UserParam5 @Inject constructor(var user5: User5)

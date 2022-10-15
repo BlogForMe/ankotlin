@@ -10,4 +10,4 @@
 package com.john.kot.hilt.model
 
 
-class UserHilt5
+class User5
