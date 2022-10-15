@@ -7,7 +7,8 @@
  * UpdateDate:     2021/9/25 10:27 PM
  * UpdateRemark:   Modify the description
  */
-package com.john.kot.hilt;
+package com.john.kot.hilt.model
 
-public class User2 {
-}
+import javax.inject.Inject
+
+class User2 @Inject constructor()

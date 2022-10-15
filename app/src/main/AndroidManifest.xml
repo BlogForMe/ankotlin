@@ -123,6 +123,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".hilt.HiltSecondActivity" />
+
         <provider
             android:name=".CameraProvider"
             android:authorities="${applicationId}.fileprovider"

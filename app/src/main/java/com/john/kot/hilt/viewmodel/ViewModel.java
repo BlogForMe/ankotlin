@@ -7,7 +7,7 @@
  * UpdateDate:     2021/9/26 10:59 AM
  * UpdateRemark:   Modify the description
  */
-package com.john.kot.hilt;
+package com.john.kot.hilt.viewmodel;
 
 // 已经绑定的类
 //public class ViewModel {

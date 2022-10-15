@@ -7,7 +7,7 @@
  * UpdateDate:     2021/8/29 11:46 PM
  * UpdateRemark:   Modify the description
  */
-package com.john.kot.hilt;
+package com.john.kot.hilt.di;
 
 //import dagger.Module;
 //import dagger.Provides;
