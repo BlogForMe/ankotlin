@@ -7,7 +7,7 @@ import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
-@HiltAndroidApp // 1.  HiltAndroidApp注解
+@HiltAndroidApp // 1.  HiltAndroidApp注解 ,生成相应的组件
 class MyApp : Application() {
 
     override fun onCreate() {

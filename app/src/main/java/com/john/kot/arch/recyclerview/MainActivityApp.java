@@ -28,7 +28,7 @@ import com.john.kot.R;
  * For devices with displays with a width of 720dp or greater, the sample log is always visible,
  * on other devices it's visibility is controlled by an item on the Action Bar.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivityApp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

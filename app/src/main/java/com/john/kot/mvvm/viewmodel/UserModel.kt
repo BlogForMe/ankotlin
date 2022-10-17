@@ -6,13 +6,13 @@ import androidx.lifecycle.ViewModel
 import java.util.*
 
 class UserModel : ViewModel() {
-    private val userLiveData = MutableLiveData<List<User>>()
-    private val userList = LinkedList<User>()
-    val user: LiveData<List<User>>
+    private val userLiveData = MutableLiveData<List<UserObject>>()
+    private val userList = LinkedList<UserObject>()
+    val user: LiveData<List<UserObject>>
         get() = userLiveData
 
     fun doAction() {
-        userList.add(User("lili"))
+        userList.add(UserObject("lili"))
         userLiveData.postValue(userList)
     }
 }
