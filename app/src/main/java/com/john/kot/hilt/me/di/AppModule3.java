@@ -7,7 +7,7 @@
  * UpdateDate:     2021/8/29 11:46 PM
  * UpdateRemark:   Modify the description
  */
-package com.john.kot.hilt.di;
+package com.john.kot.hilt.me.di;
 
 //Module装载到ApplicationComponent中
 //@InstallIn(ActivityComponent.class) //通过这种方式和组件关联

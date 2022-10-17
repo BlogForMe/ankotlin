@@ -24,21 +24,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/HomeTheme">
         <activity
+            android:name=".hilt.dn.HiltSecondActivity"
+            android:exported="false" />
+        <activity
             android:name=".link.DeepLinkActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <!-- for deep-link -->
             <intent-filter>
-                <!-- 必须加否否无法响应点击链接的 Intent-->
+
+                <!-- 必须加否否无法响应点击链接的 Intent -->
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="ewallet" />
@@ -46,7 +44,13 @@
         </activity>
         <activity
             android:name=".hilt.dn.HiltMainActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.ActivityD"
             android:exported="true"
@@ -133,8 +137,8 @@
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
-        <activity android:name=".hilt.HiltActivity"></activity>
-        <activity android:name=".hilt.HiltSecondActivity" />
+        <activity android:name=".hilt.me.HiltActivity" />
+        <activity android:name=".hilt.me.HiltSecondActivity" />
 
         <provider
             android:name=".CameraProvider"

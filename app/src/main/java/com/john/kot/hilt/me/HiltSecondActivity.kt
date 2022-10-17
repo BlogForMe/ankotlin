@@ -1,4 +1,4 @@
-package com.john.kot.hilt
+package com.john.kot.hilt.me
 
 import android.os.Bundle
 import android.util.Log

@@ -1,4 +1,4 @@
-package com.john.kot.hilt.di
+package com.john.kot.hilt.me.di
 
 import com.john.kot.hilt.model.User5
 import com.john.kot.hilt.model.UserParam5
