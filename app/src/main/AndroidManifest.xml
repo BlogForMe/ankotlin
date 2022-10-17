@@ -69,7 +69,7 @@
         <activity android:name=".ui.TriangleActivity" />
         <activity android:name=".ui.FontActivity" />
         <activity android:name=".test.robolec.MyActivity" />
-        <activity android:name=".viewGroup.ViewGroupActivity" />
+        <activity android:name=".viewgroup.ViewGroupActivity" />
         <activity android:name=".tool.glide.lifecycle.GlideActivity" />
         <activity android:name=".mvvm.lifecycle.LifeCycleActivity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
@@ -92,7 +92,7 @@
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
         <activity android:name=".mvvm.viewmodel.ViewModelActivity" />
-        <activity android:name=".time.TextClockActivity" />
+        <activity android:name="com.john.kot.tool.time.TextClockActivity" />
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />
         <activity
@@ -106,13 +106,13 @@
         <activity android:name=".anim.MoveViewActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
         <activity android:name=".ui.ResultBleActivity" />
-        <activity android:name=".skin.SkinStaticThemeActivity" />
+        <activity android:name="com.john.kot.ui.skin.SkinStaticThemeActivity" />
         <activity android:name=".ui.GradientActivity" />
         <activity android:name=".ui.MeasureLearnActivity" />
         <activity android:name=".ui.CircleProgressActivity" />
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
-        <activity android:name=".elec.ElecActivity" />
+        <activity android:name="com.john.kot.ui.elec.ElecActivity" />
         <activity android:name=".arch.recyclerview.MainActivityApp" />
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />

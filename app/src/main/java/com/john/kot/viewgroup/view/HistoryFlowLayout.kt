@@ -9,7 +9,7 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.viewGroup.view
+package com.john.kot.viewgroup.view
 
 import android.content.Context
 import android.util.AttributeSet

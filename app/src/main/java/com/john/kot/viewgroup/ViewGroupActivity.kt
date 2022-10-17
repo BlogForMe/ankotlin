@@ -1,14 +1,9 @@
-package com.john.kot.viewGroup
+package com.john.kot.viewgroup
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
 import com.john.kot.databinding.ActivityViewGroupBinding
-import com.john.kot.viewGroup.view.HistoryFlowLayout
-import okio.ByteString.Companion.toByteString
 
 class ViewGroupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

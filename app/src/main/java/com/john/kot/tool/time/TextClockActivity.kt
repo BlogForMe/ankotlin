@@ -1,7 +1,7 @@
-package com.john.kot.time
+package com.john.kot.tool.time
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
 
 class TextClockActivity : AppCompatActivity() {

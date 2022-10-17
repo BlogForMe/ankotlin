@@ -3,12 +3,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.john.kot.elec.BasicView
-            android:background="#ccc"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:paddingLeft="20dp"
-            android:paddingBottom="40dp"
-    />
+    <com.john.kot.ui.elec.BasicView
+        android:background="#ccc"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="40dp" />
 
 </FrameLayout>

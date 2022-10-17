@@ -1,14 +1,12 @@
-package com.john.kot.viewGroup.view
+package com.john.kot.viewgroup.view
 
 import android.content.Context
 import android.content.res.Resources
 import android.util.AttributeSet
 import android.util.Log
-import android.view.ViewGroup
-import android.view.View.MeasureSpec
 import android.util.TypedValue
 import android.view.View
-import java.util.ArrayList
+import android.view.ViewGroup
 
 //  https://www.bilibili.com/video/BV1M54y1y79P?from=search&seid=18028227823566625572&spm_id_from=333.337.0.0
 class FlowLayout : ViewGroup {

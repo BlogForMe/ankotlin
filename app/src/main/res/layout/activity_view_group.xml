@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".viewGroup.ViewGroupActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".viewgroup.ViewGroupActivity">
 
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="搜索历史"
-            android:textSize="20sp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="搜索历史"
+        android:textSize="20sp" />
 
-    <com.john.kot.viewGroup.view.FlowLayout
-            android:id="@+id/flow_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <com.john.kot.viewgroup.view.FlowLayout
+        android:id="@+id/flow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="费劲儿1"
-                android:textSize="20sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="费劲儿1"
+            android:textSize="20sp" />
 
         <TextView
                 android:layout_width="wrap_content"
@@ -59,16 +58,16 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="费劲哦哦儿7"
-                android:textSize="20sp" />
+            android:text="费劲哦哦儿7"
+            android:textSize="20sp" />
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="费劲哦哦儿8"
-                android:textSize="20sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="费劲哦哦儿8"
+            android:textSize="20sp" />
 
 
-    </com.john.kot.viewGroup.view.FlowLayout>
+    </com.john.kot.viewgroup.view.FlowLayout>
 
 </LinearLayout>
