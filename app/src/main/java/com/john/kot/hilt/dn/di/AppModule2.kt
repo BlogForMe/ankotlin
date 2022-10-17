@@ -12,15 +12,15 @@ package com.john.kot.hilt.dn.di
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.scopes.ActivityScoped
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 //Module装载到ActivityComponent中
-@InstallIn(ActivityComponent::class) //通过这种方式和组件关联
+@InstallIn(SingletonComponent::class) //通过这种方式和组件关联
 @Module
 class AppModule2 {
     // ApplicationComponent对应的作用域 @Singleton
-    @ActivityScoped
+    @Singleton
     @Provides
     fun provideUser(): User2 {
         return User2()
