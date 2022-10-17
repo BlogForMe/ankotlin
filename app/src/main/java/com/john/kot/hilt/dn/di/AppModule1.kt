@@ -14,7 +14,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 
-//Module装载到ApplicationComponent中
+//Module装载到ActivityComponent中
 @InstallIn(ActivityComponent::class) //通过这种方式和组件关联
 @Module
 class AppModule1 {

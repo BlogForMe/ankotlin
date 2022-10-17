@@ -41,9 +41,7 @@
 
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data
-                    android:host="topic"
-                    android:scheme="com.great.jon" />
+                <data android:scheme="ewallet" />
             </intent-filter>
         </activity>
         <activity
