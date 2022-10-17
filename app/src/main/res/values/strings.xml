@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mock Google Play</string>
+    <string name="app_name">Demo</string>
 
     <string name="element_text">Element</string>
     <string name="grid_layout_manager">Grid Layout Manager</string>
