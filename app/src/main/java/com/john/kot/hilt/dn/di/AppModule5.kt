@@ -16,7 +16,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.qualifiers.ActivityContext
 
 //Module装载到ActivityComponent中
 @InstallIn(ActivityComponent::class) //这里用SingletonComponent会报错,因为Application不能提供activity实例
@@ -28,7 +28,7 @@ class AppModule5 {
         user: User3,
         application: Application,
         activity: Activity,
-        @ApplicationContext context: Context
+        @ActivityContext context: Context
     ): HiltViewModel5 {
         return HiltViewModel5(user, application, activity, context)
     }
