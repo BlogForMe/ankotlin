@@ -7,7 +7,7 @@ android {
     compileSdkVersion 33
 
     buildFeatures {
-        dataBinding = true
+        viewBinding = true
     }
 
     compileOptions {

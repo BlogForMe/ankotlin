@@ -17,7 +17,6 @@
 package com.android.util.base;
 
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.SparseArray;
@@ -27,7 +26,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +37,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.android.util.BR;
 
 
 /**
@@ -98,7 +95,7 @@ public abstract class BaseFragment extends Fragment {
 
         ViewDataBinding binding = DataBindingUtil.inflate(inflater, dataBindingConfig.getLayout(), container, false);
         binding.setLifecycleOwner(this);
-        binding.setVariable(BR.viewModel, dataBindingConfig.getStateViewModel());
+        //binding.setVariable(BR.viewModel, dataBindingConfig.getStateViewModel());
         SparseArray bindingParams = dataBindingConfig.getBindingParams();
         for (int i = 0, length = bindingParams.size(); i < length; i++) {
             binding.setVariable(bindingParams.keyAt(i), bindingParams.valueAt(i));
@@ -124,10 +121,6 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
-    public boolean isDebug() {
-        return mActivity.getApplicationContext().getApplicationInfo() != null &&
-                (mActivity.getApplicationContext().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
-    }
 
     protected void showLongToast(String text) {
         Toast.makeText(mActivity.getApplicationContext(), text, Toast.LENGTH_LONG).show();

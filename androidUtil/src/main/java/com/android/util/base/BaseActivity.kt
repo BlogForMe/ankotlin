@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.android.util.BR
 import com.android.util.R
 import timber.log.Timber
 
@@ -33,7 +32,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
         var binding: ViewDataBinding = DataBindingUtil.setContentView(this,dataBindingConfig.layout)
         binding.lifecycleOwner=this
-        binding.setVariable(BR.viewModel, dataBindingConfig.stateViewModel)
+//        binding.setVariable(BR.viewModel, dataBindingConfig.stateViewModel)
         var bindParam = dataBindingConfig.bindingParams
         for (i in 0 until bindParam.size()){
             binding.setVariable(bindParam.keyAt(i),bindParam.valueAt(i))
