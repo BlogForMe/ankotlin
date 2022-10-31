@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
 import com.john.kot.hilt.model.User1
+import com.john.kot.hilt.model.User6
 import com.john.kot.hilt.model.UserParam1
 import com.john.kot.hilt.model.UserParam5
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +25,8 @@ class HiltActivity : AppCompatActivity() {
     @Inject
     lateinit var userParam5: UserParam5
 
+    @Inject
+    lateinit var user6: User6 // 方式2
 
     //@Inject
     //User1 user2;
@@ -42,6 +45,9 @@ class HiltActivity : AppCompatActivity() {
 //        Log.i(TAG, "user1: $user1")
         Log.i(TAG, "userParam: ${userParam.user1}")
         Log.i(TAG, "userParam5: ${userParam5.user5}")
+
+        Log.i(TAG, "user6: $user6")
+
         //Log.i(TAG, "user2: " + user2);
         startActivity(Intent(this, HiltSecondActivity::class.java));
 

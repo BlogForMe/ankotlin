@@ -14,7 +14,7 @@ class ViewModel1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_model1)
-        viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        viewModel = ViewModelProvider(this)[MyViewModel::class.java]
         textView = findViewById<View>(R.id.textview) as TextView
         textView!!.text = String.valueOf(viewModel!!.number)
     }

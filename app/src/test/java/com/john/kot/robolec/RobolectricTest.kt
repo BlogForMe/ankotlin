@@ -25,6 +25,8 @@ class RobolectricTest {
         for (i in 0 until 4) {
             arrayMap.put(i, i)
         }
-        arrayMap[4] = 4
+        val reResult = arrayMap.put(1, 6)
+        println(arrayMap)
+
     }
 }

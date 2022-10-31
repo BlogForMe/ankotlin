@@ -45,11 +45,7 @@
         <activity
             android:name=".hilt.dn.HiltMainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.ActivityD"
@@ -110,7 +106,9 @@
         <activity android:name=".customview.StrapSleepActivity" />
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
-        <activity android:name=".mvvm.viewmodel.ViewModelActivity" />
+        <activity android:name=".mvvm.viewmodel.ViewModelActivity">
+
+        </activity>
         <activity android:name="com.john.kot.tool.time.TextClockActivity" />
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />
@@ -132,12 +130,20 @@
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
         <activity android:name="com.john.kot.ui.elec.ElecActivity" />
-        <activity android:name=".arch.recyclerview.MainActivityApp" />
+        <activity android:name=".arch.recyclerview.MainActivityApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
-        <activity android:name=".hilt.me.HiltActivity" />
+        <activity android:name=".hilt.me.HiltActivity">
+
+        </activity>
         <activity android:name=".hilt.me.HiltSecondActivity" />
 
         <provider

@@ -1,15 +1,12 @@
 package com.john.kot.util;
 
-import android.content.Context;
-import android.util.ArrayMap;
-
-import com.john.kot.R;
-
 import java.io.InputStream;
 import java.util.LinkedList;
 
-public class DataUtil {
+import android.content.Context;
+import com.john.kot.R;
 
+public class DataUtil {
 
     public static LinkedList<Float> loadDatas(Context context) {
         LinkedList<Float> datas = new LinkedList<>();

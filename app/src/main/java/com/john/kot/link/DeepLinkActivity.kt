@@ -9,5 +9,7 @@ class DeepLinkActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val biding = ActivityDeepLinkBinding.inflate(layoutInflater)
         setContentView(biding.root)
+
+
     }
 }

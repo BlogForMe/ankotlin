@@ -16,10 +16,10 @@
 package com.john.kot.arch.recyclerview
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -27,16 +27,15 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.util.sysdialog.ItemPickDialog
-import com.john.kot.R
-import com.john.kot.anim.model.AnimServiceListener
-import com.john.kot.ui.dialog.dArr
-import com.john.kot.util.viewBinding
+import com.john.kot.databinding.RecyclerViewFragBinding
 
 /**
  * Demonstrates the use of [RecyclerView] with a [LinearLayoutManager] and a
  * [GridLayoutManager].
  */
 class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
+    private var _binding: RecyclerViewFragBinding? = null
+    private val binding get() = _binding
     private var mRecyclerViewModel: RecycleViewModel? = null
 
     enum class LayoutManagerType {
@@ -63,16 +62,17 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val rootView = inflater.inflate(R.layout.recycler_view_frag, container, false)
-        rootView.tag = TAG
+    ): View {
+        _binding = RecyclerViewFragBinding.inflate(inflater, container, false)
+        val view = _binding!!.root
+//        rootView.findViewById<Button>(R.id.bt_show_dialog).setOnClickListener {
+//            ItemPickDialog.newInstance("请选择测量项", dArr).show(childFragmentManager, "")
+//        }
+        return view
+    }
 
-        rootView.findViewById<Button>(R.id.bt_show_dialog).setOnClickListener {
-            ItemPickDialog.newInstance("请选择测量项", dArr).show(childFragmentManager, "")
-        }
-
-        // BEGIN_INCLUDE(initializeRecyclerView)
-        mRecyclerView = rootView.findViewById<View>(R.id.recyclerView) as RecyclerView
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         // LinearLayoutManager is used here, this will layout the elements in a similar fashion
         // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
@@ -86,19 +86,16 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType)
         mAdapter = CustomAdapter()
-//        lifecycle.addObserver(AnimServiceListener(mAdapter))
 
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView!!.adapter = mAdapter
-        // END_INCLUDE(initializeRecyclerView)
-        mLinearLayoutRadioButton = rootView.findViewById<View>(R.id.linear_layout_rb) as RadioButton
-        mLinearLayoutRadioButton!!.setOnClickListener {
-            setRecyclerViewLayoutManager(
-                LayoutManagerType.LINEAR_LAYOUT_MANAGER
-            )
+        mAdapter!!.listener = object : OnItemClickListener {
+            override fun onItemClick(v: View?, position: Int) {
+                Log.i(TAG, "onItemClick position: $position")
+            }
         }
-        mGridLayoutRadioButton = rootView.findViewById<View>(R.id.grid_layout_rb) as RadioButton
-        mGridLayoutRadioButton!!.setOnClickListener { setRecyclerViewLayoutManager(LayoutManagerType.GRID_LAYOUT_MANAGER) }
+
+        // END_INCLUDE(initializeRecyclerView)
         mRecyclerViewModel!!.requestData.observe(viewLifecycleOwner) { data: Array<String?>? ->
             if (data != null) {
                 mAdapter!!.setList(data)
@@ -106,7 +103,7 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
             }
         }
         mRecyclerViewModel!!.requestRecycleData()
-        return rootView
+
     }
 
     /**
@@ -152,6 +149,12 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
         private const val SPAN_COUNT = 2
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     override fun getItemPosition(position: Int) {
+        TODO("Not yet implemented")
     }
 }

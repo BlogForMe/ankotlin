@@ -15,18 +15,12 @@
  */
 package com.john.kot.arch.recyclerview
 
-import android.animation.Animator
-import android.animation.ValueAnimator
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.LottieAnimationView
-import com.john.kot.R
-import com.john.kot.anim.animationUrl1
-import com.john.kot.anim.animationUrl2
+import com.john.kot.databinding.TextRowItemBinding
+import kotlinx.android.synthetic.main.text_row_item.view.*
 
 /**
  * Provide views to RecyclerView with data from mDataSet.
@@ -36,53 +30,53 @@ class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     private val TAG_LIFE = "LIFECYCLE"
 
     private var mDataSet: Array<String?>? = null
+    var listener: OnItemClickListener? = null
 
-    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val textView: TextView = v.findViewById(R.id.textView)
-        val lottieAnimView: LottieAnimationView = v.findViewById(R.id.home_service_img)
-    }
-
+    class ViewHolder(v: TextRowItemBinding) : RecyclerView.ViewHolder(v.root)
     fun setList(dataSet: Array<String?>?) {
         mDataSet = dataSet
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.text_row_item, viewGroup, false)
-        val viewHolder = ViewHolder(v)
+        val binding =
+            TextRowItemBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+        val viewHolder = ViewHolder(binding)
         Log.i(TAG_CLASS, "onCreateViewHolder: $viewHolder")
         return viewHolder
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         Log.i(TAG_CLASS, "onBindViewHolder: $viewHolder")
-        viewHolder.textView.text = mDataSet!![position]
-        val animationView = viewHolder.lottieAnimView
-        when (position) {
-            1 -> playAnim(animationView, animationUrl1)
-            2 -> playAnim(animationView, animationUrl2)
-            else -> animationView.setImageResource(R.mipmap.ic_launcher)
+        viewHolder.itemView.textView.text = mDataSet!![position]
+        viewHolder.itemView.setOnClickListener {
+            listener?.onItemClick(viewHolder.itemView, position)
         }
-        if (position == 1 || position == 2) {
-            animationView.addAnimatorListener(object : Animator.AnimatorListener {
-                override fun onAnimationStart(animation: Animator) {
-                    Log.i(TAG_LIFE, " onAnimationStart: $animationView ")
-                }
-
-                override fun onAnimationEnd(animation: Animator) {
-                    Log.i(TAG_LIFE, "onAnimationEnd: $animationView")
-                }
-
-                override fun onAnimationCancel(animation: Animator) {
-                    Log.i(TAG_LIFE, "onAnimationCancel: $animationView")
-                }
-
-                override fun onAnimationRepeat(animation: Animator) {
-                    Log.i(TAG_LIFE, "onAnimationRepeat: $animationView")
-                }
-
-            })
-        }
+//        val animationView = viewHolder.lottieAnimView
+//        when (position) {
+//            1 -> playAnim(animationView, animationUrl1)
+//            2 -> playAnim(animationView, animationUrl2)
+//            else -> animationView.setImageResource(R.mipmap.ic_launcher)
+//        }
+//        if (position == 1 || position == 2) {
+//            animationView.addAnimatorListener(object : Animator.AnimatorListener {
+//                override fun onAnimationStart(animation: Animator) {
+//                    Log.i(TAG_LIFE, " onAnimationStart: $animationView ")
+//                }
+//
+//                override fun onAnimationEnd(animation: Animator) {
+//                    Log.i(TAG_LIFE, "onAnimationEnd: $animationView")
+//                }
+//
+//                override fun onAnimationCancel(animation: Animator) {
+//                    Log.i(TAG_LIFE, "onAnimationCancel: $animationView")
+//                }
+//
+//                override fun onAnimationRepeat(animation: Animator) {
+//                    Log.i(TAG_LIFE, "onAnimationRepeat: $animationView")
+//                }
+//
+//            })
+//        }
     }
 
     override fun getItemCount(): Int {
@@ -93,32 +87,23 @@ class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
 
     override fun onViewDetachedFromWindow(holder: ViewHolder) {
-        super.onViewDetachedFromWindow(holder)
-        Log.i(TAG_CLASS, "onViewDetachedFromWindow: $holder")
-        val animationView = holder.lottieAnimView
-        when (holder.absoluteAdapterPosition) {
-            1,2 -> animationView.pauseAnimation()
-        }
-    }
-
-//    override fun onViewAttachedToWindow(holder: ViewHolder) {
-//        super.onViewAttachedToWindow(holder)
-//        Log.i(TAG, "onViewAttachedToWindow: $holder")
+//        super.onViewDetachedFromWindow(holder)
+//        Log.i(TAG_CLASS, "onViewDetachedFromWindow: $holder")
 //        val animationView = holder.lottieAnimView
 //        when (holder.absoluteAdapterPosition) {
-//            2 -> animationView.resumeAnimation()
+//            1, 2 -> animationView.pauseAnimation()
 //        }
-//    }
-
-
-    private fun playAnim(animationView: LottieAnimationView, animationUrl: String) {
-        Log.i(TAG_CLASS, "playAnim: ")
-        animationView.setFailureListener {
-            animationView.setImageResource(R.drawable.ic_go_pinjam)
-        }
-        animationView.setAnimationFromUrl(animationUrl)
-        animationView.playAnimation()
-        animationView.repeatCount = ValueAnimator.INFINITE
-        animationView.backgroundTintMode
     }
+
+
+//    private fun playAnim(animationView: LottieAnimationView, animationUrl: String) {
+//        Log.i(TAG_CLASS, "playAnim: ")
+//        animationView.setFailureListener {
+//            animationView.setImageResource(R.drawable.ic_go_pinjam)
+//        }
+//        animationView.setAnimationFromUrl(animationUrl)
+//        animationView.playAnimation()
+//        animationView.repeatCount = ValueAnimator.INFINITE
+//        animationView.backgroundTintMode
+//    }
 }

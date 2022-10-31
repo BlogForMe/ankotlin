@@ -4,22 +4,20 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_view_model.*
+import com.john.kot.databinding.ActivityViewModelBinding
 
 class ViewModelActivity : AppCompatActivity() {
-
+    val biding by lazy { ActivityViewModelBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_model)
+        setContentView(biding.root)
         val viewModel = ViewModelProvider(this)[UserModel::class.java]
-        viewModel.user.observe(
-            this
-        ) {
+        viewModel.userLiveData.observe(this) {
             Log.i("ViewModelActivity", "onCreate: $it")
+            biding.btDoAction.text = it[0].name
         }
 
-        bt_do_action.setOnClickListener {
+        biding.btDoAction.setOnClickListener {
             viewModel.doAction()
         }
 

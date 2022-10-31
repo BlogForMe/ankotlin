@@ -4,10 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import java.util.List;
-
 public class RecycleViewModel extends ViewModel {
-    private static final int DATASET_COUNT = 60;
+    private static final int DATASET_COUNT = 4;
 //    protected String[] mDataset;
 
     private MutableLiveData<String[]> recycleLiveData;
