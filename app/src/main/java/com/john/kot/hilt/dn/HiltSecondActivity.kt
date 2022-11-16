@@ -17,8 +17,8 @@ class HiltSecondActivity : AppCompatActivity() {
     lateinit var user5: User2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val biding = ActivityHiltSecondBinding.inflate(layoutInflater)
-        setContentView(biding.root)
+        val binding = ActivityHiltSecondBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         Log.i(TAG, "user5: $user5")
     }
 }

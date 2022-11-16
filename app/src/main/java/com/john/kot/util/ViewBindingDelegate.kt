@@ -26,5 +26,7 @@ inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
 fun <T : ViewBinding> Fragment.viewBinding(viewBindingFactory: (View) -> T) =
     FragmentViewBindingDelegate(this, viewBindingFactory)
 
+inline fun <reified T : ViewBinding> Fragment.viewBinding() =
+    FragmentViewBinding(T::class.java, this)
 
 

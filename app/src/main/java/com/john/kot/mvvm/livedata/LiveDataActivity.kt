@@ -15,12 +15,12 @@ class LiveDataActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_live_data)
         myViewModel = ViewModelProvider(this).get(ListViewModel::class.java)
 
-//        var biding = DataBindingUtil.setContentView<ActivityLiveDataBindingImpl>(
+//        var binding = DataBindingUtil.setContentView<ActivityLiveDataBindingImpl>(
 //            this,
 //            R.layout.activity_live_data
 //        )
-//        biding.lifecycleOwner = this
-//        biding.viewmodel = myViewModel
+//        binding.lifecycleOwner = this
+//        binding.viewmodel = myViewModel
 
         var i = 1
         bt_click.setOnClickListener {

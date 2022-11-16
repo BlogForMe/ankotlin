@@ -7,7 +7,7 @@ import com.john.kot.databinding.ActivityDBinding
 import com.john.kot.util.viewBinding
 
 class ActivityD : AppCompatActivity() {
-    val biding by viewBinding(ActivityDBinding::inflate)
+    val binding by viewBinding(ActivityDBinding::inflate)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_d)

@@ -11,6 +11,7 @@ package com.john.kot.hilt.dn.di
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import javax.inject.Inject
 
@@ -18,7 +19,8 @@ import javax.inject.Inject
 class HiltViewModel3 @Inject constructor(
     var user: User3,
     var application: Application,
-    var activity: Activity
+    var activity: Activity,
+    var context: Context
 ) {
     var TAG = javaClass.simpleName
     fun test() {
