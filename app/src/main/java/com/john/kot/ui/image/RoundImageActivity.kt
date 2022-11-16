@@ -7,13 +7,13 @@ import com.john.kot.R
 import com.john.kot.databinding.ActivityRoundImage1Binding
 
 class RoundImageActivity : AppCompatActivity() {
-    //    val biding by lazy { ActivityRoundImageBinding.inflate(layoutInflater) }
-    val biding by lazy { ActivityRoundImage1Binding.inflate(layoutInflater) }
+    //    val binding by lazy { ActivityRoundImageBinding.inflate(layoutInflater) }
+    val binding by lazy { ActivityRoundImage1Binding.inflate(layoutInflater) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(biding.root)
+        setContentView(binding.root)
 
         val bitmap = BitmapFactory.decodeResource(
             resources, R.drawable.meitu110468869
@@ -22,7 +22,7 @@ class RoundImageActivity : AppCompatActivity() {
 //            resources, R.drawable.meituimages1
 //        )
 
-//        biding.demoShaderBottomRoundImage.setImageBitmap(
+//        binding.demoShaderBottomRoundImage.setImageBitmap(
 //            roundBottomBitmapByShader(
 //                bitmap,
 //                resources.getDimension(R.dimen.round_bitmap_width).toInt(),
@@ -30,7 +30,7 @@ class RoundImageActivity : AppCompatActivity() {
 //                resources.getDimension(R.dimen.round_bitmap_radius).toInt()
 //            )
 //        )
-//        biding.demoShaderBottomRoundImage1.setImageBitmap(
+//        binding.demoShaderBottomRoundImage1.setImageBitmap(
 //            roundBottomBitmapByShader(
 //                bitmap,
 //                resources.getDimension(R.dimen.round_bitmap_width).toInt(),
@@ -166,7 +166,7 @@ class RoundImageActivity : AppCompatActivity() {
 }
 
 
-//        biding.ivGirl1.setOnClickListener {
+//        binding.ivGirl1.setOnClickListener {
 //            val languageSpanString1 = LanguageUtil.setLanguageSpanString(this,getString(R.string.duitnow_first_copy_account_no))
 //            val languageSpanString2 = LanguageUtil.setLanguageSpanString(this,getString(R.string.duitnow_second_login_banking_app))
 //            val languageSpanString3 = LanguageUtil.setLanguageSpanString(this,getString(R.string.duitnow_third_select_transfer_type))

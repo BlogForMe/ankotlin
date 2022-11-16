@@ -26,14 +26,14 @@ package com.john.kot.tool.date
 //
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
-//        val biding = ActivityDateBinding.inflate(layoutInflater)
-//        setContentView(biding.root)
+//        val binding = ActivityDateBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
 //        initLunarPicker()
-//        biding.btDate.setOnClickListener {
+//        binding.btDate.setOnClickListener {
 //            pvCustomLunar?.show()
 //        }
 //
-//        biding.getCurrentTime.setOnClickListener {
+//        binding.getCurrentTime.setOnClickListener {
 ////            Log.i(TAG, "onCreate: ${Calendar.getInstance().timeInMillis}")
 //            val apply = Calendar.getInstance().apply {
 //                1642948984495
@@ -59,7 +59,7 @@ package com.john.kot.tool.date
 ////            Log.i(TAG, "onCreate: ${dateCondition.after(apply)}")
 //        }
 //
-//        biding.getCurrentTimeHms.setOnClickListener {
+//        binding.getCurrentTimeHms.setOnClickListener {
 ////            val sevenDaysCondition = Calendar.getInstance().apply {
 ////                add(Calendar.DAY_OF_MONTH, -7)
 ////            }

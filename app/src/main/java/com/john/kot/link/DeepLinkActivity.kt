@@ -7,8 +7,8 @@ import com.john.kot.databinding.ActivityDeepLinkBinding
 class DeepLinkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val biding = ActivityDeepLinkBinding.inflate(layoutInflater)
-        setContentView(biding.root)
+        val binding = ActivityDeepLinkBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
     }

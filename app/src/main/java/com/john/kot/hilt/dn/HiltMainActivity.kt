@@ -42,8 +42,8 @@ class HiltMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val biding = ActivityHiltMainBinding.inflate(layoutInflater)
-        setContentView(biding.root)
+        val binding = ActivityHiltMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 //        Log.i(TAG, "user: $user")
 //        Log.i(TAG, "user1: $user1")
 //        Log.i(TAG, "user3: $user3")
@@ -56,9 +56,9 @@ class HiltMainActivity : AppCompatActivity() {
 
         mainViewModel.test()
 
-        var ss: String? = null
-        when (ss) {
-
-        }
+//        var ss: String? = null
+//        when (ss) {
+//
+//        }
     }
 }

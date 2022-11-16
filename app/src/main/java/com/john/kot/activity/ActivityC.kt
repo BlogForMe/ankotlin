@@ -7,10 +7,10 @@ import com.john.kot.databinding.ActivityCBinding
 import com.john.kot.util.viewBinding
 
 class ActivityC : AppCompatActivity() {
-    val biding by viewBinding(ActivityCBinding::inflate)
+    val binding by viewBinding(ActivityCBinding::inflate)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        biding.btC.setOnClickListener {
+        binding.btC.setOnClickListener {
             startActivity(Intent(this, ActivityD::class.java))
         }
     }

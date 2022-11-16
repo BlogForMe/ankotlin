@@ -89,13 +89,18 @@
         <activity android:name=".mvvm.lifecycle.LifeCycleActivity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData1Activity" />
-        <activity android:name=".mvvm.dongnao.viewmodel.ViewModel1Activity" />
+        <activity android:name=".mvvm.dongnao.viewmodel.ViewModelShareActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".mvvm.dongnao.lifecycle.Step2Activity" />
         <activity android:name=".tool.rx.WriteRxjavaActivity" />
         <activity android:name=".net.OkhtttpActivity" />
         <activity android:name=".permission.PemissionxUseActivity" />
         <activity android:name=".tool.audio.AudioRecordActivity" />
-        <activity android:name=".mvvm.fragment.MvvMFragmentActivity" />
         <activity android:name=".tool.rx.RxJavaActivity" />
         <activity android:name=".tool.SharedPreferencesActivity" />
         <activity android:name=".ui.scroll.ScrollViewActivity" />
@@ -131,11 +136,7 @@
         <activity android:name=".ui.constraint.Constraint1Activity" />
         <activity android:name="com.john.kot.ui.elec.ElecActivity" />
         <activity android:name=".arch.recyclerview.MainActivityApp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
