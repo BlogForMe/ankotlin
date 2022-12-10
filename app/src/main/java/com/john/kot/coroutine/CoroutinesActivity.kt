@@ -9,13 +9,10 @@ class CoroutinesActivity : AppCompatActivity() {
     //    val binding by viewBinding(ActivityCoroutinesBinding::inflate)
     val binding by lazy { ActivityCoroutinesBinding.inflate(layoutInflater) }
 
-    lateinit var baseMeta: BaseMeta
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.btCoroutines01.setOnClickListener {
-        }
     }
 }
 

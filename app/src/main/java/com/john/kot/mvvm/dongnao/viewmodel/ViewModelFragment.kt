@@ -31,6 +31,10 @@ class ViewModelFragment : Fragment() {
         binding.btNumber.setOnClickListener {
             Log.i(TAG, "onViewCreated: ${viewModel.number} ")
         }
+
+        val transferMain: ViewGroup = view.findViewById(R.id.transfer_main)
+        transferMain.visibility = View.INVISIBLE
+
     }
 
 

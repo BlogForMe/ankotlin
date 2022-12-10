@@ -61,7 +61,17 @@
             android:exported="true" />
         <activity
             android:name=".mvvm.livedata.LivedataStickActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mvvm.livedata.LivedataStick02Activity"
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".ui.image.RoundImageActivity"
             android:exported="true" />
@@ -70,7 +80,9 @@
             android:exported="true" />
         <activity
             android:name=".coroutine.CoroutinesActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".ui.fragment.TabFragmentActivity"
             android:label="@string/title_activity_tab_fragment"
@@ -85,16 +97,14 @@
         <activity android:name=".ui.FontActivity" />
         <activity android:name=".test.robolec.MyActivity" />
         <activity android:name=".viewgroup.ViewGroupActivity" />
-        <activity android:name=".tool.glide.lifecycle.GlideActivity" />
+        <activity android:name=".tool.glide.lifecycle.GlideActivity" >
+
+        </activity>
         <activity android:name=".mvvm.lifecycle.LifeCycleActivity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData1Activity" />
         <activity android:name=".mvvm.dongnao.viewmodel.ViewModelShareActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".mvvm.dongnao.lifecycle.Step2Activity" />
         <activity android:name=".tool.rx.WriteRxjavaActivity" />
@@ -140,7 +150,9 @@
         </activity>
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
-        <activity android:name=".ui.MessageActivityFragment" />
+        <activity android:name=".ui.MessageActivityFragment" >
+
+        </activity>
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
         <activity android:name=".hilt.me.HiltActivity">
 
