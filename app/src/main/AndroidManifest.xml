@@ -71,6 +71,7 @@
         <activity
             android:name=".mvvm.livedata.LivedataStick02Activity"
             android:exported="true" >
+
         </activity>
         <activity
             android:name=".ui.image.RoundImageActivity"

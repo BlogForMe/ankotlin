@@ -1,0 +1,35 @@
+package com.john.kot.coroutine.dongnao
+
+import kotlinx.coroutines.*
+import org.junit.Test
+
+/**
+ *
+ * ClassName:      Coroutine26
+ * Description:    Description
+ * Author:         zh
+ * CreateDate:     2022/7/28 9:17 PM
+ * UpdateUser:     zh
+ * UpdateDate:     2022/7/28 9:17 PM
+ * UpdateRemark:   Modify the description
+ */
+
+class CoroutineTest27 {
+
+    @Test
+    fun `test scope cancel`() = runBlocking<Unit> {
+        val scope = CoroutineScope(Dispatchers.Default)
+        val job1 = scope.launch {
+            delay(1000)
+            println("Job 1.")
+        }
+
+        val job2=scope.launch {
+            delay(1000)
+            println("Job 2.")
+        }
+        delay(100)  //需要加这个才能看到 打印
+        job1.cancel()
+        delay(2000)
+    }
+}

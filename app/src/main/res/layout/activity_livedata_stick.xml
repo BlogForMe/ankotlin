@@ -3,19 +3,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
     <Button
         android:id="@+id/bt_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sticky analysis" />
+        android:text="bt_first go 02" />
 
     <Button
         android:id="@+id/bt_sendData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="senddata" />
+    <Button
+        android:id="@+id/mainClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mainClick"/>
+
+
 
     <FrameLayout
         android:id="@+id/fm_container"

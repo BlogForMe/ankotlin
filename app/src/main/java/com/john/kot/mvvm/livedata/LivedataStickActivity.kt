@@ -3,16 +3,9 @@ package com.john.kot.mvvm.livedata
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.john.kot.BaseActivity
-import com.john.kot.R
+import androidx.lifecycle.*
 import com.john.kot.databinding.ActivityLivedataStickBinding
-import com.john.kot.mvvm.livedata.stick.StickFragment
 import com.john.kot.mvvm.livedata.stick.StickViewModel
 import com.john.kot.util.viewBinding
 
@@ -23,6 +16,10 @@ class LivedataStickActivity : AppCompatActivity() {
     //    val viewModel by viewModels<StickViewModel>()
     private lateinit var viewModel: StickViewModel
 
+    companion object {
+        val livedata = MutableLiveData<String>()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        supportFragmentManager.beginTransaction()
@@ -30,17 +27,44 @@ class LivedataStickActivity : AppCompatActivity() {
 //            .commit()
         viewModel = ViewModelProvider(this)[StickViewModel::class.java]
 
-
-        binding.btFirst.setOnClickListener {
-            startActivity(Intent(this, LivedataStick02Activity::class.java))
+        binding.mainClick.setOnClickListener {
+            livedata.value = "mainClick"
         }
+
+        val lifecycle: LifecycleOwner? = null
+
+        val atLeast = lifecycle?.lifecycle?.currentState?.isAtLeast(Lifecycle.State.DESTROYED)==true
+        binding.btFirst.setOnClickListener {
+//            startActivity(Intent(this, LivedataStick02Activity::class.java))
+//            finish()
+            Log.i(TAG, "onCreate: $atLeast")
+        }
+
+        viewModel.textLiveData.value = "text1"
+
         binding.btSendData.setOnClickListener {
-            viewModel.textLiveData.value = "text1"
             viewModel.textLiveData.observe(this, object : Observer<String> {
                 override fun onChanged(t: String?) {
                     Log.i(TAG, "onChanged: $t")
+                    binding.btFirst.text = t
+
                 }
             })
         }
     }
+
+
+    override fun onStop() {
+        super.onStop()
+        val finishState = this.isDestroyed()
+
+        Log.i(TAG, "onStop: $finishState")
+    }
+
+    override fun onDestroy() {
+        Log.i(TAG, "onDestroy: ${this.isFinishing()}")
+        super.onDestroy()
+    }
+
+
 }
