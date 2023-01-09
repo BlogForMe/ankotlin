@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import com.john.kot.R
 import android.graphics.*
+import kotlinx.android.synthetic.main.activity_constraint1.view.*
 
 
 class MyTextView : View {
@@ -15,7 +16,11 @@ class MyTextView : View {
     private lateinit var mBound: Rect
     private var mTextSize: Float = 0f
     private var mTextColor: Int = Color.BLUE
-    private var mText: String = "文字"
+    var mText: String = "文字"
+        set(value) {
+            field = value
+            invalidate()
+        }
 
     val DEFAULT_VIEW_WIDTH = 100
     val DEFAULT_VIEW_HEIGHT = 100
@@ -23,16 +28,20 @@ class MyTextView : View {
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         init(context, attrs, defStyleAttr)
     }
 
     private fun init(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
         val a = context.obtainStyledAttributes(attrs, R.styleable.MyTextView, 0, defStyleAttr)
-        mText = a.getString(R.styleable.MyTextView_mText)!!;
+        mText = a.getString(R.styleable.MyTextView_mText) ?: "";
         mTextColor = a.getColor(R.styleable.MyTextView_mTextColor, Color.BLACK);
         mTextSize = a.getDimension(R.styleable.MyTextView_mTextSize, 100f);
-        a?.recycle()
+        a.recycle()
 
         mPaint = Paint().apply {
             textSize = mTextSize

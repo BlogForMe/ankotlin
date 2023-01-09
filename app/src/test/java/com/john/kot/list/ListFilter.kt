@@ -16,5 +16,7 @@ class ListFilter {
 //
 //        var nList = people.filter { invitedList.contains(it.nickname) }
 //        println(nList)
+
+
     }
 }

@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title: wallet transfer page -
+
+actor USER as "User"
+participant APP as "App"
+participant TNG as "TNG Server"
+participant OS as "Android"
+
+
+autonumber
+
+USER -> APP :enter wallet transfer page
+USER <-- APP : request Permissiom
+alt  #pink not grant
+USER <-- APP : show loading dialog
+APP -> TNG : "request: {ap.tngdwallet.promotion.certificate.transfer.recent.list}"
+APP <-- TNG : "response: {ap.tngdwallet.promotion.certificate.transfer.recent.list}"
+USER <-- APP : hide loading dialog
+APP ->x APP
+end
+USER <-- APP : show loading dialog
+APP -> TNG : "request: {ap.tngdwallet.promotion.certificate.transfer.recent.list}"
+APP -> OS : "query local contacts"  //异步任务的图，是这样的吗?
+APP <-- TNG : "response: {ap.tngdwallet.promotion.certificate.transfer.recent.list}"
+APP <-- OS :  "response contacts"
+USER <-- APP : hide loading dialog
+
+newpage
+
+
+
+
+
+
+
+
+@enduml

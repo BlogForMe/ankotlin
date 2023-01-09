@@ -24,8 +24,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_number">
 
+        <com.john.kot.view.MyTextView
+            android:id="@+id/my_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:mText="my Test" />
+
         <include
-            layout="@layout/activity_deep_link" />
+            layout="@layout/activity_deep_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_text_view" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

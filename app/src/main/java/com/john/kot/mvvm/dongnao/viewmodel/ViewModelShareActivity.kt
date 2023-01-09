@@ -1,5 +1,6 @@
 package com.john.kot.mvvm.dongnao.viewmodel
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -23,11 +24,16 @@ class ViewModelShareActivity : AppCompatActivity() {
 
         viewBinding.button.setOnClickListener {
 //            viewModel.number = 2
-            val metrics = DisplayMetrics()
-            getWindowManager().getDefaultDisplay().getMetrics(metrics)
-            metrics.density
-            Log.i(TAG, "onCreate lineCount : ${viewBinding.button.lineCount}")
-            Log.i(TAG, "onCreate: metrics.density ${metrics.density}")
+//            val metrics = DisplayMetrics()
+//            getWindowManager().getDefaultDisplay().getMetrics(metrics)
+//            metrics.density
+//            Log.i(TAG, "onCreate lineCount : ${viewBinding.button.lineCount}")
+//            Log.i(TAG, "onCreate: metrics.density ${metrics.density}")
+            if (application is Activity) {
+                Log.i(TAG, "onCreate: application")
+            } else {
+                Log.i(TAG, "onCreate: nonApplication")
+            }
         }
 
 //        textView = findViewById<View>(R.id.textview) as TextView
