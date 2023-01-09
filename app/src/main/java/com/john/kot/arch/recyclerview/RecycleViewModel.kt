@@ -8,7 +8,7 @@ class RecycleViewModel : ViewModel() {
      * Generates Strings for RecyclerView's adapter. This data would usually come
      * from a local content provider or remote server.
      */
-    fun initDataset(): Array<String> {
-        return arrayOf("50", "100", "150", "200", "Others")
+    fun initDataset(): List<String> {
+        return arrayOf("50", "100", "150", "200", "Others").toList()
     }
 }

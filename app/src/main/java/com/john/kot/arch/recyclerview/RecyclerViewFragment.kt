@@ -15,6 +15,7 @@
  */
 package com.john.kot.arch.recyclerview
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -26,9 +27,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.util.sysdialog.ItemPickDialog
 import com.john.kot.databinding.RecyclerViewFragBinding
 
-const val TAG = "RecyclerViewFragment"
 
 class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
+    val TAG = "RecyclerViewFragment"
+
     private var _binding: RecyclerViewFragBinding? = null
     private var mRecyclerViewModel: RecycleViewModel? = null
 
@@ -54,9 +56,12 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
         super.onViewCreated(view, savedInstanceState)
 
         val mLayoutManager = LinearLayoutManager(activity)
+        mLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         _binding?.recyclerView?.layoutManager = mLayoutManager
 
         val initDataset = mRecyclerViewModel!!.initDataset()
+        val itemPadding = getItemPadding(initDataset, "RM", Typeface.DEFAULT)
+        _binding?.recyclerView?.addItemDecoration(ItemTransferAmount(itemPadding))
         val mAdapter = CustomAdapter(initDataset)
         _binding?.recyclerView?.adapter = mAdapter
         mAdapter.listener = object : OnItemClickListener {

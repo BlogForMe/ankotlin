@@ -24,7 +24,7 @@ import com.john.kot.databinding.TextRowItemBinding
 import kotlinx.android.synthetic.main.item_ammount.view.*
 import kotlinx.android.synthetic.main.text_row_item.view.*
 
-class CustomAdapter(val mDataSet: Array<String>) :
+class CustomAdapter(val mDataSet: List<String>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     private val TAG_CLASS = "CustomAdapter"
 
