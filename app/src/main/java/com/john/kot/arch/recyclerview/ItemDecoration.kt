@@ -69,7 +69,7 @@ class ItemTransferAmount(val padding: Int) : RecyclerView.ItemDecoration() {
         } else {
             outRect.set(0, 0, padding, 0)
         }
-        Log.i(TAG, "getItemOffsets: $position")
+//        Log.i(TAG, "getItemOffsets: $position")
 
     }
 }
@@ -94,7 +94,7 @@ fun getItemPadding(
 
     Log.i(
         TAG,
-        "getItemPadding: ${getScreenWidth()}  getTextLength ${
+        "getItemPadding: ${getScreenWidth()}  AmountTextLength ${
             getTextLength(
                 typeface,
                 txtStr.toString()
@@ -103,9 +103,15 @@ fun getItemPadding(
     )
 
     // 剩余的宽度/5 组建中间留白的个数
+    val textWidth = COUNT_ITEM_AMOUNT_TRANSFER * getTextLength(typeface, "RM")
+
+    Log.i(TAG, "getItemPadding:  RM textWidth $textWidth")
+
     val width =
-        (getScreenWidth() - getTextLength(typeface, txtStr.toString())) /
+        (getScreenWidth() - getTextLength(typeface, txtStr.toString()) - textWidth) /
                 (COUNT_ITEM_AMOUNT_TRANSFER - 1)
+
+    Log.i(TAG, "getItemPadding:  width $width")
 
     return width
 }
@@ -113,7 +119,7 @@ fun getItemPadding(
 fun getTextLength(typeface: Typeface, txt: String): Int {
     val paint = Paint()
     paint.typeface = typeface
-    paint.textSize = 30.dp.toFloat()
+    paint.textSize = 10.dp.toFloat()
     val textWidth = paint.measureText(txt)
     return textWidth.toInt()
 }

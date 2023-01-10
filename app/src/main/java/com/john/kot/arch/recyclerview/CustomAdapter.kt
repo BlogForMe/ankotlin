@@ -31,19 +31,19 @@ class CustomAdapter(val mDataSet: List<String>) :
 
     var listener: OnItemClickListener? = null
 
-    //    class ViewHolder(biding: ItemAmmountBinding) : RecyclerView.ViewHolder(biding.root)
-    class ViewHolder(biding: ItemAmmountSimpleBinding) : RecyclerView.ViewHolder(biding.root)
+    class ViewHolder(biding: ItemAmmountBinding) : RecyclerView.ViewHolder(biding.root)
+//    class ViewHolder(biding: ItemAmmountSimpleBinding) : RecyclerView.ViewHolder(biding.root)
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-//        val binding =
-//            ItemAmmountBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
         val binding =
-            ItemAmmountSimpleBinding.inflate(
-                LayoutInflater.from(viewGroup.context),
-                viewGroup,
-                false
-            )
+            ItemAmmountBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+//        val binding =
+//            ItemAmmountSimpleBinding.inflate(
+//                LayoutInflater.from(viewGroup.context),
+//                viewGroup,
+//                false
+//            )
         val viewHolder = ViewHolder(binding)
         Log.i(TAG_CLASS, "onCreateViewHolder: $viewHolder")
         return viewHolder
