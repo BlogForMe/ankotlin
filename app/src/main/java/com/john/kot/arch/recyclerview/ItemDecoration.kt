@@ -103,12 +103,12 @@ fun getItemPadding(
     )
 
     // 剩余的宽度/5 组建中间留白的个数
-    val textWidth = COUNT_ITEM_AMOUNT_TRANSFER * getTextLength(typeface, "RM")
+    val rmWidth = COUNT_ITEM_AMOUNT_TRANSFER * getTextLength(typeface, "RM")
 
-    Log.i(TAG, "getItemPadding:  RM textWidth $textWidth")
+    Log.i(TAG, "getItemPadding:  RM textWidth $rmWidth")
 
     val width =
-        (getScreenWidth() - getTextLength(typeface, txtStr.toString()) - textWidth) /
+        (getScreenWidth() - getTextLength(typeface, txtStr.toString()) - rmWidth) /
                 (COUNT_ITEM_AMOUNT_TRANSFER - 1)
 
     Log.i(TAG, "getItemPadding:  width $width")
