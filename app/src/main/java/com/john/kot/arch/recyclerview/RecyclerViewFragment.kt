@@ -69,7 +69,6 @@ class RecyclerViewFragment : Fragment(), ItemPickDialog.ISelectListener {
                 Log.i(TAG, "onItemClick position: $position")
             }
         }
-
     }
 
 

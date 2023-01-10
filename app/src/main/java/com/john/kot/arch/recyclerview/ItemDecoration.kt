@@ -3,10 +3,12 @@ package com.john.kot.arch.recyclerview
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.Typeface
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.android.util.window.util.dp
 import com.android.util.window.util.getScreenWidth
+import com.android.util.window.util.sp
 
 /**
  *
@@ -19,6 +21,7 @@ import com.android.util.window.util.getScreenWidth
  * UpdateRemark:   Modify the description
  */
 
+val TAG = "ItemDecoration"
 
 class ItemDecoration(
     private val spanCount: Int,
@@ -26,7 +29,6 @@ class ItemDecoration(
     private val columnSpacing: Int
 ) : RecyclerView.ItemDecoration() {
 
-    val TAG = "ItemDecoration"
 
     override fun getItemOffsets(
         outRect: Rect,
@@ -87,25 +89,31 @@ fun getItemPadding(
     list.forEach {
         txtStr.append(it)
     }
+
+    Log.i(
+        TAG,
+        "getItemPadding: ${getScreenWidth()}  getTextLength ${
+            getTextLength(
+                typeface,
+                txtStr.toString()
+            )
+        }"
+    )
+
     // 剩余的宽度/5 组建中间留白的个数
-    var width =
-        (getScreenWidth() - 2 * PAGE_MARING_EDGE - (getTextLength(
+    val width =
+        ((getScreenWidth() - getTextLength(
             typeface,
             txtStr.toString()
-        ) + COUNT_ITEM_AMOUNT_TRANSFER * (2 * (PADDING_ITEM_TEXT + 1.dp) + getTextLength(
-            typeface,
-            CurrencyUnit
-        )))) / (COUNT_ITEM_AMOUNT_TRANSFER - 1)
-    if (width < 2.dp) {
-        width = 2.dp
-    }
+        ))) / (COUNT_ITEM_AMOUNT_TRANSFER - 1)
+
     return width
 }
 
 fun getTextLength(typeface: Typeface, txt: String): Int {
     val paint = Paint()
     paint.typeface = typeface
-    paint.textSize = 12.dp.toFloat()
+    paint.textSize = 30.sp.toFloat()
     val textWidth = paint.measureText(txt)
     return textWidth.toInt()
 }

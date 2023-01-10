@@ -20,6 +20,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.john.kot.databinding.ItemAmmountBinding
+import com.john.kot.databinding.ItemAmmountSimpleBinding
 import com.john.kot.databinding.TextRowItemBinding
 import kotlinx.android.synthetic.main.item_ammount.view.*
 import kotlinx.android.synthetic.main.text_row_item.view.*
@@ -30,13 +31,19 @@ class CustomAdapter(val mDataSet: List<String>) :
 
     var listener: OnItemClickListener? = null
 
-    class ViewHolder(biding: ItemAmmountBinding) : RecyclerView.ViewHolder(biding.root)
-//    class ViewHolder(v: TextRowItemBinding) : RecyclerView.ViewHolder(v.root)
+    //    class ViewHolder(biding: ItemAmmountBinding) : RecyclerView.ViewHolder(biding.root)
+    class ViewHolder(biding: ItemAmmountSimpleBinding) : RecyclerView.ViewHolder(biding.root)
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+//        val binding =
+//            ItemAmmountBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
         val binding =
-            ItemAmmountBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+            ItemAmmountSimpleBinding.inflate(
+                LayoutInflater.from(viewGroup.context),
+                viewGroup,
+                false
+            )
         val viewHolder = ViewHolder(binding)
         Log.i(TAG_CLASS, "onCreateViewHolder: $viewHolder")
         return viewHolder
