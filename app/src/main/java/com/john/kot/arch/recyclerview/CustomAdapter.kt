@@ -17,6 +17,7 @@ package com.john.kot.arch.recyclerview
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.john.kot.databinding.ItemAmmountBinding
@@ -52,6 +53,10 @@ class CustomAdapter(val mDataSet: List<String>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         Log.i(TAG_CLASS, "onBindViewHolder: $viewHolder")
         viewHolder.itemView.amount_tv.text = mDataSet[position]
+
+        if (mDataSet.size.minus(1) == position) {
+            viewHolder.itemView.rm_tv.visibility = View.GONE
+        }
         viewHolder.itemView.setOnClickListener {
             listener?.onItemClick(viewHolder.itemView, position)
         }
