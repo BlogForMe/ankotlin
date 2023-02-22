@@ -4,14 +4,41 @@ import android.content.Context
 import android.graphics.Typeface
 import android.text.*
 import android.text.style.*
+import android.util.Log
 import android.view.View
 import com.john.kot.R
+import com.john.kot.anim.TextViewBigActivity
+import java.lang.StringBuilder
+import java.util.regex.Pattern
 
 /**
  * Created by Administrator on 2018/5/14.
  */
 
 object SpanStringUtils {
+
+    fun strContactBuffer(index: Int, str: String, pattern: String): String {
+        val strBuilder = StringBuilder()
+        val array = str.split(pattern.toRegex())
+        for (i in index until array.size) {
+            val append = strBuilder.append(array[i])
+            if (i != array.lastIndex) {
+                append.append(" ")
+            }
+        }
+        return strBuilder.toString()
+    }
+
+    fun contactIndexBuffer(index: Int, array: List<String>): String {
+        val strBuilder = StringBuilder()
+        for (i in index until array.size) {
+            val append = strBuilder.append(array[i])
+            if (i != array.lastIndex) {
+                append.append(" ")
+            }
+        }
+        return strBuilder.toString()
+    }
 
     fun setClickable(
         context: Context,

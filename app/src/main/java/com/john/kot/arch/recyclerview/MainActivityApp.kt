@@ -45,19 +45,12 @@ class MainActivityApp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val text = "RMRMRMRMRM"
+        val text = "100"
 
-//        val textview = TextView(this)
-//
-//        textview.text = text
-//        textview.measure(
-//            LinearLayout.LayoutParams.WRAP_CONTENT,
-//            LinearLayout.LayoutParams.WRAP_CONTENT
-//        )
         binding.rmTv.text = text
         binding.root.viewTreeObserver.addOnGlobalLayoutListener {
             val width = binding.rmTv.measuredWidth
-            Log.i(TAG, "width: $width")
+            Log.i(TAG, "globalLayoutListener width: $width")
         }
 
 //        val measureText = binding.rmTv.paint.measureText(text)
@@ -90,13 +83,6 @@ class MainActivityApp : AppCompatActivity() {
         val desiredWidth = BoringLayout.getDesiredWidth(text, paint)
         Log.i(TAG, "desiredWidth :$desiredWidth")
 
-
-        val tv = TextView(this)
-        tv.textSize = 12f
-        tv.text = text
-        val tp = tv.paint
-        val length: Float = Layout.getDesiredWidth(tv.text.toString(), 0, tv.text.length, tp)
-        Log.i(TAG, "txt length:$length")
 
 
         if (savedInstanceState == null) {

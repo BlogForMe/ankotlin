@@ -29,8 +29,18 @@ public class JavaTest {
         array[0] = mTwiceBaseCache;
         array[1] = hashes;
 
-        System.out.println(" array[0]" +  array[0]);
-        System.out.println(" array[1]" +  array[1]);
+        System.out.println(" array[0]" + array[0]);
+        System.out.println(" array[1]" + array[1]);
         System.out.println(array);
+    }
+
+    @Test
+    public void regulartTest() {
+        String[] split = "earn return".split("\\s");
+        String[] split1 = "earn\treturn".split("\\s");
+        String[] split2 = "earn\rreturn".split("\\s");
+        String[] split3 = "earn\nreturn".split("\\s");
+        System.out.println(split);
+
     }
 }

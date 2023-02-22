@@ -5,3 +5,4 @@ include ':androidUtil'
 //project(':lottie').projectDir = new File('../lottie-android/lottie')
 
 
+include ':Mine'

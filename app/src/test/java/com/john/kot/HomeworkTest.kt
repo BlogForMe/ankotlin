@@ -21,6 +21,13 @@ class HomeworkTest {
     }
 
     @Test
+    fun ff() {
+        for (i in 65 until 127) {
+            println(i.toChar())
+        }
+    }
+
+    @Test
     fun `fib(2) = fib(0) + fib(1)`() {
         val fib2 = Homework.fib(2)
         val fib0 = Homework.fib(0)

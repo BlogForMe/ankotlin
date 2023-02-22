@@ -4,6 +4,8 @@ import android.content.res.Resources
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.Typeface
+import android.text.BoringLayout
+import android.text.TextPaint
 import android.util.Log
 import android.view.View
 import android.widget.TextView
@@ -94,8 +96,8 @@ fun getItemPadding(
         list = list.subList(0, COUNT_ITEM_AMOUNT_TRANSFER)
     }
     val pageEdgeWidth = 2 * PAGE_MARING_EDGE
-    val rmWidth = (COUNT_ITEM_AMOUNT_TRANSFER - 1) * (getTextLength(typeface, currencyUnit) + 2f.dp)
-    val textPaddingWidth = COUNT_ITEM_AMOUNT_TRANSFER * (2f * PADDING_ITEM_TEXT)
+//    val rmWidth = (COUNT_ITEM_AMOUNT_TRANSFER - 1) * (getTextLength(typeface, currencyUnit) + 2f.dp)
+//    val textPaddingWidth = COUNT_ITEM_AMOUNT_TRANSFER * (2f * PADDING_ITEM_TEXT)
 
     var textWidth = 0f
     list.forEach {
@@ -104,7 +106,7 @@ fun getItemPadding(
 
     // 剩余的宽度/5 组建中间留白的个数
     var widthPadding =
-        (getScreenWidth() - pageEdgeWidth - rmWidth - textPaddingWidth - textWidth) / (COUNT_ITEM_AMOUNT_TRANSFER - 1)
+        (getScreenWidth() - pageEdgeWidth - textWidth) / (COUNT_ITEM_AMOUNT_TRANSFER - 1)
 
 //    LogUtils.d(TAG + " 2dp ${2f.sp} getScreenWidth() ${getScreenWidth()}")
 
@@ -118,8 +120,9 @@ fun getItemPadding(
     return widthPadding.toInt()
 }
 
+
 fun getTextLength(typeface: Typeface, txt: String): Float {
-    val paint = Paint()
+    val paint = TextPaint()
     paint.typeface = typeface
     paint.textSize = 12f.dp
 
@@ -127,8 +130,10 @@ fun getTextLength(typeface: Typeface, txt: String): Float {
 //    paint.getTextBounds(txt, 0, txt.length, rect)
 //    val textWidth = rect.width().toFloat()
 
-    val textWidth = paint.measureText(txt)
-//    LogUtils.d("$TAG $txt txtWidth :$textWidth")
+//    val textWidth = paint.measureText(txt)
+    val textWidth = BoringLayout.getDesiredWidth(txt, paint)
+
+    Log.d(TAG, " $txt txtWidth :$textWidth")
     return textWidth
 }
 

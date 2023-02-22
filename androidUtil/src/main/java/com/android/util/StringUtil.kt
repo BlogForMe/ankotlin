@@ -9,20 +9,19 @@ const val RESULT_NORMAL = "normal"
 const val RESULT_HIGH = "high"
 const val RESULT_VERY_HIGH = "very_high"
 
-class StringUtil {
-    companion object{
-        //正则校验
-        fun validation(pattern: String?, str: String?): Boolean {
-            return if (str.isNullOrEmpty()) {
-                false
-            } else Pattern.compile(pattern).matcher(str).matches()
-        }
-    }
 
+//正则校验
+fun String?.validation(pattern: String): Boolean {
+    return if (this.isNullOrEmpty()) {
+        false
+    } else
+        Pattern.compile(pattern).matcher(this).matches()
 }
+
+
 fun getRandomString(length: Int): String {
     val str =
-            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     val random = Random()
     val sb = StringBuffer()
     for (i in 0 until length) {
@@ -43,11 +42,11 @@ fun getRandomString(length: Int): String {
 fun twoDoubleRange(dataValue: Double, array: DoubleArray): String? {
     var conclusion = ""
     if (dataValue < array[0]) {
-        conclusion =RESULT_LOW
+        conclusion = RESULT_LOW
     } else if (dataValue >= array[0] && dataValue < array[1]) {
-        conclusion =RESULT_NORMAL
+        conclusion = RESULT_NORMAL
     } else if (dataValue > array[1]) {
-        conclusion =RESULT_HIGH
+        conclusion = RESULT_HIGH
     }
     return conclusion
 }
@@ -55,11 +54,11 @@ fun twoDoubleRange(dataValue: Double, array: DoubleArray): String? {
 fun getTwoIntRange(dataValue: Int, array: IntArray): String? {
     var conclusion = ""
     if (dataValue < array[0]) {
-        conclusion =RESULT_LOW
+        conclusion = RESULT_LOW
     } else if (dataValue >= array[0] && dataValue < array[1]) {
-        conclusion =RESULT_NORMAL
+        conclusion = RESULT_NORMAL
     } else if (dataValue > array[1]) {
-        conclusion =RESULT_HIGH
+        conclusion = RESULT_HIGH
     }
     return conclusion
 }
@@ -75,13 +74,13 @@ fun getTwoIntRange(dataValue: Int, array: IntArray): String? {
 fun getThreeRange(dataValue: Double, array: DoubleArray): String? {
     var conclusion = ""
     if (dataValue < array[0]) {
-        conclusion =RESULT_LOW
+        conclusion = RESULT_LOW
     } else if (dataValue >= array[0] && dataValue < array[1]) {
-        conclusion =RESULT_NORMAL
+        conclusion = RESULT_NORMAL
     } else if (dataValue > array[1] && dataValue < array[2]) {
-        conclusion =RESULT_HIGH
+        conclusion = RESULT_HIGH
     } else if (dataValue > array[2]) {
-        conclusion =RESULT_VERY_HIGH
+        conclusion = RESULT_VERY_HIGH
     }
     return conclusion
 }
@@ -138,4 +137,17 @@ fun getRemoteTxt(rmStates: Int): String? {
     return txt
 }
 
+fun <T> Array<T>.printArray() {
+    for (i in this) {
+        print(" $i ")
+    }
+    println()
+}
+
+fun <T> List<T>.printArray() {
+    for (i in this) {
+        println("$i")
+    }
+    println()
+}
 

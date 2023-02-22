@@ -9,14 +9,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
 import com.john.kot.databinding.ActivityPlayStoreBinding
 
-class PlayStoreActivity : AppCompatActivity() {
+class GoogleTopUpActivity : AppCompatActivity() {
     val binding by lazy { ActivityPlayStoreBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val intent = Intent()
         binding.opengoogle.setOnClickListener {
-            intent.action = "com.google.android.payments.standard.TOPUP_V1"
+            intent.action = "com.google.android.payments.standard.TOPUP_V2"
+            intent.addCategory("android.intent.category.DEFAULT")
             intent.putExtra("gspTopUpRequest", resources.getString(R.string.secret_key))
             resultLauncher.launch(intent)
         }

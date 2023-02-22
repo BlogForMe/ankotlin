@@ -15,6 +15,8 @@
  */
 package com.john.kot.arch.recyclerview
 
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -54,11 +56,15 @@ class CustomAdapter(val mDataSet: List<String>) :
         Log.i(TAG_CLASS, "onBindViewHolder: $viewHolder")
         viewHolder.itemView.amount_tv.text = mDataSet[position]
 
-        if (mDataSet.size.minus(1) == position) {
-            viewHolder.itemView.rm_tv.visibility = View.GONE
-        }
+//        if (mDataSet.size.minus(1) == position) {
+//            viewHolder.itemView.rm_tv.visibility = View.GONE
+//        }
         viewHolder.itemView.setOnClickListener {
             listener?.onItemClick(viewHolder.itemView, position)
+        }
+        Handler(Looper.myLooper()!!).post {
+            val width = viewHolder.itemView.width
+            Log.i(TAG, "${mDataSet[position]} itemWidth: $width")
         }
     }
 

@@ -7,13 +7,12 @@
     tools:context=".arch.recyclerview.MainActivityApp">
 
     <TextView
-        android:background="@color/bgGreenColor"
         android:id="@+id/rm_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RM"
+        android:text="100"
         android:textColor="#282828"
-        android:textSize="12dp" />
+        android:textSize="20dp" />
 
     <FrameLayout
         android:id="@+id/sample_content_fragment"

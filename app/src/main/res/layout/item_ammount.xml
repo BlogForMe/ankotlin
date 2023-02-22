@@ -4,33 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:background="#EBEBEB"
-    android:paddingTop="5dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="5dp">
+    android:layout_height="wrap_content">
 
-
-    <TextView
-        android:id="@+id/rm_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RM"
-        android:textColor="#282828"
-        android:textSize="12dp"
-        android:layout_marginEnd="2dp"
-        FontTextView:kit_typeFace="@string/font_type_rb_Regular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/amount_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/amount_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#EBEBEB"
         android:text="100"
         android:textColor="#282828"
         android:textSize="12dp"
@@ -38,7 +19,6 @@
         FontTextView:kit_typeFace="@string/font_type_rb_Regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rm_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
 
