@@ -30,4 +30,18 @@
     <string name="duitnow_bottom_transfer_service_introduction">DuitNow Transfer is a real-time money transfer service by PayNet, and is supported by ALL banks in Malaysia. $$$86,3::::::#004CA1:::1:::0 </string>
 
     <string name="secret_key">"hQEMAwUixtGMneUtAQf_XoqkEu5OSZS18tY511F-fx4Zwj07ssGaLuyH0i6yN5wkpt-HRUZAudmE0AWubFz46m_yK130mnCGZnL__9Z63LxWHjXFyhEsqwhwvtyxn4SHr0MszFgglfFM90OAReI_sK6vXKGS3nc6rTsgXbzJ_uBcs0QgqK4yaTgX_FPgZi2LtJcQJdyI0Yky26j2hQUC5N2f06vdNuVcfHZzQt335HIkJAoZLUMsgx2dyNk5tjNaA9J8Zqf1KklbF4E9s0qcL6hrEfWmf9zujM2VqaSc6ooBlKJi7HVZpiKGCRsKnqPHERGG7h7Npw5HNMjaq5IVcYuHb0uUDPx7Wl3Gyubv-MnBZY9_BtyzmWXlSQhZ5GRlJwfPIM6Wc06-7lOjQEIxn7gXVMTLg61cxuJ2WhdVqwb1KaTFFMLSKphP39nzEKCwWr4eV3HeZtC0zkITZTypibySmpyRYIoe2lZ2mueXc1b05CNXPgbLjeHhGlcZ5RwdQbfK0YCmt0Ex2Vos6dEQiLn-Fh2vICEuTSv2Zo6n8C8ooumnfbInE3XgPsEbQhIjGtJps_rDEixbtx4R0WvNCsvoBpQ_c710mLuOa10Rp3z0iFbN-JY4stZVI_DL5TkDMxgM6KVU6Lbc9bcjuYssBSeXYnNbmv9fPph7oW-9IY5czbXdBKT2xp4V2XnLbnZ3R-PHxqpp4CuxbTgTToILz42UshCoym3Xz9Nu4KAB9pPTRtKOI7hcFKKg6a-zTmikBR9k6BlnZM5GgZ73AupWknRG2gj4hke3J32CPjFYkCflKGPGKENz8C9C2XrIyQRFN-7HBQdtgYPlLTGKmrUIUYDyfaXfSOeCBL5XZqCJXOPytJcZQhA_rmg8-t-DF8QFbRKBMQFGwByCb6uPNTNDl9aG8LvIoaV-mv0NHV9t-I7gM16Fcr8_bWLVm7fsgIb2eL8AZZCBuwpL0_idEafB7lN0FUODGC-YtMdX5pTCSZzb65Lj-Ltwl6GmKXSE1Tbdx74FD_NHAdm-MU1JBBw_bKtXLIlR5-HVSiSaVMUhJnc378e5kjAwpO6grEBE-MwGk6T4dy81AA=="</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
