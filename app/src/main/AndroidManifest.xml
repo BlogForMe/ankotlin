@@ -18,14 +18,8 @@
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 悬浮窗权限 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-    <!-- Defines a custom permission -->
-    <permission
-        android:name="com.example.dangerousactivity.MY_DANG_PERM"
-        android:description="dangerous_perm_string"
-        android:label="dangerous_permission_label_string"
-        android:protectionLevel="dangerous">
-
-    </permission>
+    <!--  request for DANGEROUS_PERM permission to this application -->
+    <uses-permission android:name="com.example.dangerousactivity.MY_DANG_PERM" />
 
     <application
         android:name=".MyApp"

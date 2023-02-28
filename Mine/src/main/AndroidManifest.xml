@@ -19,14 +19,22 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
+    <!-- Defines a custom permission -->
+    <permission
+        android:name="com.example.dangerousactivity.MY_DANG_PERM"
+        android:label="dangerous_permission_label_string"
+        android:protectionLevel="dangerous" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:permission="com.example.dangerousactivity.MY_DANG_PERM"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".link.TestDeepLinkActivity"
             android:exported="true">
@@ -36,12 +44,11 @@
             android:name=".work.ReloadActivity"
             android:exported="false" />
         <activity
-            android:name=".work.GoogleTopUpActivity"
+            android:name=".work.DangerousInvokeActivity"
             android:exported="true"
-            android:permission=""
             android:theme="@style/AgsAuthenticationTheme">
             <intent-filter>
-                <action android:name="com.google.android.payments.standard.TOPUP_V2" />
+                <action android:name="com.example.dangerousactivity.MY_DANG_ACTION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -63,13 +70,9 @@
             android:name=".ui.StateBarActivity"
             android:exported="true" />
         <activity
-            android:exported="true"
-            android:name=".AppManagerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".AppManagerActivity"
+            android:exported="true">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".dagger.dn.DaggerSecondActivity2" />
         <activity
@@ -161,7 +164,15 @@
         <activity android:name=".openlib.eventbus.GoalEventActivity" />
         <activity android:name=".component.service.CheckServiceActivity" />
         <activity android:name=".dialog.dw.ProgressBarActivity" />
-        <activity android:name=".ui.tab.TabLayoutActivity" />
+        <activity
+            android:name=".ui.tab.TabLayoutActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.tab.TabBottomActivity" />
         <activity android:name=".openlib.rxretrofit.retrofit.RetrofitActivity" />
         <activity android:name=".anim.gesture.GestureDetectorActivity" />
@@ -221,6 +232,7 @@
                 <action android:name="com.broadcast.android" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

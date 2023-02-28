@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.comm.util.base.BaseActivity
 import com.comm.util.databinding.ActivityGoogleTopUpBinding
 
-class GoogleTopUpActivity : BaseActivity() {
+class DangerousInvokeActivity : BaseActivity() {
     val biding by lazy { ActivityGoogleTopUpBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
