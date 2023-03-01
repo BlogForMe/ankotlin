@@ -19,17 +19,18 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <!-- Defines a custom permission -->
-    <permission
-        android:name="com.example.dangerousactivity.MY_DANG_PERM"
-        android:label="dangerous_permission_label_string"
-        android:protectionLevel="dangerous" />
+    <!-- <permission
+         android:name="com.example.dangerousactivity.MY_DANG_PERM"
+         android:label="dangerous_permission_label_string"
+         android:protectionLevel="dangerous" />-->
 
+
+    <!--android:permission="com.example.dangerousactivity.MY_DANG_PERM"-->
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:permission="com.example.dangerousactivity.MY_DANG_PERM"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -37,7 +38,11 @@
         <activity
             android:name=".link.TestDeepLinkActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".work.ReloadActivity"
@@ -166,11 +171,7 @@
         <activity
             android:name=".ui.tab.TabLayoutActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.tab.TabBottomActivity" />
         <activity android:name=".openlib.rxretrofit.retrofit.RetrofitActivity" />
