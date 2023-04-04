@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.activity_live_data.*
 import timber.log.Timber
 
 class LiveDataActivity : AppCompatActivity() {
@@ -23,16 +22,16 @@ class LiveDataActivity : AppCompatActivity() {
 //        binding.viewmodel = myViewModel
 
         var i = 1
-        bt_click.setOnClickListener {
+//        bt_click.setOnClickListener {
 //            myViewModel.userClicksOnButton()
-            myViewModel.isShow.value = i++
-            Timber.i("i ${myViewModel.isShow.value}")
-            myViewModel.isVisible.value = true
-        }
+        myViewModel.isShow.value = i++
+        Timber.i("i ${myViewModel.isShow.value}")
+        myViewModel.isVisible.value = true
+//        }
 
-        bt_hide.setOnClickListener {
-            myViewModel.isVisible.value = false
-        }
+//        bt_hide.setOnClickListener {
+//            myViewModel.isVisible.value = false
+//        }
     }
 
 

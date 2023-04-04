@@ -3,7 +3,6 @@ package com.comm.util.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.comm.util.R
-import kotlinx.android.synthetic.main.activity_dial.*
 
 /**
  * 绘制体脂秤 体重的表盘
@@ -19,8 +18,8 @@ class DialActivity : AppCompatActivity() {
 //            body_˝data_view.setBdFatValue(ff.toString())
 //        }
 
-        bt_setkg.setOnClickListener {
-            dkgview.setEbelKg(78.4f)
-        }
+//        bt_setkg.setOnClickListener {
+//            dkgview.setEbelKg(78.4f)
+//        }
     }
 }

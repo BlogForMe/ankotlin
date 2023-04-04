@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import com.comm.util.R
 import com.comm.util.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_ok.*
 import timber.log.Timber
 
 /**
@@ -32,10 +31,10 @@ class ResultOkFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         val intent = Intent(context, SecondResultActivity::class.java)
 
-        bt_fragment.setOnClickListener {
-            startActivityForResult(intent, requestCode)
-            Timber.d("startActivityForResult $requestCode")
-        }
+//        bt_fragment.setOnClickListener {
+//            startActivityForResult(intent, requestCode)
+//            Timber.d("startActivityForResult $requestCode")
+//        }
     }
 
 

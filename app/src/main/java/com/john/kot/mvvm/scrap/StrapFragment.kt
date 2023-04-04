@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.john.kot.R
-import kotlinx.android.synthetic.main.strap_fragment.*
 
 class StrapFragment : Fragment() {
 
@@ -23,28 +22,28 @@ class StrapFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        tb_layout.addTab(tb_layout.newTab().setText("体征"))
-        tb_layout.addTab(tb_layout.newTab().setText("睡眠"))
+//        tb_layout.addTab(tb_layout.newTab().setText("体征"))
+//        tb_layout.addTab(tb_layout.newTab().setText("睡眠"))
 
         childFragmentManager.beginTransaction()
-                .replace(R.id.fcv_content, BodyDataFragment.newInstance())
-                .commit()
+            .replace(R.id.fcv_content, BodyDataFragment.newInstance())
+            .commit()
 
-        tb_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(p0: TabLayout.Tab?) {
-            }
-
-            override fun onTabUnselected(p0: TabLayout.Tab?) {
-            }
-
-            override fun onTabSelected(p0: TabLayout.Tab?) {
-                if (p0?.text == "体征") {
-
-                } else if (p0?.text == "睡眠") {
-
-                }
-            }
-        })
+//        tb_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//            override fun onTabReselected(p0: TabLayout.Tab?) {
+//            }
+//
+//            override fun onTabUnselected(p0: TabLayout.Tab?) {
+//            }
+//
+//            override fun onTabSelected(p0: TabLayout.Tab?) {
+//                if (p0?.text == "体征") {
+//
+//                } else if (p0?.text == "睡眠") {
+//
+//                }
+//            }
+//        })
     }
 
 }

@@ -6,7 +6,6 @@ import com.comm.util.bean.BaseCount
 import com.comm.util.bean.Site
 import com.comm.util.utils.GsonUtil.gson
 import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.activity_kotlin_type.*
 import timber.log.Timber
 
 class KotlinTypeActivity : AppCompatActivity() {
@@ -22,8 +21,8 @@ class KotlinTypeActivity : AppCompatActivity() {
         val type = object : TypeToken<BaseCount<List<Site>>>() {}.type
         var response = gson.fromJson<BaseCount<List<Site>>>(json, type)
 
-        bt_wenhao.setOnClickListener {
-            //            val ss = null
+//        bt_wenhao.setOnClickListener {
+        //            val ss = null
 //            checkNull(ss)
 //            archivesInfoList = response.dataList
 //            val dataList = response.dataList
@@ -35,20 +34,20 @@ class KotlinTypeActivity : AppCompatActivity() {
 //            data?.let { it ->
 //                it[0].sites
 //            }
-            val nullTxt: String? = null
-            Timber.i("? " + nullTxt?.length)
+        val nullTxt: String? = null
+        Timber.i("? " + nullTxt?.length)
 
-            nullTxt?.let {
-                Timber.i("let " + it.length)
-            }
-
-
+        nullTxt?.let {
+            Timber.i("let " + it.length)
         }
 
-        bt_gantan.setOnClickListener {
-            val ss = null
-            ganTan(ss)
-        }
+
+//        }
+
+//        bt_gantan.setOnClickListener {
+//            val ss = null
+//            ganTan(ss)
+//        }
     }
 
     private fun ganTan(ss: String?) {

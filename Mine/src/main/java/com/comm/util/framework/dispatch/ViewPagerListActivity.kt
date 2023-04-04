@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import com.comm.util.R
 import com.comm.util.framework.dispatch.widget.BaseViewPagerAdapter
 import com.comm.util.framework.dispatch.widget.ListViewFragment
-import kotlinx.android.synthetic.main.activity_view_pager_list.*
 
 class ViewPagerListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +17,6 @@ class ViewPagerListActivity : AppCompatActivity() {
 //            mFragments.add(ItemRecyclerFragment.newInstance(1))
             mFragments.add(ListViewFragment.newInstance(i.toString()))
         }
-        viewpager.adapter = BaseViewPagerAdapter(supportFragmentManager, mFragments)
+//        viewpager.adapter = BaseViewPagerAdapter(supportFragmentManager, mFragments)
     }
 }

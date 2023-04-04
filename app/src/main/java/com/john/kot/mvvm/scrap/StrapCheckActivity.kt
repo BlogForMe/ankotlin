@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.john.kot.R
-import kotlinx.android.synthetic.main.ble_activity_temp.*
-import timber.log.Timber
 
 /**
  * 手环
@@ -19,11 +17,11 @@ class StrapCheckActivity :AppCompatActivity() {
         setContentView(R.layout.ble_activity_temp)
         mBodyDataModel = ViewModelProvider(this).get(BodyDataModel::class.java)
         resultFragment()
-        iv_back.setOnClickListener {
+//        iv_back.setOnClickListener {
             mBodyDataModel.activityTime.value  = "333333333333222222222222222222222323233333332222222233232232222223333333"
 //            Timber.i("mBodyDataModel.activityTime.value ${mBodyDataModel.spData.value}")
 
-        }
+//        }
     }
 
 

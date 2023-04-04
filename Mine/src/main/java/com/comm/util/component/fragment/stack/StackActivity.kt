@@ -7,7 +7,6 @@ import com.comm.util.R
 import com.comm.util.base.BaseActivity
 import com.comm.util.component.activityresult.SecondResultActivity
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_stack.*
 import timber.log.Timber
 
 /**
@@ -28,16 +27,15 @@ class StackActivity : BaseActivity() {
         ft.commit()
 
 
-
-        bt_t1.setOnClickListener {
-//            val ft1 = supportFragmentManager.beginTransaction();
-//            ft1.replace(R.id.fl_content,  Stack1Fragment(), "One");
-//            ft1.addToBackStack(null);
-//            ft1.commit();
-            stack1Fragment.arguments = Bundle().apply {
-                putString("param1", "stack2")
-            }
-        }
+//        bt_t1.setOnClickListener {
+////            val ft1 = supportFragmentManager.beginTransaction();
+////            ft1.replace(R.id.fl_content,  Stack1Fragment(), "One");
+////            ft1.addToBackStack(null);
+////            ft1.commit();
+//            stack1Fragment.arguments = Bundle().apply {
+//                putString("param1", "stack2")
+//            }
+//        }
 
         findViewById<View>(R.id.bt_t2).setOnClickListener { v: View? ->
             val ft2 = supportFragmentManager.beginTransaction()

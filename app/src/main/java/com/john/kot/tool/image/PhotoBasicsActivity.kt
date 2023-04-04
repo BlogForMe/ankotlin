@@ -14,7 +14,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_photo_basics.*
 import java.io.File
 
 /**
@@ -35,25 +34,29 @@ class PhotoBasicsActivity : AppCompatActivity() {
 //                            当某条权限之前已经请求过，并且用户已经拒绝了该权限时，shouldShowRequestPermissionRationale ()方法返回的是true
                 } else {
 //                            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
-                    requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA), WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
+                    requestPermissions(
+                        arrayOf(
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.CAMERA
+                        ), WRITE_EXTERNAL_STORAGE_REQUEST_CODE
+                    );
                 }
             }
         }
 
 
-
-        bt_basic_show.setOnClickListener {
+//        bt_basic_show.setOnClickListener {
+////            dispatchBasicTakePictureIntent()
 //            dispatchBasicTakePictureIntent()
-            dispatchBasicTakePictureIntent()
-        }
-
-        bt_basic_path.setOnClickListener {
-            dispatchTakePictureGalleryIntent()
-        }
-
-        bt_compass_path.setOnClickListener {
-
-        }
+//        }
+//
+//        bt_basic_path.setOnClickListener {
+//            dispatchTakePictureGalleryIntent()
+//        }
+//
+//        bt_compass_path.setOnClickListener {
+//
+//        }
     }
 
     private var mImageUriFromFile: Uri? = null
@@ -116,7 +119,7 @@ class PhotoBasicsActivity : AppCompatActivity() {
               })
 //              photoURI?.let { galleryAddPic(it) }
 //              galleryAddPic(mImageUriFromFile)
-              img_show.setImageBitmap(imageBitmap)
+//              img_show.setImageBitmap(imageBitmap)
 
           }
       }

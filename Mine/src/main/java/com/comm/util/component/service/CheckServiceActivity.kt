@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.comm.util.R
-import kotlinx.android.synthetic.main.activity_check_service.*
 import timber.log.Timber
 
 /**
@@ -26,30 +25,30 @@ class CheckServiceActivity : AppCompatActivity() {
         setContentView(R.layout.activity_check_service)
         val intent = Intent(this, ServiceLifeCycle::class.java)
         intent.putExtra(PARRAM, "CANS")
-        bt_start_service.setOnClickListener { v: View? ->
-            startService(intent)
-        }
-        bt_stop_service.setOnClickListener {
-            stopService(intent)
-        }
-        bt_bind_service.setOnClickListener {
-            if (bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE)) {
-                mShouldUnbind = true
-            } else {
-                Log.e(
-                    "MY_APP_TAG", "Error: The requested service doesn't " +
-                            "exist, or this client isn't allowed access to it."
-                )
-            }
-        }
-
-        bt_unbind_service.setOnClickListener {
-            unBindService()
-        }
-
-        bt_stop_myself.setOnClickListener {
-            mBlueService?.stopMySelf()
-        }
+//        bt_start_service.setOnClickListener { v: View? ->
+//            startService(intent)
+//        }
+//        bt_stop_service.setOnClickListener {
+//            stopService(intent)
+//        }
+//        bt_bind_service.setOnClickListener {
+//            if (bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE)) {
+//                mShouldUnbind = true
+//            } else {
+//                Log.e(
+//                    "MY_APP_TAG", "Error: The requested service doesn't " +
+//                            "exist, or this client isn't allowed access to it."
+//                )
+//            }
+//        }
+//
+//        bt_unbind_service.setOnClickListener {
+//            unBindService()
+//        }
+//
+//        bt_stop_myself.setOnClickListener {
+//            mBlueService?.stopMySelf()
+//        }
     }
 
     fun unBindService() {

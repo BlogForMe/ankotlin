@@ -1,10 +1,8 @@
 package com.john.kot.coroutine.dongnao
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.databinding.ActivityP16MainScopeBinding
-import kotlinx.android.synthetic.main.activity_p16_main_scope.*
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 

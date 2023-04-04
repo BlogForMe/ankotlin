@@ -12,7 +12,6 @@ import androidx.core.view.isVisible
 import com.john.kot.R
 import com.john.kot.databinding.ActivityGlideBinding
 import com.john.kot.util.viewBinding
-import kotlinx.android.synthetic.main.activity_glide.*
 import retrofit2.http.Url
 
 class GlideActivity : AppCompatActivity() {

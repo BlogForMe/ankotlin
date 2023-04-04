@@ -1,28 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jetbrains.kotlin.android'
 
-
-//apply plugin: 'com.tencent.matrix-plugin'
-//matrix {
-//    trace {
-//        enable = true	//if you don't want to use trace canary, set false
-//        baseMethodMapFile = "${project.buildDir}/matrix_output/Debug.methodmap"
-//        blackListFile = "${project.projectDir}/matrixTrace/blackMethodList.txt"
-//    }
-//}
 
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
-
-//jiagu{
-//    userName 'jon'
-//    password '123456'
-//}
 
 android {
     compileSdkVersion 33
@@ -33,7 +19,7 @@ android {
     defaultConfig {
         applicationId "com.comm.util"
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -60,34 +46,26 @@ android {
         unitTests.includeAndroidResources = true
     }
 
-//    packagingOptions {
-//        pickFirst 'lib/arm64-v8a/libsqlite.so'
-//        pickFirst 'lib/arm64-v8a/libc++_shared.so'
-//        pickFirst 'lib/arm64-v8a/libwechatbacktrace.so'
-//        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
-//        pickFirst 'lib/armeabi-v7a/libwechatbacktrace.so'
-//    }
 }
 
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
-    androidTestImplementation 'androidx.test:runner:1.5.0-beta01'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:+'
+    androidTestImplementation 'androidx.test:core:1.5.0'
+    androidTestImplementation 'androidx.test:runner:1.5.3-alpha01'
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion
     androidTestImplementation 'org.robolectric:annotations:' + rootProject.robolectricVersion
-//    androidTestImplementation "android.arch.core:core-testing:2.2.0"
-
     implementation project(path: ':androidUtil')
 
 
-    testImplementation 'androidx.test.ext:junit:1.1.4-beta01'
+    testImplementation 'androidx.test.ext:junit:1.1.5'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'androidx.test:core:1.5.0'
 
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
@@ -114,19 +92,10 @@ dependencies {
     implementation project(path: ':androidUtil')
     implementation 'androidx.core:core-ktx:1.9.0'
 
-    //Dagger
-    implementation 'com.google.dagger:dagger:2.42'
-    kapt 'com.google.dagger:dagger-compiler:2.42'
+    implementation 'com.google.dagger:dagger:2.44'
+    kapt 'com.google.dagger:dagger-compiler:2.44'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
 
-
-//    implementation group: "com.tencent.matrix", name: "matrix-android-lib", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-android-commons", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-trace-canary", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-resource-canary-android", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-resource-canary-common", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-io-canary", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-sqlite-lint-android-sdk", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-battery-canary", version: MATRIX_VERSION, changing: true
-//    implementation group: "com.tencent.matrix", name: "matrix-hooks", version: MATRIX_VERSION, changing: true
 }

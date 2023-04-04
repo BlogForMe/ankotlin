@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.comm.util.R
-import kotlinx.android.synthetic.main.fragment_list_view.*
 
 
 // TODO: Rename parameter arguments, choose names that match

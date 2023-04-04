@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_pemissionx_use.*
 
 /**
  * guolin 库
@@ -20,9 +19,9 @@ class PemissionxUseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemissionx_use)
-        bt_start_pemission.setOnClickListener {
-            requestPermissions()
-        }
+//        bt_start_pemission.setOnClickListener {
+//            requestPermissions()
+//        }
     }
 
     override fun onRequestPermissionsResult(

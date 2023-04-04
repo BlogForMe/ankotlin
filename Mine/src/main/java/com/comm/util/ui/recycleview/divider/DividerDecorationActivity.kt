@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.comm.util.R
 import com.comm.util.ui.recycleview.adapter.ItemAdpater
 import com.comm.util.ui.recycleview.divider.line.DividerGridItemDecoration
-import kotlinx.android.synthetic.main.activity_divider_decoration.*
 
 class DividerDecorationActivity : AppCompatActivity() {
     //定义RecyclerView
@@ -29,12 +28,12 @@ class DividerDecorationActivity : AppCompatActivity() {
         initData()
         mAdapter = ItemAdpater(this, mData)
 //        val mLayoutManager =
-        recycler_view.layoutManager = GridLayoutManager(this, 4)
-        //这句就是添加我们自定义的分隔线
-        val mDivider = DividerGridItemDecoration(this)
-        recycler_view.addItemDecoration(mDivider)
-
-        recycler_view.adapter = mAdapter
+//        recycler_view.layoutManager = GridLayoutManager(this, 4)
+//        //这句就是添加我们自定义的分隔线
+//        val mDivider = DividerGridItemDecoration(this)
+//        recycler_view.addItemDecoration(mDivider)
+//
+//        recycler_view.adapter = mAdapter
     }
 
     //初始化加载到RecyclerView中的数据, 我这里只是给每一个Item添加了String类型的数据

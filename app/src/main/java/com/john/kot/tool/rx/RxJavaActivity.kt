@@ -10,7 +10,6 @@ import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_rx_java.*
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
@@ -20,14 +19,12 @@ class RxJavaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_rx_java)
 
 
-
-
-        bt_rx.setOnClickListener {
-            Observable.interval(1,TimeUnit.SECONDS)
-                .subscribe{
-                    getData()
-                }
-        }
+//        bt_rx.setOnClickListener {
+//            Observable.interval(1,TimeUnit.SECONDS)
+//                .subscribe{
+//                    getData()
+//                }
+//        }
     }
 
 

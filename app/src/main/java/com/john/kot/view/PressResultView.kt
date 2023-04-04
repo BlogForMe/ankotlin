@@ -7,8 +7,6 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
-import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_skin_theme.view.*
 
 /**
  * 绘制血压结果图

@@ -3,7 +3,6 @@ package com.john.kot.ui.custom
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_custom_view.*
 
 class CustomViewActivity : AppCompatActivity() {
 
@@ -12,6 +11,6 @@ class CustomViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_custom_view)
 
 //        spread_view.setSpreadImg(R.mipmap.mem_ic_yuyue_presure)
-        rlr.setTime(100,300)
+//        rlr.setTime(100,300)
     }
 }

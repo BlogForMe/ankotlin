@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.View
 import com.john.kot.R
 import android.graphics.*
-import kotlinx.android.synthetic.main.activity_constraint1.view.*
 
 
 class MyTextView : View {

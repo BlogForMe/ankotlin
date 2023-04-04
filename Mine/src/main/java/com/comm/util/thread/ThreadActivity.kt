@@ -6,7 +6,6 @@ import android.os.Looper
 import android.os.Message
 import androidx.appcompat.app.AppCompatActivity
 import com.comm.util.R
-import kotlinx.android.synthetic.main.activity_thread.*
 import timber.log.Timber
 
 class ThreadActivity : AppCompatActivity() {
@@ -17,7 +16,7 @@ class ThreadActivity : AppCompatActivity() {
         setContentView(R.layout.activity_thread)
 
 
-        btA.setOnClickListener {
+//        btA.setOnClickListener {
             val threadA = ThreadA()
             val threadB = ThreadB()
             Thread(threadA).start()
@@ -26,7 +25,7 @@ class ThreadActivity : AppCompatActivity() {
                 handler = threadA.getHandler()
             }
             Thread(threadB).start()
-        }
+//        }
     }
 
 

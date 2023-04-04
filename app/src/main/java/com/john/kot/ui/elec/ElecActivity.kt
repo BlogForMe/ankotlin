@@ -5,7 +5,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
 import com.john.kot.util.DataUtil
-import kotlinx.android.synthetic.main.activity_elec.*
 
 class ElecActivity : AppCompatActivity() {
 
@@ -17,7 +16,7 @@ class ElecActivity : AppCompatActivity() {
 
     fun show(view: View) {
         val mylist = DataUtil.loadDatas(this)
-        pathView.setData(mylist)
+//        pathView.setData(mylist)
 //        ss!!.toString()
     }
 }

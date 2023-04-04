@@ -12,4 +12,9 @@ package com
  */
 
 class TestR {
+    fun fget(
+        ff: Int, fff: Int,
+    ) {
+
+    }
 }

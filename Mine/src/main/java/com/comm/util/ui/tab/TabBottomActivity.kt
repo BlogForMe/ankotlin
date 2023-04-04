@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.comm.util.R
 import com.comm.util.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_tab_bottom.*
 import timber.log.Timber
 
 /**
@@ -57,36 +56,36 @@ class TabBottomActivity : BaseActivity() {
         initFragment()
         Timber.tag(TAG).d("initFragment() homeFragment $homeFragment")
 
-        bnv.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.navigation_home -> {
-                    Timber.d("home")
-                    if (homeFragment == null) {
-                        homeFragment = HomeFragment()
-                        addFragment(homeFragment!!)
-                    }
-                    showFragment(homeFragment)
-                }
-                R.id.navigation_health -> {
-                    Timber.d("navigation_health")
-                    if (healthFragment == null) {
-                        healthFragment = HealthFragment()
-                        addFragment(healthFragment!!)
-                    }
-                    showFragment(healthFragment)
-                }
-                R.id.navigation_person -> {
-                    if (personFragment == null) {
-                        personFragment = PersonFragment()
-                        addFragment(personFragment!!)
-                    }
-                    showFragment(personFragment)
-                    Timber.d(",person")
-                }
-
-            }
-            return@setOnNavigationItemSelectedListener true
-        }
+//        bnv.setOnNavigationItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.navigation_home -> {
+//                    Timber.d("home")
+//                    if (homeFragment == null) {
+//                        homeFragment = HomeFragment()
+//                        addFragment(homeFragment!!)
+//                    }
+//                    showFragment(homeFragment)
+//                }
+//                R.id.navigation_health -> {
+//                    Timber.d("navigation_health")
+//                    if (healthFragment == null) {
+//                        healthFragment = HealthFragment()
+//                        addFragment(healthFragment!!)
+//                    }
+//                    showFragment(healthFragment)
+//                }
+//                R.id.navigation_person -> {
+//                    if (personFragment == null) {
+//                        personFragment = PersonFragment()
+//                        addFragment(personFragment!!)
+//                    }
+//                    showFragment(personFragment)
+//                    Timber.d(",person")
+//                }
+//
+//            }
+//            return@setOnNavigationItemSelectedListener true
+//        }
     }
 
 //    override fun setLayoutId(): Int {

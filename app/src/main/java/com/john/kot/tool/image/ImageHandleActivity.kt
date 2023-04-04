@@ -4,7 +4,6 @@ import android.graphics.*
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_image_handle.*
 
 
 /**
@@ -16,9 +15,9 @@ class ImageHandleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_handle)
 
-        bt_mirror_flip.setOnClickListener {
-            mirrorFlip()
-        }
+//        bt_mirror_flip.setOnClickListener {
+//            mirrorFlip()
+//        }
     }
     //镜面翻转
     fun mirrorFlip(){
@@ -32,6 +31,6 @@ class ImageHandleActivity : AppCompatActivity() {
         matrix.setScale(-1f,1f) //水平翻转
 //        matrix.setScale(1f,-1f) //垂直翻转
         val reversePic = Bitmap.createBitmap(bitmap,0,0,w,h,matrix,true)
-        iv_origin_target.setImageBitmap(reversePic)
+//        iv_origin_target.setImageBitmap(reversePic)
     }
 }

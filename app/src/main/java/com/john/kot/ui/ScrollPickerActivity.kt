@@ -3,8 +3,6 @@ package com.john.kot.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
-import kotlinx.android.synthetic.main.activity_scorll_picker.*
-import timber.log.Timber
 
 
 class ScrollPickerActivity : AppCompatActivity() {

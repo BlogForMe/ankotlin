@@ -19,14 +19,9 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.john.kot.databinding.ItemAmmountBinding
-import com.john.kot.databinding.ItemAmmountSimpleBinding
-import com.john.kot.databinding.TextRowItemBinding
-import kotlinx.android.synthetic.main.item_ammount.view.*
-import kotlinx.android.synthetic.main.text_row_item.view.*
 
 class CustomAdapter(val mDataSet: List<String>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
@@ -54,7 +49,7 @@ class CustomAdapter(val mDataSet: List<String>) :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         Log.i(TAG_CLASS, "onBindViewHolder: $viewHolder")
-        viewHolder.itemView.amount_tv.text = mDataSet[position]
+//        viewHolder.itemView.amount_tv.text = mDataSet[position]
 
 //        if (mDataSet.size.minus(1) == position) {
 //            viewHolder.itemView.rm_tv.visibility = View.GONE
