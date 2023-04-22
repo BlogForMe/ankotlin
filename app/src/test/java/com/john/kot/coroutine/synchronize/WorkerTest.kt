@@ -7,7 +7,7 @@ import kotlin.coroutines.suspendCoroutine
 import kotlin.system.measureTimeMillis
 
 
-internal class WorkerTest {
+class WorkerTest {
 
     @Test
     fun doSomething() {
@@ -36,8 +36,8 @@ internal class WorkerTest {
                 /*Async to Sync Operation*/
                 try {
                     /*Do some work, don't throw exception*/
-                    val doSomethingSync = async() { worker.doSomethingSync(false) }
-                    val doSomethingSync1 = async { worker.doSomethingSync(false) }
+//                    val doSomethingSync = async() { worker.doSomethingSync(false) }
+//                    val doSomethingSync1 = async { worker.doSomethingSync(false) }
 
 //                    val doSomethingSync = async { worker.doSomethingSync(false) }
 //                    val doSomethingSync1 = async { worker.doSomethingSync(false) }
@@ -45,8 +45,8 @@ internal class WorkerTest {
 //                    doSomethingSync1.await()
 //                    doSomethingSync.await()
 
-                    println("doSomethingSync $doSomethingSync")
-                    println("doSomethingSync1 $doSomethingSync1")
+//                    println("doSomethingSync $doSomethingSync")
+//                    println("doSomethingSync1 $doSomethingSync1")
                     /*Do some work, throw exception*/
                 } catch (e: Exception) {
                     e.printStackTrace()
