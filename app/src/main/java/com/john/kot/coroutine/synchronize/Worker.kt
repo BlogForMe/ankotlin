@@ -1,5 +1,13 @@
 package com.john.kot.coroutine.synchronize
 
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
+
 /**
  *
  * ClassName:      Worker
@@ -8,19 +16,18 @@ package com.john.kot.coroutine.synchronize
  * CreateDate:     2023/4/4
  * UpdateUser:     zh
  * UpdateDate:     2023/4/4
- * UpdateRemark:   Modify the description
+ * UpdateRemark:    https://rommansabbir.com/kotlin-coroutine-convert-async-apis-into-sync the description
  */
-
 class Worker {
     /*Async API*/
     fun doSomething(listener: Listener, throwError: Boolean) {
         when (throwError) {
             true -> {
-                Thread.sleep(3000)
+//                delay(4000)
                 listener.onError(Exception("Just a random exception..."))
             }
             else -> {
-                Thread.sleep(3000)
+//                delay(4000)
                 listener.onSuccess("Success")
             }
         }
@@ -32,17 +39,18 @@ class Worker {
     }
 }
 
-//suspend fun Worker.doSomethingSync(throwError: Boolean): String {
-//    return suspendCoroutine {
-//        doSomething(object : Worker.Listener {
-//            override fun onSuccess(msg: String) {
-//                it.resume("Success")
-//            }
-//
-//            override fun onError(e: Exception) {
-//                it.resumeWithException(e)
-//            }
-//
-//        }, throwError)
-//    }
-//}
+
+suspend fun doSomethingSync(throwError: Boolean): String {
+    return suspendCoroutine {
+        Worker().doSomething(object : Worker.Listener {
+            override fun onSuccess(msg: String) {
+                it.resume("Success")
+            }
+
+            override fun onError(e: Exception) {
+                it.resumeWithException(e)
+            }
+
+        }, throwError)
+    }
+}

@@ -5,4 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".hilt.me.HiltSecondActivity">
 
+    <Button
+        android:id="@+id/bt_finsh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="finish button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

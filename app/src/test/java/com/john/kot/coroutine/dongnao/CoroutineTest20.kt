@@ -74,12 +74,10 @@ class CoroutineTest20 {
             val two = async { doTwo() }
             println("total before")
 
-            one.await()
-            println("total one")
+            println("total one ${one.await()}")
 
-            two.await()
 //            println("The result : ${one.await() + two.await()}")
-            println("total two")
+            println("total two ${two.await()}")
         }
         println("completed in $time ms")
     }
@@ -114,13 +112,13 @@ class CoroutineTest20 {
     }
 
     private suspend fun doOne(): Int {
-        delay(2000)
+        Thread.sleep(3000)
         println("doOne")
         return 14
     }
 
     private suspend fun doTwo(): Int {
-        delay(1000)
+        Thread.sleep(4000)
         println("doTwo")
         return 25
     }

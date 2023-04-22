@@ -35,7 +35,7 @@ class ActivityA : BaseActivity() {
         Timber.i("getSaveDd $getSaveDd")
     }
 
-    override fun initView() {
+//    override fun initView() {
 //        findViewById<View>(R.id.bt_dialog).setOnClickListener { v: View? ->
 //            AlertDialog.Builder(this)
 //                .setPositiveButton("确认") { dialog, which -> }
@@ -90,8 +90,8 @@ class ActivityA : BaseActivity() {
         //                e.printStackTrace();
         //            }
 
-        //        });
-    }
+    //        });
+//    }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)

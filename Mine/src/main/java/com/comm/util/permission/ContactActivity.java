@@ -35,10 +35,6 @@ public class ContactActivity extends BaseActivity {
     //    return R.layout.activity_contact;
     //}
 
-    @Override
-    protected void initView() {
-        super.initView();
-    }
 
     @OnClick(R.id.bt_contact)
     public void btContact() {

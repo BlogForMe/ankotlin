@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.comm.util.R
 import com.comm.util.base.BaseActivity
-import com.comm.util.component.activityresult.SecondResultActivity
 import com.google.android.material.tabs.TabLayout
-import timber.log.Timber
 
 /**
  * Fragment回退栈
@@ -59,8 +57,8 @@ class StackActivity : BaseActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         when (resultCode) {
             21 -> {
-                val datas = data!!.getStringExtra(SecondResultActivity.sData)
-                Timber.d(datas)
+//                val datas = data!!.getStringExtra(SecondResultActivity.sData)
+//                Timber.d(datas)
             }
         }
     }

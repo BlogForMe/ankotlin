@@ -8,7 +8,7 @@ class StringUtilTest {
     //    const val REGEX_FULL_NAME = "(?=.*[A-Za-z]+.*)[A-Za-z@\\/`'’‘,\\.\\(\\)\\-]{4,100}$"
 //    val OLD_REG_ANDROID = "^[A-Za-z @\\/\\-'`,().]{4,100}$"
 //    val REGEX_PATTERN = "(?=.*[A-Za-z]+)[A-Za-z0-9 @ \\/`'’‘,\\.\\(\\)\\-]{4,100}$"
-//    val REGEX_REMARKS_INPUT = "^\\p{ASCII}+$"
+    val REGEX_REMARKS_INPUT = "^\\p{ASCII}+$"
 //
 //    val OLD_REGEX_IOS = "(?=.*\\D$)(?=.*[A-Za-z]+.*)[A-Za-z0-9@/`'’‘,——\\.\\(\\)\\-]+$"
 ////    val OLD_REG_ANDROID = "^[A-Za-z@\\/\\-'`,()]{4,100}$"

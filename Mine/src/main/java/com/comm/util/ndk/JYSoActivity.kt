@@ -1,22 +1,6 @@
 package com.comm.util.ndk
 
-import android.os.Bundle
-import android.os.Handler
-import android.os.Message
-import android.view.View
-import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
-import com.android.util.ToastUtil
-import com.comm.util.DevicePort
-import com.comm.util.R
-import com.comm.util.ndk.ParseZigUtil.getCurrentPress
-import com.comm.util.utils.GsonUtil
-import com.comm.util.utils.StringUtil.decimalOnePlace
-import com.comm.util.utils.StringUtil.decimalTwoPlace
-import timber.log.Timber
-import java.lang.ref.WeakReference
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 
 
 class JYSoActivity : AppCompatActivity() {

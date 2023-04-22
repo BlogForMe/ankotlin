@@ -38,11 +38,7 @@
         <activity
             android:name=".link.TestDeepLinkActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".work.ReloadActivity"
@@ -76,7 +72,10 @@
         <activity
             android:name=".AppManagerActivity"
             android:exported="true">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".dagger.dn.DaggerSecondActivity2" />
         <activity
@@ -150,7 +149,7 @@
         <activity android:name=".memory.MemoryMonitorActivity" />
         <activity android:name=".dagger.DaggerPresenterActivity" />
         <activity android:name=".dagger.demo1.A01SimpleActivity" />
-        <activity android:name=".component.activityresult.FirstResultActivity" />
+
         <activity android:name=".component.launchmode.SerachActivity" />
         <activity android:name=".component.launchmode.ActivityB" />
         <activity android:name=".component.launchmode.ThirdActivity" />
@@ -207,7 +206,6 @@
         </receiver>
 
         <activity android:name=".socket.MinaActivity" />
-        <activity android:name=".component.activityresult.SecondResultActivity" />
 
         <service android:name=".component.service.ContentService" />
 

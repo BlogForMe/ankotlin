@@ -28,11 +28,6 @@
         <activity
             android:name=".fragment.FragmentTestActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".hilt.dn.HiltSecondActivity"
@@ -148,6 +143,15 @@
         <activity android:name=".hilt.me.HiltActivity"></activity>
         <activity android:name=".hilt.me.HiltSecondActivity" />
 
+        <activity
+            android:name=".activity.activityresult.FirstResultActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <provider
             android:name=".CameraProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -160,6 +164,8 @@
                 android:resource="@xml/camera_path" />
             <!-- 用于设置FileProvider的文件访问路径 -->
         </provider>
+
+        <activity android:name=".activity.activityresult.SecondResultActivity" />
     </application>
 
 </manifest>

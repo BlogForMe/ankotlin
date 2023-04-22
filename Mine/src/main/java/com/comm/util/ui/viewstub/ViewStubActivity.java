@@ -9,11 +9,11 @@ public class ViewStubActivity extends BaseActivity {
 
     private ViewStub vsContent;
 
-    @Override
-    protected void initView() {
-        vsContent = findViewById(R.id.vs_content);
-
-    }
+    //@Override
+    //protected void initView() {
+    //    vsContent = findViewById(R.id.vs_content);
+    //
+    //}
 
     //@Override
     //protected int setLayoutId() {
