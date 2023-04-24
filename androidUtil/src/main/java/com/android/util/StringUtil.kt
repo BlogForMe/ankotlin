@@ -2,7 +2,7 @@ package com.android.util
 
 import java.util.regex.Pattern
 
-const val REGEX_CHINESE_WITH_INNER_SPACE = "^(?!\\s)(?!.*\\s\$)[\u4e00-\u9fa50-9a-zA-Z\\s]{2,15}"
+const val REGEX_CHINESE_WITH_INNER_SPACE = "^(?!\\s)(?!.*\\s\$)[0-9a-zA-Z\\s]{2,15}"
 
 // https://stackoverflow.com/questions/34974942/regex-for-no-whitespace-at-the-beginning-and-end
 

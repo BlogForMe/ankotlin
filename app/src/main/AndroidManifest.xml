@@ -26,8 +26,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/HomeTheme">
         <activity
+            android:name=".arch.recyclerview.multitype.visit.RecycleVisitActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragment.FragmentTestActivity"
             android:exported="true">
+
         </activity>
         <activity
             android:name=".hilt.dn.HiltSecondActivity"
@@ -50,26 +60,25 @@
         </activity>
         <activity
             android:name=".hilt.dn.HiltMainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activity.ActivityD"
             android:exported="true"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity
             android:name=".activity.ActivityC"
             android:exported="true"
-            android:launchMode="singleTask"></activity>
-        <activity android:name=".tool.GoogleTopUpActivity">
-        </activity>
+            android:launchMode="singleTask" />
+        <activity android:name=".tool.GoogleTopUpActivity"></activity>
         <activity
             android:name=".ui.image.XfermodesActivity"
             android:exported="true" />
         <activity
             android:name=".mvvm.livedata.LivedataStickActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".mvvm.livedata.LivedataStick02Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.image.RoundImageActivity"
             android:exported="true" />
@@ -78,7 +87,7 @@
             android:exported="true" />
         <activity
             android:name=".coroutine.CoroutinesActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.fragment.TabFragmentActivity"
             android:label="@string/title_activity_tab_fragment"
@@ -93,11 +102,11 @@
         <activity android:name=".ui.FontActivity" />
         <activity android:name=".test.robolec.MyActivity" />
         <activity android:name=".viewgroup.ViewGroupActivity" />
-        <activity android:name=".tool.glide.lifecycle.GlideActivity"></activity>
+        <activity android:name=".tool.glide.lifecycle.GlideActivity" />
         <activity android:name=".mvvm.lifecycle.LifeCycleActivity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData1Activity" />
-        <activity android:name=".mvvm.dongnao.viewmodel.ViewModelShareActivity"></activity>
+        <activity android:name=".mvvm.dongnao.viewmodel.ViewModelShareActivity" />
         <activity android:name=".mvvm.dongnao.lifecycle.Step2Activity" />
         <activity android:name=".tool.rx.WriteRxjavaActivity" />
         <activity android:name=".net.OkhtttpActivity" />
@@ -113,7 +122,7 @@
         <activity android:name=".customview.StrapSleepActivity" />
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
-        <activity android:name=".mvvm.viewmodel.ViewModelActivity"></activity>
+        <activity android:name=".mvvm.viewmodel.ViewModelActivity" />
         <activity android:name="com.john.kot.tool.time.TextClockActivity" />
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />
@@ -124,33 +133,27 @@
         <activity android:name=".tool.image.ImageHandleActivity" />
         <activity android:name=".tool.image.ScreenPhotoActivity" />
         <activity android:name=".tool.image.PhotoBasicsActivity" />
-        <activity android:name=".anim.TextViewBigActivity"></activity>
+        <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".anim.MoveViewActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
         <activity android:name=".ui.ResultBleActivity" />
         <activity android:name="com.john.kot.ui.skin.SkinStaticThemeActivity" />
         <activity android:name=".ui.GradientActivity" />
-        <activity android:name=".ui.MeasureLearnActivity"></activity>
+        <activity android:name=".ui.MeasureLearnActivity" />
         <activity android:name=".ui.CircleProgressActivity" />
         <activity android:name=".ui.constraint.ConstraintPlaceholderActivity" />
         <activity android:name=".ui.constraint.Constraint1Activity" />
         <activity android:name="com.john.kot.ui.elec.ElecActivity" />
-        <activity android:name=".arch.recyclerview.MainActivityApp"></activity>
+        <activity android:name=".arch.recyclerview.MainActivityApp" />
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
-        <activity android:name=".ui.MessageActivityFragment"></activity>
+        <activity android:name=".ui.MessageActivityFragment" />
         <activity android:name=".mvvm.scrap.StrapCheckActivity" />
-        <activity android:name=".hilt.me.HiltActivity"></activity>
+        <activity android:name=".hilt.me.HiltActivity" />
         <activity android:name=".hilt.me.HiltSecondActivity" />
-
         <activity
             android:name=".activity.activityresult.FirstResultActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
 
         <provider
             android:name=".CameraProvider"
