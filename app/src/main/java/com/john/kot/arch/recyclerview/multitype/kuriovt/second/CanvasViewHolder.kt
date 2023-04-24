@@ -1,4 +1,4 @@
-package com.john.kot.arch.recyclerview.multitype.kuriovt.third
+package com.john.kot.arch.recyclerview.multitype.kuriovt.second
 
 import android.view.View
 import android.widget.TextView
@@ -15,8 +15,8 @@ import com.john.kot.R
  * UpdateRemark:   Modify the description
  */
 
-class CanvasViewHolder(val view: View) : BaseViewHolder<LayoutFactory.Article>(view) {
-    override fun bind(model: LayoutFactory.Article) {
-        (view.findViewById<TextView>(R.id.txt_name)).text = model.title
+class CanvasViewHolder(val view: View) : BaseViewHolder<Canvas>(view) {
+    override fun bind(model: Canvas) {
+        view.findViewById<TextView>(R.id.txt_name).text = model.title
     }
 }

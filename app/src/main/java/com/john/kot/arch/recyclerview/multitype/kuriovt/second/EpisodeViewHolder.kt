@@ -1,4 +1,4 @@
-package com.john.kot.arch.recyclerview.multitype.kuriovt.third
+package com.john.kot.arch.recyclerview.multitype.kuriovt.second
 
 import android.view.View
 import android.widget.TextView
@@ -15,8 +15,8 @@ import com.john.kot.R
  * UpdateRemark:   Modify the description
  */
 
-class EpisodeViewHolder(val view: View) : BaseViewHolder<LayoutFactory.Article>(view) {
-    override fun bind(model: LayoutFactory.Article) {
-        (view.findViewById<TextView>(R.id.txt_name)).text = model.title
+class EpisodeViewHolder(val view: View) : BaseViewHolder<Episode>(view) {
+    override fun bind(model: Episode) {
+        view.findViewById<TextView>(R.id.txt_name).text = model.title
     }
 }
