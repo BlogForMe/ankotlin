@@ -1,6 +1,7 @@
 package com.john.kot.arch.recyclerview.multitype.kuriovt.third
 
 import android.view.View
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.*
 
 /**
  *
@@ -21,15 +22,15 @@ class ViewHolderLayoutVisitor(private val visitor: ItemViewVisitor = ItemViewLay
         return viewHolder as? BaseViewHolder<FeedContent>
     }
 
-    override fun visit(article: LayoutFactory.Article, layout: String): Int {
+    override fun visit(article: Article, layout: String): Int {
         return visitor.visit(article).layoutResource(layout)
     }
 
-    override fun visit(canvas: LayoutFactory.Canvas, layout: String): Int {
+    override fun visit(canvas: Canvas, layout: String): Int {
         return visitor.visit(canvas).layoutResource(layout)
     }
 
-    override fun visit(episode: LayoutFactory.Episode, layout: String): Int {
+    override fun visit(episode: Episode, layout: String): Int {
         return visitor.visit(episode).layoutResource(layout)
     }
 }

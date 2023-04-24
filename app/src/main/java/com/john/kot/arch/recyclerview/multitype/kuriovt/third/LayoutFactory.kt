@@ -4,6 +4,9 @@ import android.util.SparseArray
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.john.kot.R
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.CanvasViewHolder
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.DefaultViewHolder
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.EpisodeViewHolder
 
 /**
  *
@@ -17,28 +20,19 @@ import com.john.kot.R
  */
 
 object LayoutFactory {
-    object Article : FeedContent("Article") {
+    object Article {
         val DEFAULT = R.layout.viewholder_article_default
         val THUMBNAIL_TEXT_RIGHT = R.layout.viewholder_article_thumbnail_text_right
-        override fun accept(viewHolderVisitor: ViewHolderVisitor, layout: String): Int {
-            return viewHolderVisitor.visit(this, layout)
-        }
     }
 
-    object Canvas : FeedContent("Canvas") {
+    object Canvas {
         val DEFAULT = R.layout.viewholder_canvas_default
         val BIG_THUMBNAIL = R.layout.viewholder_canvas_big_thumbnail
-        override fun accept(viewHolderVisitor: ViewHolderVisitor, layout: String): Int {
-            return viewHolderVisitor.visit(this, layout)
-        }
     }
 
-    object Episode : FeedContent("Episode") {
+    object Episode {
         val DEFAULT = R.layout.viewholder_episode_default
         val TEXT_ONLY = R.layout.viewholder_episode_text_only
-        override fun accept(viewHolderVisitor: ViewHolderVisitor, layout: String): Int {
-            return viewHolderVisitor.visit(this, layout)
-        }
     }
 
     val DEFAULT = R.layout.viewholder_default

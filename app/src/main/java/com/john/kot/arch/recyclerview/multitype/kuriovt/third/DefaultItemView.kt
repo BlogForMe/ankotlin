@@ -1,5 +1,6 @@
 package com.john.kot.arch.recyclerview.multitype.kuriovt.third
 
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.FeedContent
 import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Article.THUMBNAIL_TEXT_RIGHT
 
 
@@ -16,7 +17,7 @@ import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Arti
 
 class DefaultItemView(feedContent: FeedContent) : BaseItemView<FeedContent>(feedContent) {
     override fun layoutResource(layoutType: String): Int {
-        return when (layoutType) {
+        return when (layoutType.toInt()) {
             THUMBNAIL_TEXT_RIGHT -> LayoutFactory.Article.THUMBNAIL_TEXT_RIGHT
             else -> LayoutFactory.Article.DEFAULT
         }

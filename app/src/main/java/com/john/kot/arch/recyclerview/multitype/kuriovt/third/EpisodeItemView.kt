@@ -1,5 +1,6 @@
 package com.john.kot.arch.recyclerview.multitype.kuriovt.third
 
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Episode
 import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Episode.TEXT_ONLY
 
 /**
@@ -13,10 +14,9 @@ import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Epis
  * UpdateRemark:   Modify the description
  */
 
-class EpisodeItemView(podcast: LayoutFactory.Episode) :
-    BaseItemView<LayoutFactory.Episode>(podcast) {
+class EpisodeItemView(podcast: Episode) : BaseItemView<Episode>(podcast) {
     override fun layoutResource(layoutType: String): Int {
-        return when (layoutType) {
+        return when (layoutType.toInt()) {
             TEXT_ONLY -> LayoutFactory.Episode.TEXT_ONLY
             else -> LayoutFactory.Episode.DEFAULT
         }

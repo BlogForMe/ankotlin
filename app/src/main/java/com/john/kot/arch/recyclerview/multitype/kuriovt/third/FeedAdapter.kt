@@ -3,6 +3,9 @@ package com.john.kot.arch.recyclerview.multitype.kuriovt.third
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.BaseViewHolder
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.DefaultViewHolder
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.FeedContent
 
 /**
  *
@@ -15,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
  * UpdateRemark:   Modify the description
  */
 
-class FeedAdapter(private val visitor: ViewHolderVisitor = ViewHolderLayoutVisitor()) :
+class FeedAdapter(private val visitor: ViewHolderLayoutVisitor = ViewHolderLayoutVisitor()) :
     RecyclerView.Adapter<BaseViewHolder<FeedContent>>() {
 
     private val items = mutableListOf<FeedItem>()
@@ -23,7 +26,6 @@ class FeedAdapter(private val visitor: ViewHolderVisitor = ViewHolderLayoutVisit
     init {
 //         Set dummy data to show the feed items
 //        setList(Dummy.items)
-//        LayoutFactory.Article("Article")
     }
 
     fun setList(items: List<FeedItem>) {

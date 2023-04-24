@@ -3,6 +3,10 @@ package com.john.kot.arch.recyclerview.multitype.kuriovt.third
 import android.util.SparseArray
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Article
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Canvas
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Episode
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.FeedContent
 
 /**
  *
@@ -18,7 +22,7 @@ import androidx.recyclerview.widget.RecyclerView
 interface ItemViewVisitor {
     fun data(itemView: View): SparseArray<RecyclerView.ViewHolder>
     fun visitDefault(feedContent: FeedContent): DefaultItemView
-    fun visit(article: LayoutFactory.Article): ArticleItemView
-    fun visit(canvas: LayoutFactory.Canvas): CanvasItemView
-    fun visit(episode: LayoutFactory.Episode): EpisodeItemView
+    fun visit(article: Article): ArticleItemView
+    fun visit(canvas: Canvas): CanvasItemView
+    fun visit(episode: Episode): EpisodeItemView
 }

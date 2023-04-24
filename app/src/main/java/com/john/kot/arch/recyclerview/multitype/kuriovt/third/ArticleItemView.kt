@@ -1,12 +1,10 @@
 package com.john.kot.arch.recyclerview.multitype.kuriovt.third
 
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Canvas
-import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Canvas.BIG_THUMBNAIL
-
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Article
 
 /**
  *
- * ClassName:      CanvasItemView
+ * ClassName:      ArticleItemView
  * Description:    Description
  * Author:         zh
  * CreateDate:     2023/4/24
@@ -15,11 +13,12 @@ import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Canv
  * UpdateRemark:   Modify the description
  */
 
-class CanvasItemView(canvas: Canvas) : BaseItemView<Canvas>(canvas) {
+
+class ArticleItemView(article: Article) : BaseItemView<Article>(article) {
     override fun layoutResource(layoutType: String): Int {
         return when (layoutType.toInt()) {
-            BIG_THUMBNAIL -> BIG_THUMBNAIL
-            else -> LayoutFactory.Canvas.DEFAULT
+            LayoutFactory.Article.THUMBNAIL_TEXT_RIGHT -> LayoutFactory.Article.THUMBNAIL_TEXT_RIGHT
+            else -> LayoutFactory.Article.DEFAULT
         }
     }
 }

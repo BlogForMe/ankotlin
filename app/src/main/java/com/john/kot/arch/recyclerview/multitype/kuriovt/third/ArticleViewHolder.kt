@@ -3,6 +3,8 @@ package com.john.kot.arch.recyclerview.multitype.kuriovt.third
 import android.view.View
 import android.widget.TextView
 import com.john.kot.R
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Article
+import com.john.kot.arch.recyclerview.multitype.kuriovt.second.BaseViewHolder
 
 /**
  *
@@ -15,8 +17,8 @@ import com.john.kot.R
  * UpdateRemark:   Modify the description
  */
 
-class ArticleViewHolder(val view: View) : BaseViewHolder<LayoutFactory.Article>(view) {
-    override fun bind(model: LayoutFactory.Article) {
+class ArticleViewHolder(val view: View) : BaseViewHolder<Article>(view) {
+    override fun bind(model: Article) {
         (view.findViewById<TextView>(R.id.txt_name)).text = model.title
     }
 }
