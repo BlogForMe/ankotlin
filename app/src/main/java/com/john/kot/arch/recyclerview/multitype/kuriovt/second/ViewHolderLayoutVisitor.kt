@@ -36,7 +36,6 @@ class ViewHolderLayoutVisitor : ViewHolderVisitor {
         // Render canvas layout resource based on layout type
 //        if (layout != canvasDefault)
 //            return R.layout.viewholder_default
-
         return R.layout.viewholder_canvas_default
     }
 
@@ -44,7 +43,6 @@ class ViewHolderLayoutVisitor : ViewHolderVisitor {
         // Render episode layout resource based on layout type
 //        if (layout != episodeDefault)
 //            return R.layout.viewholder_default
-
         return R.layout.viewholder_episode_default
     }
 }
