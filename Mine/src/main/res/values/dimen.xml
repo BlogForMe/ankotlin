@@ -37,5 +37,8 @@
     <dimen name="dimen_11">11dp</dimen>
     <dimen name="dimen_10">10dp</dimen>
 
+    <dimen name="sectioned_top">27dp</dimen>
+    <dimen name="sectioned_alignBottom">7dp</dimen>
+
 
 </resources>

@@ -70,7 +70,7 @@
             android:name=".ui.StateBarActivity"
             android:exported="true" />
         <activity
-            android:name=".AppManagerActivity"
+            android:name=".recyclew.clickhead.StickyHeadClickActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
