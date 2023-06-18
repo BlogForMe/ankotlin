@@ -2,8 +2,8 @@ package com.comm.util.openlib.rxretrofit;
 
 import android.view.View;
 import butterknife.OnClick;
+import com.android.util.base.BaseFragment;
 import com.comm.util.R;
-import com.comm.util.base.BaseFragment;
 import com.comm.util.openlib.rxretrofit.Season_zlc.rxdemo07;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -24,15 +24,15 @@ import timber.log.Timber;
 
 public class RxJava2Fragment extends BaseFragment {
 
-    @Override
-    protected void initView(View rootView) {
-        //        Timber.d(Thread.currentThread().getName());
-    }
-
-    @Override
-    protected int setLayoutId() {
-        return R.layout.fragment_rxjava2;
-    }
+    //@Override
+    //protected void initView(View rootView) {
+    //    //        Timber.d(Thread.currentThread().getName());
+    //}
+    //
+    //@Override
+    //protected int setLayoutId() {
+    //    return R.layout.fragment_rxjava2;
+    //}
 
     /**
      * 给初学者的RxJava2.0教程(一)

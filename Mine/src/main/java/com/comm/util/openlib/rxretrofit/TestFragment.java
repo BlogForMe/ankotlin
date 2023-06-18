@@ -1,24 +1,23 @@
 package com.comm.util.openlib.rxretrofit;
 
-import android.view.View;
 import android.widget.Button;
 import butterknife.OnClick;
+import com.android.util.base.BaseFragment;
 import com.comm.util.R;
-import com.comm.util.base.BaseFragment;
 
 /**
  * Created by jon on 3/30/18.
  */
 
 public class TestFragment extends BaseFragment {
-    @Override
-    protected void initView(View view) {
-    }
-
-    @Override
-    protected int setLayoutId() {
-        return R.layout.fragment_test;
-    }
+    //@Override
+    //protected void initView(View view) {
+    //}
+    //
+    //@Override
+    //protected int setLayoutId() {
+    //    return R.layout.fragment_test;
+    //}
 
     @OnClick(R.id.error_return)
     public void error_return(Button button) {

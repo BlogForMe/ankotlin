@@ -1,23 +1,13 @@
 package com.comm.util.component.fragment.life
 
-import android.os.Bundle
+import com.android.util.base.BaseFragment
 import com.comm.util.R
-import com.comm.util.base.BaseFragment
 
 /**
  * Created by A on 2018/3/20.
  */
 
-class LifeFragment : BaseFragment() {
+class LifeFragment : BaseFragment(R.layout.fragment_life) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        retainInstance = true
-    }
-
-
-    override fun setLayoutId(): Int {
-        return R.layout.fragment_life
-    }
 
 }

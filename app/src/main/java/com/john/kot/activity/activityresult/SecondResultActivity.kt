@@ -1,29 +1,29 @@
-package com.john.kot.activity.activityresult;
+package com.john.kot.activity.activityresult
 
-import android.content.Intent;
-import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import com.john.kot.R;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.john.kot.R
+import com.john.kot.mvvm.demo.UserDemo
 
 //@Route(path = ACTIVITY_SECOND)
-public class SecondResultActivity extends AppCompatActivity {
-
-    public static String sData = "data";
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        initView();
+class SecondResultActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_second)
+        initView()
     }
 
     //@Override
-    protected void initView() {
-        findViewById(R.id.bt_finsh).setOnClickListener(v -> {
-            setResult(21, new Intent().putExtra(sData, "我要回调啦!!!"));
-            finish();
-        });
+    protected fun initView() {
+        val list = java.util.ArrayList(listOf(UserDemo("name", 22, "adreww").apply {
+            this.from = "cananda"
+        }))
+        findViewById<View>(R.id.bt_finsh).setOnClickListener { v: View? ->
+            setResult(21, Intent().putExtra(sData, list))
+            finish()
+        }
 
         //        findViewById(R.id.bt_islive).setOnClickListener(v -> {
         //            boolean isSendo = DisplayUtils.isMainActivityAlive(SecondActivity.this,
@@ -38,13 +38,10 @@ public class SecondResultActivity extends AppCompatActivity {
         //            Timber.i("getLocalClassName   " + this.getsim);
         //            startActivity(new Intent(this, ThirdActivity.class));
         //        });
-    }
-
-    //@Override
+    } //@Override
     //protected int setLayoutId() {
     //    return R.layout.activity_second;
     //}
-
     /**
      * 检测某Activity是否在当前Task的栈顶
      */
@@ -61,4 +58,7 @@ public class SecondResultActivity extends AppCompatActivity {
     //    }
     //    return cmpNameTemp.equals(activityName);
     //}
+    companion object {
+        var sData = "data"
+    }
 }

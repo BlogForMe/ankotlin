@@ -28,6 +28,8 @@ class RegularTest {
         "earn \t  return".split("\\s+".toRegex()).printArray()
 
         "earn return".split("\\s+".toRegex()).printArray()
+        val arrayListOf = arrayListOf("1", "2", "3")
+        println(arrayListOf.indexOf("1"))
     }
 
 

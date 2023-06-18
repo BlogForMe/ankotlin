@@ -1,108 +1,85 @@
-package com.comm.util.ui.tab;
+package com.comm.util.ui.tab
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import com.comm.util.R;
-import com.google.android.material.tabs.TabLayout;
+import android.os.Bundle
+import android.view.View
+import android.widget.FrameLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.comm.util.R
+import com.google.android.material.tabs.TabLayout
 
 /**
  * https://jonzhou.com/2017/12/26/TabLayout/
  * 动态Tab和样式修改
  */
-public class TabLayoutActivity extends AppCompatActivity {
+class TabLayoutActivity : AppCompatActivity() {
+    var tabTitles = arrayOf("血压", "血糖")
+    var homeFragment: Fragment? = null
+    var healthFragment: Fragment? = null
+    private var tabLayout: TabLayout? = null
+    private var flContent: FrameLayout? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tab_layout)
+        tabLayout = findViewById(R.id.tb_layout)
+        flContent = findViewById(R.id.fl_content)
+        initTab()
 
-    String[] tabTitles = {"血压", "血糖", "拍照", "血氧", "足感", "足照"};
-    Fragment firstFragment, secondFragment;
-    private TabLayout tabLayout;
-    private FrameLayout flContent;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_layout);
-        tabLayout = findViewById(R.id.tb_layout);
-        flContent = findViewById(R.id.fl_content);
-        initTab();
-
-        //        findViewById(R.id.bt_finish).setOnClickListener(v -> {
-        //            for (int i = 0; i < 2; i++) {
-        //                TextView itemTextView = tabLayout.getTabAt(i).getCustomView()
-        //                .findViewById(R.id.tv_item_title);
-        //                itemTextView.setTextColor(Color.parseColor("#EEB125"));
-        //                itemTextView.setBackgroundResource(R.drawable.bg_circle_tab_yellow_w);
-        //            }
-        //        });
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                showFragment(tab.getPosition());
+        tabLayout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                showFragment(tab.position)
             }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
+    }
 
+    private fun initTab() {
+        for (text in tabTitles) {
+            tabLayout?.addTab(tabLayout!!.newTab().setText(text))
+        }
+//        for (i in tabTitles.indices) {
+//            val tab = tabLayout!!.getTabAt(i)
+//            tab!!.setCustomView(R.layout.tab_item)
+//            val tvItemTitle = tab.customView!!.findViewById<TextView>(R.id.tv_item_title)
+//            tvItemTitle.text = tabTitles[i]
+//            if (i == tabTitles.size - 1) {
+//                tab.customView!!.findViewById<View>(R.id.view_line).visibility =
+//                    View.GONE
+//            }
+//        }
+    }
+
+    private fun showFragment(index: Int) {
+        val ft = supportFragmentManager.beginTransaction()
+        hideFragment(ft)
+        when (index) {
+            0 -> if (homeFragment == null) {
+                homeFragment = HomeFragment()
+                ft.add(R.id.fl_content, homeFragment!!, HomeFragment::class.java.name)
+            } else {
+                ft.show(homeFragment!!)
             }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-    }
-
-    private void initTab() {
-        for (int i = 0; i < tabTitles.length; i++) {
-            tabLayout.addTab(tabLayout.newTab());
-        }
-
-        for (int i = 0; i < tabTitles.length; i++) {
-            TabLayout.Tab tab = tabLayout.getTabAt(i);
-            tab.setCustomView(R.layout.tab_item);
-            TextView tvItemTitle = tab.getCustomView().findViewById(R.id.tv_item_title);
-            tvItemTitle.setText(tabTitles[i]);
-            if (i == tabTitles.length - 1) {
-                tab.getCustomView().findViewById(R.id.view_line).setVisibility(View.GONE);
+            1 -> if (healthFragment == null) {
+                healthFragment = HealthFragment()
+                ft.add(R.id.fl_content, healthFragment!!, HealthFragment::class.java.name)
+            } else {
+                ft.show(healthFragment!!)
             }
         }
+        ft.addToBackStack(null)
+        ft.commit()
     }
 
-    private void showFragment(int index) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        hideFragment(ft);
-        switch (index) {
-            case 0:
-                if (firstFragment == null) {
-                    firstFragment = HomeFragment.newInstance();
-                    ft.add(R.id.fl_content, firstFragment, HomeFragment.class.getName());
-                } else {
-                    ft.show(firstFragment);
-                }
-                break;
-            case 1:
-                if (secondFragment == null) {
-                    secondFragment = HealthFragment.newInstance();
-                    ft.add(R.id.fl_content, secondFragment, HealthFragment.class.getName());
-                } else {
-                    ft.show(secondFragment);
-                }
-                break;
+    private fun hideFragment(ft: FragmentTransaction) {
+        if (homeFragment != null) {
+            ft.hide(homeFragment!!)
         }
-        ft.addToBackStack(null);
-        ft.commit();
-    }
-
-    private void hideFragment(FragmentTransaction ft) {
-        if (firstFragment != null) {
-            ft.hide(firstFragment);
-        }
-        if (secondFragment != null) {
-            ft.hide(secondFragment);
+        if (healthFragment != null) {
+            ft.hide(healthFragment!!)
         }
     }
-
 }

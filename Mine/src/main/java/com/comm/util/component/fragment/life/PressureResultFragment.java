@@ -8,10 +8,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import butterknife.BindView;
 import com.android.util.DisplayUtils;
+import com.android.util.base.BaseFragment;
 import com.comm.util.R;
-import com.comm.util.base.BaseFragment;
 import timber.log.Timber;
 
+import static com.android.util.base.CBaseFragment.PARAMS_01;
+import static com.android.util.base.CBaseFragment.PARAMS_02;
+import static com.android.util.base.CBaseFragment.PARAMS_03;
 import static com.android.util.circledialog.Controller.dp2px;
 
 /**
@@ -57,14 +60,7 @@ public class PressureResultFragment extends BaseFragment {
         return pressureResultFragment;
     }
 
-    @Override
-    protected void initView(View view) {
-    }
 
-    @Override
-    protected int setLayoutId() {
-        return R.layout.mem_fragment_pressure_result;
-    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

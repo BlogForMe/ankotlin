@@ -1,13 +1,5 @@
 package com.john.kot.arch.recyclerview.multitype.normal
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.john.kot.R
-import kotlinx.android.synthetic.main.item_items_view.view.*
-
 /**
  *
  * ClassName:      BasicRecyclerAdapter

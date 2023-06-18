@@ -17,6 +17,11 @@ class ListFilter {
 //        var nList = people.filter { invitedList.contains(it.nickname) }
 //        println(nList)
 
+        val listOf = listOf(1, 2, 3)
+        val list = (listOf.takeIf { it.size > 5 }?.subList(0, 5) ?: listOf)
+        println(list)
+//        println(listOf.subList(1,6))
+
 
     }
 }
