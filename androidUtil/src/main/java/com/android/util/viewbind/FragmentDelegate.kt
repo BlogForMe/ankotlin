@@ -1,4 +1,4 @@
-package com.john.kot.util
+package com.android.util.viewbind
 
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding

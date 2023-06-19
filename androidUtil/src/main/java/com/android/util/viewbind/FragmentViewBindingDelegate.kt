@@ -1,11 +1,9 @@
-package my.com.tngdigital.common.viewbinding
+package com.android.util.viewbind
 
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.viewbinding.ViewBinding
-import com.john.kot.util.observerWhenCreated
-import com.john.kot.util.observerWhenDestroyed
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 

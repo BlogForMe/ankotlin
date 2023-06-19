@@ -1,4 +1,4 @@
-package com.john.kot.util
+package com.android.util.viewbind
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle

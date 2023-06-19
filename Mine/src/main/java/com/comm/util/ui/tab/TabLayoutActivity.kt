@@ -1,13 +1,13 @@
 package com.comm.util.ui.tab
 
 import android.os.Bundle
-import android.view.View
 import android.widget.FrameLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.android.util.viewbind.viewBinding
 import com.comm.util.R
+import com.comm.util.databinding.ActivityTabLayoutBinding
 import com.google.android.material.tabs.TabLayout
 
 /**
@@ -15,19 +15,16 @@ import com.google.android.material.tabs.TabLayout
  * 动态Tab和样式修改
  */
 class TabLayoutActivity : AppCompatActivity() {
-    var tabTitles = arrayOf("血压", "血糖")
+    private val tabTitles = arrayOf("血压", "血糖")
     var homeFragment: Fragment? = null
     var healthFragment: Fragment? = null
-    private var tabLayout: TabLayout? = null
-    private var flContent: FrameLayout? = null
+    private val binding by viewBinding(ActivityTabLayoutBinding::inflate)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tab_layout)
-        tabLayout = findViewById(R.id.tb_layout)
-        flContent = findViewById(R.id.fl_content)
         initTab()
 
-        tabLayout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        binding.tbLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 showFragment(tab.position)
             }
@@ -35,11 +32,15 @@ class TabLayoutActivity : AppCompatActivity() {
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+
+        homeFragment = HomeFragment()
+        healthFragment = HealthFragment()
+        showFragment(0)
     }
 
     private fun initTab() {
         for (text in tabTitles) {
-            tabLayout?.addTab(tabLayout!!.newTab().setText(text))
+            binding.tbLayout.addTab(binding.tbLayout.newTab().setText(text))
         }
 //        for (i in tabTitles.indices) {
 //            val tab = tabLayout!!.getTabAt(i)
@@ -53,33 +54,54 @@ class TabLayoutActivity : AppCompatActivity() {
 //        }
     }
 
+    private var preFragment: Fragment? = null
     private fun showFragment(index: Int) {
         val ft = supportFragmentManager.beginTransaction()
-        hideFragment(ft)
-        when (index) {
-            0 -> if (homeFragment == null) {
-                homeFragment = HomeFragment()
-                ft.add(R.id.fl_content, homeFragment!!, HomeFragment::class.java.name)
-            } else {
-                ft.show(homeFragment!!)
-            }
-            1 -> if (healthFragment == null) {
-                healthFragment = HealthFragment()
-                ft.add(R.id.fl_content, healthFragment!!, HealthFragment::class.java.name)
-            } else {
-                ft.show(healthFragment!!)
-            }
+        val f = if (index == 0) {
+            homeFragment as Fragment
+        } else {
+            healthFragment as Fragment
         }
-        ft.addToBackStack(null)
+
+        if (preFragment != null && !preFragment?.isHidden!!) {
+            ft.hide(preFragment!!)
+        }
+        if (f.isAdded) {
+            ft.show(f)
+        } else {
+            ft.add(R.id.fl_content, f)
+        }
         ft.commit()
+        preFragment = f
     }
 
-    private fun hideFragment(ft: FragmentTransaction) {
-        if (homeFragment != null) {
-            ft.hide(homeFragment!!)
-        }
-        if (healthFragment != null) {
-            ft.hide(healthFragment!!)
-        }
-    }
+//    private fun hideFragment(ft: FragmentTransaction) {
+//        if (homeFragment != null) {
+//            ft.hide(homeFragment!!)
+//        }
+//        if (healthFragment != null) {
+//            ft.hide(healthFragment!!)
+//        }
+//    }
+
+//    private fun showFragment(index: Int) {
+//        val ft = supportFragmentManager.beginTransaction()
+//        hideFragment(ft)
+//        when (index) {
+//            0 -> if (homeFragment == null) {
+//                homeFragment = HomeFragment()
+//                ft.add(R.id.fl_content, homeFragment!!, HomeFragment::class.java.name)
+//            } else {
+//                ft.show(homeFragment!!)
+//            }
+//            1 -> if (healthFragment == null) {
+//                healthFragment = HealthFragment()
+//                ft.add(R.id.fl_content, healthFragment!!, HealthFragment::class.java.name)
+//            } else {
+//                ft.show(healthFragment!!)
+//            }
+//        }
+//        ft.addToBackStack(null)
+//        ft.commit()
+//    }
 }

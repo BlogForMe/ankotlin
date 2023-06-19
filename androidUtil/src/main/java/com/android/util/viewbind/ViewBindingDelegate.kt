@@ -1,4 +1,4 @@
-package com.john.kot.util
+package com.android.util.viewbind
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import my.com.tngdigital.common.viewbinding.FragmentViewBindingDelegate
 
 /**
  *

@@ -1,4 +1,4 @@
-package com.john.kot.util
+package com.android.util.viewbind
 
 import android.view.LayoutInflater
 import android.view.View
