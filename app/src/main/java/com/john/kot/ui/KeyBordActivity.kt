@@ -1,10 +1,8 @@
 package com.john.kot.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.john.kot.R
-import com.john.kot.databinding.ActivityLiveData02Binding
-import com.john.kot.util.viewBinding
 
 class KeyBordActivity : AppCompatActivity() {
 

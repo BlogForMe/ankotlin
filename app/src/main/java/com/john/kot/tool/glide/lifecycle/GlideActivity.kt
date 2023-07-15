@@ -1,18 +1,14 @@
 package com.john.kot.tool.glide.lifecycle
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import androidx.core.view.isVisible
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.android.util.viewbind.viewBinding
 import com.john.kot.R
 import com.john.kot.databinding.ActivityGlideBinding
-import com.john.kot.util.viewBinding
-import retrofit2.http.Url
 
 class GlideActivity : AppCompatActivity() {
     private lateinit var icLink: View

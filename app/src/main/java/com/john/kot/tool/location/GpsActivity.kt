@@ -8,9 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.GPSUtils
+import com.android.util.viewbind.viewBinding
 import com.john.kot.R
 import com.john.kot.databinding.ActivityLocationBinding
-import com.john.kot.util.viewBinding
 
 class GpsActivity : AppCompatActivity() {
     val binding by viewBinding(ActivityLocationBinding::inflate)

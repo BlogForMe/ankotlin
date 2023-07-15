@@ -2,14 +2,13 @@ package com.john.kot.mvvm.dongnao.viewmodel
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.android.util.viewbind.viewBinding
 import com.john.kot.R
 import com.john.kot.databinding.FragmentViewModelBinding
-import com.john.kot.util.viewBinding
 
 
 class ViewModelFragment : Fragment(R.layout.fragment_view_model) {

@@ -1,13 +1,16 @@
 package com.john.kot.mvvm.livedata
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.*
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.android.util.viewbind.viewBinding
 import com.john.kot.databinding.ActivityLivedataStickBinding
 import com.john.kot.mvvm.livedata.stick.StickViewModel
-import com.john.kot.util.viewBinding
 
 class LivedataStickActivity : AppCompatActivity() {
     private val TAG = "LivedataStickActivity"

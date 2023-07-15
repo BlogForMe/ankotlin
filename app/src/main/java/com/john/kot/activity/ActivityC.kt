@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.android.util.viewbind.viewBinding
 import com.john.kot.databinding.ActivityCBinding
-import com.john.kot.util.viewBinding
 
 class ActivityC : AppCompatActivity() {
 
@@ -21,7 +21,6 @@ class ActivityC : AppCompatActivity() {
         binding.btC.setOnClickListener {
             startActivity(Intent(this, ActivityD::class.java))
         }
-        ABinding::inflate
     }
 }
 

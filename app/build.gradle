@@ -98,3 +98,46 @@ dependencies {
 
 
 }
+
+task testGrdele {
+    println("testGrdele")
+}
+
+//闭包的概念, 像kotlin匿名函数
+task closure {
+    mEach {
+        println it
+    }
+
+    mEachWithParams { m, n ->//  -> 将闭包的参数和主体分离开
+        println "${m} is ${n}"
+    }
+}
+
+def mEach(closure) {
+    for (int i in 1..5) {
+        closure(i)
+    }
+}
+
+def mEachWithParams(closure) {
+    def map = ['name': 'groovy', 'age': 10]
+    map.each {
+        closure(it.key, it.value)
+    }
+}
+
+
+//app模块下的build.gradle文件中定义的对象插件
+class CustomGradlePlugin implements Plugin<Project> {
+
+    @Override
+    void apply(Project target) {
+        target.task("showCustomPlugin") {
+            doLast {
+                println("this is CustomGradlePlugin")
+            }
+        }
+    }
+}
+

@@ -3,10 +3,8 @@ package com.john.kot.ui.scroll
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
+import com.android.util.viewbind.viewBinding
 import com.john.kot.databinding.ActivityScrollViewBinding
-import com.john.kot.util.viewBinding
-import java.lang.RuntimeException
 
 class ScrollViewActivity : AppCompatActivity() {
     val binding by viewBinding(ActivityScrollViewBinding::inflate)

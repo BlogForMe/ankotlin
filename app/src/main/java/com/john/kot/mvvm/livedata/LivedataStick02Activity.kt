@@ -2,18 +2,12 @@ package com.john.kot.mvvm.livedata
 
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.android.util.viewbind.viewBinding
 import com.john.kot.BaseActivity
-import com.john.kot.R
 import com.john.kot.databinding.ActivityLiveData02Binding
-import com.john.kot.databinding.ActivityLivedataStickBinding
-import com.john.kot.mvvm.livedata.stick.StickFragment
 import com.john.kot.mvvm.livedata.stick.StickViewModel
-import com.john.kot.util.viewBinding
 
 class LivedataStick02Activity : BaseActivity() {
 //    override val TAG = "LivedataStick02Activity"

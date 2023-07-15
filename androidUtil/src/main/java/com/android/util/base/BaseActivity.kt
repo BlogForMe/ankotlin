@@ -6,8 +6,6 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.android.util.R
@@ -20,7 +18,7 @@ import timber.log.Timber
 abstract class BaseActivity : AppCompatActivity() {
     private val TAG = javaClass.simpleName
     private var mToolBarTitle: TextView? = null
-    protected var mBinding: ViewDataBinding? = null
+//    protected var mBinding: ViewDataBinding? = null
 
     private var mActivityProvider: ViewModelProvider? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,14 +28,14 @@ abstract class BaseActivity : AppCompatActivity() {
 
         val dataBindingConfig: DataBindingConfig = getDataBindingConfig()
 
-        var binding: ViewDataBinding = DataBindingUtil.setContentView(this,dataBindingConfig.layout)
-        binding.lifecycleOwner=this
+//        var binding: ViewDataBinding = DataBindingUtil.setContentView(this,dataBindingConfig.layout)
+//        binding.lifecycleOwner=this
 //        binding.setVariable(BR.viewModel, dataBindingConfig.stateViewModel)
-        var bindParam = dataBindingConfig.bindingParams
-        for (i in 0 until bindParam.size()){
-            binding.setVariable(bindParam.keyAt(i),bindParam.valueAt(i))
-        }
-        mBinding = binding
+//        var bindParam = dataBindingConfig.bindingParams
+//        for (i in 0 until bindParam.size()){
+//            binding.setVariable(bindParam.keyAt(i),bindParam.valueAt(i))
+//        }
+//        mBinding = binding
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR
         var mToolbar: Toolbar? = findViewById(R.id.toolbar)
