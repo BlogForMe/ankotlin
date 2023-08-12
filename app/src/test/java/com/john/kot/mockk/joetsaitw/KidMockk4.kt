@@ -11,9 +11,7 @@
 
 package com.john.kot.mockk.joetsaitw
 
-import com.john.kot.list.Person
 import com.john.kot.test.mockk.Util
-import com.john.kot.test.mockk.UtilJava
 import com.john.kot.test.mockk.UtilKotlin
 import com.john.kot.test.mockk.UtilKotlin1
 import io.mockk.*
@@ -26,19 +24,19 @@ class KidMockk4 {
     fun ok() {
         // Given
         val util = Util()
-        mockkStatic(UtilJava::class)
+        mockkStatic(com.kot.test.mockk.UtilJava::class)
         mockkStatic(UtilKotlin::class)
-        every { UtilJava.ok() } returns "Joe"
+        every { com.kot.test.mockk.UtilJava.ok() } returns "Joe"
         every { UtilKotlin.ok() } returns "Tsai"
 
         // When
         util.ok()
 
         // Then
-        verify { UtilJava.ok() }
+        verify { com.kot.test.mockk.UtilJava.ok() }
         verify { UtilKotlin.ok() }
 
-        assertEquals("Joe", UtilJava.ok())
+        assertEquals("Joe", com.kot.test.mockk.UtilJava.ok())
         assertEquals("Tsai", UtilKotlin.ok())
 
     }

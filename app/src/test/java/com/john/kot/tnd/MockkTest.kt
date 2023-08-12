@@ -13,7 +13,6 @@ package com.john.kot.tnd
 
 import com.google.gson.Gson
 import com.john.kot.list.Person
-import com.john.kot.test.mockk.Parent
 import com.john.kot.test.mockk.Son1
 import io.mockk.every
 import io.mockk.mockk
@@ -41,9 +40,9 @@ class MockkTest {
 
     @Test
     fun `mockkStatic `() {
-        mockkStatic(Parent::class)
-        every { Parent.test5() } returns 10
-        assertEquals(10, Parent.test5())
+        mockkStatic(com.kot.test.mockk.Parent::class)
+        every { com.kot.test.mockk.Parent.test5() } returns 10
+        assertEquals(10, com.kot.test.mockk.Parent.test5())
     }
 
     @Test

@@ -1,5 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+project.task("scriptPlugin") {
+    doLast {
+        println("$project.name:this is a scriptPlugin")
+    }
+}
+
 
 ext {
     // Sdk and tools

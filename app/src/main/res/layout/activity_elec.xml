@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.elec.ElecActivity">
 
-    <com.john.kot.ui.elec.Electrocardiogram
+    <com.kot.ui.elec.Electrocardiogram
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.john.kot.ui.elec.ReportView
+    <com.kot.ui.elec.ReportView
         android:id="@+id/pathView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

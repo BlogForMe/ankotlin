@@ -6,5 +6,8 @@ plugins {
 repositories {
     google()
     mavenCentral()
+}
 
+dependencies {
+    gradleApi()
 }

@@ -102,14 +102,14 @@
         <activity android:name=".viewgroup.ViewGroupActivity" />
         <activity android:name=".tool.glide.lifecycle.GlideActivity" />
         <activity android:name=".mvvm.lifecycle.LifeCycleActivity" />
-        <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
-        <activity android:name=".mvvm.livedata.xiangxue.LiveData1Activity" />
+        <activity android:name="com.kot.mvvm.livedata.xiangxue.LiveData2Activity" />
+        <activity android:name="com.kot.mvvm.livedata.xiangxue.LiveData1Activity" />
         <activity android:name=".mvvm.dongnao.viewmodel.ViewModelShareActivity" />
-        <activity android:name=".mvvm.dongnao.lifecycle.Step2Activity" />
-        <activity android:name=".tool.rx.WriteRxjavaActivity" />
-        <activity android:name=".net.OkhtttpActivity" />
+        <activity android:name="com.kot.mvvm.dongnao.lifecycle.Step2Activity" />
+        <activity android:name="com.kot.tool.rx.WriteRxjavaActivity" />
+        <activity android:name="com.kot.net.OkhtttpActivity" />
         <activity android:name=".permission.PemissionxUseActivity" />
-        <activity android:name=".tool.audio.AudioRecordActivity" />
+        <activity android:name="com.kot.tool.audio.AudioRecordActivity" />
         <activity android:name=".tool.rx.RxJavaActivity" />
         <activity android:name=".tool.SharedPreferencesActivity" />
         <activity android:name=".ui.scroll.ScrollViewActivity" />
@@ -122,14 +122,14 @@
         <activity android:name=".ui.custom.CustomViewActivity" />
         <activity android:name=".mvvm.viewmodel.ViewModelActivity" />
         <activity android:name="com.john.kot.tool.time.TextClockActivity" />
-        <activity android:name=".tool.screenshot.ScreenShortActivity" />
-        <activity android:name=".permission.PermissionActivity" />
+        <activity android:name="com.kot.tool.screenshot.ScreenShortActivity" />
+        <activity android:name="com.kot.permission.PermissionActivity" />
         <activity
             android:name=".tool.location.GpsActivity"
             android:exported="true"
             android:launchMode="singleTop" />
         <activity android:name=".tool.image.ImageHandleActivity" />
-        <activity android:name=".tool.image.ScreenPhotoActivity" />
+        <activity android:name="com.kot.tool.image.ScreenPhotoActivity" />
         <activity android:name=".tool.image.PhotoBasicsActivity" />
         <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".anim.MoveViewActivity" />
@@ -154,7 +154,7 @@
         </activity>
 
         <provider
-            android:name=".CameraProvider"
+            android:name="com.kot.CameraProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
