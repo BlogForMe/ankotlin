@@ -10,8 +10,8 @@ import android.graphics.RectF
 import android.graphics.Shader
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
-import com.john.kot.databinding.ActivityRoundImage1Binding
+import com.kot.R
+import com.kot.databinding.ActivityRoundImage1Binding
 
 class RoundImageActivity : AppCompatActivity() {
     //    val binding by lazy { ActivityRoundImageBinding.inflate(layoutInflater) }

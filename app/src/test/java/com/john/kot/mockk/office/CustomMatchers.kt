@@ -9,7 +9,7 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
 import com.google.common.base.Verify.verify
 import io.mockk.every

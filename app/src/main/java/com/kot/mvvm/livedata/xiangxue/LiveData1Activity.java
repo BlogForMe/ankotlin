@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import com.john.kot.R;
+import com.kot.R;
 
 /**
  * 数据粘性问题

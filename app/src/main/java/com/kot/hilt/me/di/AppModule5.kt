@@ -1,7 +1,7 @@
 package com.kot.hilt.me.di
 
-import com.john.kot.hilt.model.User5
-import com.john.kot.hilt.model.UserParam5
+import com.kot.hilt.model.User5
+import com.kot.hilt.model.UserParam5
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

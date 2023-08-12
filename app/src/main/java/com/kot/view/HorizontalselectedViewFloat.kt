@@ -12,7 +12,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import com.android.util.DisplayUtils.dp2px
-import com.john.kot.R
+import com.kot.R
 import timber.log.Timber
 
 /**

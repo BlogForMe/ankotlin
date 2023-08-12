@@ -9,8 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.john.kot.tool.wechat.util.MyApiUtilKt.WeChatBaseUrl;
-
+import static com.kot.tool.wechat.util.MyApiUtilKt.WeChatBaseUrl;
 
 /**
  * Created by jon on 3/25/18.

@@ -1,9 +1,15 @@
-package com.john.kot.coroutine.dongnao
+package com.kot.coroutine.dongnao
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.cancelAndJoin
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.yield
 import org.junit.Test
-import java.lang.AssertionError
-import java.lang.IllegalArgumentException
 
 /**
  *

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.databinding.ActivityConstraintConerBinding
+import com.kot.databinding.ActivityConstraintConerBinding
 
 //    https://juejin.cn/post/6949186887609221133
 class ConstraintAngerActivity : AppCompatActivity() {

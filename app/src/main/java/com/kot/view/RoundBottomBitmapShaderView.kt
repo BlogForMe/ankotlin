@@ -12,7 +12,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
-import com.john.kot.R
+import com.kot.R
 import kotlin.properties.Delegates
 
 

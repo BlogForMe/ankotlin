@@ -9,7 +9,7 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
 import io.mockk.every
 import io.mockk.spyk

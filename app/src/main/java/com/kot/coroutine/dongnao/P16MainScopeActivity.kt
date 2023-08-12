@@ -2,7 +2,7 @@ package com.kot.coroutine.dongnao
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.databinding.ActivityP16MainScopeBinding
+import com.kot.databinding.ActivityP16MainScopeBinding
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 

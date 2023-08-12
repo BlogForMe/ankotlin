@@ -26,7 +26,7 @@ class ActivityB : BaseActivity() {
         binding.btGoActivityd.setOnClickListener {
             val intent = Intent(Intent.ACTION_MAIN)
             intent.addCategory(Intent.CATEGORY_LAUNCHER)
-            val cn = ComponentName("com.john.kot", "com.john.kot.activity.ActivityD")
+            val cn = ComponentName("com.kot", "com.kot.activity.ActivityD")
             intent.component = cn
             startActivity(intent)
         }

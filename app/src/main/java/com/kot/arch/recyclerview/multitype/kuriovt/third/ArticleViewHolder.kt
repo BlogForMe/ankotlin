@@ -2,9 +2,9 @@ package com.kot.arch.recyclerview.multitype.kuriovt.third
 
 import android.view.View
 import android.widget.TextView
-import com.john.kot.R
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Article
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.BaseViewHolder
+import com.kot.R
+import com.kot.arch.recyclerview.multitype.kuriovt.second.Article
+import com.kot.arch.recyclerview.multitype.kuriovt.second.BaseViewHolder
 
 /**
  *

@@ -2,7 +2,7 @@ package com.kot.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.databinding.ActivityTriangleBinding
+import com.kot.databinding.ActivityTriangleBinding
 
 class TriangleActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTriangleBinding

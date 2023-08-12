@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.sysdialog.ItemPickDialog
 import com.android.util.viewbind.viewBinding
-import com.john.kot.R
-import com.john.kot.databinding.ActivityLottieAnimBinding
-import com.john.kot.ui.dialog.dArr
+import com.kot.R
+import com.kot.databinding.ActivityLottieAnimBinding
+import com.kot.ui.dialog.dArr
 
 val animationUrl1 =
     "https://cdn.tngdigital.com.my/resource/2022/2/11/3ff2468a-29d3-4262-9396-79330ca46813.json"

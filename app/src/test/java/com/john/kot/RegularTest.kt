@@ -1,12 +1,9 @@
-package com.john.kot
+package com.kot
 
-import androidx.annotation.VisibleForTesting
 import com.android.util.printArray
-import com.android.util.validation
-import com.john.kot.util.SpanStringUtils
+import com.kot.util.SpanStringUtils
 import org.junit.Assert
 import org.junit.Test
-import java.lang.Math.max
 
 /**
  *

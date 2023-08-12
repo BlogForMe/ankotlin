@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
-import com.john.kot.databinding.ActivityScrollViewBinding
+import com.kot.databinding.ActivityScrollViewBinding
 
 class ScrollViewActivity : AppCompatActivity() {
     val binding by viewBinding(ActivityScrollViewBinding::inflate)

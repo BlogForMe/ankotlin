@@ -1,6 +1,9 @@
-package com.john.kot.coroutine
+package com.kot.coroutine
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  *

@@ -9,9 +9,9 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
-import com.john.kot.test.mockk.office.ObjBeingMocked
+import com.kot.test.mockk.office.ObjBeingMocked
 import io.mockk.every
 import io.mockk.mockkObject
 import io.mockk.unmockkAll

@@ -9,13 +9,21 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
-import com.john.kot.test.mockk.office.Car
-import com.john.kot.test.mockk.office.DoorType
-import com.john.kot.test.mockk.office.MockCls
-import com.john.kot.test.mockk.office.WindowState
-import io.mockk.*
+import com.kot.test.mockk.office.Car
+import com.kot.test.mockk.office.DoorType
+import com.kot.test.mockk.office.MockCls
+import com.kot.test.mockk.office.WindowState
+import io.mockk.Called
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.slot
+import io.mockk.verify
+import io.mockk.verifyAll
+import io.mockk.verifyOrder
+import io.mockk.verifySequence
 import org.junit.Test
 
 class ChainedcallsTest {

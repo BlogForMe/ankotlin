@@ -10,8 +10,8 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import com.android.util.base.BaseFragment
-import com.john.kot.R
-import com.john.kot.mvvm.demo.UserDemo
+import com.kot.R
+import com.kot.mvvm.demo.UserDemo
 
 /**
  * Created by A on 2018/3/20.

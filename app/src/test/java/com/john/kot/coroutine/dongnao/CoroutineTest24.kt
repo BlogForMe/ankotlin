@@ -1,8 +1,12 @@
-package com.john.kot.coroutine.dongnao
+package com.kot.coroutine.dongnao
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.supervisorScope
 import org.junit.Test
-import java.lang.IllegalArgumentException
 
 /**
  *

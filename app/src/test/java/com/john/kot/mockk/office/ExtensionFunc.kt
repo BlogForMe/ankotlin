@@ -9,11 +9,11 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
-import com.john.kot.test.mockk.office.Ext
-import com.john.kot.test.mockk.office.Obj
-import com.john.kot.test.mockk.office.extensionFunc
+import com.kot.test.mockk.office.Ext
+import com.kot.test.mockk.office.Obj
+import com.kot.test.mockk.office.extensionFunc
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkStatic
@@ -42,7 +42,7 @@ class ExtensionFunc {
     @Test
     fun `mockkStatic extension func`(){
 
-        mockkStatic("com.john.kot.test.mockk.office.Obj.kt")
+        mockkStatic("com.kot.test.mockk.office.Obj.kt")
 
         every {
             Obj(5).extensionFunc()
@@ -60,8 +60,8 @@ class ExtensionFunc {
         fun Obj.extensionFunc() = value + 5
 
 
-//        mockkStatic("com.john.kot.test.mockk.office.Obj.kt")
-     //或者
+//        mockkStatic("com.kot.test.mockk.office.Obj.kt")
+        //或者
         mockkStatic(Obj::extensionFunc)
 
         every {

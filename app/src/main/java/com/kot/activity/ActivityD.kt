@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.annotation.FloatRange
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
-import com.john.kot.databinding.ActivityDBinding
+import com.kot.databinding.ActivityDBinding
 
 class ActivityD : AppCompatActivity() {
 

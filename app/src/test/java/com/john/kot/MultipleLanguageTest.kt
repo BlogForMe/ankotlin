@@ -1,4 +1,4 @@
-package com.john.kot
+package com.kot
 
 import org.junit.Test
 

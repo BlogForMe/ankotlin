@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
-import com.john.kot.R
+import com.kot.R
 
 class LifeCycleActivity : AppCompatActivity(), LifecycleOwner {
     val TAG = "LifeCycleActivity";

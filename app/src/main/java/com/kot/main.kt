@@ -11,7 +11,7 @@
 
 package com.kot
 
-import com.john.kot.ztest.MaterialDialog
+import com.kot.ztest.MaterialDialog
 
 fun main() {
     MaterialDialog().show {

@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.sysdialog.ItemPickDialog
-import com.john.kot.R
-import com.john.kot.ui.dialog.DialogShowFragment
+import com.kot.R
+import com.kot.ui.dialog.DialogShowFragment
 
 class MeasureLearnActivity : AppCompatActivity(), ItemPickDialog.ISelectListener {
     val TAG = "MeasureLearnActivity"

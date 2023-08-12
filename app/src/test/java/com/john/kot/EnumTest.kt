@@ -1,6 +1,6 @@
-package com.john.kot
+package com.kot
 
-import androidx.lifecycle.Lifecycle.*
+import androidx.lifecycle.Lifecycle.State
 import org.junit.Test
 
 /**

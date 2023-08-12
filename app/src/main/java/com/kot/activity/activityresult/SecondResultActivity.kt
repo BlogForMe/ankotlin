@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
-import com.john.kot.mvvm.demo.UserDemo
+import com.kot.R
+import com.kot.mvvm.demo.UserDemo
 
 //@Route(path = ACTIVITY_SECOND)
 class SecondResultActivity : AppCompatActivity() {

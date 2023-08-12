@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import com.john.kot.R;
+import com.kot.R;
 import com.kot.tool.rx.core.Emitter;
 import com.kot.tool.rx.core.Observable;
 import com.kot.tool.rx.core.ObservableOnSubscribe;

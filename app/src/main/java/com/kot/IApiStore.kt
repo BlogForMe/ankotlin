@@ -1,7 +1,7 @@
 package com.kot
 
-import com.john.kot.tool.wechat.util.WeChatLogin
-import com.john.kot.tool.wechat.util.WeChatLoginSecond
+import com.kot.tool.wechat.util.WeChatLogin
+import com.kot.tool.wechat.util.WeChatLoginSecond
 import io.reactivex.Observable
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

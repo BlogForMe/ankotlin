@@ -1,7 +1,7 @@
 package com.kot.arch.recyclerview.multitype.kuriovt.third
 
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Canvas
-import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Canvas.BIG_THUMBNAIL
+import com.kot.arch.recyclerview.multitype.kuriovt.second.Canvas
+import com.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Canvas.BIG_THUMBNAIL
 
 
 /**

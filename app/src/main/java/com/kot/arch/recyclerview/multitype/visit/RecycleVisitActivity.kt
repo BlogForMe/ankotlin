@@ -3,10 +3,10 @@ package com.kot.arch.recyclerview.multitype.visit
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.SECONDARY
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.TERTIARY
-import com.john.kot.databinding.ContentRecycleVisitBinding
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.SECONDARY
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.TERTIARY
+import com.kot.databinding.ContentRecycleVisitBinding
 
 class RecycleVisitActivity : AppCompatActivity() {
 

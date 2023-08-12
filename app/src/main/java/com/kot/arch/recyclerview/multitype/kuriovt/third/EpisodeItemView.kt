@@ -1,7 +1,7 @@
 package com.kot.arch.recyclerview.multitype.kuriovt.third
 
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Episode
-import com.john.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Episode.TEXT_ONLY
+import com.kot.arch.recyclerview.multitype.kuriovt.second.Episode
+import com.kot.arch.recyclerview.multitype.kuriovt.third.LayoutFactory.Episode.TEXT_ONLY
 
 /**
  *

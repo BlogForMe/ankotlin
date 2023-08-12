@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import com.john.kot.R;
+import com.kot.R;
 
 
 //原文链接：https://blog.csdn.net/geyuecang/article/details/89028283

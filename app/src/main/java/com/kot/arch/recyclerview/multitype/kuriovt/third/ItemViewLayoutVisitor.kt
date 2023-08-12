@@ -3,10 +3,10 @@ package com.kot.arch.recyclerview.multitype.kuriovt.third
 import android.util.SparseArray
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Article
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Canvas
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Episode
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.FeedContent
+import com.kot.arch.recyclerview.multitype.kuriovt.second.Article
+import com.kot.arch.recyclerview.multitype.kuriovt.second.Canvas
+import com.kot.arch.recyclerview.multitype.kuriovt.second.Episode
+import com.kot.arch.recyclerview.multitype.kuriovt.second.FeedContent
 
 /**
  *

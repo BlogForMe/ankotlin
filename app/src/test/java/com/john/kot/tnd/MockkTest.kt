@@ -9,11 +9,11 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.tnd
+package com.kot.tnd
 
 import com.google.gson.Gson
-import com.john.kot.list.Person
-import com.john.kot.test.mockk.Son1
+import com.kot.list.Person
+import com.kot.test.mockk.Son1
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkObject

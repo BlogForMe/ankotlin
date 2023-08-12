@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.john.kot.R
+import com.kot.R
 
 /**
  *
@@ -60,7 +60,7 @@ class StickFragment : Fragment() {
         }
         //使用LiveData
         viewModel.textLiveData.observe(viewLifecycleOwner,object :Observer<String>{
-            override fun onChanged(t: String?) {
+            override fun onChanged(t: String) {
                 message.text = t
                 message.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
             }

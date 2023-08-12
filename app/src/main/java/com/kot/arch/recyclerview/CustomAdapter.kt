@@ -21,7 +21,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.john.kot.databinding.ItemAmmountBinding
+import com.kot.databinding.ItemAmmountBinding
 
 class CustomAdapter(val mDataSet: List<String>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {

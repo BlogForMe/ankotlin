@@ -3,9 +3,9 @@ package com.kot.arch.recyclerview.multitype.kuriovt.second
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.TERTIARY
-import com.john.kot.databinding.ContentRecycleVisitBinding
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.TERTIARY
+import com.kot.databinding.ContentRecycleVisitBinding
 
 class RecycleVisitSecondActivity : AppCompatActivity() {
 

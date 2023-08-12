@@ -7,8 +7,8 @@
 
     <fragment
             android:id="@+id/FirstFragment"
-            android:name="com.john.kot.mvvm.demo.FirstFragment"
-            android:label="@string/first_fragment_label"
+        android:name="com.kot.mvvm.demo.FirstFragment"
+        android:label="@string/first_fragment_label"
             tools:layout="@layout/fragment_first">
 
         <action
@@ -16,9 +16,9 @@
                 app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
-            android:id="@+id/SecondFragment"
-            android:name="com.john.kot.mvvm.demo.SecondFragment"
-            android:label="@string/second_fragment_label"
+        android:id="@+id/SecondFragment"
+        android:name="com.kot.mvvm.demo.SecondFragment"
+        android:label="@string/second_fragment_label"
             tools:layout="@layout/fragment_second">
 
         <action

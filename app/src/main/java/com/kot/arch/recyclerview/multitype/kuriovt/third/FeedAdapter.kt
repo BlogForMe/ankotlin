@@ -3,9 +3,9 @@ package com.kot.arch.recyclerview.multitype.kuriovt.third
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.BaseViewHolder
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.DefaultViewHolder
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.FeedContent
+import com.kot.arch.recyclerview.multitype.kuriovt.second.BaseViewHolder
+import com.kot.arch.recyclerview.multitype.kuriovt.second.DefaultViewHolder
+import com.kot.arch.recyclerview.multitype.kuriovt.second.FeedContent
 
 /**
  *

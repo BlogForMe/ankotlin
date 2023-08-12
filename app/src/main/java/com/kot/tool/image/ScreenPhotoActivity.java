@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.android.util.PhotoTakeManger;
 import com.android.util.base.CBaseActivity;
-import com.john.kot.R;
+import com.kot.R;
 
 
 /**

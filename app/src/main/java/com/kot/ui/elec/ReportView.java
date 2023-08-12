@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import androidx.annotation.Nullable;
-import com.john.kot.R;
+import com.kot.R;
 
 /**
  * https://blog.csdn.net/qingsheng33/article/details/77933977

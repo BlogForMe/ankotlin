@@ -2,7 +2,7 @@ package com.kot.arch.recyclerview.multitype.kuriovt.second
 
 import android.view.View
 import android.widget.TextView
-import com.john.kot.R
+import com.kot.R
 
 /**
  *

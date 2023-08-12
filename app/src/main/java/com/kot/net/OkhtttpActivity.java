@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import com.john.kot.R;
+import com.kot.R;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

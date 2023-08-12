@@ -5,7 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.john.kot.databinding.ActivityColorIntBinding
+import com.kot.databinding.ActivityColorIntBinding
 
 class ColorIntActivity : AppCompatActivity() {
     val TAG = "ColorIntActivity"

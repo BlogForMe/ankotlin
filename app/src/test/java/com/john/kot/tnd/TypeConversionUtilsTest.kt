@@ -1,7 +1,7 @@
-package com.john.kot.tnd
+package com.kot.tnd
 
 
-import com.john.kot.test.TypeConversionUtils.stringToInt
+import com.kot.test.TypeConversionUtils.stringToInt
 import org.junit.Before
 import org.junit.Test
 

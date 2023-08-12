@@ -10,7 +10,7 @@ import android.graphics.RectF
 import android.graphics.Shader
 import android.util.AttributeSet
 import android.view.View
-import com.john.kot.R
+import com.kot.R
 import timber.log.Timber
 
 class CustomView @JvmOverloads constructor(

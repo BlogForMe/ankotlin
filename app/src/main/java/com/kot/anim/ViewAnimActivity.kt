@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
+import com.kot.R
 
 /**
  * https://blog.csdn.net/carson_ho/article/details/72827747

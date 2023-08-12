@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
-import com.john.kot.R
-import com.john.kot.databinding.ActivityGlideBinding
+import com.kot.R
+import com.kot.databinding.ActivityGlideBinding
 
 class GlideActivity : AppCompatActivity() {
     private lateinit var icLink: View

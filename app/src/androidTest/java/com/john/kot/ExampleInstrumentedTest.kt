@@ -1,4 +1,4 @@
-package com.john.kot
+package com.kot
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -23,7 +23,7 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.john.kot", appContext.packageName)
+        assertEquals("com.kot", appContext.packageName)
 
     }
 

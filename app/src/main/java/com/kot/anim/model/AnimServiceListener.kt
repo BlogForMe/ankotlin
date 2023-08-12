@@ -3,7 +3,7 @@ package com.kot.anim.model
 import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import com.john.kot.arch.recyclerview.CustomAdapter
+import com.kot.arch.recyclerview.CustomAdapter
 
 /**
  *

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".customview.DrawPathActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customview.DrawPathActivity">
 
-    <!-- <com.john.kot.view.PathDraw
+    <!-- <com.kot.view.PathDraw
              android:layout_width="match_parent"
              android:layout_height="match_parent" />-->
 
-    <com.john.kot.view.SaveRestoreView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <com.kot.view.SaveRestoreView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

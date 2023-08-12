@@ -9,7 +9,7 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
-import com.john.kot.R
+import com.kot.R
 import timber.log.Timber
 import kotlin.math.PI
 import kotlin.math.cos

@@ -2,7 +2,7 @@ package com.kot.customview
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
+import com.kot.R
 
 /**
  * 绘制Path 学习

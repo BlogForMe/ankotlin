@@ -14,7 +14,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import com.john.kot.R;
+import com.kot.R;
 
 /**
  * Sample that demonstrates how to record a device's microphone using {@link AudioRecord}.

@@ -6,7 +6,7 @@ import android.os.Looper
 import android.widget.Button
 import android.widget.Toast
 import com.android.util.sysdialog.FireMissilesDialogFragment
-import com.john.kot.R
+import com.kot.R
 
 class CircleProgressActivity : com.kot.BaseActivity(), FireMissilesDialogFragment.IConfirmListener {
 

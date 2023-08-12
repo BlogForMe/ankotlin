@@ -1,7 +1,7 @@
-package com.john.kot
+package com.kot
 
 import com.google.common.truth.Truth.assertThat
-import com.john.kot.test.Homework
+import com.kot.test.Homework
 import org.junit.Test
 
 class HomeworkTest {

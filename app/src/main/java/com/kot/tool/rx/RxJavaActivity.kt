@@ -2,8 +2,8 @@ package com.kot.tool.rx
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.IApiStore
-import com.john.kot.R
+import com.kot.IApiStore
+import com.kot.R
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers

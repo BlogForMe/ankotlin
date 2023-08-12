@@ -2,7 +2,7 @@ package com.kot.mvvm.livedata
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
+import com.kot.R
 
 /**
  * https://www.jianshu.com/p/e08287ec62cd

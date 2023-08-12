@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.android.util.viewbind.viewBinding
-import com.john.kot.databinding.ActivityCBinding
+import com.kot.databinding.ActivityCBinding
 
 class ActivityC : AppCompatActivity() {
 

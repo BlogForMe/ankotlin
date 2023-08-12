@@ -1,6 +1,6 @@
 package com.kot.arch.recyclerview.multitype.visit
 
-import com.john.kot.R
+import com.kot.R
 
 /**
  *

@@ -3,11 +3,11 @@ package com.kot.hilt.me
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
-import com.john.kot.hilt.model.User1
-import com.john.kot.hilt.model.User6
-import com.john.kot.hilt.model.UserParam1
-import com.john.kot.hilt.model.UserParam5
+import com.kot.R
+import com.kot.hilt.model.User1
+import com.kot.hilt.model.User6
+import com.kot.hilt.model.UserParam1
+import com.kot.hilt.model.UserParam5
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

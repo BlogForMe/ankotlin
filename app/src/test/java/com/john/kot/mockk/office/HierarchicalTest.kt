@@ -9,9 +9,9 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
-import com.john.kot.test.mockk.office.AddressBook
+import com.kot.test.mockk.office.AddressBook
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.john.kot
+package com.kot
 
 import org.hamcrest.CoreMatchers
 import org.hamcrest.MatcherAssert.assertThat

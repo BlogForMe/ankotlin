@@ -1,7 +1,6 @@
-package com.john.kot.coroutine.dongnao
+package com.kot.coroutine.dongnao
 
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

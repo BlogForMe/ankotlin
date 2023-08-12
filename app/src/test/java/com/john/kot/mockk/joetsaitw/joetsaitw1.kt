@@ -9,10 +9,10 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk
+package com.kot.mockk
 
-import com.john.kot.test.mockk.Kid
-import com.john.kot.test.mockk.Mother
+import com.kot.test.mockk.Kid
+import com.kot.test.mockk.Mother
 import io.mockk.every
 import io.mockk.mockk
 import junit.framework.Assert.assertEquals

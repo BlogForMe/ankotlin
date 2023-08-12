@@ -9,8 +9,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.util.viewbind.viewBinding
-import com.john.kot.databinding.ActivityLivedataStickBinding
-import com.john.kot.mvvm.livedata.stick.StickViewModel
+import com.kot.databinding.ActivityLivedataStickBinding
+import com.kot.mvvm.livedata.stick.StickViewModel
 
 class LivedataStickActivity : AppCompatActivity() {
     private val TAG = "LivedataStickActivity"
@@ -47,7 +47,7 @@ class LivedataStickActivity : AppCompatActivity() {
 
         binding.btSendData.setOnClickListener {
             viewModel.textLiveData.observe(this, object : Observer<String> {
-                override fun onChanged(t: String?) {
+                override fun onChanged(t: String) {
                     Log.i(TAG, "onChanged: $t")
                     binding.btFirst.text = t
 

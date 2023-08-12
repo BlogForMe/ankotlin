@@ -1,8 +1,7 @@
-package com.john.kot.coroutine
+package com.kot.coroutine
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.merge
 import org.junit.Test
 import kotlin.time.ExperimentalTime

@@ -6,8 +6,8 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
-import com.john.kot.R
-import com.john.kot.databinding.ActivityViewModelShareBinding
+import com.kot.R
+import com.kot.databinding.ActivityViewModelShareBinding
 
 
 class ViewModelShareActivity : AppCompatActivity() {

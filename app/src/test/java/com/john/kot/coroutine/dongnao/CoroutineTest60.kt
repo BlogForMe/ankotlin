@@ -1,4 +1,4 @@
-package com.john.kot.coroutine.dongnao
+package com.kot.coroutine.dongnao
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect

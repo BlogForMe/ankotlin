@@ -9,12 +9,19 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.joetsaitw
+package com.kot.mockk.joetsaitw
 
-import com.john.kot.test.mockk.Kid
-import com.john.kot.test.mockk.Mother
-import io.mockk.*
+import com.kot.test.mockk.Kid
+import com.kot.test.mockk.Mother
+import io.mockk.MockKAnnotations
+import io.mockk.Runs
+import io.mockk.every
 import io.mockk.impl.annotations.MockK
+import io.mockk.just
+import io.mockk.slot
+import io.mockk.verify
+import io.mockk.verifyOrder
+import io.mockk.verifySequence
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test

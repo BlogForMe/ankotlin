@@ -9,7 +9,7 @@ import android.graphics.RectF
 import android.graphics.Shader
 import android.util.AttributeSet
 import android.view.View
-import com.john.kot.R
+import com.kot.R
 import kotlin.properties.Delegates
 
 

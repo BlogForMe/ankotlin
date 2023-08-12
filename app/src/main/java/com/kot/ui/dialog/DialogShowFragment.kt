@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import com.android.util.ToastUtil
 import com.android.util.base.CBaseFragment
 import com.android.util.sysdialog.ItemPickDialog
-import com.john.kot.R
+import com.kot.R
 
 val dArr = arrayListOf("红色", "绿色", "蓝色")
 

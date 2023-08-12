@@ -3,11 +3,11 @@ package com.kot.hilt.dn
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.databinding.ActivityHiltMainBinding
-import com.john.kot.hilt.dn.di.MainViewModel
-import com.john.kot.hilt.dn.di.User
-import com.john.kot.hilt.dn.di.User1
-import com.john.kot.hilt.dn.di.User2
+import com.kot.databinding.ActivityHiltMainBinding
+import com.kot.hilt.dn.di.MainViewModel
+import com.kot.hilt.dn.di.User
+import com.kot.hilt.dn.di.User1
+import com.kot.hilt.dn.di.User2
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

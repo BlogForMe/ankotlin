@@ -12,7 +12,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.john.kot.R
+import com.kot.R
 import timber.log.Timber
 import java.lang.ref.WeakReference
 import java.text.DecimalFormat

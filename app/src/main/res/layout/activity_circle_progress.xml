@@ -15,18 +15,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- <com.john.kot.view.OnTouchEventView
+    <!-- <com.kot.view.OnTouchEventView
              android:layout_width="match_parent"
              android:layout_height="match_parent"/>
  -->
     <!--
-        <com.john.kot.view.TermRoundView
+        <com.kot.view.TermRoundView
                 android:id="@+id/trm_rule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
 
-        <com.john.kot.view.TempCircleView
+        <com.kot.view.TempCircleView
                 android:layout_below="@+id/trm_rule"
                 android:layout_width="51dp"
                 android:layout_height="51dp" />

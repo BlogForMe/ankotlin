@@ -9,13 +9,18 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
-import com.john.kot.test.mockk.office.Car
-import com.john.kot.test.mockk.office.Direction
-import com.john.kot.test.mockk.office.MockCls
-import com.john.kot.test.mockk.office.Outcome
-import io.mockk.*
+import com.kot.test.mockk.office.Car
+import com.kot.test.mockk.office.Direction
+import com.kot.test.mockk.office.MockCls
+import com.kot.test.mockk.office.Outcome
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.excludeRecords
+import io.mockk.justRun
+import io.mockk.mockk
+import io.mockk.verify
 import org.junit.Test
 
 class VerificationTest {

@@ -9,10 +9,14 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.office
+package com.kot.mockk.office
 
-import com.john.kot.test.mockk.office.MockCls
-import io.mockk.*
+import com.kot.test.mockk.office.MockCls
+import io.mockk.EqMatcher
+import io.mockk.OfTypeMatcher
+import io.mockk.every
+import io.mockk.mockkConstructor
+import io.mockk.verify
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

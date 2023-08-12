@@ -4,8 +4,8 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
-import com.john.kot.databinding.ActivityDialogStatebarBinding
+import com.kot.R
+import com.kot.databinding.ActivityDialogStatebarBinding
 
 class DialogStateBarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

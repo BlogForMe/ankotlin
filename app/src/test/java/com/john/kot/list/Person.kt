@@ -1,4 +1,4 @@
-package com.john.kot.list
+package com.kot.list
 
 //open class Animal {
 //    var name: String? = null

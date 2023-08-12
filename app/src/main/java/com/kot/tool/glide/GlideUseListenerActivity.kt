@@ -1,4 +1,4 @@
-//package com.john.kot.sdk
+//package com.kot.sdk
 //
 //import android.graphics.drawable.Drawable
 //import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,7 @@
 //import com.bumptech.glide.load.engine.GlideException
 //import com.bumptech.glide.request.RequestListener
 //import com.bumptech.glide.request.target.Target
-//import com.john.kot.R
+//import com.kot.R
 //import kotlinx.android.synthetic.main.activity_glide_use_listener.*
 //import timber.log.Timber
 //

@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.ToastUtil
 import com.android.util.sysdialog.ItemPickDialog
-import com.john.kot.R
+import com.kot.R
 
 class MessageActivityFragment : AppCompatActivity(), ItemPickDialog.ISelectListener {
 

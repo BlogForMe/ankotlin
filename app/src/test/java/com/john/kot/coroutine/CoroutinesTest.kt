@@ -1,4 +1,4 @@
-package com.john.kot.coroutine
+package com.kot.coroutine
 
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat

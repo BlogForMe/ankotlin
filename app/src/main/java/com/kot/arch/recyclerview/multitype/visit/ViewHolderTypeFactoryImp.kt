@@ -1,11 +1,11 @@
 package com.kot.arch.recyclerview.multitype.visit
 
 import android.view.View
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY_VIEW
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.SECONDARY
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.SECONDARY_VIEW
-import com.john.kot.arch.recyclerview.multitype.visit.Item.Companion.TERTIARY_VIEW
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.PRIMARY_VIEW
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.SECONDARY
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.SECONDARY_VIEW
+import com.kot.arch.recyclerview.multitype.visit.Item.Companion.TERTIARY_VIEW
 
 /**
  *

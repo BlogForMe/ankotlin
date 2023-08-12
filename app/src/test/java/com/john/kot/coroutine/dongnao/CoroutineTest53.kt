@@ -1,11 +1,7 @@
-package com.john.kot.coroutine.dongnao
+package com.kot.coroutine.dongnao
 
 import kotlinx.coroutines.*
 import org.junit.Test
-import java.io.IOException
-import java.lang.AssertionError
-import java.lang.IllegalArgumentException
-import java.lang.IndexOutOfBoundsException
 
 /**
  *

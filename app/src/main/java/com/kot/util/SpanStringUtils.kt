@@ -13,7 +13,7 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import android.view.View
-import com.john.kot.R
+import com.kot.R
 
 /**
  * Created by Administrator on 2018/5/14.

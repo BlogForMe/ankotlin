@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
-import com.john.kot.R
-import com.john.kot.databinding.ActivityShareprefenceBinding
+import com.kot.R
+import com.kot.databinding.ActivityShareprefenceBinding
 
 class SharedPreferencesActivity : AppCompatActivity() {
     private val TAG = "SharedPreferencesActivity"

@@ -2,7 +2,7 @@ package com.kot.mvvm.dongnao.lifecycle;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import com.john.kot.R;
+import com.kot.R;
 
 public class Step2Activity extends AppCompatActivity {
 

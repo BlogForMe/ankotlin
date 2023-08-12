@@ -9,11 +9,10 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk
+package com.kot.mockk
 
-import com.john.kot.test.LoginModelImpl
-import com.john.kot.test.ResModel
-import io.mockk.every
+import com.kot.test.LoginModelImpl
+import com.kot.test.ResModel
 import io.mockk.slot
 import io.mockk.verify
 import org.junit.Test

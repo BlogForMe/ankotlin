@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.LinkedList;
 
 import android.content.Context;
-import com.john.kot.R;
+import com.kot.R;
 
 public class DataUtil {
 

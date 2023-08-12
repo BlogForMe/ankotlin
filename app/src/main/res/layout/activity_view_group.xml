@@ -12,7 +12,7 @@
         android:text="搜索历史"
         android:textSize="20sp" />
 
-    <com.john.kot.viewgroup.view.FlowLayout
+    <com.kot.viewgroup.view.FlowLayout
         android:id="@+id/flow_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -68,6 +68,6 @@
             android:textSize="20sp" />
 
 
-    </com.john.kot.viewgroup.view.FlowLayout>
+    </com.kot.viewgroup.view.FlowLayout>
 
 </LinearLayout>

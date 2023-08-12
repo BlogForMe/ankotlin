@@ -1,6 +1,6 @@
 package com.kot.arch.recyclerview.multitype.kuriovt.third
 
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.Article
+import com.kot.arch.recyclerview.multitype.kuriovt.second.Article
 
 /**
  *

@@ -1,4 +1,4 @@
-package com.john.kot.tnd;
+package com.kot.tnd;
 
 /**
  * ClassName:      DataModel

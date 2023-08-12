@@ -9,12 +9,14 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.coroutine.dongnao
+package com.kot.coroutine.dongnao
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.selects.select
 import org.junit.Test
-import java.lang.IllegalArgumentException
 import kotlin.system.measureTimeMillis
 
 //https://www.bilibili.com/video/BV1uo4y1y7ZF?p=20&vd_source=d4c5260002405798a57476b318eccac9

@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
-import com.john.kot.databinding.ActivityPlayStoreBinding
+import com.kot.R
+import com.kot.databinding.ActivityPlayStoreBinding
 
 class GoogleTopUpActivity : AppCompatActivity() {
     val binding by lazy { ActivityPlayStoreBinding.inflate(layoutInflater) }

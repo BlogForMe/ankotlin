@@ -15,7 +15,7 @@ import android.graphics.Xfermode
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
+import com.kot.R
 
 
 class XfermodesActivity : AppCompatActivity() {

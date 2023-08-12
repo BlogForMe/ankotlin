@@ -3,7 +3,7 @@ package com.kot.viewgroup
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.databinding.ActivityViewGroupBinding
+import com.kot.databinding.ActivityViewGroupBinding
 
 class ViewGroupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

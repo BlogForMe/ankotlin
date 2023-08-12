@@ -2,7 +2,7 @@ package com.kot.tool.time
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
+import com.kot.R
 
 class TextClockActivity : AppCompatActivity() {
 

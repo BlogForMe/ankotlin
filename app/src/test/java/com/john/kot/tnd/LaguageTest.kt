@@ -1,6 +1,5 @@
-package com.john.kot.tnd
+package com.kot.tnd
 
-import com.john.kot.util.LanguageUtil
 import org.junit.Test
 
 /**

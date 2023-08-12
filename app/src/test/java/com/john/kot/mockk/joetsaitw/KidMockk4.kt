@@ -9,12 +9,15 @@
  * UpdateRemark:   Modify the description
  */
 
-package com.john.kot.mockk.joetsaitw
+package com.kot.mockk.joetsaitw
 
-import com.john.kot.test.mockk.Util
-import com.john.kot.test.mockk.UtilKotlin
-import com.john.kot.test.mockk.UtilKotlin1
-import io.mockk.*
+import com.kot.test.mockk.Util
+import com.kot.test.mockk.UtilKotlin
+import com.kot.test.mockk.UtilKotlin1
+import io.mockk.every
+import io.mockk.mockkObject
+import io.mockk.mockkStatic
+import io.mockk.verify
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

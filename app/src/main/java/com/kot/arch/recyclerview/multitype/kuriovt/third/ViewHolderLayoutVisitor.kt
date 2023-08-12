@@ -1,7 +1,7 @@
 package com.kot.arch.recyclerview.multitype.kuriovt.third
 
 import android.view.View
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.*
+import com.kot.arch.recyclerview.multitype.kuriovt.second.*
 
 /**
  *

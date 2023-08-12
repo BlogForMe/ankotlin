@@ -6,9 +6,9 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
 import com.android.util.window.util.getScreenWidth
-import com.john.kot.R
-import com.john.kot.databinding.ActivityTextViewBigBinding
-import com.john.kot.util.SpanStringUtils.contactIndexBuffer
+import com.kot.R
+import com.kot.databinding.ActivityTextViewBigBinding
+import com.kot.util.SpanStringUtils.contactIndexBuffer
 import kotlin.math.abs
 
 /**

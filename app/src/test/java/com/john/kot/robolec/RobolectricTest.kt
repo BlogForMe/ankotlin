@@ -1,4 +1,4 @@
-package com.john.kot.robolec
+package com.kot.robolec
 
 import android.util.ArrayMap
 import org.junit.Test

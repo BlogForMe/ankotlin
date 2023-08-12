@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.image.RoundImageActivity">
 
-    <com.john.kot.view.RoundImageShaderView
+    <com.kot.view.RoundImageShaderView
         android:id="@+id/iv_girl2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <com.john.kot.view.RoundBottomBitmapShaderView
+    <com.kot.view.RoundBottomBitmapShaderView
         android:id="@+id/demo_shader_bottom_round_image1"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_girl2" />
 
-    <com.john.kot.view.RoundSingleBitmapShaderView
+    <com.kot.view.RoundSingleBitmapShaderView
         android:id="@+id/demo_shader_bottom_round_image2"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/demo_shader_bottom_round_image1" />
 
-    <com.john.kot.view.RoundXfermodeBitmapShaderView
+    <com.kot.view.RoundXfermodeBitmapShaderView
         android:id="@+id/demo_round_xfermode"
         android:layout_width="150dp"
         android:layout_height="150dp"

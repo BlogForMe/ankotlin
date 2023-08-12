@@ -7,8 +7,9 @@
         android:layout_height="match_parent"
         tools:context=".ui.GradientActivity">
 
-    <com.john.kot.view.GradientView
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="400dp" android:layout_height="200dp"/>
+    <com.kot.view.GradientView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="400dp"
+        android:layout_height="200dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

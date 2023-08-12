@@ -1,7 +1,7 @@
-package com.john.kot
+package com.kot
 
 import com.google.common.truth.Truth.assertThat
-import com.john.kot.test.RegistrationUtil
+import com.kot.test.RegistrationUtil
 import org.junit.Test
 
 

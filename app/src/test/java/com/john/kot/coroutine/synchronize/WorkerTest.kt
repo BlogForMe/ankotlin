@@ -1,6 +1,8 @@
-package com.john.kot.coroutine.synchronize
+package com.kot.coroutine.synchronize
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine

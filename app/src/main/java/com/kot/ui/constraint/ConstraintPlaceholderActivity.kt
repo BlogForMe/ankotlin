@@ -2,8 +2,8 @@ package com.kot.ui.constraint
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.R
-import com.john.kot.databinding.ActivityConstraintBinding
+import com.kot.R
+import com.kot.databinding.ActivityConstraintBinding
 
 class ConstraintPlaceholderActivity : AppCompatActivity() {
     private lateinit var binding: ActivityConstraintBinding

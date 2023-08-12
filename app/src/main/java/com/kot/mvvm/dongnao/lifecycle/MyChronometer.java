@@ -16,12 +16,13 @@ public class MyChronometer extends Chronometer implements LifecycleObserver {
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    private void startMeter() {
+    public void startMeter() {
         setBase(SystemClock.elapsedRealtime() - elapseTime);
         start();
     }
+
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    private void stopMeter() {
+    public void stopMeter() {
         elapseTime = SystemClock.elapsedRealtime() - getBase();
         stop();
     }

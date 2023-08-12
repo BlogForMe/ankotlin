@@ -2,7 +2,7 @@ package com.kot.coroutine
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.john.kot.databinding.ActivityCoroutinesBinding
+import com.kot.databinding.ActivityCoroutinesBinding
 
 class CoroutinesActivity : AppCompatActivity() {
     //    val binding by viewBinding(ActivityCoroutinesBinding::inflate)

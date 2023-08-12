@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.john.kot">
+    package="com.kot">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -121,7 +121,7 @@
         <activity android:name=".ui.viewpager.ScreenSlidePagerActivity" />
         <activity android:name=".ui.custom.CustomViewActivity" />
         <activity android:name=".mvvm.viewmodel.ViewModelActivity" />
-        <activity android:name="com.john.kot.tool.time.TextClockActivity" />
+        <activity android:name="com.kot.tool.time.TextClockActivity" />
         <activity android:name="com.kot.tool.screenshot.ScreenShortActivity" />
         <activity android:name="com.kot.permission.PermissionActivity" />
         <activity

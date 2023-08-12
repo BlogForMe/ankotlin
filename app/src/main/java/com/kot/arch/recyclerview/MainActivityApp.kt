@@ -23,8 +23,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.window.util.dp
 import com.android.util.window.util.getScreenWidth
-import com.john.kot.R
-import com.john.kot.databinding.ActivityMainBinding
+import com.kot.R
+import com.kot.databinding.ActivityMainBinding
 
 
 /**

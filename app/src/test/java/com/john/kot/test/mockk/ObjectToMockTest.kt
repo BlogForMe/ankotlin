@@ -1,4 +1,4 @@
-package com.john.kot.test.mockk
+package com.kot.test.mockk
 
 import io.mockk.every
 import io.mockk.mockk

@@ -1,4 +1,4 @@
-package com.john.kot
+package com.kot
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.android.util.DateUtil.calculateAge

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.ToastUtil
-import com.john.kot.R
+import com.kot.R
 
 class LBSFirebaseActivity : AppCompatActivity() {
 

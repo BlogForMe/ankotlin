@@ -3,10 +3,10 @@ package com.kot.arch.recyclerview.multitype.kuriovt.third
 import android.util.SparseArray
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.john.kot.R
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.CanvasViewHolder
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.DefaultViewHolder
-import com.john.kot.arch.recyclerview.multitype.kuriovt.second.EpisodeViewHolder
+import com.kot.R
+import com.kot.arch.recyclerview.multitype.kuriovt.second.CanvasViewHolder
+import com.kot.arch.recyclerview.multitype.kuriovt.second.DefaultViewHolder
+import com.kot.arch.recyclerview.multitype.kuriovt.second.EpisodeViewHolder
 
 /**
  *

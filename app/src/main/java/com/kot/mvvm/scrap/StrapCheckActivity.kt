@@ -3,7 +3,7 @@ package com.kot.mvvm.scrap
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.john.kot.R
+import com.kot.R
 
 /**
  * 手环

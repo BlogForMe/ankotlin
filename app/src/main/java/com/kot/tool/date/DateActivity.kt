@@ -13,8 +13,8 @@ package com.kot.tool.date
 //import com.bigkoo.pickerview.listener.CustomListener
 //import com.bigkoo.pickerview.listener.OnTimeSelectListener
 //import com.bigkoo.pickerview.view.TimePickerView
-//import com.john.kot.R
-//import com.john.kot.databinding.ActivityDateBinding
+//import com.kot.R
+//import com.kot.databinding.ActivityDateBinding
 //import kotlinx.android.synthetic.main.activity_date.*
 //import java.text.SimpleDateFormat
 //import java.util.*
