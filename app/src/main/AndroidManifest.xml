@@ -26,7 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/HomeTheme">
         <activity
-            android:name="com.compose.ComposeActivity"
+            android:name="com.compose.ComposeActivity03"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,11 +37,6 @@
         <activity
             android:name=".ui.KeyBordActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".arch.recyclerview.multitype.visit.RecycleVisitActivity"
