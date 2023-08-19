@@ -15,16 +15,19 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.compose.model.Message
+import com.compose.util.BasicsCodelabTheme
 import com.kot.R
 
 /**
  *  05-配置布局
  */
-class ComposeActivity03 : AppCompatActivity() {
+class ComposeActivity04 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MessageCard(Message("Android", "Jectpack compse"))
+            BasicsCodelabTheme {
+                MessageCard(Message("Android", "Jectpack compse"))
+            }
         }
     }
 
