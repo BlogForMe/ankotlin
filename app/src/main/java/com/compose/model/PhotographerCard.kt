@@ -55,6 +55,7 @@ fun PhotographerCard(modifier: Modifier = Modifier) {
 
             Text(text = "Slfred sisley", fontWeight = FontWeight.Bold)
             Text(text = "3 minutes ago sisley", style = MaterialTheme.typography.bodyMedium)
+
         }
     }
 }
