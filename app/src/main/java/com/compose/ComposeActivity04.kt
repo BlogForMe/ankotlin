@@ -4,10 +4,13 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,6 +23,7 @@ import com.kot.R
 
 /**
  *  05-配置布局
+ *  06 改变主题
  */
 class ComposeActivity04 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +37,11 @@ class ComposeActivity04 : AppCompatActivity() {
 
     @Composable
     fun MessageCard(msg: Message) {
-        Row {
+        Row(
+            modifier = Modifier
+                .padding(all = 8.dp)
+                .background(MaterialTheme.colorScheme.background)
+        ) {
             Image(
                 painter = painterResource(id = R.drawable.id_korean),
                 contentDescription = "contact profile ",

@@ -36,14 +36,16 @@ private val DarkColorScheme = darkColorScheme(
     surface = Blue,
     onSurface = Navy,
     primary = Navy,
-    onPrimary = Chartreuse
+    onPrimary = Chartreuse,
+    background = Color.Blue
 )
 
 private val LightColorScheme = lightColorScheme(
     surface = Blue,
     onSurface = Color.White,
     primary = LightBlue,
-    onPrimary = Navy
+    onPrimary = Navy,
+    background = Color.White
 )
 
 @Suppress("DEPRECATION")

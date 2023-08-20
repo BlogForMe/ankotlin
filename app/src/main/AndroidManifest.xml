@@ -26,7 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/HomeTheme">
         <activity
-            android:name="com.compose.ComposeActivity03"
+            android:name="com.compose.ComponentActivity01"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
