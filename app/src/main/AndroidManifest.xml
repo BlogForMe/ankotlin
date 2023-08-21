@@ -26,7 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/HomeTheme">
         <activity
-            android:name="com.compose.AndroidCompose03"
+            android:name=".tool.shake.ShakeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,9 +35,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.KeyBordActivity"
+            android:name="com.compose.AndroidCompose03"
             android:exported="true">
+
         </activity>
+        <activity
+            android:name=".ui.KeyBordActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".arch.recyclerview.multitype.visit.RecycleVisitActivity"
             android:exported="true" />
