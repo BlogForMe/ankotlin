@@ -7,7 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
-class ComposeActivity01 : AppCompatActivity() {
+class ComposeActivity02 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -24,7 +24,7 @@ class ComposeActivity01 : AppCompatActivity() {
     @Preview
     @Composable
     fun PreviewMessageCard() {
-        MessageCard(name = "Android")
+        MessageCard(name = "googd at Android")
     }
 
 
