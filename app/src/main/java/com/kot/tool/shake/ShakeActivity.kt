@@ -10,9 +10,13 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.media.MediaPlayer
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
+import android.os.VibrationEffect
 import android.os.Vibrator
+import android.os.VibratorManager
 import android.view.LayoutInflater
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -38,14 +42,14 @@ class ShakeActivity : AppCompatActivity() {
     /**
      * 摇一摇动画
      */
-    private val anim: ObjectAnimator? = null
+    private var anim: ObjectAnimator? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shake)
         imgHand = findViewById(R.id.imgHand)
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         shakeListener = ShakeSensorListener()
-
+        anim = ObjectAnimator.ofFloat(imgHand, "rotation", 0f, 45f, -30f, 0f)
         anim?.duration = 500
         anim?.repeatCount = ValueAnimator.INFINITE
     }
@@ -93,7 +97,7 @@ class ShakeActivity : AppCompatActivity() {
                 //震动，注意权限
                 vibrate(500)
                 //仿网络延迟操作，这里可以去请求服务器...
-                Handler().postDelayed({ //弹框
+                Handler(Looper.getMainLooper()).postDelayed({ //弹框
                     showDialog()
                     //动画取消
                     anim?.cancel()
@@ -110,8 +114,17 @@ class ShakeActivity : AppCompatActivity() {
     }
 
     private fun vibrate(milliseconds: Long) {
-        val vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
-        vibrator.vibrate(milliseconds)
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            (getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager).defaultVibrator
+        } else {
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(150, 10))
+        } else {
+            vibrator.vibrate(milliseconds)
+        }
     }
 
     private fun showDialog() {
