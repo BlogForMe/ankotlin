@@ -3,7 +3,7 @@ package com.compose
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import com.compose.model.PhotographerCard
+import com.compose.model.LayoutStudy
 
 /**
  *
@@ -20,7 +20,8 @@ class ComponentActivity01 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            PhotographerCard()
+//            PhotographerCard()
+            LayoutStudy()
         }
 
     }
