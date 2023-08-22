@@ -120,10 +120,14 @@ class ShakeActivity : AppCompatActivity() {
             getSystemService(VIBRATOR_SERVICE) as Vibrator
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            vibrator.vibrate(VibrationEffect.createOneShot(150, 10))
-        } else {
-            vibrator.vibrate(milliseconds)
+        //判断是否支持震动
+        if (vibrator.hasVibrator()) {
+            vibrator.cancel()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(150, 10))
+            } else {
+                vibrator.vibrate(milliseconds)
+            }
         }
     }
 

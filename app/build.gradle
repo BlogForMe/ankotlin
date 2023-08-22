@@ -145,6 +145,6 @@ def mEachWithParams(closure) {
 }
 
 
-new Throwable().printStackTrace()
-println(getClass())
-println(getClass().superclass)
+//new Throwable().printStackTrace()
+//println(getClass())
+//println(getClass().superclass)
