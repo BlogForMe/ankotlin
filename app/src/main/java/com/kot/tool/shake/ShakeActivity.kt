@@ -17,6 +17,7 @@ import android.os.Looper
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -49,16 +50,20 @@ class ShakeActivity : AppCompatActivity() {
         imgHand = findViewById(R.id.imgHand)
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         shakeListener = ShakeSensorListener()
-        anim = ObjectAnimator.ofFloat(imgHand, "rotation", 0f, 45f, -30f, 0f)
+//        anim = ObjectAnimator.ofFloat(imgHand, "rotation", 0f, 45f, -30f, 0f)
         anim?.duration = 500
         anim?.repeatCount = ValueAnimator.INFINITE
     }
 
     override fun onResume() {
+        val sensor = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+        if (sensor == null) {
+            Log.i("ShakeActivity", "onResume: Failure! No magnetometer.")
+        }
         //注册监听加速度传感器
         sensorManager?.registerListener(
             shakeListener,
-            sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+            sensor,
             SensorManager.SENSOR_DELAY_FASTEST
         )
         super.onResume()
@@ -89,6 +94,8 @@ class ShakeActivity : AppCompatActivity() {
             val x = Math.abs(values[0])
             val y = Math.abs(values[1])
             val z = Math.abs(values[2])
+
+            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
             //加速度超过19，摇一摇成功
             if (x > 19 || y > 19 || z > 19) {
                 isShake = true
