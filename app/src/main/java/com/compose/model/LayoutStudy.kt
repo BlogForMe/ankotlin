@@ -23,6 +23,10 @@ import androidx.compose.ui.unit.dp
  * UpdateUser:     zh
  * UpdateDate:     8/21/23 08:07
  * UpdateRemark:   Modify the description
+ *
+ * 16 Scaffold
+ *
+ * 可以做导航栏
  */
 
 @OptIn(ExperimentalMaterial3Api::class)
