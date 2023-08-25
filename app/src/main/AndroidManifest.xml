@@ -156,7 +156,11 @@
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
-        <activity android:name=".mvvm.scrap.StrapCheckActivity" />
+        <activity
+            android:name=".mvvm.scrap.StrapCheckActivity"
+            android:exported="true">
+
+        </activity>
         <activity android:name=".hilt.me.HiltActivity" />
         <activity android:name=".hilt.me.HiltSecondActivity" />
         <activity

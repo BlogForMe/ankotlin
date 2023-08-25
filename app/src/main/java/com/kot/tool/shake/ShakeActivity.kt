@@ -59,6 +59,7 @@ class ShakeActivity : AppCompatActivity() {
         val sensor = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         if (sensor == null) {
             Log.i("ShakeActivity", "onResume: Failure! No magnetometer.")
+            return
         }
         //注册监听加速度传感器
         sensorManager?.registerListener(

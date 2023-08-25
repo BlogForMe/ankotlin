@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.kot.R
 import timber.log.Timber
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,9 +22,6 @@ private const val ARG_PARAM2 = "param2"
 class BodyDataFragment : Fragment() {
     private var mBodyDataModel: BodyDataModel? = null
 
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +40,7 @@ class BodyDataFragment : Fragment() {
         mBodyDataModel = ViewModelProvider(requireActivity()).get(BodyDataModel::class.java)
 //        binding.vmBodyFragment = mBodyDataModel
 //        binding.lifecycleOwner = this.viewLifecycleOwner
-        return null
+        return inflater.inflate(R.layout.fragment_body_data, null)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

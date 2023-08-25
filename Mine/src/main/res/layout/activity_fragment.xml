@@ -7,10 +7,11 @@
     tools:context=".component.fragment.life.LifeActivity">
 
     <Button
+        android:id="@+id/bt_life"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btTimber"
-        android:text="测试Timber" />
+        android:text="测试Life" />
 
     <FrameLayout
         android:id="@+id/fl_content"
