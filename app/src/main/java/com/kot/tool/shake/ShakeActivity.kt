@@ -83,6 +83,19 @@ class ShakeActivity : AppCompatActivity() {
         private val SHAKE_THRESHOLD_GRAVITY = 2.7f
         private val SHAKE_SLOP_TIME_MS = 500
         private val SHAKE_COUNT_RESET_TIME_MS = 3000
+
+
+        val SENSITIVITY_LIGHT = 11
+        val SENSITIVITY_MEDIUM = 13
+        val SENSITIVITY_HARD = 15
+
+        private val DEFAULT_ACCELERATION_THRESHOLD = SENSITIVITY_MEDIUM
+
+        /**
+         * When the magnitude of total acceleration exceeds this
+         * value, the phone is accelerating.
+         */
+        private val accelerationThreshold = DEFAULT_ACCELERATION_THRESHOLD
         override fun onSensorChanged(event: SensorEvent) {
             //避免一直摇
             if (isShake) {
@@ -129,7 +142,8 @@ class ShakeActivity : AppCompatActivity() {
 
             Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
 //            加速度超过19，摇一摇成功
-            if (gForce > SHAKE_THRESHOLD_GRAVITY) {
+//            if (gForce > SHAKE_THRESHOLD_GRAVITY) {
+            if (gForce > accelerationThreshold * accelerationThreshold) {
                 isShake = true
                 //播放声音
                 playSound(this@ShakeActivity)
