@@ -79,6 +79,10 @@ class ShakeActivity : AppCompatActivity() {
     }
 
     private inner class ShakeSensorListener : SensorEventListener {
+
+        private val SHAKE_THRESHOLD_GRAVITY = 2.7f
+        private val SHAKE_SLOP_TIME_MS = 500
+        private val SHAKE_COUNT_RESET_TIME_MS = 3000
         override fun onSensorChanged(event: SensorEvent) {
             //避免一直摇
             if (isShake) {
@@ -88,17 +92,44 @@ class ShakeActivity : AppCompatActivity() {
             anim?.start()
             val values = event.values
             /*
+
              * x : x轴方向的重力加速度，向右为正
              * y : y轴方向的重力加速度，向前为正
              * z : z轴方向的重力加速度，向上为正
              */
+//            val x = Math.abs(values[0])
+//            val y = Math.abs(values[1])
+//            val z = Math.abs(values[2])
+//            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
+            //加速度超过19，摇一摇成功
+//            if (x > 19 || y > 19 || z > 19) {
+//                isShake = true
+//                //播放声音
+//                playSound(this@ShakeActivity)
+//                //震动，注意权限
+//                vibrate(500)
+//                //仿网络延迟操作，这里可以去请求服务器...
+//                Handler(Looper.getMainLooper()).postDelayed({ //弹框
+//                    showDialog()
+//                    //动画取消
+//                    anim?.cancel()
+//                }, 1000)
+
+
             val x = Math.abs(values[0])
             val y = Math.abs(values[1])
             val z = Math.abs(values[2])
 
+            val gX = x / SensorManager.GRAVITY_EARTH.toDouble()
+            val gY = y / SensorManager.GRAVITY_EARTH;
+            val gZ = z / SensorManager.GRAVITY_EARTH;
+
+            // gForce will be close to 1 when there is no movement.
+            val gForce = Math.sqrt(gX * gX + gY * gY + gZ * gZ);
+
             Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
-            //加速度超过19，摇一摇成功
-            if (x > 19 || y > 19 || z > 19) {
+//            加速度超过19，摇一摇成功
+            if (gForce > SHAKE_THRESHOLD_GRAVITY) {
                 isShake = true
                 //播放声音
                 playSound(this@ShakeActivity)
@@ -111,10 +142,13 @@ class ShakeActivity : AppCompatActivity() {
                     anim?.cancel()
                 }, 1000)
             }
+
+
         }
 
         override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
     }
+
 
     private fun playSound(context: Context) {
         val player = MediaPlayer.create(context, R.raw.shake_sound)
