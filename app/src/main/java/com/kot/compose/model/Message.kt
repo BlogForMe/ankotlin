@@ -1,4 +1,4 @@
-package com.compose.model
+package com.kot.compose.model
 
 /**
  *
@@ -11,5 +11,4 @@ package com.compose.model
  * UpdateRemark:   Modify the description
  */
 
-class Message(val author: String, val body: String) {
-}
+class Message(val author: String, val body: String)

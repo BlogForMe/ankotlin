@@ -1,4 +1,4 @@
-package com.compose
+package com.kot.compose
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -17,9 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.compose.model.Message
-import com.compose.util.BasicsCodelabTheme
 import com.kot.R
+import com.kot.compose.model.Message
+import com.kot.compose.util.BasicsCodelabTheme
 
 /**
  *  05-配置布局

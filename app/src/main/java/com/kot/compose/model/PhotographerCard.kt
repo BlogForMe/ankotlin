@@ -1,4 +1,4 @@
-package com.compose.model
+package com.kot.compose.model
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

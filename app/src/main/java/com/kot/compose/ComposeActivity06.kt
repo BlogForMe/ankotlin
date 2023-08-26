@@ -1,4 +1,4 @@
-package com.compose
+package com.kot.compose
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -30,20 +30,21 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.compose.model.Message
-import com.compose.model.SampleData
-import com.compose.util.BasicsCodelabTheme
 import com.kot.R
+import com.kot.compose.model.Message
+import com.kot.compose.model.SimpleList
+import com.kot.compose.util.BasicsCodelabTheme
 
 /**
  *  08 动画
  */
-class ComposeActivity05 : AppCompatActivity() {
+class ComposeActivity06 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             BasicsCodelabTheme {
-                Conversation(SampleData.conversationSample)
+//                SimpleColumn()
+                SimpleList() //滚动
             }
         }
     }

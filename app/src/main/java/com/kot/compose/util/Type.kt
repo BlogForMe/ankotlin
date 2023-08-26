@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.compose.util
+package com.kot.compose.util
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

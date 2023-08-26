@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.compose.util
+package com.kot.compose.util
 
 import android.app.Activity
 import android.os.Build

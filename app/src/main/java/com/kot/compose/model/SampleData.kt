@@ -1,4 +1,4 @@
-package com.compose.model
+package com.kot.compose.model
 
 /**
  *

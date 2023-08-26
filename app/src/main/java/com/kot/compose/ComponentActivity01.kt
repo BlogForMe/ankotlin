@@ -1,9 +1,9 @@
-package com.compose
+package com.kot.compose
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import com.compose.model.LayoutStudy
+import com.kot.compose.model.LayoutStudy
 
 /**
  *
