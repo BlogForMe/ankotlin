@@ -1,15 +1,10 @@
 package com.comm.util.component.fragment.life
 
-import android.content.Intent
-import android.os.Build.VERSION_CODES.HONEYCOMB
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import com.comm.util.R
 import com.comm.util.base.BaseActivity
-import com.comm.util.component.launchmode.ThirdActivity
-import timber.log.Timber
 
 /**
  * 横竖屏切换 查看Fragment生命周期
@@ -37,8 +32,12 @@ class LifeActivity : BaseActivity() {
         ft.commitAllowingStateLoss()
         val isDD = lifeFragment.isAdded
         Log.i("LifeActivity", "LifeFragment ${lifeFragment.isAdded}")
-        if (lifeFragment.isAdded.not())
-            ft.commitAllowingStateLoss()
+
+        val ft1 = supportFragmentManager.beginTransaction()
+        ft1.add(R.id.fl_content, lifeFragment)
+        ft1.commitAllowingStateLoss()
+//        if (lifeFragment.isAdded.not())
+//            ft.commitAllowingStateLoss()
 //        ft.commitNow()
 //        ft.commitNowAllowingStateLoss()
 //        }

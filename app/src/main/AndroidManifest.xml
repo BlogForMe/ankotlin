@@ -29,15 +29,17 @@
         android:theme="@style/HomeTheme">
         <activity
             android:name=".tool.shake.ShakeActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".tool.shake.ShakeMeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".tool.shake.ShakeMeActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".compose.AndroidCompose03"
