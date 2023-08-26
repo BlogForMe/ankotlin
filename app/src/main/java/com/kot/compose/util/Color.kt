@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.compose.theme
+package com.kot.compose.util
 
 import androidx.compose.ui.graphics.Color
 

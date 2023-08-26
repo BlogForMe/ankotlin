@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.compose.theme
+package com.kot.compose.util
 
 import android.app.Activity
 import android.os.Build
@@ -36,14 +36,16 @@ private val DarkColorScheme = darkColorScheme(
     surface = Blue,
     onSurface = Navy,
     primary = Navy,
-    onPrimary = Chartreuse
+    onPrimary = Chartreuse,
+    background = Color.Blue
 )
 
 private val LightColorScheme = lightColorScheme(
     surface = Blue,
     onSurface = Color.White,
     primary = LightBlue,
-    onPrimary = Navy
+    onPrimary = Navy,
+    background = Color.White
 )
 
 @Suppress("DEPRECATION")
@@ -52,7 +54,7 @@ fun BasicsCodelabTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
