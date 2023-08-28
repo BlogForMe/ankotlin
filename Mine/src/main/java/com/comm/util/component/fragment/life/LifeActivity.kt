@@ -36,6 +36,7 @@ class LifeActivity : BaseActivity() {
         val ft1 = supportFragmentManager.beginTransaction()
         ft1.add(R.id.fl_content, lifeFragment)
         ft1.commitAllowingStateLoss()
+
 //        if (lifeFragment.isAdded.not())
 //            ft.commitAllowingStateLoss()
 //        ft.commitNow()

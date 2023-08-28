@@ -96,6 +96,15 @@ class ShakeActivity : AppCompatActivity() {
          * value, the phone is accelerating.
          */
         private val accelerationThreshold = DEFAULT_ACCELERATION_THRESHOLD
+
+
+        private var mLastUpdateTime: Long = 0
+        private var mLastX = 0f
+        private var mLastY = 0f
+        private var mLastZ = 0f
+        private var mShakeThreshold = 20
+
+
         override fun onSensorChanged(event: SensorEvent) {
             //避免一直摇
             if (isShake) {
@@ -110,24 +119,25 @@ class ShakeActivity : AppCompatActivity() {
              * y : y轴方向的重力加速度，向前为正
              * z : z轴方向的重力加速度，向上为正
              */
-            val x = Math.abs(values[0])
-            val y = Math.abs(values[1])
-            val z = Math.abs(values[2])
-            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
-//            加速度超过19，摇一摇成功
-            if (x > 19 || y > 19 || z > 19) {
-                isShake = true
-                //播放声音
-                playSound(this@ShakeActivity)
-                //震动，注意权限
-                vibrate(500)
-                //仿网络延迟操作，这里可以去请求服务器...
-                Handler(Looper.getMainLooper()).postDelayed({ //弹框
-                    showDialog()
-                    //动画取消
-                    anim?.cancel()
-                }, 1000)
-            }
+//            val x = Math.abs(values[0])
+//            val y = Math.abs(values[1])
+//            val z = Math.abs(values[2])
+//            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
+////            加速度超过19，摇一摇成功
+//            if (x > 19 || y > 19 || z > 19) {
+//                isShake = true
+//                //播放声音
+//                playSound(this@ShakeActivity)
+//                //震动，注意权限
+//                vibrate(500)
+//                //仿网络延迟操作，这里可以去请求服务器...
+//                Handler(Looper.getMainLooper()).postDelayed({ //弹框
+//                    showDialog()
+//                    //动画取消
+//                    anim?.cancel()
+//                }, 1000)
+//            }
+
 
 //            val x = Math.abs(values[0])
 //            val y = Math.abs(values[1])
@@ -158,9 +168,46 @@ class ShakeActivity : AppCompatActivity() {
 //            }
 
 
+            val currentTime = System.currentTimeMillis()
+            val diffTime: Long = currentTime - this.mLastUpdateTime
+            if (diffTime >= 100L) {
+                this.mLastUpdateTime = currentTime
+                val x = event.values[0]
+                val y = event.values[1]
+                val z = event.values[2]
+                val deltaX: Float = x - this.mLastX
+                val deltaY: Float = y - this.mLastY
+                val deltaZ: Float = z - this.mLastZ
+                this.mLastX = x
+                this.mLastY = y
+                this.mLastZ = z
+                val delta =
+                    Math.sqrt((deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ).toDouble())
+                        .toFloat() / diffTime.toFloat() * 10000.0f
+                val mIsShaking = delta > this.mShakeThreshold.toFloat()
+                if (mIsShaking) {
+                    startShake()
+                }
+            }
+
         }
 
         override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+    }
+
+
+    fun startShake() {
+        isShake = true
+        //播放声音
+        playSound(this@ShakeActivity)
+        //震动，注意权限
+        vibrate(500)
+        //仿网络延迟操作，这里可以去请求服务器...
+        Handler(Looper.getMainLooper()).postDelayed({ //弹框
+            showDialog()
+            //动画取消
+            anim?.cancel()
+        }, 1000)
     }
 
 
