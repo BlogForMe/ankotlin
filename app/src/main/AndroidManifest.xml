@@ -31,11 +31,7 @@
         <activity
             android:name=".tool.shake.ShakeMeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -110,7 +106,15 @@
             android:name=".ui.fragment.TabFragmentActivity"
             android:label="@string/title_activity_tab_fragment"
             android:theme="@style/HomeTheme.NoActionBar" />
-        <activity android:name=".anim.LottieAnimActivity" />
+        <activity
+            android:name=".anim.LottieAnimActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".test.ui.EspressoActivity" />
         <activity android:name=".ColorIntActivity" />
         <activity android:name=".ui.dialog.DialogStateBarActivity" />

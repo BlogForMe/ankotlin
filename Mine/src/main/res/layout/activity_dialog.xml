@@ -12,21 +12,18 @@
         android:id="@+id/bt_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="btDialog"
         android:text="Dialog" />
 
     <Button
         android:id="@+id/btConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="btDialog"
         android:text="确定" />
 
     <Button
         android:id="@+id/btRecycleView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="btDialog"
         android:text="HRecycleView" />
 
     <Button
