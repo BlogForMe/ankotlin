@@ -1,0 +1,42 @@
+@startuml
+title: "add CCRD"
+actor USER as "User"
+participant LAND as "landing page"
+participant TRANSFER as "Transfer page"
+participant RESULT as "Result page"
+participant mPASS as "mPass"
+
+autonumber
+
+USER -> LAND :enter wallet transfer page
+LAND -> mPASS : "request: {ap.tngdwallet.contact.favorite.list}"
+LAND <-- mPASS : "response:{bankAccountNo ,encryptedBankAccountNo}"
+USER <-- LAND : "show bankAccountNo"
+
+USER -> LAND : "click a item"
+group #pink [NEW flow]
+alt  serviceType=="PTA" && transferType=="CCRD"
+LAND -> mPASS : "request: {ap.tngdwallet.duitnow.account.decrypt.query}"\n {bankAccountNoEncrypted}
+LAND <-- mPASS : "response: {decrypted bankAccountNo}
+end
+alt failed
+USER <-- mPASS : show error dialog "comfirm"
+USER x<-- mPASS
+end
+end
+LAND -> mPASS : "request: {ap.tngdwallet.duitnow.proxy.enquiry}"\n {receiverAccountNo = decrypted bankAccountNo}
+LAND <-- mPASS : "response: {previous flow data}
+USER <-- TRANSFER : "show full CCRD string "
+USER -> RESULT : "click add favourite button"
+
+/'alt transferType == "CCRD"
+USER <-- RESULT : "show masked "
+end'/
+RESULT -> mPASS : "request: {ap.tngdwallet.contact.favorite.add}"
+RESULT <-- mPASS : "response"
+alt [success]
+USER <-- RESULT : show added toast
+end
+
+
+@enduml
