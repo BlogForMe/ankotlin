@@ -33,10 +33,10 @@ class XYRelativeLayout :RelativeLayout{
 
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas?.drawLine(0f,mCenterY/2f,mCenterX,mCenterY/2f,mLinePaint)
-        canvas?.drawLine(mCenterX/2,0f,mCenterX/2,mCenterY,mLinePaint)
+        canvas?.drawLine(0f, mCenterY / 2f, mCenterX, mCenterY / 2f, mLinePaint)
+        canvas?.drawLine(mCenterX / 2, 0f, mCenterX / 2, mCenterY, mLinePaint)
     }
 
 }

@@ -48,7 +48,7 @@ class RoundXfermodeBitmapShaderView @JvmOverloads constructor(
         setUpShader()
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
 //        super.onDraw(canvas)  //否则Canvas又会在ImageView中重新绘制，将我们之前的操作都覆盖了
 
         val newBt = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)

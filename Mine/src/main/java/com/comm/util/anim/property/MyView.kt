@@ -27,7 +27,7 @@ class MyView : View {
 
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
 
         // 如果当前点坐标为空(即第一次)
         if (currentPoint == null) {

@@ -79,10 +79,10 @@ class TermRoundImgView @JvmOverloads constructor(
 
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        val txtTop =60f
+        val txtTop = 60f
 
         val bitmapWeak = WeakReference<Bitmap>(
             BitmapFactory.decodeResource(

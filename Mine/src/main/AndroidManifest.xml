@@ -141,14 +141,18 @@
         <activity
             android:name=".dialog.DialogActivity"
             android:exported="true">
+
+        </activity>
+
+        <activity android:name=".storage.StorageActivity" />
+        <activity
+            android:name=".component.broadcastservice.BroadcastReceiverActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".storage.StorageActivity" />
-        <activity android:name=".component.broadcastservice.BroadcastReceiverActivity" />
         <activity android:name=".ui.recycleview.ListViewActivity" />
         <activity android:name=".anim.AnimUseActivity" />
         <activity android:name=".memory.MemoryMonitorActivity" />
@@ -206,13 +210,13 @@
         <activity android:name=".ui.customview.CustomViewActivity" />
         <activity android:name=".gcssloop.touchevent.TouchEventActivity" />
 
-        <receiver
-            android:name=".component.broadcastservice.UpdateBroadcastReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.UpdateBroadcastReceiver" />
-            </intent-filter>
-        </receiver>
+        <!--        <receiver
+                    android:name=".component.broadcastservice.UpdateBroadcastReceiver"
+                    android:exported="false">
+                    <intent-filter>
+                        <action android:name="android.intent.action.UpdateBroadcastReceiver" />
+                    </intent-filter>
+                </receiver>-->
 
         <activity android:name=".socket.MinaActivity" />
 

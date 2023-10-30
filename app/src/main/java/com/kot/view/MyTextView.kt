@@ -56,7 +56,7 @@ class MyTextView : View {
     }
 
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         BaseX = getWidth() / 2 - mBound.width() / 2;

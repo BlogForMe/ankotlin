@@ -10,4 +10,6 @@
 package com.kot.hilt.model
 
 
-class User5
+class User5 {
+    var name: String = ""
+}

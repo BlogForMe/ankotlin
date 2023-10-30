@@ -47,7 +47,7 @@ class RelativeLayoutRate : RelativeLayout {
         mHeight = h.toFloat();
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
 //        super.onDraw(canvas)
         Timber.i("mWidth $mWidth mHeight $mHeight")
 

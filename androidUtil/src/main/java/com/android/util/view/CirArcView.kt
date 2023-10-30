@@ -72,7 +72,7 @@ class CirArcView : View {
 //        y = h / 2.0f
 //    }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
 

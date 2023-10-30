@@ -14,18 +14,26 @@ USER <-- LAND : "show bankAccountNo"
 
 USER -> LAND : "click a item"
 group #lightblue [NEW flow]
-alt  serviceType=="PTA" && transferType=="CCRD"
+alt  duitnow_ccrd_add_switch==true &&serviceType=="PTA" && transferType=="CCRD"
 LAND -> mPASS : "request: {ap.tngdwallet.duitnow.account.decrypt.query}"\n {bankAccountNoEncrypted}
 LAND <-- mPASS : "response: {decrypted bankAccountNo}
 end
 alt failed
-USER <-- mPASS : show error dialog "comfirm"
-USER x<-- mPASS
+USER <-- mPASS : show common error dialog
+USER x<-- mPASS : return
 end
 end
 LAND -> mPASS : "request: {ap.tngdwallet.duitnow.proxy.enquiry}"\n {receiverAccountNo = decrypted bankAccountNo}
 LAND <-- mPASS : "response: {previous flow data}
 USER <-- RESULT : "show full CCRD string in result page"
+
+group #lightblue [NEW flow\n]
+ alt  duitnow_ccrd_add_switch==false &&serviceType=="PTA" && transferType=="CCRD"
+ USER <-- mPASS :  hide "add to favourite" button
+ USER x<-- mPASS : return
+ end
+end
+
 USER -> RESULT : "click add favourite button"
 
 RESULT -> mPASS : "request: {ap.tngdwallet.contact.favorite.add}"

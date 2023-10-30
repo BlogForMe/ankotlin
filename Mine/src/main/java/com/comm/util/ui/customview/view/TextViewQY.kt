@@ -24,7 +24,7 @@ class TextViewQY @JvmOverloads constructor(
         style = Paint.Style.FILL
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         //绘制外层矩形
         canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint1)
 

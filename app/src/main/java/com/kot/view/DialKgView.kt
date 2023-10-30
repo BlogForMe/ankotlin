@@ -86,7 +86,7 @@ class DialKgView @JvmOverloads constructor(context: Context?, attrs: AttributeSe
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val centerX = width / 2.0f
         val centerY = height / 2.0f

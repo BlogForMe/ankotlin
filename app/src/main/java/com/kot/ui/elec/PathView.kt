@@ -40,7 +40,7 @@ class PathView : View {
 
     private var datas: List<Float>? = null
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val path = Path()
         if (datas != null) {

@@ -53,7 +53,7 @@ class CircleImageView(context: Context, attrs: AttributeSet?) : AppCompatImageVi
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
 
         val sPaint = Paint().apply {
             color = Color.BLUE

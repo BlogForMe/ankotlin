@@ -50,7 +50,7 @@ class BitmapShaderView @JvmOverloads constructor(
         mPaint.shader = bmpShader //设置BitmapShader之后相当于绘制了底层的图片背景
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         //这样就可以使用shader的纹理去覆盖绘制的图形的表面了,其中根据：CLAMP,REPEAT,MIRROR，

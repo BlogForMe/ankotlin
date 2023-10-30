@@ -8,6 +8,7 @@ import com.kot.hilt.dn.di.MainViewModel
 import com.kot.hilt.dn.di.User
 import com.kot.hilt.dn.di.User1
 import com.kot.hilt.dn.di.User2
+import com.kot.hilt.me.model.BannerRepository
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -40,6 +41,9 @@ class HiltMainActivity : AppCompatActivity() {
     private val mainViewModel: MainViewModel by viewModels()
 
 
+    @Inject
+    lateinit var bannerImp: BannerRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityHiltMainBinding.inflate(layoutInflater)
@@ -55,6 +59,11 @@ class HiltMainActivity : AppCompatActivity() {
 //        viewModel5.test()
 
         mainViewModel.test()
+
+        binding.btClick.setOnClickListener {
+            bannerImp.getBanner()
+        }
+
 
 //        var ss: String? = null
 //        when (ss) {

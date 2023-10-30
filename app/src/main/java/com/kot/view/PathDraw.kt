@@ -19,13 +19,13 @@ class PathDraw @JvmOverloads constructor(
         strokeWidth = DisplayUtils.dp2px(context, 2f)
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas?.translate(width / 2.toFloat(), height / 2.toFloat())
 //        canvas?.scale(1f,-1f)
         val path = Path()
-        path.addArc(0f,0f,200f,200f,90f,180f)
-        path.lineTo(200f,300f)
+        path.addArc(0f, 0f, 200f, 200f, 90f, 180f)
+        path.lineTo(200f, 300f)
         canvas?.drawPath(path, txtPaint)
     }
 

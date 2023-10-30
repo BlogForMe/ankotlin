@@ -1,4 +1,4 @@
-package com.comm.util.component.broadcastservice;
+package com.kot.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -9,7 +9,7 @@ import timber.log.Timber;
  * Created by jon on 12/17/17.
  */
 
-public class UpdateBroadcastReceiver extends BroadcastReceiver {
+public class DeviceBroadcastReceiver extends BroadcastReceiver {
     //public final static String ACTION_UPDATE = "android.intent.action.UpdateBroadcastReceiver";
     public final static String ACTION_UPDATE = "android.net.conn.CONNECTIVITY_CHANGE";
 

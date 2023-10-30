@@ -24,32 +24,14 @@ class DialogActivity : AppCompatActivity() {
         findViewById<View>(R.id.bt_dialog).setOnClickListener { v: View? ->
             val invest = InvestPwdDialog()
             invest.show(supportFragmentManager, "InvestPwdDialog")
-            val findFragmentByTag = supportFragmentManager.findFragmentByTag("InvestPwdDialog")
-            Log.i(TAG, "onCreate: invest $invest  findFragmentByTag $findFragmentByTag ")
+            Log.i(TAG, "onCreate: invest $invest ")
         }
 
 
         findViewById<View>(R.id.btConfirm).setOnClickListener { m: View? ->
-            CircleDialog.Builder() //                        .setTitle("标题")
-                .setWidth(0.3f)
-                .setText(
-                    """移动认证简介\n" +
- "\n" +
- "1、什么是移动认证\n""""
-                )
-                .setPositive(
-                    "确定"
-                ) { v: View? ->
-                    Toast.makeText(this@DialogActivity, "取消", Toast.LENGTH_SHORT).show()
-                }
-                .setNegative("取消") { v: View? ->
-                    Toast.makeText(
-                        this@DialogActivity,
-                        "取消",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                .show(supportFragmentManager)
+            val findFragmentByTag = supportFragmentManager.findFragmentByTag("InvestPwdDialog")
+            Log.i(TAG, "onCreate:findFragmentByTag $findFragmentByTag ")
+
         }
         findViewById<View>(R.id.btRecycleView).setOnClickListener { v: View? ->
             val listData = ArrayList<PictureTypeEntity>()
@@ -84,12 +66,20 @@ class DialogActivity : AppCompatActivity() {
         //        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
     }
 
-    class InvestPwdDialog : DialogFragment() {
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?,
-        ): View? {
-            return inflater.inflate(R.layout.dialog_alert, container)
+}
+
+class InvestPwdDialog : DialogFragment() {
+    companion object {
+        fun newInstance(): InvestPwdDialog {
+            return InvestPwdDialog()
         }
+    }
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
+        return inflater.inflate(R.layout.dialog_alert, container)
     }
 }

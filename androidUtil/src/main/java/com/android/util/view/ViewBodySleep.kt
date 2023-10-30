@@ -53,7 +53,7 @@ class ViewBodySleep : View {
     }
 
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         var unitWidth = mWidth / 72
         var wakeCount = 0 //出现的次数

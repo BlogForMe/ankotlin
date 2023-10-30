@@ -29,7 +29,7 @@ class TempCircleView @JvmOverloads constructor(
 
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val centerX = width / 2f
         val centerY = height / 2f
@@ -39,7 +39,7 @@ class TempCircleView @JvmOverloads constructor(
         canvas?.drawCircle(centerX, centerY, srcRadius, srcPaint);
         canvas?.drawCircle(centerX, centerY, innerRadius, innnerPaint);
 
-        var circleX = (centerX-innerRadius + 20)
+        var circleX = (centerX - innerRadius + 20)
         for (i in 0..2) {
             val rectF = RectF(circleX+(10*i), centerY-20f, circleX+10f+(10*i), centerY+20);
             circleX = (circleX + 10);

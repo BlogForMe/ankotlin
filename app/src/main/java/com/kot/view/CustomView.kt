@@ -58,7 +58,7 @@ class CustomView @JvmOverloads constructor(
     }
 
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         Timber.i("onDraw")
         canvas?.drawRoundRect(mRoundRect, 20f, 20f, mBitmapPaint)

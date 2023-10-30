@@ -29,13 +29,13 @@ class SaveRestoreView @JvmOverloads constructor(
     }
 
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val px = 500f
         val py = 500f
 
 
-        canvas?.drawLine(0f,200f,700f,200f,gryayPaint)
+        canvas?.drawLine(0f, 200f, 700f, 200f, gryayPaint)
         canvas?.save()  //将画布状态保存
 
         canvas?.rotate(90f, px / 2, py / 2);

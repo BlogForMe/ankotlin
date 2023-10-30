@@ -40,17 +40,17 @@ class PressResultView @JvmOverloads constructor(context: Context?, attrs: Attrib
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        val centerX = width/2f
-        val centerY = height/2f
+        val centerX = width / 2f
+        val centerY = height / 2f
 
         var lineY = rectHight / 2
 
-        canvas?.drawLine(0f,lineY,400f,lineY,mLinePaint)
+        canvas?.drawLine(0f, lineY, 400f, lineY, mLinePaint)
 
-        val rectF = RectF(0f,0f,1000f,rectHight)
+        val rectF = RectF(0f, 0f, 1000f, rectHight)
 
         canvas?.drawRoundRect(rectF,centerX,centerY,mRtSrcPaint)
 
