@@ -1,12 +1,14 @@
 package com.kot.permission
 
 import android.Manifest
-import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.AudioAttributes
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -25,7 +27,6 @@ import com.android.util.viewbind.viewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.kot.R
 import com.kot.databinding.ActivityJetpackNotificationBinding
-import java.lang.RuntimeException
 
 
 class NotificationPermissionActivity : AppCompatActivity() {
@@ -138,6 +139,8 @@ class NotificationPermissionActivity : AppCompatActivity() {
             ).apply {
                 description = "This notification contains important announcement, etc."
             }
+
+//            myNotificationChannel.setSound(generateSoundUri(this,"notification"), null)
             notificationManager.createNotificationChannel(myNotificationChannel)
         }
     }
@@ -216,7 +219,9 @@ class NotificationPermissionActivity : AppCompatActivity() {
      * The notification won't appear if the user doesn't grant notification permission first.
      */
     private fun showDummyNotification() {
+        val generateSoundUri = generateSoundUri(this, "notification")
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSound(generateSoundUri)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Congratulations! 🎉🎉🎉")
             .setContentText("You have post a notification to Android 13!!!")
@@ -240,4 +245,15 @@ class NotificationPermissionActivity : AppCompatActivity() {
 //            }
         }
 
+    private fun generateSoundUri(context: Context, sound: String): Uri? {
+        val soundSourceId = getSoundSourceId(context, sound)
+        return Uri.parse(
+            ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.applicationContext
+                .packageName + "/" + soundSourceId
+        )
+    }
+
+    private fun getSoundSourceId(context: Context, source: String): Int {
+        return context.resources.getIdentifier(source, "raw", context.packageName)
+    }
 }
