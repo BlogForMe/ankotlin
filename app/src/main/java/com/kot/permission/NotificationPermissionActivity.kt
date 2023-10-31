@@ -1,12 +1,12 @@
 package com.kot.permission
 
 import android.Manifest
+import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -15,6 +15,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
@@ -24,6 +25,7 @@ import com.android.util.viewbind.viewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.kot.R
 import com.kot.databinding.ActivityJetpackNotificationBinding
+import java.lang.RuntimeException
 
 
 class NotificationPermissionActivity : AppCompatActivity() {
@@ -54,13 +56,6 @@ class NotificationPermissionActivity : AppCompatActivity() {
                     "Please grant Notification permission from App Settings",
                     Snackbar.LENGTH_LONG
                 ).show()
-
-                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                val uri = Uri.fromParts("package", packageName, null)
-                intent.data = uri
-                startActivity(intent)
-                startActivity(intent)
             }
         }
 
@@ -87,24 +82,7 @@ class NotificationPermissionActivity : AppCompatActivity() {
                 requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
 
-            Log.i(TAG, "refreshUI: Notifications ${notificationManager.areNotificationsEnabled()}")
-
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-                if (NotificationManager.IMPORTANCE_NONE == notificationManager.getNotificationChannel(
-                        CHANNEL_ID
-                    ).importance
-                )
-                    Log.i(
-                        TAG,
-                        "channelName importance:  ${
-                            notificationManager.getNotificationChannel(
-                                CHANNEL_ID
-                            ).importance
-                        }"
-                    )
-            }
+            logData()
         }
 
         binding.buttonSendNotification.setOnClickListener {
@@ -118,6 +96,25 @@ class NotificationPermissionActivity : AppCompatActivity() {
 
         // Refresh UI.
         refreshUI()
+    }
+
+    private fun logData() {
+        Log.i(TAG, "refreshUI: Notifications ${notificationManager.areNotificationsEnabled()}")
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (NotificationManager.IMPORTANCE_NONE == notificationManager.getNotificationChannel(
+                    CHANNEL_ID
+                ).importance
+            )
+                Log.i(
+                    TAG,
+                    "channelName importance:  ${
+                        notificationManager.getNotificationChannel(
+                            CHANNEL_ID
+                        ).importance
+                    }"
+                )
+        }
     }
 
     /**
@@ -143,7 +140,6 @@ class NotificationPermissionActivity : AppCompatActivity() {
             }
             notificationManager.createNotificationChannel(myNotificationChannel)
         }
-
     }
 
 
@@ -165,33 +161,53 @@ class NotificationPermissionActivity : AppCompatActivity() {
      * https://stackoverflow.com/questions/32366649/any-way-to-link-to-the-android-notification-settings-for-my-app
      */
     fun goNotificationSettings(context: Context, channelId: String? = null) {
-        val notificationSettingsIntent = when {
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.O /*8.0*/ -> Intent().apply {
-                action = when (channelId) {
-                    null -> Settings.ACTION_APP_NOTIFICATION_SETTINGS
-                    else -> Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS
+        try {
+            val notificationSettingsIntent = when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.O /*8.0*/ -> Intent().apply {
+                    action =
+                        if (channelId.isNullOrEmpty() || notificationManager.areNotificationsEnabled()
+                                .not()
+                        ) {
+                            Settings.ACTION_APP_NOTIFICATION_SETTINGS
+                        } else {
+                            Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS
+                        }
+                    if (notificationManager.areNotificationsEnabled()) {
+                        channelId?.let { putExtra(Settings.EXTRA_CHANNEL_ID, it) }
+                    }
+                    putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P /*28*/) {
+//                        flags += Intent.FLAG_ACTIVITY_NEW_TASK
+//                    }
                 }
-                channelId?.let { putExtra(Settings.EXTRA_CHANNEL_ID, it) }
-                putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P /*28*/) {
-                    flags += Intent.FLAG_ACTIVITY_NEW_TASK
-                }
-            }
 
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP /*21*/ -> Intent().apply {
-                action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
-                putExtra("app_package", context.packageName)
-                putExtra("app_uid", context.applicationInfo.uid)
-            }
-            /*   Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT *//*19*//* -> Intent().apply {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP /*21*/ -> Intent().apply {
+                    action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+                    putExtra("app_package", context.packageName)
+                    putExtra("app_uid", context.applicationInfo.uid)
+                }
+                /*   Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT *//*19*//* -> Intent().apply {
                 action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
                 addCategory(Intent.CATEGORY_DEFAULT)
                 data = Uri.parse("package:${context.packageName}")
             }*/
-            else -> null
+                else -> null
+            }
+//        notificationSettingsIntent?.let(context::startActivity)
+//            val intent = Intent(this,PermissionActivity::class.java)
+
+            resultLauncher.launch(notificationSettingsIntent)
+//            startActivityForResult(notificationSettingsIntent!!,122)
+        } catch (e: Exception) {
+            throw RuntimeException(e)
         }
-        notificationSettingsIntent?.let(context::startActivity)
     }
+
+
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        Log.i(TAG, "onActivityResult: ")
+//    }
 
 
     /**
@@ -210,5 +226,18 @@ class NotificationPermissionActivity : AppCompatActivity() {
             notify(1, builder.build())
         }
     }
+
+
+    var resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+//            if (result.resultCode == Activity.RESULT_OK) {
+            // There are no request codes
+            val data: Intent? = result.data
+            refreshUI()
+//            doSomeOperations()
+            Log.i(TAG, ": registerForActivityResult")
+            logData()
+//            }
+        }
 
 }
