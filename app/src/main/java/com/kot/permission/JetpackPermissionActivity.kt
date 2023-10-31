@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -16,6 +17,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.android.util.viewbind.viewBinding
+import com.kot.R
 import com.kot.databinding.ActivityJetpackPermissionBinding
 
 
@@ -26,6 +28,8 @@ class JetpackPermissionActivity : AppCompatActivity() {
     private val notificationManager: NotificationManager by lazy {
         getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     }
+
+    private val CHANNEL_ID = "JetCHANNEL_ID"
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,21 +44,26 @@ class JetpackPermissionActivity : AppCompatActivity() {
         }
 
         createNotificationChannel()
+
+        binding.btPermissionActivity.setOnClickListener {
+            startActivity(Intent(this, NotificationPermissionActivity::class.java))
+        }
     }
 
     /**
      * Creates Notification Channel (required for API level >= 26) before sending any notification.
      */
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel() {
-        val channel = NotificationChannel(
-            NotificationPermissionActivity.CHANNEL_ID,
-            "Important Notification Channel",
-            NotificationManager.IMPORTANCE_HIGH,
-        ).apply {
-            description = "This notification contains important announcement, etc."
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                "Jetpack Notification Channel",
+                NotificationManager.IMPORTANCE_HIGH,
+            ).apply {
+                description = "This notification contains important announcement, etc."
+            }
+            notificationManager.createNotificationChannel(channel)
         }
-        notificationManager.createNotificationChannel(channel)
     }
 
 
@@ -102,11 +111,19 @@ class JetpackPermissionActivity : AppCompatActivity() {
             return
         }
 
-        val builder = NotificationCompat.Builder(this, NotificationPermissionActivity.CHANNEL_ID)
-            .setSmallIcon(com.kot.R.drawable.ic_launcher_foreground)
+//        val builder = NotificationCompat.Builder(this, NotificationPermissionActivity.CHANNEL_ID)
+//            .setSmallIcon(com.kot.R.drawable.ic_launcher_foreground)
+//            .setContentTitle("Congratulations! 🎉🎉🎉")
+//            .setContentText("You have post a notification to Android 13!!!")
+//            .setPriority(NotificationCompat.PRIORITY_HIGH)
+//        NotificationManagerCompat.from(this).notify(2, builder.build())
+
+
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Congratulations! 🎉🎉🎉")
-            .setContentText("You have post a notification to Android 13!!!")
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setContentText("You have post a notification to Android 14!!!")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
         NotificationManagerCompat.from(this).notify(2, builder.build())
     }
 

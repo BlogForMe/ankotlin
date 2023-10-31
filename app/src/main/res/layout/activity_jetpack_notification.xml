@@ -25,4 +25,18 @@
         android:layout_height="wrap_content"
         tools:text="YES" />
 
+
+    <Button
+        android:id="@+id/button_send_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send Notification" />
+
+    <Button
+        android:id="@+id/button_open_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="notification settings" />
+
+
 </androidx.appcompat.widget.LinearLayoutCompat>
