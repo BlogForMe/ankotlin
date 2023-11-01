@@ -140,7 +140,7 @@ class NotificationPermissionActivity : AppCompatActivity() {
                 description = "This notification contains important announcement, etc."
             }
 
-//            myNotificationChannel.setSound(generateSoundUri(this,"notification"), null)
+            myNotificationChannel.setSound(generateSoundUri(this, "notification"), null)
             notificationManager.createNotificationChannel(myNotificationChannel)
         }
     }
@@ -249,7 +249,7 @@ class NotificationPermissionActivity : AppCompatActivity() {
         val soundSourceId = getSoundSourceId(context, sound)
         return Uri.parse(
             ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.applicationContext
-                .packageName + "/" + soundSourceId
+                .packageName + "/" + R.raw.notification
         )
     }
 
