@@ -38,7 +38,7 @@ class NotificationPermissionActivity : AppCompatActivity() {
     private val CHANNEL_ID = "dummy_channel"
     private val TAG = "PermissionActivity"
     val permission = Manifest.permission.POST_NOTIFICATIONS
-    val channelName = "Notification Channel"
+    val channelName = "Notification Channel 1"
 
     private val binding by viewBinding(ActivityJetpackNotificationBinding::inflate)
 
@@ -249,7 +249,7 @@ class NotificationPermissionActivity : AppCompatActivity() {
         val soundSourceId = getSoundSourceId(context, sound)
         return Uri.parse(
             ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.applicationContext
-                .packageName + "/" + R.raw.notification
+                .packageName + "/" + soundSourceId
         )
     }
 

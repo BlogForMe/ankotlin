@@ -57,7 +57,7 @@ class JetpackPermissionActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
-                "Jetpack Notification Channel",
+                "Notification Channel 2",
                 NotificationManager.IMPORTANCE_HIGH,
             ).apply {
                 description = "This notification contains important announcement, etc."
