@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".permission.PhotoVideoPermissionActivity">
 
+    <Button
+        android:id="@+id/bt_request_target34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="request image video" />
 </androidx.constraintlayout.widget.ConstraintLayout>
