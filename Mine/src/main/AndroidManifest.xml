@@ -150,7 +150,14 @@
         <activity android:name=".component.launchmode.SerachActivity" />
         <activity android:name=".component.launchmode.ActivityB" />
         <activity android:name=".component.launchmode.ThirdActivity" />
-        <activity android:name=".component.fragment.life.LifeActivity" />
+        <activity
+            android:name=".component.fragment.life.LifeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".openlib.glide.GlideActivity" />
         <activity android:name=".ui.viewstub.ViewStubActivity" />
         <activity android:name=".ui.LinerLayoutActivity" />
@@ -167,10 +174,7 @@
         <activity
             android:name=".ui.tab.TabLayoutActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.tab.TabBottomActivity" />
         <activity android:name=".openlib.rxretrofit.retrofit.RetrofitActivity" />

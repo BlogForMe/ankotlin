@@ -1,6 +1,5 @@
 package com.android.util.sysdialog
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,12 +19,13 @@ class ItemPickDialog : DialogFragment() {
     companion object {
         const val PARAMS_PICK_TITLE = "item_pick_title"
         const val PARAMS_PICK_CONTENT = "item_pick_content"
-        fun newInstance(title: String, resArr: ArrayList<String>) = ItemPickDialog().apply {
-            arguments = Bundle().apply {
-                putString(PARAMS_PICK_TITLE, title)
-                putStringArrayList(PARAMS_PICK_CONTENT, resArr)
+        fun newInstance(title: String = "test commit", resArr: ArrayList<String>? = null) =
+            ItemPickDialog().apply {
+                arguments = Bundle().apply {
+                    putString(PARAMS_PICK_TITLE, title)
+                    putStringArrayList(PARAMS_PICK_CONTENT, resArr)
+                }
             }
-        }
     }
 
     override fun onCreateView(
@@ -53,10 +53,10 @@ class ItemPickDialog : DialogFragment() {
         tvTitle?.text = "请选择测量项"
         mAdapter.setOnItemClickListener { adapter, view, position ->
 //            Toast.makeText(context," $position ",Toast.LENGTH_SHORT).show()
-            mListener?.let {
-                it.getItemPosition(position)
-                dismiss()
-            }
+//            mListener?.let {
+//                it.getItemPosition(position)
+//                dismiss()
+//            }
         }
     }
 
@@ -65,18 +65,18 @@ class ItemPickDialog : DialogFragment() {
         fun getItemPosition(position: Int)
     }
 
-    var mListener: ISelectListener? = null
+//    var mListener: ISelectListener? = null
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (parentFragment is ISelectListener) {
-            mListener = parentFragment as ISelectListener
-        } else if (context is ISelectListener) {
-            mListener = context
-        } else {
-            throw RuntimeException(context!!.toString() + " must implement ISelectListener")
-        }
-    }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        if (parentFragment is ISelectListener) {
+//            mListener = parentFragment as ISelectListener
+//        } else if (context is ISelectListener) {
+//            mListener = context
+//        } else {
+//            throw RuntimeException(context!!.toString() + " must implement ISelectListener")
+//        }
+//    }
 
     class DialogAdapter(layoutResId: Int, data: ArrayList<String>?) :
         BaseQuickAdapter<String, BaseViewHolder>(layoutResId, data) {

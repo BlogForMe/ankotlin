@@ -32,7 +32,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.kot.R
 import com.kot.compose.model.Message
-import com.kot.compose.model.SimpleList
 import com.kot.compose.util.BasicsCodelabTheme
 
 /**
@@ -43,8 +42,9 @@ class ComposeActivity06 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             BasicsCodelabTheme {
-//                SimpleColumn()
-                SimpleList() //滚动
+//                SimpleList() //滚动
+//                LazylList()
+                Conversation(listOf(Message("ee", "e")))
             }
         }
     }
