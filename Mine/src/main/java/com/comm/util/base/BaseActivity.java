@@ -1,6 +1,10 @@
 package com.comm.util.base;
 
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
@@ -11,78 +15,78 @@ import butterknife.Unbinder;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-    public String TAG = getClass().getSimpleName() + " LaunchModeActivity  ";
+    protected String TAG = getClass().getSimpleName();
     private Unbinder unBinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Log.d(TAG, "onCreate() taskId  " + getTaskId());
-        //unBinder = ButterKnife.bind(this);
-        //initView();
+        Log.i(TAG, "onCreate() taskId  " + getTaskId());
+        unBinder = ButterKnife.bind(this);
+        initView();
     }
 
     protected void initView() {
     }
 
-    //@Override
-    //protected void onRestoreInstanceState(Bundle savedInstanceState) {
-    //    super.onRestoreInstanceState(savedInstanceState);
-    //    Log.d(TAG, "onRestoreInstanceState()");
-    //}
-    //
-    //@Override
-    //protected void onSaveInstanceState(Bundle outState) {
-    //    super.onSaveInstanceState(outState);
-    //    Log.d(TAG, "onSaveInstanceState()");
-    //}
-    //
-    //@Override
-    //protected void onRestart() {
-    //    super.onRestart();
-    //    Log.d(TAG, "onRestart()");
-    //}
-    //
-    //@Override
-    //protected void onStart() {
-    //    super.onStart();
-    //    Log.d(TAG, "onStart()");
-    //}
-    //
-    //@Override
-    //protected void onResume() {
-    //    super.onResume();
-    //    Log.d(TAG, "onResume()");
-    //}
-    //
-    //@Override
-    //protected void onPause() {
-    //    super.onPause();
-    //    Log.d(TAG, "onPause()");
-    //}
-    //
-    //@Override
-    //protected void onStop() {
-    //    super.onStop();
-    //    Log.d(TAG, "onStop()");
-    //}
-    //
-    //@Override
-    //protected void onNewIntent(Intent intent) {
-    //    super.onNewIntent(intent);
-    //    Log.d(TAG, " onNewIntent(Intent intent)");
-    //}
-    //
-    //@Override
-    //protected void onDestroy() {
-    //    super.onDestroy();
-    //    Log.d(TAG, "onDestroy()");
-    //    unBinder.unbind();
-    //}
-    //
-    //@Override
-    //public void onConfigurationChanged(@NonNull Configuration newConfig) {
-    //    super.onConfigurationChanged(newConfig);
-    //    Log.d(TAG, " onConfigurationChanged ");
-    //}
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i(TAG, "onRestoreInstanceState()");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "onSaveInstanceState()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart()");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop()");
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.i(TAG, " onNewIntent(Intent intent)");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy()");
+        unBinder.unbind();
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.i(TAG, " onConfigurationChanged ");
+    }
 }

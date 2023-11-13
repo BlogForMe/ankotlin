@@ -14,9 +14,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 悬浮窗权限 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- request for DANGEROUS_PERM permission to this application -->
     <uses-permission android:name="com.example.dangerousactivity.MY_DANG_PERM" />
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
 
     <application
         android:name=".MyApp"
@@ -25,8 +27,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/HomeTheme">
+
         <activity
-            android:name=".compose.ComposeActivity06"
+            android:name=".tool.shake.ShakeMeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,16 +37,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".tool.shake.ShakeActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".compose.AndroidCompose03"
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".ui.KeyBordActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".arch.recyclerview.multitype.visit.RecycleVisitActivity"
             android:exported="true" />
         <activity
             android:name=".hilt.dn.HiltSecondActivity"
-            android:exported="false" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".link.DeepLinkActivity"
             android:exported="true">
@@ -148,7 +164,11 @@
         <activity android:name=".ui.ScrollPickerActivity" />
         <activity android:name=".anim.ViewAnimActivity" />
         <activity android:name=".ui.MessageActivityFragment" />
-        <activity android:name=".mvvm.scrap.StrapCheckActivity" />
+        <activity
+            android:name=".mvvm.scrap.StrapCheckActivity"
+            android:exported="true">
+
+        </activity>
         <activity android:name=".hilt.me.HiltActivity" />
         <activity android:name=".hilt.me.HiltSecondActivity" />
         <activity

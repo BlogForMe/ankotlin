@@ -24,7 +24,7 @@ class ComposeActivity01 : AppCompatActivity() {
     @Preview
     @Composable
     fun PreviewMessageCard() {
-        MessageCard(name = "googd at Android")
+        MessageCard(name = "Android")
     }
 
 
