@@ -42,7 +42,7 @@ fun SimpleList() {
 
 // 能滑动，带缓冲功能，类似于recycleview
 @Composable
-fun LazyList() {
+fun LazylList() {
     val scrollState = rememberLazyListState()
     LazyColumn(state = scrollState) {
         items(100) {
