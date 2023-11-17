@@ -29,7 +29,7 @@ class PhotoVideoPermissionActivity : AppCompatActivity() {
                     arrayOf(
                         READ_MEDIA_IMAGES,
                         READ_MEDIA_VIDEO,
-//                        READ_MEDIA_VISUAL_USER_SELECTED
+                        READ_MEDIA_VISUAL_USER_SELECTED
                     )
                 )
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -48,6 +48,12 @@ class PhotoVideoPermissionActivity : AppCompatActivity() {
             // Handle permission requests results
             // See the permission example in the Android platform samples: https://github.com/android/platform-samples
             Log.i(TAG, ": $results")
+
+            val permission1 = results[READ_MEDIA_IMAGES]
+            val permission2 = results[READ_MEDIA_VIDEO]
+
+            Log.i(TAG, ": $permission1   $permission2")
+
         }
 
 

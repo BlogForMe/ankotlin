@@ -1,21 +1,22 @@
 @startuml
 'https://plantuml.com/activity-diagram-beta
 
+
 start
 if (version>=13?) then (yes)
-  :request permission;
+  :check permission;
   if (granted?) is (yes) then
-    if (channels is enable?) is (yes) then
+    if (channel switch?) is (yes) then
       : next flow;
     else (no)
-      :open channel page;
+      :open channel setting page;
     endif
   else (no)
       if (notification switch?) is (yes) then
           if (channel switch?) is (yes) then
             : next flow;
           else (no)
-          :open channel page;
+          :open channel setting page;
           endif
        else (no)
         :open notification setting page;
@@ -27,7 +28,7 @@ else if(version>=8 && version<13?))is (yes) then
       if (channel switch?) is (yes) then
       : next flow;
       else (no)
-      :open channel page;
+      :open channel setting page;
       endif
    else (no)
     :open notification setting page;
@@ -43,4 +44,6 @@ endif
 
 stop
 
+
 @enduml
+

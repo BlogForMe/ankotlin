@@ -47,6 +47,11 @@
         <activity
             android:name=".permission.PhotoVideoPermissionActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".permission.NotificationPermissionActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,12 +59,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".permission.NotificationPermissionActivity"
-            android:exported="true"></activity>
-        <activity
             android:name=".permission.JetpackPermissionActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".service.ForegroundActivity"
             android:exported="true" />

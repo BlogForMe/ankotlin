@@ -20,6 +20,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
@@ -32,13 +33,13 @@ import com.kot.databinding.ActivityJetpackNotificationBinding
 class NotificationPermissionActivity : AppCompatActivity() {
     private lateinit var myNotificationChannel: NotificationChannel
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
-    private val notificationManager: NotificationManager by lazy {
-        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    private val notificationManager: NotificationManagerCompat by lazy {
+        NotificationManagerCompat.from(this)
     }
     private val CHANNEL_ID = "dummy_channel"
     private val TAG = "PermissionActivity"
     val permission = Manifest.permission.POST_NOTIFICATIONS
-    val channelName = "Notification Channel 1"
+    val channelName = "General Money Packet"
 
     private val binding by viewBinding(ActivityJetpackNotificationBinding::inflate)
 
@@ -61,7 +62,7 @@ class NotificationPermissionActivity : AppCompatActivity() {
         }
 
         // Sets up notification channel.
-        createNotificationChannel()
+
 
         // Sets up button.
         binding.buttonShowNotification.setOnClickListener {
@@ -70,8 +71,13 @@ class NotificationPermissionActivity : AppCompatActivity() {
                     permission,
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
+                logData()
+                createNotificationChannel()
                 showDummyNotification()
-            } else if (shouldShowRequestPermissionRationale(permission)) {
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+                    permission
+                )
+            ) {
                 // In an educational UI, explain to the user why your app requires this
                 // permission for a specific feature to behave as expected, and what
                 // features are disabled if it's declined. In this UI, include a
@@ -83,7 +89,7 @@ class NotificationPermissionActivity : AppCompatActivity() {
                 requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
 
-            logData()
+
         }
 
         binding.buttonSendNotification.setOnClickListener {
@@ -100,21 +106,33 @@ class NotificationPermissionActivity : AppCompatActivity() {
     }
 
     private fun logData() {
-        Log.i(TAG, "refreshUI: Notifications ${notificationManager.areNotificationsEnabled()}")
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            if (NotificationManager.IMPORTANCE_NONE == notificationManager.getNotificationChannel(
-                    CHANNEL_ID
-                ).importance
+            // did not open channel
+            if (NotificationManager.IMPORTANCE_NONE == NotificationManagerCompat.from(this)
+                    .getNotificationChannel(CHANNEL_ID)?.importance
             )
                 Log.i(
                     TAG,
                     "channelName importance:  ${
                         notificationManager.getNotificationChannel(
                             CHANNEL_ID
-                        ).importance
+                        )?.importance
                     }"
                 )
+
+            val channel = notificationManager.getNotificationChannel(
+                CHANNEL_ID
+            )
+            Log.i(TAG, "logData: $channel")
+
+//            Log.i(
+//                TAG,
+//                "channelName importance:  ${
+//                    notificationManager.getNotificationChannel(
+//                        CHANNEL_ID
+//                    )
+//                }"
+//            )
         }
     }
 
@@ -228,6 +246,20 @@ class NotificationPermissionActivity : AppCompatActivity() {
             .setPriority(NotificationCompat.PRIORITY_HIGH)
 
         with(NotificationManagerCompat.from(this)) {
+            if (ActivityCompat.checkSelfPermission(
+                    this@NotificationPermissionActivity,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return
+            }
             notify(1, builder.build())
         }
     }
