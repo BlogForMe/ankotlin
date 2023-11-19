@@ -52,11 +52,6 @@
         <activity
             android:name=".permission.NotificationPermissionActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".permission.JetpackPermissionActivity"
@@ -166,7 +161,15 @@
             android:exported="true"
             android:launchMode="singleTop" />
         <activity android:name=".tool.image.ImageHandleActivity" />
-        <activity android:name=".tool.image.ScreenPhotoActivity" />
+        <activity
+            android:name=".tool.image.ScreenPhotoActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".tool.image.PhotoBasicsActivity" />
         <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".anim.MoveViewActivity" />
