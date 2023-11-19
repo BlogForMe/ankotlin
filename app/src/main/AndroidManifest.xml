@@ -164,13 +164,17 @@
         <activity
             android:name=".tool.image.ScreenPhotoActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".tool.image.PhotoBasicsActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tool.image.PhotoBasicsActivity" />
         <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".anim.MoveViewActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />

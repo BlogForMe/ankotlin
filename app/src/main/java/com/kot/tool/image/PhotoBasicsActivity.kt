@@ -1,64 +1,61 @@
 package com.kot.tool.image
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.kot.R
+import com.android.util.viewbind.viewBinding
+import com.kot.databinding.ActivityPhotoBasicsBinding
+import com.kot.tool.image.ImageUtil.getVisualMedia
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import java.io.File
 
 /**
  * 拍照上传
  */
 class PhotoBasicsActivity : AppCompatActivity() {
-    private val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 267
+
+    val TAG = "PhotoBasicsActivity"
+
+    val binding by viewBinding(ActivityPhotoBasicsBinding::inflate)
+
+    private val coroutineScope = MainScope()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_photo_basics)
 
-        // Here, thisActivity is the current activity
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            //则每次执行需要这一权限的操作时您都必须检查自己是否具有该权限
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                // Should we show an explanation?
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-//                            当某条权限之前已经请求过，并且用户已经拒绝了该权限时，shouldShowRequestPermissionRationale ()方法返回的是true
-                } else {
-//                            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
-                    requestPermissions(
-                        arrayOf(
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.CAMERA
-                        ), WRITE_EXTERNAL_STORAGE_REQUEST_CODE
-                    );
-                }
+        binding.btPhotoPicker.setOnClickListener {
+            requestPermissions.launch(
+                arrayOf(
+                    Manifest.permission.READ_MEDIA_IMAGES,
+                    Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
+                )
+            )
+        }
+    }
+
+
+    val requestPermissions =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+            // Better logic to handle denied & permanently denied access should be written here.
+            // We recommend you to look at the {Single Permission} sample
+//            if (value != StorageAccess.Denied) {
+            coroutineScope.launch {
+                val files = getVisualMedia(contentResolver)
+                Log.i(TAG, ": $files")
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, files[0].uri)
+                binding.ivBanner.setImageBitmap(bitmap)
             }
         }
 
 
-//        bt_basic_show.setOnClickListener {
-////            dispatchBasicTakePictureIntent()
-//            dispatchBasicTakePictureIntent()
-//        }
-//
-//        bt_basic_path.setOnClickListener {
-//            dispatchTakePictureGalleryIntent()
-//        }
-//
-//        bt_compass_path.setOnClickListener {
-//
-//        }
-    }
-
+    // deprecated
     private var mImageUriFromFile: Uri? = null
     private var photoURI: Uri? = null
     val REQUEST_IMAGE_CAPTURE = 1
@@ -86,7 +83,7 @@ class PhotoBasicsActivity : AppCompatActivity() {
 //                    null
 //                }
 
-                val fileProviderName = "$packageName.fileprovider";
+                val fileProviderName = "$packageName.fileprovider"
                 photoFile?.also {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { //7.0以上要通过FileProvider将File转化为Uri
                         photoURI = FileProvider.getUriForFile(this, fileProviderName, it)
@@ -104,25 +101,25 @@ class PhotoBasicsActivity : AppCompatActivity() {
     }
 
 
-      override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-          super.onActivityResult(requestCode, resultCode, data)
-          if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-  //            data?.extras?.let {
-  //                val imageBitmap = it.get("data") as Bitmap
-  //                img_show.setImageBitmap(imageBitmap)
-  //            }
-              //如果拍照成功，将Uri用BitmapFactory的decodeStream方法转为Bitmap
-              val imageBitmap = BitmapFactory.decodeStream(photoURI?.let {
-                  contentResolver.openInputStream(
-                      it
-                  )
-              })
-//              photoURI?.let { galleryAddPic(it) }
-//              galleryAddPic(mImageUriFromFile)
-//              img_show.setImageBitmap(imageBitmap)
-
-          }
-      }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+//            //            data?.extras?.let {
+//            //                val imageBitmap = it.get("data") as Bitmap
+//            //                img_show.setImageBitmap(imageBitmap)
+//            //            }
+//            //如果拍照成功，将Uri用BitmapFactory的decodeStream方法转为Bitmap
+//            val imageBitmap = BitmapFactory.decodeStream(photoURI?.let {
+//                contentResolver.openInputStream(
+//                    it
+//                )
+//            })
+////              photoURI?.let { galleryAddPic(it) }
+////              galleryAddPic(mImageUriFromFile)
+////              img_show.setImageBitmap(imageBitmap)
+//
+//        }
+//    }
 
 
     //不起作用
@@ -159,7 +156,7 @@ class PhotoBasicsActivity : AppCompatActivity() {
      * @param uri 拍的照片的Uri
      */
     private fun galleryAddPic(uri: Uri?) {
-        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri)
+        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri)
         sendBroadcast(mediaScanIntent)
     }
 
