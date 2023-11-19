@@ -37,22 +37,31 @@ class PhotoBasicsActivity : AppCompatActivity() {
                     Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
                 )
             )
+//
+//            selectPhotos()
         }
     }
 
 
     val requestPermissions =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
-            // Better logic to handle denied & permanently denied access should be written here.
-            // We recommend you to look at the {Single Permission} sample
-//            if (value != StorageAccess.Denied) {
-            coroutineScope.launch {
-                val files = getVisualMedia(contentResolver)
-                Log.i(TAG, ": $files")
-                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, files[0].uri)
-                binding.ivBanner.setImageBitmap(bitmap)
+            if (ImageUtil.getStorageAccess(this) != StorageAccess.Denied) {
+                selectPhotos()
             }
         }
+
+
+    fun selectPhotos() {
+        // Better logic to handle denied & permanently denied access should be written here.
+        // We recommend you to look at the {Single Permission} sample
+//            if (value != StorageAccess.Denied) {
+        coroutineScope.launch {
+            val files = getVisualMedia(contentResolver)
+            Log.i(TAG, ": $files")
+            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, files[0].uri)
+            binding.ivBanner.setImageBitmap(bitmap)
+        }
+    }
 
 
     // deprecated
