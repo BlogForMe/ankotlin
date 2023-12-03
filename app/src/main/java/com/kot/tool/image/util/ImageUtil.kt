@@ -1,4 +1,4 @@
-package com.kot.tool.image
+package com.kot.tool.image.util
 
 import android.Manifest
 import android.Manifest.permission.READ_MEDIA_IMAGES
