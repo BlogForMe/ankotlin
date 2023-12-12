@@ -1,6 +1,7 @@
 package com.kot.permission
 
 import android.Manifest
+import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ContentResolver
@@ -63,7 +64,6 @@ class NotificationPermissionActivity : AppCompatActivity() {
 
         // Sets up notification channel.
 
-
         // Sets up button.
         binding.buttonShowNotification.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
@@ -110,15 +110,17 @@ class NotificationPermissionActivity : AppCompatActivity() {
             // did not open channel
             if (NotificationManager.IMPORTANCE_NONE == NotificationManagerCompat.from(this)
                     .getNotificationChannel(CHANNEL_ID)?.importance
+            ) {
+
+            }
+            Log.i(
+                TAG,
+                "channelName importance:  ${
+                    notificationManager.getNotificationChannel(
+                        CHANNEL_ID
+                    )?.importance
+                }"
             )
-                Log.i(
-                    TAG,
-                    "channelName importance:  ${
-                        notificationManager.getNotificationChannel(
-                            CHANNEL_ID
-                        )?.importance
-                    }"
-                )
 
             val channel = notificationManager.getNotificationChannel(
                 CHANNEL_ID
@@ -164,20 +166,6 @@ class NotificationPermissionActivity : AppCompatActivity() {
     }
 
 
-    private fun openNotificationSettingsForApp(channelId: String?) {
-        // Links to this app's notification settings.
-        val intent = Intent()
-        intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
-        intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && channelId != null && notificationManager.areNotificationsEnabled()) {
-            intent.action = Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS
-            intent.putExtra(Settings.EXTRA_CHANNEL_ID, channelId)
-        }
-        startActivity(intent)
-    }
-
-
     /**
      * https://stackoverflow.com/questions/32366649/any-way-to-link-to-the-android-notification-settings-for-my-app
      */
@@ -202,23 +190,13 @@ class NotificationPermissionActivity : AppCompatActivity() {
 //                    }
                 }
 
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP /*21*/ -> Intent().apply {
-                    action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+                else/*21*/ -> Intent().apply {
+                    action = "android.settings.APP_NOTIFICATION_SETTINGS"
                     putExtra("app_package", context.packageName)
                     putExtra("app_uid", context.applicationInfo.uid)
                 }
-                /*   Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT *//*19*//* -> Intent().apply {
-                action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-                addCategory(Intent.CATEGORY_DEFAULT)
-                data = Uri.parse("package:${context.packageName}")
-            }*/
-                else -> null
             }
-//        notificationSettingsIntent?.let(context::startActivity)
-//            val intent = Intent(this,PermissionActivity::class.java)
-
             resultLauncher.launch(notificationSettingsIntent)
-//            startActivityForResult(notificationSettingsIntent!!,122)
         } catch (e: Exception) {
             throw RuntimeException(e)
         }

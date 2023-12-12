@@ -5,6 +5,9 @@ import com.kot.test.RegistrationUtil
 import org.junit.Test
 
 
+const val SCENE_MONEY_PACKET_CREATED = "MONEY_PACKET_CREATED"
+const val SCENE_MONEY_PACKET_ClAIMED = "MONEY_PACKET_ClAIMED"
+
 //https://www.youtube.com/watch?v=W0ag98EDhGc&list=PLQkwcJG4YTCSYJ13G4kVIJ10X5zisB2Lq&index=3
 class RegistrationUtilTest {
 

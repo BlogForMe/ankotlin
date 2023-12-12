@@ -4,11 +4,14 @@ import android.Manifest.permission.READ_EXTERNAL_STORAGE
 import android.Manifest.permission.READ_MEDIA_IMAGES
 import android.Manifest.permission.READ_MEDIA_VIDEO
 import android.Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.android.util.viewbind.viewBinding
 import com.kot.databinding.ActivityPhotoVideoPermissionBinding
 
@@ -42,6 +45,11 @@ class PhotoVideoPermissionActivity : AppCompatActivity() {
     }
 
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+    }
+
     // Register ActivityResult handler
     val requestPermissions =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { results ->
@@ -49,12 +57,18 @@ class PhotoVideoPermissionActivity : AppCompatActivity() {
             // See the permission example in the Android platform samples: https://github.com/android/platform-samples
             Log.i(TAG, ": $results")
 
+            isPermissionGranted(READ_MEDIA_IMAGES)
+
             val permission1 = results[READ_MEDIA_IMAGES]
             val permission2 = results[READ_MEDIA_VIDEO]
 
             Log.i(TAG, ": $permission1   $permission2")
 
+
         }
 
+    private fun isPermissionGranted(name: String) = ContextCompat.checkSelfPermission(
+        this, name
+    ) == PackageManager.PERMISSION_GRANTED
 
 }

@@ -425,7 +425,9 @@ class PhotoTakeManger( //布尔值，true：在mActivity进行操作 ；false :F
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             }
-            bitmap!!.compress(Bitmap.CompressFormat.PNG, 60, fOut)
+            if (fOut != null) {
+                bitmap!!.compress(Bitmap.CompressFormat.PNG, 60, fOut)
+            }
             try {
                 fOut!!.flush()
             } catch (e: IOException) {

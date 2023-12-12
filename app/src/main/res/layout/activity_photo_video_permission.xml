@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".permission.PhotoVideoPermissionActivity">
 
     <Button
@@ -11,4 +12,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="request image video" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBarRight"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:indeterminateTint="#f5f5f5"
+        android:max="100"
+        android:progress="40"
+        android:progressTint="#CD0B00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:padding="5dp"
+        android:progress="40"
+        android:progressDrawable="@drawable/curved_progress_bar" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="#f5f5f5" />
+
+
+</LinearLayout>
