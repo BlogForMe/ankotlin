@@ -17,6 +17,8 @@ import com.kot.databinding.ActivityPhotoVideoPermissionBinding
 
 /**
  *  https://developer.android.com/about/versions/14/changes/partial-photo-video-access
+ *
+ *  https://seeratabbaskhan.medium.com/custom-progress-bar-in-android-with-background-99de450af168
  */
 class PhotoVideoPermissionActivity : AppCompatActivity() {
     val TAG = "PhotoVideoPermission"
