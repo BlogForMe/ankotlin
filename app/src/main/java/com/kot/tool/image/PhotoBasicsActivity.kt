@@ -61,7 +61,13 @@ class PhotoBasicsActivity : AppCompatActivity() {
             val files = getVisualMedia(contentResolver)
             Log.i(TAG, ": $files")
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, files[0].uri)
-            binding.ivBanner.setImageBitmap(bitmap)
+            binding.ivBanner1.setImageBitmap(bitmap)
+            binding.ivBanner1.setImageBitmap(
+                MediaStore.Images.Media.getBitmap(
+                    contentResolver,
+                    files[1].uri
+                )
+            )
         }
     }
 

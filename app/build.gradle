@@ -23,6 +23,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "com.kot.CustomTestRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
     testOptions {
         execution 'ANDROIDX_TEST_ORCHESTRATOR'
@@ -32,6 +35,18 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
 
@@ -46,10 +61,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation platform('androidx.compose:compose-bom:2023.03.00')
 
 
     // For Robolectric tests.
     testImplementation("com.google.dagger:hilt-android-testing:2.44")
+    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
     // ...with Kotlin.
     kaptTest("com.google.dagger:hilt-android-compiler:2.44")
     // ...with Java.

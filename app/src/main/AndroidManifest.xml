@@ -21,20 +21,13 @@
     <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" /> <!-- 前台服务 -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="Manifest.permission.CAMERA" />
-
-
-    <!--target Android 14  -->
-    <!-- Devices running Android 12L (API level 32) or lower  -->
+    <uses-permission android:name="Manifest.permission.CAMERA" /> <!-- target Android 14 -->
+    <!-- Devices running Android 12L (API level 32) or lower -->
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" />
-
-    <!-- Devices running Android 13 (API level 33) or higher -->
+        android:maxSdkVersion="32" /> <!-- Devices running Android 13 (API level 33) or higher -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-
-    <!-- To handle the reselection within the app on Android 14 (API level 34) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" /> <!-- To handle the reselection within the app on Android 14 (API level 34) -->
     <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
 
     <application
@@ -45,16 +38,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/HomeTheme">
         <activity
-            android:name=".permission.PhotoVideoPermissionActivity"
+            android:name=".ui.ProgressBarActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
+            android:name=".permission.PhotoVideoPermissionActivity"
+            android:exported="true" />
+        <activity
             android:name=".permission.NotificationPermissionActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".permission.JetpackPermissionActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".service.ForegroundActivity"
             android:exported="true" />
@@ -162,21 +162,13 @@
         <activity android:name=".tool.image.ImageHandleActivity" />
         <activity
             android:name=".tool.image.ScreenPhotoActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".tool.image.PhotoBasicsActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".tool.image.PickerImagesActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity android:name=".anim.TextViewBigActivity" />
         <activity android:name=".anim.MoveViewActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
