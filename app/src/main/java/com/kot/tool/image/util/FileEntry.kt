@@ -1,4 +1,4 @@
-package com.kot.tool.image
+package com.kot.tool.image.util
 
 import android.net.Uri
 

@@ -12,13 +12,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.android.util.viewbind.viewBinding
 import com.kot.databinding.ActivityPhotoBasicsBinding
-import com.kot.tool.image.ImageUtil.getVisualMedia
+import com.kot.tool.image.util.ImageUtil
+import com.kot.tool.image.util.ImageUtil.getVisualMedia
+import com.kot.tool.image.util.StorageAccess
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import java.io.File
 
 /**
- * 拍照上传
+ * Android 14 support
  */
 class PhotoBasicsActivity : AppCompatActivity() {
 
@@ -34,7 +36,7 @@ class PhotoBasicsActivity : AppCompatActivity() {
             requestPermissions.launch(
                 arrayOf(
                     Manifest.permission.READ_MEDIA_IMAGES,
-                    Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
+//                    Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED,
                 )
             )
 //
@@ -59,7 +61,13 @@ class PhotoBasicsActivity : AppCompatActivity() {
             val files = getVisualMedia(contentResolver)
             Log.i(TAG, ": $files")
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, files[0].uri)
-            binding.ivBanner.setImageBitmap(bitmap)
+            binding.ivBanner1.setImageBitmap(bitmap)
+            binding.ivBanner1.setImageBitmap(
+                MediaStore.Images.Media.getBitmap(
+                    contentResolver,
+                    files[1].uri
+                )
+            )
         }
     }
 

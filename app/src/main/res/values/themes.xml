@@ -8,4 +8,6 @@
     <style name="HomeTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="HomeTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="HomeThemeNew" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

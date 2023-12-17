@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 
 android {
@@ -46,6 +47,10 @@ dependencies {
     api group: 'org.jooq', name: 'joor-java-8', version: '0.9.7'
     api group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
     api "androidx.paging:paging-runtime-ktx:3.1.1"
+
+    //hilt
+    api "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-android-compiler:2.44"
 }
 
 ext {
