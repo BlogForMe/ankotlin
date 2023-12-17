@@ -64,6 +64,14 @@ class ListCompareTest {
 
 //        assertThat(ArrayList(), IsEmptyCollection.empty())
 
+    }
+
+
+    @Test
+    fun testdd() {
+        val ddd: Any? = null
+
+        println(ddd.toString())
 
     }
 }

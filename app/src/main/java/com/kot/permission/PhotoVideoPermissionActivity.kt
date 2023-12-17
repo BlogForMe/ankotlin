@@ -34,7 +34,7 @@ class PhotoVideoPermissionActivity : AppCompatActivity() {
                     arrayOf(
                         READ_MEDIA_IMAGES,
                         READ_MEDIA_VIDEO,
-                        READ_MEDIA_VISUAL_USER_SELECTED
+//                        READ_MEDIA_VISUAL_USER_SELECTED
                     )
                 )
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
