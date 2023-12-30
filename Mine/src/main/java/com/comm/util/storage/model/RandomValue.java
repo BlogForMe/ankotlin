@@ -1,4 +1,4 @@
-package com.comm.util.storage;
+package com.comm.util.storage.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

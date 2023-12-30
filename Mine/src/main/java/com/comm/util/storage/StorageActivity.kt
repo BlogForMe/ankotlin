@@ -1,85 +1,96 @@
-package com.comm.util.storage;
+package com.comm.util.storage
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Bundle
+import android.os.Environment
+import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.android.util.storage.FileUtil
+import com.android.util.storage.StorageUtil
+import com.android.util.viewbind.viewBinding
+import com.comm.util.R
+import com.comm.util.databinding.ActivityStorageBinding
+import timber.log.Timber
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.Date
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Environment;
-import android.view.View;
-import android.widget.ProgressBar;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import com.comm.util.R;
-import com.comm.util.utils.StorageUtil;
-import timber.log.Timber;
+class StorageActivity : AppCompatActivity() {
 
-public class StorageActivity extends AppCompatActivity {
+    private val binding by viewBinding(ActivityStorageBinding::inflate)
+    var number = 0
+    var fileInnerName = "fileInnerName"
+    private var rootFile: String? = null
+    private var progressBar: ProgressBar? = null
 
-    private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 001;
-    int number;
-    String fileInnerName = "fileInnerName";
-    private String rootFile;
-    private ProgressBar progressBar;
+    private val TAG = "StorageActivity"
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        rootFile = StorageUtil.rootDirectory + "/zhuji.apk"
+        progressBar = findViewById(R.id.progress)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_storage);
-        rootFile = StorageUtil.getRootDirectory() + "/zhuji.apk";
-        progressBar = findViewById(R.id.progress);
+        binding.btPrivatefileCrate.setOnClickListener { v: View? ->
+            val createFilePath =
+                FileUtil.createFilePath(this, "photoImage", "sit/283838388383/avtfjfjf.png")
 
-        findViewById(R.id.bt_privatefile_crate).setOnClickListener(v -> {
-            createPrivateFile();
-        });
+            if (createFilePath.exists().not()) createFilePath.mkdirs()
+            Log.i(TAG, "onCreate: $createFilePath")
+            FileUtil.base64ToFile(createFilePath, "fejeekkekekek")
+
+        }
     }
 
-    private void createPrivateFile() {
-        File fileCache = new File(getCacheDir(), fileInnerName);
-        boolean bf = fileCache.mkdirs();
-        Timber.i("createPrivateFile " + bf);
-
+    private fun createPrivateFile() {
+        val fileCache = File(cacheDir, fileInnerName)
+        val bf = fileCache.mkdirs()
+        Timber.i("createPrivateFile $bf")
     }
 
-    private void checkPermission() {
+    private fun checkPermission() {
         // Here, thisActivity is the current activity
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
+                != PackageManager.PERMISSION_GRANTED
+            ) {
                 // Should we show an explanation?
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(
+                        this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    )
+                ) {
                     //                            当某条权限之前已经请求过，并且用户已经拒绝了该权限时，shouldShowRequestPermissionRationale ()方法返回的是true
                 } else {
                     //                            ActivityCompat.requestPermissions(getActivity()
                     //                            , new String[]{Manifest.permission
                     //                            .WRITE_EXTERNAL_STORAGE},
                     //                            WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
-                    requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
+                    requestPermissions(
+                        arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                        WRITE_EXTERNAL_STORAGE_REQUEST_CODE
+                    )
                 }
             }
         } else {
-            createExternalStorage();
+            createExternalStorage()
         }
-
     }
 
-    public void btPermission(View v) {
-        checkPermission();
+    fun btPermission(v: View?) {
+        checkPermission()
     }
 
-    public void btCreateFile(View v) {
-        createExternalStorage();
+    fun btCreateFile(v: View?) {
+        createExternalStorage()
     }
 
     /**
@@ -87,96 +98,97 @@ public class StorageActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void btFile(View view) {
+    fun btFile(view: View?) {
         try {
-            createImageFile();
-        } catch (IOException e) {
-            e.printStackTrace();
+            createImageFile()
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case WRITE_EXTERNAL_STORAGE_REQUEST_CODE: {
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            WRITE_EXTERNAL_STORAGE_REQUEST_CODE -> {
+
                 // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.size > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                ) {
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                 }
-                return;
-                // other 'case' lines to check for other
-                // permissions this app might request
+                return
             }
         }
     }
 
-    private void createExternalStorage() {
-
-        String dir = StorageUtil.getCacheDirectory();
-        String apkDIR = "apkdir.apk";
-        File apkFile = new File(dir, apkDIR);
-
-        if (!StorageUtil.isExternalStorageWritable()) {
-            return;
+    private fun createExternalStorage() {
+        val dir = StorageUtil.cacheDirectory
+        val apkDIR = "apkdir.apk"
+        val apkFile = File(dir, apkDIR)
+        if (!StorageUtil.isExternalStorageWritable) {
+            return
         }
         if (apkFile.exists()) {  //如果存在则删除文件
-            apkFile.delete();
+            apkFile.delete()
         }
-        boolean isCreate = false;
+        var isCreate = false
         try {
-            isCreate = apkFile.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
+            isCreate = apkFile.createNewFile()
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
-
         if (isCreate) {
-            readApk(rootFile, apkFile.getPath());
+            readApk(rootFile, apkFile.path)
         }
-
     }
 
-    private void readApk(String rootFile, String apkFile) {
-        byte[] buff = new byte[1024];
+    private fun readApk(rootFile: String?, apkFile: String) {
+        val buff = ByteArray(1024)
         try {
-            FileInputStream is = new FileInputStream(rootFile);
-            FileOutputStream fos = new FileOutputStream(apkFile);
-            int len;
-            int sum = 0;
-            while ((len = is.read(buff)) != -1) {
-                fos.write(buff, 0, len);
-                sum += len;
-                int progress = (int)(sum * 1.0f / sum * 100);
-
-                progressBar.setProgress(progress);
+            val `is` = FileInputStream(rootFile)
+            val fos = FileOutputStream(apkFile)
+            var len: Int
+            var sum = 0
+            while (`is`.read(buff).also { len = it } != -1) {
+                fos.write(buff, 0, len)
+                sum += len
+                val progress = (sum * 1.0f / sum * 100).toInt()
+                progressBar!!.progress = progress
             }
-            fos.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            fos.flush()
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 
-    private File createImageFile() throws IOException {
-        number++;
+    @Throws(IOException::class)
+    private fun createImageFile(): File {
+        number++
         // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_" + number;
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
+        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        val imageFileName = "JPEG_" + timeStamp + "_" + number
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val image = File.createTempFile(
             imageFileName,
             ".jpg",
             storageDir
-        );
+        )
         // Save a file: path for use with ACTION_VIEW intents
-        String mCurrentPhotoPath = image.getAbsolutePath();
-        return image;
+        val mCurrentPhotoPath = image.absolutePath
+        return image
+    }
+
+    companion object {
+        private const val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 1
     }
 }

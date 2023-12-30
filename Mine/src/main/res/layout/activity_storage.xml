@@ -37,6 +37,7 @@
 
     <Button
         android:id="@+id/bt_privatefile_crate"
+        android:text="项目内部存储"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>
