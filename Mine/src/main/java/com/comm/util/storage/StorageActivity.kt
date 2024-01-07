@@ -2,6 +2,7 @@ package com.comm.util.storage
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -11,6 +12,7 @@ import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.android.util.storage.BitmapUtils
 import com.android.util.storage.FileUtil
 import com.android.util.storage.StorageUtil
 import com.android.util.viewbind.viewBinding
@@ -43,9 +45,21 @@ class StorageActivity : AppCompatActivity() {
             val createFilePath =
                 FileUtil.createFilePath(this, "photoImage", "sit/283838388383/avtfjfjf.png")
 
-            if (createFilePath.exists().not()) createFilePath.mkdirs()
+            createFilePath.parentFile?.takeIf { it.exists().not() }?.mkdirs()
+
+            if (createFilePath.exists().not()) {
+                createFilePath.createNewFile()
+            }
             Log.i(TAG, "onCreate: $createFilePath")
-            FileUtil.base64ToFile(createFilePath, "fejeekkekekek")
+            FileUtil.base64ToFile(
+                createFilePath,
+                BitmapUtils.bitmapToBase64(
+                    BitmapFactory.decodeResource(
+                        resources,
+                        R.mipmap.ic_launcher
+                    )
+                )!!
+            )
 
         }
     }

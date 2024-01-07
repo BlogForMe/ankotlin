@@ -35,4 +35,7 @@
         <item>Header/Footer</item>
     </string-array>
 
+    <string name="image_picker_provider_authority_suffix">.imagepicker.provider</string>
+
+
 </resources>
