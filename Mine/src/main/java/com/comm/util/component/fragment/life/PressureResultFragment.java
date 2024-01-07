@@ -2,14 +2,11 @@ package com.comm.util.component.fragment.life;
 
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
-import butterknife.BindView;
 import com.android.util.DisplayUtils;
 import com.android.util.base.BaseFragment;
-import com.comm.util.R;
 import timber.log.Timber;
 
 import static com.android.util.base.CBaseFragment.PARAMS_01;
@@ -23,28 +20,28 @@ import static com.android.util.circledialog.Controller.dp2px;
  */
 public class PressureResultFragment extends BaseFragment {
 
-    @BindView(R.id.tv_systolic)
+    //(R.id.tv_systolic)
     TextView tvSystolic;
-    @BindView(R.id.tv_diastolic)
+    //(R.id.tv_diastolic)
     TextView tvDiastolic;
-    @BindView(R.id.tv_mean_ap)
+    //(R.id.tv_mean_ap)
     TextView tvMeanap;
 
-    @BindView(R.id.tv_systolic_line)
+    //(R.id.tv_systolic_line)
     TextView tvSystolicLine;
-    @BindView(R.id.tv_diastolic_line)
+    //(R.id.tv_diastolic_line)
     TextView tvDiastolicLine;
-    @BindView(R.id.tv_mean_ap_line)
+    //(R.id.tv_mean_ap_line)
     TextView tvMeanapLine;
 
-    @BindView(R.id.tv_current_time)
+    //(R.id.tv_current_time)
     TextView tvCurrentTime;
 
-    @BindView(R.id.iv_press_line_1)
+    //(R.id.iv_press_line_1)
     ImageView ivPressLine1;
-    @BindView(R.id.iv_press_line_2)
+    //(R.id.iv_press_line_2)
     ImageView ivPressLine2;
-    @BindView(R.id.iv_press_line_3)
+    //(R.id.iv_press_line_3)
     ImageView ivPressLine3;
     private float highInt;
     private float lowInt, pulseInt;
@@ -68,14 +65,14 @@ public class PressureResultFragment extends BaseFragment {
 
         Bundle arg = getArguments();
         highInt = arg.getFloat(PARAMS_01);
-        tvSystolic.setText("" + highInt);
+        tvSystolic.setText(String.valueOf(highInt));
         lowInt = arg.getFloat(PARAMS_02);
-        tvDiastolic.setText("" + lowInt);
+        tvDiastolic.setText(String.valueOf(lowInt));
         pulseInt = arg.getFloat(PARAMS_03);
-        tvMeanap.setText("" + pulseInt);
-        tvSystolicLine.setText("" + arg.getFloat(PARAMS_01));
-        tvDiastolicLine.setText("" + arg.getFloat(PARAMS_02));
-        tvMeanapLine.setText("" + arg.getFloat(PARAMS_03));
+        tvMeanap.setText(String.valueOf(pulseInt));
+        tvSystolicLine.setText(String.valueOf(arg.getFloat(PARAMS_01)));
+        tvDiastolicLine.setText(String.valueOf(arg.getFloat(PARAMS_02)));
+        tvMeanapLine.setText(String.valueOf(arg.getFloat(PARAMS_03)));
 
         //        ll = new LinearLayout.LayoutParams(getActivity());
         //

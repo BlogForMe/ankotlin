@@ -7,8 +7,6 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by Administrator on 2017/12/8 0008.
@@ -16,13 +14,11 @@ import butterknife.Unbinder;
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected String TAG = getClass().getSimpleName();
-    private Unbinder unBinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate() taskId  " + getTaskId());
-        unBinder = ButterKnife.bind(this);
         initView();
     }
 
@@ -81,7 +77,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy()");
-        unBinder.unbind();
     }
 
     @Override

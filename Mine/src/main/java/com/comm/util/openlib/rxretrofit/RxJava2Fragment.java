@@ -1,7 +1,6 @@
 package com.comm.util.openlib.rxretrofit;
 
 import android.view.View;
-import butterknife.OnClick;
 import com.android.util.base.BaseFragment;
 import com.comm.util.R;
 import com.comm.util.openlib.rxretrofit.Season_zlc.rxdemo07;
@@ -38,7 +37,7 @@ public class RxJava2Fragment extends BaseFragment {
      * 给初学者的RxJava2.0教程(一)
      */
 
-    @OnClick({R.id.bt_00f, R.id.bt_01f})
+    //({R.id.bt_00f, R.id.bt_01f})
     public void button(View v) {
         switch (v.getId()) {
             case R.id.bt_00f:
@@ -53,36 +52,30 @@ public class RxJava2Fragment extends BaseFragment {
     /**
      * 给初学者的RxJava2.0教程(二)
      */
-    @OnClick({R.id.bt_10f})
+    //({R.id.bt_10f})
     public void button10(View v) {
-        switch (v.getId()) {
-            case R.id.bt_10f:
-                bt10();
-                break;
+        if (v.getId() == R.id.bt_10f) {
+            bt10();
         }
     }
 
     /**
      * 给初学者的RxJava2.0教程(五)
      */
-    @OnClick({R.id.bt_40f})
+    //({R.id.bt_40f})
     public void button40(View v) {
-        switch (v.getId()) {
-            case R.id.bt_40f:
-                bt40();
-                break;
+        if (v.getId() == R.id.bt_40f) {
+            bt40();
         }
     }
 
     /**
      * 给初学者的RxJava2.0教程(六)
      */
-    @OnClick({R.id.bt_50f})
+    //({R.id.bt_50f})
     public void button50(View v) {
-        switch (v.getId()) {
-            case R.id.bt_50f:
-                bt50();
-                break;
+        if (v.getId() == R.id.bt_50f) {
+            bt50();
         }
     }
 
@@ -91,7 +84,7 @@ public class RxJava2Fragment extends BaseFragment {
      *
      * @param v
      */
-    @OnClick({R.id.bt_60f})
+    //({R.id.bt_60f})
     public void button60(View v) {
         switch (v.getId()) {
             case R.id.bt_60f:

@@ -12,9 +12,6 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import butterknife.BindView;
-import butterknife.OnClick;
-import com.comm.util.R;
 import com.comm.util.base.BaseActivity;
 
 /**
@@ -27,7 +24,6 @@ public class ContactActivity extends BaseActivity {
 
     public static final int CONTACT_REQUEST_CODE = 3;
 
-    @BindView(R.id.lv_contacts)
     ListView lvContact;
 
     //@Override
@@ -36,7 +32,7 @@ public class ContactActivity extends BaseActivity {
     //}
 
 
-    @OnClick(R.id.bt_contact)
+    //(R.id.bt_contact)
     public void btContact() {
         checkPermm();
     }
@@ -107,18 +103,15 @@ public class ContactActivity extends BaseActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case CONTACT_REQUEST_CODE: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-                    getContacts();
+        if (requestCode
+            == CONTACT_REQUEST_CODE) {// If request is cancelled, the result arrays are empty.
+            if (grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // permission was granted, yay! Do the
+                // contacts-related task you need to do.
+                getContacts();
 
-                } else {
-                }
-                return;
+            } else {
             }
         }
     }
