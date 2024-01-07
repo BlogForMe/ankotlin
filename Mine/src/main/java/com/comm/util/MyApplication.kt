@@ -6,8 +6,6 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.android.util.AppUtil
 import com.android.util.ToastUtil
 import com.comm.util.dagger.dn.di.ApplicationComponent2
-import com.comm.util.dagger.dn.di.DaggerApplicationComponent2
-import com.comm.util.dagger.dn.di.NetModule2
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
@@ -21,8 +19,8 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        DaggerApplicationComponent2.builder().netModule2(NetModule2(this)).build()
-        applicationComponent2 = DaggerApplicationComponent2.create()
+//        DaggerApplicationComponent2.builder().netModule2(NetModule2(this)).build()
+//        applicationComponent2 = DaggerApplicationComponent2.create()
 
         AppUtil.init(this)
         ToastUtil.register(this)

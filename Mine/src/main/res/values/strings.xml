@@ -36,6 +36,7 @@
     </string-array>
 
     <string name="image_picker_provider_authority_suffix">.imagepicker.provider</string>
+    <string name="title_activity_permission_write">PermissionWriteActivity</string>
 
 
 </resources>

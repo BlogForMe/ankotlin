@@ -1,10 +1,8 @@
 package com.comm.util.dagger.dn
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.comm.util.R
-import com.comm.util.dagger.dn.di.DaggerApplicationComponent3
 import com.comm.util.dagger.dn.di.Student
 import javax.inject.Inject
 
@@ -27,8 +25,8 @@ class DaggerSecondActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second2)
 
-        DaggerApplicationComponent3.create().studentComponent().create().inject(this)
-        Log.i(TAG, "student: $student ")
+//        DaggerApplicationComponent.create().studentComponent().create().inject(this)
+//        Log.i(TAG, "student: $student ")
 
 
     }

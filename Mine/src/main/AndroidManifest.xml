@@ -18,14 +18,6 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
-    <!-- Defines a custom permission -->
-    <!-- <permission
-         android:name="com.example.dangerousactivity.MY_DANG_PERM"
-         android:label="dangerous_permission_label_string"
-         android:protectionLevel="dangerous" />-->
-
-
-    <!--android:permission="com.example.dangerousactivity.MY_DANG_PERM"-->
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -34,12 +26,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".storage.PermissionWriteActivity"
+            android:exported="true"
+            android:label="@string/title_activity_permission_write"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".link.TestDeepLinkActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".work.ReloadActivity"
             android:exported="false" />
@@ -71,22 +71,20 @@
             android:exported="true" />
         <activity
             android:name=".recyclew.clickhead.StickyHeadClickActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity android:name=".dagger.dn.DaggerSecondActivity2" />
         <activity
             android:name=".dagger.dn.DaggerUserActivity2"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".dagger.dn.DaggerSecondActivity4"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".dagger.dn2.MainActivity6"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".dagger.dn.DaggerUserActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".dagger.dn.DaggerSecondActivity1"
             android:exported="true" />
@@ -140,41 +138,29 @@
         <activity android:name=".openlib.rxretrofit.renyugang.RxJavaRenActivity" />
         <activity
             android:name=".dialog.DialogActivity"
-            android:exported="true">
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".storage.StorageActivity"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".storage.NewPhotoPicker"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".component.broadcastservice.BroadcastReceiverActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity android:name=".ui.recycleview.ListViewActivity" />
         <activity android:name=".anim.AnimUseActivity" />
         <activity android:name=".memory.MemoryMonitorActivity" />
         <activity android:name=".dagger.DaggerPresenterActivity" />
         <activity android:name=".dagger.demo1.A01SimpleActivity" />
-
         <activity android:name=".component.launchmode.SerachActivity" />
         <activity android:name=".component.launchmode.ActivityB" />
         <activity android:name=".component.launchmode.ThirdActivity" />
         <activity
             android:name=".component.fragment.life.LifeActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity android:name=".openlib.glide.GlideActivity" />
         <activity android:name=".ui.viewstub.ViewStubActivity" />
         <activity android:name=".ui.LinerLayoutActivity" />
@@ -190,9 +176,7 @@
         <activity android:name=".dialog.dw.ProgressBarActivity" />
         <activity
             android:name=".ui.tab.TabLayoutActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity android:name=".ui.tab.TabBottomActivity" />
         <activity android:name=".openlib.rxretrofit.retrofit.RetrofitActivity" />
         <activity android:name=".anim.gesture.GestureDetectorActivity" />
@@ -205,7 +189,7 @@
         <activity android:name=".audio.AudioActivity" />
         <activity
             android:name=".ui.constraint.ConstraintLayoutActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".component.fragment.stack.StackActivity" />
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".anim.move.MoveActivity" />
@@ -217,15 +201,15 @@
         <activity android:name=".ui.recycleview.RecycleViewScrollActivity" />
         <activity android:name=".ui.customview.CustomViewActivity" />
         <activity android:name=".gcssloop.touchevent.TouchEventActivity" />
-
-        <!--        <receiver
+        <!--
+        <receiver
                     android:name=".component.broadcastservice.UpdateBroadcastReceiver"
                     android:exported="false">
                     <intent-filter>
                         <action android:name="android.intent.action.UpdateBroadcastReceiver" />
                     </intent-filter>
-                </receiver>-->
-
+                </receiver>
+        -->
         <activity android:name=".socket.MinaActivity" />
 
         <service android:name=".component.service.ContentService" />
@@ -251,7 +235,6 @@
                 <action android:name="com.broadcast.android" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>
