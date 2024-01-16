@@ -32,8 +32,8 @@ class GoogleTopUpActivity : AppCompatActivity() {
 
         binding.btnGoogleAuth.setOnClickListener {
             Intent().apply {
-                intent.action = "com.google.android.payments.standard.AUTHENTICATE_V1"
-                intent.putExtra("gspTopUpRequest", resources.getString(R.string.secret_key_auth))
+                action = "com.google.android.payments.standard.AUTHENTICATE_V1"
+                putExtra("gspTopUpRequest", resources.getString(R.string.secret_key_auth))
             }.let {
                 resultLauncher.launch(it)
             }
