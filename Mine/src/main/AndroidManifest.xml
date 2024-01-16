@@ -136,7 +136,15 @@
         <activity
             android:name=".ui.PopupWindowActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.payments.standard.TOPUP_V2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".openlib.rxretrofit.renyugang.RxJavaRenActivity" />
         <activity
             android:name=".dialog.DialogActivity"

@@ -30,10 +30,10 @@
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
     <!-- To handle the reselection within the app on Android 14 (API level 34) -->
-<!--
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" /> <!-- To handle the reselection within the app on Android 14 (API level 34) -->
-    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
--->
+    <!--
+        <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+        <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+    -->
 
     <application
         android:name=".MyApp"
@@ -45,21 +45,26 @@
         <activity
             android:name=".ui.image.RingCircleImageActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".hilt.HiltEntryActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+
+        </activity>
         <activity
             android:name=".ui.ProgressBarActivity"
             android:exported="true" />
         <activity
             android:name=".permission.PhotoVideoPermissionActivity"
-            android:exported="true" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.payments.standard.TOPUP_V2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".permission.NotificationPermissionActivity"
             android:exported="true" />
@@ -111,7 +116,16 @@
             android:name=".activity.ActivityC"
             android:exported="true"
             android:launchMode="singleTask" />
-        <activity android:name=".tool.GoogleTopUpActivity" />
+        <activity
+            android:name=".tool.GoogleTopUpActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".ui.image.XfermodesActivity"
             android:exported="true" />
