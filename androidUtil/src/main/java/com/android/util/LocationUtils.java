@@ -9,11 +9,11 @@ import android.os.Bundle;
 import android.util.Log;
 
 
-public class GPSUtils {
-    private static String TAG = GPSUtils.class.getSimpleName();
-    private static GPSUtils mInstance;
-    private Context mContext;
-    private static LocationListener mLocationListener = new LocationListener() {
+public class LocationUtils {
+    private static final String TAG = LocationUtils.class.getSimpleName();
+    private static LocationUtils mInstance;
+    private final Context mContext;
+    private static final LocationListener mLocationListener = new LocationListener() {
 
         // Provider的状态在可用、暂时不可用和无服务三个状态直接切换时触发此函数
         @Override
@@ -41,14 +41,13 @@ public class GPSUtils {
         }
     };
 
-
-    private GPSUtils(Context context) {
+    private LocationUtils(Context context) {
         this.mContext = context;
     }
 
-    public static GPSUtils getInstance(Context context) {
+    public static LocationUtils getInstance(Context context) {
         if (mInstance == null) {
-            mInstance = new GPSUtils(context.getApplicationContext());
+            mInstance = new LocationUtils(context.getApplicationContext());
         }
         return mInstance;
     }

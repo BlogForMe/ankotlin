@@ -40,11 +40,7 @@
         <activity
             android:name=".ui.image.RingCircleImageActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".hilt.HiltEntryActivity"
@@ -120,9 +116,6 @@
             android:name=".ui.image.RoundImageActivity"
             android:exported="true" />
         <activity
-            android:name=".tool.lbs.LBSFirebaseActivity"
-            android:exported="true" />
-        <activity
             android:name=".coroutine.CoroutinesActivity"
             android:exported="true" />
         <activity
@@ -163,8 +156,13 @@
         <activity android:name=".permission.PermissionActivity" />
         <activity
             android:name=".tool.location.GpsActivity"
-            android:exported="true"
-            android:launchMode="singleTop" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".tool.image.ImageHandleActivity" />
         <activity
             android:name=".tool.image.ScreenPhotoActivity"
