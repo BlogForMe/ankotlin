@@ -2,7 +2,6 @@ package com.android.util
 
 import android.Manifest
 import android.app.Activity
-import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -15,6 +14,7 @@ import android.provider.MediaStore
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.android.util.storage.StorageUtil
 import timber.log.Timber
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -251,24 +251,24 @@ class PhotoTakeManger( //布尔值，true：在mActivity进行操作 ；false :F
 
     //裁剪根据文件路径获取uri
     private fun getImageContentUri(context: Context, imgFile: File): Uri? {
-        val filePath = imgFile.absolutePath
-        val cursor = context.contentResolver.query(
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI, arrayOf(MediaStore.Images.Media._ID),
-            MediaStore.Images.Media.DATA + "=?", arrayOf(filePath), null
-        )
-        if (cursor != null && cursor.moveToFirst()) {
-            val id = cursor.getInt(cursor.getColumnIndex(MediaStore.MediaColumns._ID))
-            val baseUri = Uri.parse("content://media/external/images/media")
-            return Uri.withAppendedPath(baseUri, "" + id)
-        } else {
-            if (imgFile.exists()) {
-                val values = ContentValues()
-                values.put(MediaStore.Images.Media.DATA, filePath)
-                return context.contentResolver.insert(
-                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values
-                )
-            }
-        }
+//        val filePath = imgFile.absolutePath
+//        val cursor = context.contentResolver.query(
+//            MediaStore.Images.Media.EXTERNAL_CONTENT_URI, arrayOf(MediaStore.Images.Media._ID),
+//            MediaStore.Images.Media.DATA + "=?", arrayOf(filePath), null
+//        )
+//        if (cursor != null && cursor.moveToFirst()) {
+//            val id = cursor.getInt(cursor.getColumnIndex(MediaStore.MediaColumns._ID))
+//            val baseUri = Uri.parse("content://media/external/images/media")
+//            return Uri.withAppendedPath(baseUri, "" + id)
+//        } else {
+//            if (imgFile.exists()) {
+//                val values = ContentValues()
+//                values.put(MediaStore.Images.Media.DATA, filePath)
+//                return context.contentResolver.insert(
+//                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values
+//                )
+//            }
+//        }
         return null
     }
 

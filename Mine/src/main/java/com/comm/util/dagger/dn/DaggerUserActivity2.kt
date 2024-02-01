@@ -5,10 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.comm.util.MyApplication
 import com.comm.util.R
 import com.comm.util.dagger.dn.di.ApiService
-import com.comm.util.dagger.dn.di.DaggerUserComponent2
 import com.comm.util.dagger.dn.di.User2
 import com.comm.util.dagger.dn.di.UserComponent2
 import javax.inject.Inject
@@ -36,9 +34,9 @@ class DaggerUserActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dagger_user)
-        userComponent = DaggerUserComponent2.builder().applicationComponent2(
-            MyApplication.applicationComponent2
-        ).build()
+//        userComponent = DaggerUserComponent2.builder().applicationComponent2(
+//            MyApplication.applicationComponent2
+//        ).build()
         userComponent?.inject(this)
         Log.i(TAG, "user1: $user1")
         Log.i(TAG, "user2: $user2")

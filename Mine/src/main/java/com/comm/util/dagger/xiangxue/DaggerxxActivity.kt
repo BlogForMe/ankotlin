@@ -22,11 +22,11 @@ class DaggerxxActivity : AppCompatActivity() {
         setContentView(binding.root)
 //        DaggerMyComponent.create().inject(this)
 
-        DaggerMyComponent.builder()
-            .httpModule(HttpModule())
-            .dataBaseModule(DataBaseModule())
-            .build()
-            .inject(this)
+//        DaggerMyComponent.builder()
+//            .httpModule(HttpModule())
+//            .dataBaseModule(DataBaseModule())
+//            .build()
+//            .inject(this)
         Log.i(TAG, "onCreate: httpObject $httpObject  databaseObject  $databaseObject ")
 
 

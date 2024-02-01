@@ -20,7 +20,7 @@ android {
 dependencies {
     testImplementation "junit:junit:4.13.2"
 
-    api 'androidx.appcompat:appcompat:1.5.1'
+    api 'androidx.appcompat:appcompat:1.6.1'
     api 'androidx.legacy:legacy-support-v4:1.0.0'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
@@ -49,8 +49,8 @@ dependencies {
     api "androidx.paging:paging-runtime-ktx:3.1.1"
 
     //hilt
-    api "com.google.dagger:hilt-android:2.44"
-    kapt "com.google.dagger:hilt-android-compiler:2.44"
+    api "com.google.dagger:hilt-android:2.48"
+    kapt "com.google.dagger:hilt-android-compiler:2.48"
 }
 
 ext {

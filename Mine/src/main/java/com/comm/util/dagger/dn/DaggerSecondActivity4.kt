@@ -36,7 +36,7 @@ class DaggerSecondActivity4 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second2)
 
-        DaggerApplicationComponent3.create().studentComponent().create().inject(this)
+//        DaggerApplicationComponent3.create().studentComponent().create().inject(this)
         Log.i(TAG, "student1: $student1 ")
         Log.i(TAG, "student2: $student2 ")
 

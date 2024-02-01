@@ -1,13 +1,18 @@
 package com.kot.tool.location
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.android.util.GPSUtils
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.android.util.LocationUtils
 import com.android.util.viewbind.viewBinding
 import com.kot.R
 import com.kot.databinding.ActivityLocationBinding
@@ -23,42 +28,85 @@ class GpsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_location)
 
         binding.btLocation.setOnClickListener {
-            showLocation()
+            requestLocationPermission()
         }
         binding.btNetwork.setOnClickListener {
-            val locationByNetwork = GPSUtils.getInstance(this).locationByNetwork
-            if (locationByNetwork != null) {
-                Log.i(
-                    "GpsActivity",
-                    "onCreate:   地理位置：lon:${locationByNetwork.longitude};lat:${locationByNetwork.latitude}"
+
+        }
+    }
+
+    private fun getLocation() {
+        val locationByNetwork = LocationUtils.getInstance(this).locationByNetwork
+        if (locationByNetwork != null) {
+            Log.i(
+                "GpsActivity",
+                "onCreate:   地理位置：lon:${locationByNetwork.longitude};lat:${locationByNetwork.latitude}"
+            )
+        }
+    }
+
+    fun requestLocationPermission() {
+        when {
+            ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                // You can use the API that requires the permission.
+                showLocationWithToast()
+            }
+
+            ActivityCompat.shouldShowRequestPermissionRationale(
+                this, Manifest.permission.ACCESS_COARSE_LOCATION
+            ) -> {
+                // In an educational UI, explain to the user why your app requires this
+                // permission for a specific feature to behave as expected, and what
+                // features are disabled if it's declined. In this UI, include a
+                // "cancel" or "no thanks" button that lets the user continue
+                // using your app without granting the permission.
+//                showInContextUI(...)
+                Toast.makeText(this, "go setting", Toast.LENGTH_SHORT).show()
+            }
+
+            else -> {
+                // You can directly ask for the permission.
+                // The registered ActivityResultCallback gets the result of this request.
+                requestPermissionLauncher.launch(
+                    Manifest.permission.ACCESS_COARSE_LOCATION
                 )
             }
         }
     }
 
-    private fun showLocation() {
-//        PermissionUtils.permission(PermissionConstants.LOCATION)
-//            .callback(object : PermissionUtils.FullCallback {
-//                override fun onGranted(permissionsGranted: List<String>) {
-//                    if (GPSUtils.getInstance(this@GpsActivity).isLocationProviderEnabled) {
-//                        showLocationWithToast()
-//                    } else {
-//                        requestLocation()
-//                    }
-//                }
-//
-//                override fun onDenied(
-//                    permissionsDeniedForever: List<String>,
-//                    permissionsDenied: List<String>
-//                ) {
-//                    Toast.makeText(this@GpsActivity, "未获得地理位置权限", Toast.LENGTH_LONG).show()
-//                }
-//            })
-//            .request()
-    }
+
+    // Register the permissions callback, which handles the user's response to the
+// system permissions dialog. Save the return value, an instance of
+// ActivityResultLauncher. You can use either a val, as shown in this snippet,
+// or a lateinit var in your onAttach() or onCreate() method.
+    val requestPermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted: Boolean ->
+            if (isGranted) {
+                // Permission is granted. Continue the action or workflow in your
+                // app.
+                showLocationWithToast()
+            } else {
+                // Explain to the user that the feature is unavailable because the
+                // feature requires a permission that the user has denied. At the
+                // same time, respect the user's decision. Don't link to system
+                // settings in an effort to convince the user to change their
+                // decision.
+                Toast.makeText(
+                    this,
+                    "permission denied ",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+
 
     private fun showLocationWithToast() {
-        val location = GPSUtils.getInstance(this).location
+        val location = LocationUtils.getInstance(this).location
         location?.let {
             Toast.makeText(
                 this,
@@ -91,13 +139,14 @@ class GpsActivity : AppCompatActivity() {
         startActivityForResult(intent, REQUEST_LOCATION_PERMISSION_CODE)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            REQUEST_LOCATION_PERMISSION_CODE -> showLocation()
-            else -> {
-            }
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        when (requestCode) {
+//            REQUEST_LOCATION_PERMISSION_CODE -> showLocation()
+//            else -> {
+//            }
+//        }
+//    }
+
 
 }
