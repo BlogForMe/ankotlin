@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".tool.GoogleMapActivity">
+
+    <Button
+        android:id="@+id/bt_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="map" />
+
+    <Button
+        android:id="@+id/bt_AnotherMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AnotherMap" />
+
+    <Button
+        android:id="@+id/bt_office_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Office Map" />
+
+
+    <Button
+        android:id="@+id/bt_turn_by_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Office Turn by turn" />
+
+    <Button
+        android:id="@+id/bt_GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS" />
+
+</LinearLayout>

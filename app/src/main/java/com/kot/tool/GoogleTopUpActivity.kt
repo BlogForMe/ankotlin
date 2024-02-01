@@ -33,7 +33,7 @@ class GoogleTopUpActivity : AppCompatActivity() {
         binding.btnGoogleAuth.setOnClickListener {
             Intent().apply {
                 action = "com.google.android.payments.standard.AUTHENTICATE_V1"
-                putExtra("gspTopUpRequest", resources.getString(R.string.secret_key_auth))
+                putExtra("gspAssociationId", resources.getString(R.string.secret_key_auth))
             }.let {
                 resultLauncher.launch(it)
             }
