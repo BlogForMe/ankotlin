@@ -1,6 +1,8 @@
 package com.kot.tool
 
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
@@ -9,8 +11,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
 import com.kot.databinding.ActivityGoogleMapBinding
-import com.kot.tool.location.LocationUtils
-import java.util.concurrent.TimeUnit
 
 
 class GoogleMapActivity : AppCompatActivity() {
@@ -33,17 +33,17 @@ class GoogleMapActivity : AppCompatActivity() {
 //geo:latitude,longitude?z=zoom，z表示zoom级别，值为数字1到23
 //geo:0,0?q=my+street+address
 //geo:0,0?q=business+near+city
-//            val mUri = Uri.parse("geo:30.280615, 120.003995?q=EFC")
-//            val mIntent = Intent(Intent.ACTION_VIEW, mUri)
-//            startActivity(mIntent)
-            val toMillis = TimeUnit.SECONDS.toMillis(3000)
-            Log.i(TAG, "onCreate: $toMillis")
+            val mUri = Uri.parse("geo:30.280615, 120.003995?q=address")
+            val mIntent = Intent(Intent.ACTION_VIEW, mUri)
+            startActivity(mIntent)
+//            val toMillis = TimeUnit.SECONDS.toMillis(3000)
+//            Log.i(TAG, "onCreate: $toMillis")
         }
 
 
 
 
-        binding.btAnotherMap.setOnClickListener {
+        binding.btBrowserMap.setOnClickListener {
             val uri =
                 Uri.parse("http://maps.google.com/maps?saddr=30.280615,120.003995")
             val intent = Intent(Intent.ACTION_VIEW, uri)
@@ -79,5 +79,28 @@ class GoogleMapActivity : AppCompatActivity() {
 
             }
         }
+
+
+        binding.checkApp.setOnClickListener {
+            val checkInstallation = checkInstallation(this, "com.google.android.apps.maps")
+            Log.i(TAG, "onCreate: $checkInstallation")
+        }
+
+
     }
+
+    fun checkInstallation(context: Context, packageName: String?): Boolean {
+        // on below line creating a variable for package manager.
+        val pm = context.packageManager
+        return try {
+            // on below line getting package info
+            pm.getPackageInfo(packageName!!, PackageManager.GET_ACTIVITIES)
+            // on below line returning true if package is installed.
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            // returning false if package is not installed on device.
+            false
+        }
+    }
+
 }

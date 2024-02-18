@@ -14,10 +14,10 @@
         android:text="map" />
 
     <Button
-        android:id="@+id/bt_AnotherMap"
+        android:id="@+id/bt_browser_Map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AnotherMap" />
+        android:text="browserMap" />
 
     <Button
         android:id="@+id/bt_office_map"
@@ -38,4 +38,11 @@
         android:layout_height="wrap_content"
         android:text="GPS" />
 
+    <Button
+        android:id="@+id/check_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check app"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_GPS" />
 </LinearLayout>

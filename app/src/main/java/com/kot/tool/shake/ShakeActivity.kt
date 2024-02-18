@@ -53,7 +53,17 @@ class ShakeActivity : AppCompatActivity() {
 //        anim = ObjectAnimator.ofFloat(imgHand, "rotation", 0f, 45f, -30f, 0f)
         anim?.duration = 500
         anim?.repeatCount = ValueAnimator.INFINITE
+
+
+//        val deviceSensors: List<Sensor> = sensorManager?.getSensorList(Sensor.TYPE_ALL)
+//
+        Sensor.TYPE_GRAVITY
+        Sensor.TYPE_GYROSCOPE
+        Sensor.TYPE_LINEAR_ACCELERATION
+
+
     }
+
 
     override fun onResume() {
         val sensor = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
@@ -65,7 +75,7 @@ class ShakeActivity : AppCompatActivity() {
         sensorManager?.registerListener(
             shakeListener,
             sensor,
-            SensorManager.SENSOR_DELAY_FASTEST
+            SensorManager.SENSOR_DELAY_NORMAL
         )
         super.onResume()
     }
@@ -107,11 +117,11 @@ class ShakeActivity : AppCompatActivity() {
 
         override fun onSensorChanged(event: SensorEvent) {
             //避免一直摇
-            if (isShake) {
-                return
-            }
-            // 开始动画
-            anim?.start()
+//            if (isShake) {
+//                return
+//            }
+//            // 开始动画
+//            anim?.start()
             val values = event.values
             /*
 
@@ -122,7 +132,11 @@ class ShakeActivity : AppCompatActivity() {
 //            val x = Math.abs(values[0])
 //            val y = Math.abs(values[1])
 //            val z = Math.abs(values[2])
-//            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
+
+            val x = values[0]
+            val y = values[1]
+            val z = values[2]
+            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
 ////            加速度超过19，摇一摇成功
 //            if (x > 19 || y > 19 || z > 19) {
 //                isShake = true
@@ -168,27 +182,27 @@ class ShakeActivity : AppCompatActivity() {
 //            }
 
 
-            val currentTime = System.currentTimeMillis()
-            val diffTime: Long = currentTime - this.mLastUpdateTime
-            if (diffTime >= 100L) {
-                this.mLastUpdateTime = currentTime
-                val x = event.values[0]
-                val y = event.values[1]
-                val z = event.values[2]
-                val deltaX: Float = x - this.mLastX
-                val deltaY: Float = y - this.mLastY
-                val deltaZ: Float = z - this.mLastZ
-                this.mLastX = x
-                this.mLastY = y
-                this.mLastZ = z
-                val delta =
-                    Math.sqrt((deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ).toDouble())
-                        .toFloat() / diffTime.toFloat() * 10000.0f
-                val mIsShaking = delta > this.mShakeThreshold.toFloat()
-                if (mIsShaking) {
-                    startShake()
-                }
-            }
+//            val currentTime = System.currentTimeMillis()
+//            val diffTime: Long = currentTime - this.mLastUpdateTime
+//            if (diffTime >= 100L) {
+//                this.mLastUpdateTime = currentTime
+//                val x = event.values[0]
+//                val y = event.values[1]
+//                val z = event.values[2]
+//                val deltaX: Float = x - this.mLastX
+//                val deltaY: Float = y - this.mLastY
+//                val deltaZ: Float = z - this.mLastZ
+//                this.mLastX = x
+//                this.mLastY = y
+//                this.mLastZ = z
+//                val delta =
+//                    Math.sqrt((deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ).toDouble())
+//                        .toFloat() / diffTime.toFloat() * 10000.0f
+//                val mIsShaking = delta > this.mShakeThreshold.toFloat()
+//                if (mIsShaking) {
+//                    startShake()
+//                }
+//            }
 
         }
 

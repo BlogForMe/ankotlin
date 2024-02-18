@@ -1,8 +1,11 @@
 package com.kot.tool.location
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.LocationManager
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
@@ -32,6 +35,12 @@ class GpsActivity : AppCompatActivity() {
         }
         binding.btNetwork.setOnClickListener {
 
+        }
+        binding.btGps.setOnClickListener {
+            openGpsPage()
+        }
+        binding.btPermission.setOnClickListener {
+            settingPermissionPage()
         }
     }
 
@@ -147,6 +156,35 @@ class GpsActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
+
+    fun openGpsPage() {
+        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { _, _ ->
+                    startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                }
+                .setNegativeButton("No") { dialog, _ -> dialog.cancel() }
+            val alert = builder.create()
+            alert.show()
+        }
+    }
+
+    fun settingPermissionPage() {
+        val intent = Intent().apply {
+            action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+            addCategory(Intent.CATEGORY_DEFAULT)
+            data = Uri.parse("package:" + this@GpsActivity.packageName)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            flags = Intent.FLAG_ACTIVITY_NO_HISTORY
+            flags = Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+    }
 
 
 }

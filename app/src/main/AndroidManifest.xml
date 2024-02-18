@@ -29,6 +29,12 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
+
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -55,7 +61,11 @@
         <activity
             android:name=".tool.GoogleMapActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.image.RingCircleImageActivity"
@@ -188,11 +198,6 @@
         <activity
             android:name=".tool.location.GpsActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".tool.image.ImageHandleActivity" />
         <activity
