@@ -35,26 +35,26 @@ class ComposeActivity04 : AppCompatActivity() {
         }
     }
 
-    @Composable
-    fun MessageCard(msg: Message) {
-        Row(
+
+}
+
+@Composable
+fun MessageCard(msg: Message) {
+    Row(
+        modifier = Modifier
+            .padding(all = 8.dp)
+            .background(MaterialTheme.colorScheme.background)
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.id_korean),
+            contentDescription = "contact profile ",
             modifier = Modifier
-                .padding(all = 8.dp)
-                .background(MaterialTheme.colorScheme.background)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.id_korean),
-                contentDescription = "contact profile ",
-                modifier = Modifier
-                    .size(40.dp)
-                    .clip(CircleShape)
-            )
-            Column {
-                Text(text = msg.author)
-                Text(text = msg.body)
-            }
+                .size(40.dp)
+                .clip(CircleShape)
+        )
+        Column {
+            Text(text = msg.author)
+            Text(text = msg.body)
         }
     }
-
-
 }
