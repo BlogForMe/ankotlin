@@ -22,6 +22,7 @@ import android.view.LayoutInflater
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.kot.R
+import kotlin.math.log
 
 /**
  * https://juejin.cn/post/6844903743595479054
@@ -49,6 +50,9 @@ class ShakeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_shake)
         imgHand = findViewById(R.id.imgHand)
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+
+
+
         shakeListener = ShakeSensorListener()
 //        anim = ObjectAnimator.ofFloat(imgHand, "rotation", 0f, 45f, -30f, 0f)
         anim?.duration = 500
@@ -72,11 +76,12 @@ class ShakeActivity : AppCompatActivity() {
             return
         }
         //注册监听加速度传感器
-        sensorManager?.registerListener(
+        val registerListener = sensorManager?.registerListener(
             shakeListener,
             sensor,
             SensorManager.SENSOR_DELAY_NORMAL
         )
+        Log.i("TAG", "onResume: $registerListener")
         super.onResume()
     }
 
@@ -206,7 +211,9 @@ class ShakeActivity : AppCompatActivity() {
 
         }
 
-        override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+        override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
+            Log.i("TAG", "onAccuracyChanged: ")
+        }
     }
 
 

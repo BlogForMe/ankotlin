@@ -45,4 +45,33 @@
         android:text="check app"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_GPS" />
+
+    <Button
+        android:id="@+id/check_app_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check install app open"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_GPS" />
+
+
+    <Button
+        android:id="@+id/btn_intent_android14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=" intent_android14 "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_app_open" />
+
+    <Button
+        android:id="@+id/btn_wise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=" wise direction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_intent_android14" />
 </LinearLayout>

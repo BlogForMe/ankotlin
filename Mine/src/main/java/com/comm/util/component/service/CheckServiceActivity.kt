@@ -9,7 +9,9 @@ import android.os.IBinder
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.android.util.viewbind.viewBinding
 import com.comm.util.R
+import com.comm.util.databinding.ActivityCheckServiceBinding
 import timber.log.Timber
 
 /**
@@ -20,14 +22,16 @@ import timber.log.Timber
 class CheckServiceActivity : AppCompatActivity() {
     private var mShouldUnbind = false
 
+    val binding by viewBinding(ActivityCheckServiceBinding::inflate)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_check_service)
-        val intent = Intent(this, ServiceLifeCycle::class.java)
-        intent.putExtra(PARRAM, "CANS")
-//        bt_start_service.setOnClickListener { v: View? ->
-//            startService(intent)
-//        }
+//        val intent = Intent(this, ServiceLifeCycle::class.java)
+        val intent = Intent("com.example.service.android14")
+//        intent.putExtra(PARRAM, "CANS")
+        intent.`package` = "com.comm.util"
+        binding.btStartService.setOnClickListener { v: View? ->
+            startService(intent)
+        }
 //        bt_stop_service.setOnClickListener {
 //            stopService(intent)
 //        }

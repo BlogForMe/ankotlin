@@ -47,4 +47,5 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_activity_progress_bar">ProgressBarActivity</string>
     <string name="title_activity_google_maps">GoogleMapsActivity</string>
+    <string name="title_activity_android14">Android14Activity</string>
 </resources>

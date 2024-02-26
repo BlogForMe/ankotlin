@@ -1,5 +1,6 @@
 package com.kot.tool
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -82,24 +83,81 @@ class GoogleMapActivity : AppCompatActivity() {
 
 
         binding.checkApp.setOnClickListener {
-            val checkInstallation = checkInstallation(this, "com.google.android.apps.maps")
-            Log.i(TAG, "onCreate: $checkInstallation")
+            val checkInstallation = isPackageInstalled(this, "com.google.android.apps.maps")
+            Log.i(TAG, "googleMap: $checkInstallation")
+            Log.i(TAG, "youtube: ${isPackageInstalled(this, "com.google.android.youtube")}")
+            Log.i(TAG, "gaodemap: ${isPackageInstalled(this, "com.autonavi.minimap")}")
+            Log.i(TAG, "baidumap: ${isPackageInstalled(this, "com.baidu.BaiduMap")}")
+            Log.i(TAG, "waze: ${isPackageInstalled(this, "com.waze")}")
+        }
+
+        binding.checkAppOpen.setOnClickListener {
+            //Check if Youtube application is installed
+//            var packagename = "com.google.android.apps.maps"
+//            var packagename = "com.google.android.youtube"
+//            var packagename = "com.autonavi.minimap"
+//            val packagename = "com.baidu.BaiduMap"
+            var packagename = "com.waze"
+            checkPackageInstalled(this, packagename)
         }
 
 
+        binding.btnIntentAndroid14.setOnClickListener {
+            // This makes the intent explicit.
+            val explicitIntent =
+                Intent("com.activity.action.android14")
+            explicitIntent.apply {
+                `package` = packageName
+            }
+            startActivity(explicitIntent)
+        }
+
+
+        binding.btnWise.setOnClickListener {
+            try {
+                // Launch Waze to look for Hawaii:
+                val url = "https://waze.com/ul?ll=30.280615,120.003995"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            } catch (ex: ActivityNotFoundException) {
+                // If Waze is not installed, open it in Google Play:
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"))
+                startActivity(intent)
+            }
+        }
+
     }
 
-    fun checkInstallation(context: Context, packageName: String?): Boolean {
-        // on below line creating a variable for package manager.
-        val pm = context.packageManager
-        return try {
-            // on below line getting package info
-            pm.getPackageInfo(packageName!!, PackageManager.GET_ACTIVITIES)
-            // on below line returning true if package is installed.
-            true
+
+    fun isPackageInstalled(context: Context, packagename: String): Boolean {
+        var result = false
+        try {
+            // is the application installed?
+            context.packageManager.getPackageInfo(packagename, PackageManager.GET_ACTIVITIES)
+            result = true
         } catch (e: PackageManager.NameNotFoundException) {
-            // returning false if package is not installed on device.
-            false
+            //Not installed
+        }
+        return result
+    }
+
+
+    fun checkPackageInstalled(context: Context, packagename: String?) {
+        try {
+            // is the application installed?
+            context.packageManager.getPackageInfo(packagename!!, PackageManager.GET_ACTIVITIES)
+            //Open app!
+            val launchIntent = packageManager.getLaunchIntentForPackage(packagename)
+            launchIntent?.let { startActivity(it) }
+        } catch (e: PackageManager.NameNotFoundException) {
+            Log.i(TAG, "No existe app instalada " + e.message)
+            //Not installed, open Play store
+            context.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=" + packagename)
+                )
+            )
         }
     }
 
