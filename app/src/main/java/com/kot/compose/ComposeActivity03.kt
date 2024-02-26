@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -42,8 +43,14 @@ class ComposeActivity03 : AppCompatActivity() {
                 Text(text = msg.author)
                 Text(text = msg.body)
             }
+            Button(onClick = {
+                ComposeDialogFragment().show(this@ComposeActivity03.supportFragmentManager, null)
+            }) {
+                Text(text = "show dialog")
+            }
         }
     }
 
 
 }
+
