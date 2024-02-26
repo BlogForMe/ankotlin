@@ -42,8 +42,6 @@ class GoogleMapActivity : AppCompatActivity() {
         }
 
 
-
-
         binding.btBrowserMap.setOnClickListener {
             val uri =
                 Uri.parse("http://maps.google.com/maps?saddr=30.280615,120.003995")
