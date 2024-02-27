@@ -82,7 +82,11 @@
         <activity
             android:name=".tool.GoogleMapActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.image.RingCircleImageActivity"
@@ -214,11 +218,7 @@
         <activity
             android:name=".compose.ComposeActivity03"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".tool.location.GpsActivity"

@@ -114,12 +114,16 @@ class GoogleMapActivity : AppCompatActivity() {
         binding.btnWise.setOnClickListener {
             try {
                 // Launch Waze to look for Hawaii:
-                val url = "https://waze.com/ul?ll=30.280615,120.003995"
+                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
             } catch (ex: ActivityNotFoundException) {
                 // If Waze is not installed, open it in Google Play:
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"))
+                val intent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("market://details?id=com.google.android.apps.maps")
+                )
+//                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"))
                 startActivity(intent)
             }
         }
