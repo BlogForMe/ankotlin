@@ -17,6 +17,10 @@ object SampleData {
         Message("Colleague", "LiLi1"),
         Message("Colleague", "LiLi2"),
         Message("Colleague", "LiLi3"),
-        Message("Colleague", "LiLi4")
+        Message("Colleague", "LiLi4"),
+        Message("Colleague", "LiLi5"),
+        Message("Colleague", "LiLi5"),
+        Message("Colleague", "LiLi5"),
+        Message("Colleague", "LiLi5"),
     )
 }
