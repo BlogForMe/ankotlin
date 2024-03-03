@@ -168,7 +168,7 @@ class ComposeActivity05 : AppCompatActivity() {
                 repeat(6) {
                     Box(
                         modifier = Modifier
-                            .height(128.dp)
+                            .height(140.dp)
                             .verticalScroll(rememberScrollState())
                     ) {
                         Text(
@@ -177,7 +177,7 @@ class ComposeActivity05 : AppCompatActivity() {
                                 .border(12.dp, Color.DarkGray)
                                 .background(Color.Yellow)
                                 .padding(24.dp)
-                                .height(150.dp)
+                                .height(200.dp)
                         )
                     }
                 }
