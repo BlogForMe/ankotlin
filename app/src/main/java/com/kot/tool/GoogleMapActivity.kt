@@ -39,7 +39,7 @@ class GoogleMapActivity : AppCompatActivity() {
             try {
                 // Launch Waze to look for Hawaii:
 //                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
-                val url = "https://waze.com/ul?q=$address"
+                val url = "https://waze.com/ul?q=No 4, JALAN SM 1, BANDAR SUNWA"
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
             } catch (ex: ActivityNotFoundException) {
