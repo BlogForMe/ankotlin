@@ -27,7 +27,7 @@ class GoogleMapActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.btGoogleMap.setOnClickListener {
-            val mUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$address")
+            val mUri = Uri.parse("https://www.google.com/maps/dir/?api=1&destination=$address")
             val mIntent = Intent(Intent.ACTION_VIEW, mUri)
             startActivity(mIntent)
 //            val toMillis = TimeUnit.SECONDS.toMillis(3000)
