@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
 import com.kot.databinding.ActivityGoogleMapBinding
+import java.net.URLEncoder
 
 
 class GoogleMapActivity : AppCompatActivity() {
@@ -19,22 +20,14 @@ class GoogleMapActivity : AppCompatActivity() {
     val TAG = "GoogleMapActivity"
 
     val binding by viewBinding(ActivityGoogleMapBinding::inflate)
+    val address =
+        URLEncoder.encode("Efc Live Euro-American Plaza, 896 Jingxing Rd, 896, Yuhang District, Hangzhou, Zhejiang, China")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.btMap.setOnClickListener {
-
-//geo:latitude,longitude
-//geo:latitude,longitude?z=zoom，z表示zoom级别，值为数字1到23
-//geo:0,0?q=my+street+address
-//geo:0,0?q=business+near+city
-
-//geo:latitude,longitude
-//geo:latitude,longitude?z=zoom，z表示zoom级别，值为数字1到23
-//geo:0,0?q=my+street+address
-//geo:0,0?q=business+near+city
-            val mUri = Uri.parse("geo:30.280615, 120.003995?q=address")
+        binding.btGoogleMap.setOnClickListener {
+            val mUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$address")
             val mIntent = Intent(Intent.ACTION_VIEW, mUri)
             startActivity(mIntent)
 //            val toMillis = TimeUnit.SECONDS.toMillis(3000)
@@ -42,9 +35,28 @@ class GoogleMapActivity : AppCompatActivity() {
         }
 
 
+        binding.btnWise.setOnClickListener {
+            try {
+                // Launch Waze to look for Hawaii:
+//                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
+                val url = "https://waze.com/ul?q=$address"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            } catch (ex: ActivityNotFoundException) {
+                // If Waze is not installed, open it in Google Play:
+                val intent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("market://details?id=com.waze")
+//                    Uri.parse("market://details?id=com.google.android.apps.maps")
+                )
+//                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"))
+                startActivity(intent)
+            }
+        }
+
         binding.btBrowserMap.setOnClickListener {
             val uri =
-                Uri.parse("http://maps.google.com/maps?saddr=30.280615,120.003995")
+                Uri.parse("http://maps.google.com/maps?daddr=30.280615,120.003995")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
@@ -110,23 +122,6 @@ class GoogleMapActivity : AppCompatActivity() {
             startActivity(explicitIntent)
         }
 
-
-        binding.btnWise.setOnClickListener {
-            try {
-                // Launch Waze to look for Hawaii:
-                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                startActivity(intent)
-            } catch (ex: ActivityNotFoundException) {
-                // If Waze is not installed, open it in Google Play:
-                val intent = Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=com.google.android.apps.maps")
-                )
-//                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"))
-                startActivity(intent)
-            }
-        }
 
     }
 
