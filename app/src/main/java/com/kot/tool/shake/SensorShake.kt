@@ -50,7 +50,7 @@ class SensorShake(private val listener: Listener) : SensorEventListener {
     @JvmOverloads
     fun start(
         sensorManager: SensorManager,
-        sensorDelay: Int = SensorManager.SENSOR_DELAY_FASTEST
+        sensorDelay: Int = SensorManager.SENSOR_DELAY_FASTEST,
     ): Boolean {
         // Already started?
         if (accelerometer != null) {
@@ -138,9 +138,7 @@ class SensorShake(private val listener: Listener) : SensorEventListener {
             added.timestamp = timestamp
             added.accelerating = accelerating
             added.next = null
-            if (newest != null) {
-                newest!!.next = added
-            }
+            newest?.next = added
             newest = added
             if (oldest == null) {
                 oldest = added

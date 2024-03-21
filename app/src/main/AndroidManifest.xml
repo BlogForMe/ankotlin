@@ -84,7 +84,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -216,7 +215,7 @@
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />
         <activity
-            android:name=".compose.ComposeActivity03"
+            android:name=".compose.ComposeActivity01"
             android:exported="true">
 
         </activity>

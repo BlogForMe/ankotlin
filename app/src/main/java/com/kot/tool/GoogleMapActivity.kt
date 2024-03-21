@@ -20,16 +20,29 @@ class GoogleMapActivity : AppCompatActivity() {
     val TAG = "GoogleMapActivity"
 
     val binding by viewBinding(ActivityGoogleMapBinding::inflate)
+//    val address =
+//       URLEncoder.encode( "Efc Live Euro-American Plaza, 896 Jingxing Rd, 896, Yuhang District, Hangzhou, Zhejiang, China","utf-8")
+
     val address =
-        URLEncoder.encode("Efc Live Euro-American Plaza, 896 Jingxing Rd, 896, Yuhang District, Hangzhou, Zhejiang, China")
+        URLEncoder.encode(
+            "No. 45, First Floor, 45, Jalan SS 15/8a, Ss 15, 47500 Subang Jaya, Selangor",
+            Charsets.UTF_8.name()
+        )
+
+//    val address =
+//        "Efc Live Euro-American Plaza, 896 Jingxing Rd, 896, Yuhang District, Hangzhou, Zhejiang, China"
+//    val address =
+//        "Shop 6-120, Building 6, Future Star Chen (Direct access from Wing Fuk MTR Exit D and E)"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.btGoogleMap.setOnClickListener {
-            val mUri = Uri.parse("https://www.google.com/maps/dir/?api=1&destination=$address")
+            val mUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$address")
+
             val mIntent = Intent(Intent.ACTION_VIEW, mUri)
             startActivity(mIntent)
+            Log.i(TAG, "onCreate: ${Charsets.UTF_8.name()}")
 //            val toMillis = TimeUnit.SECONDS.toMillis(3000)
 //            Log.i(TAG, "onCreate: $toMillis")
         }
@@ -38,8 +51,8 @@ class GoogleMapActivity : AppCompatActivity() {
         binding.btnWise.setOnClickListener {
             try {
                 // Launch Waze to look for Hawaii:
-//                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
-                val url = "https://waze.com/ul?q=No 4, JALAN SM 1, BANDAR SUNWA"
+                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
+//                val url = "https://waze.com/ul?q=$address"
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
             } catch (ex: ActivityNotFoundException) {
@@ -56,15 +69,17 @@ class GoogleMapActivity : AppCompatActivity() {
 
         binding.btBrowserMap.setOnClickListener {
             val uri =
-                Uri.parse("http://maps.google.com/maps?daddr=30.280615,120.003995")
+                Uri.parse("https://www.google.com/maps/search/?api=1&query=$address")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
         binding.btOfficeMap.setOnClickListener {
             // Display a label at the location of Google's Sydney office
+//            val gmmIntentUri =
+//                Uri.parse("geo:0,0?q=30.280615, 120.003995")
             val gmmIntentUri =
-                Uri.parse("geo:0,0?q=30.280615, 120.003995(Google+EFC)")
+                Uri.parse("geo:0,0?q=30.280615, 120.003995")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
@@ -123,6 +138,21 @@ class GoogleMapActivity : AppCompatActivity() {
         }
 
 
+        binding.btnCommonMap.setOnClickListener {
+            val uri =
+                Uri.parse("geo:0,0?q=30.280615, 120.003995")
+            showMap(uri)
+        }
+    }
+
+
+    fun showMap(geoLocation: Uri) {
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            data = geoLocation
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
     }
 
 
