@@ -215,7 +215,7 @@
         <activity android:name=".tool.screenshot.ScreenShortActivity" />
         <activity android:name=".permission.PermissionActivity" />
         <activity
-            android:name=".compose.ComposeActivity01"
+            android:name=".compose.ComposeActivity05"
             android:exported="true">
 
         </activity>
