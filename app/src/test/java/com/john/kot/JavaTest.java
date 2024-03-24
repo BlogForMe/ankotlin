@@ -1,5 +1,8 @@
 package com.kot;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.junit.Test;
 
 /**
@@ -41,6 +44,14 @@ public class JavaTest {
         String[] split2 = "earn\rreturn".split("\\s");
         String[] split3 = "earn\nreturn".split("\\s");
         System.out.println(split);
+    }
 
+    @Test
+    public void groupTest() {
+        Pattern compile = Pattern.compile("(?<teste>\\w+)");
+        Matcher matcher = compile.matcher("The first word is a match");
+        matcher.find();
+        String myNamedGroup = matcher.group("teste");
+        System.out.printf("This is yout named group: %s", myNamedGroup);
     }
 }
