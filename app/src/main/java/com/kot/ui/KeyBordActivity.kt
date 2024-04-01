@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
 import com.kot.databinding.ActivityKeyBordBinding
 
-
+// https://skyacer.github.io/2017/09/12/Android-Disable-Emoji-in-Edittext/
 class KeyBordActivity : AppCompatActivity() {
 
     val binding by viewBinding(ActivityKeyBordBinding::inflate)
@@ -14,7 +14,7 @@ class KeyBordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.etText.filters = arrayOf(EMOJI_FILTER)
+        binding.etText.filters = arrayOf(filters)
 
     }
 }
@@ -28,3 +28,10 @@ var EMOJI_FILTER = InputFilter { source, start, end, dest, dstart, dend ->
     }
     null
 }
+
+val filters =
+    InputFilter { source, _, _, _, _, _ ->
+        source.filter {
+            Character.getType(it) != Character.SURROGATE.toInt() && Character.getType(it) != Character.OTHER_SYMBOL.toInt()
+        }
+    }
