@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+: enter homepage;
+fork
+: API: com.abl.wallet.balance;
+:WalletBalanceBean;
+fork again
+if (AMCS: in-app-services-gokredit?) is (yes) then
+:true;
+:API: ap.tngdwallet.finprod.query.account.statuses;
+:FinanceAccountStatus;
+if (goplusStatus || gocreditStatus?) is (yes) then
+  :true;
+  :API: ap.tngdwallet.balance.combine;
+  :UserAccountBean;
+else (no)
+  :false;
+  stop
+endif
+
+else (no)
+  :API: ap.tngdwallet.finprod.account.status;
+  :GoPlusStatusResult;
+ if (ACTIVATED_YES == status?) is (yes) then
+   :true;
+   :API: ap.tngdwallet.balance.combine;
+   :UserAccountBean;
+ else (no)
+   :false;
+   stop
+ endif
+endif
+:HomeBean;
+
+@enduml

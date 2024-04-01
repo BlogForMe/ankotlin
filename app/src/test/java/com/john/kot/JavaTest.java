@@ -1,8 +1,13 @@
 package com.john.kot;
 
+import java.util.Map;
+import java.util.function.Function;
+import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
+import org.gradle.internal.impldep.org.junit.Test;
 import org.junit.Test;
 
 import static android.opengl.Matrix.length;
@@ -59,11 +64,32 @@ public class JavaTest {
 
     @Test
     public void groupTest() {
-        Pattern compile = Pattern.compile("(?<teste>\\w+)");
-        Matcher matcher = compile.matcher("The first word is a match");
+        String pattern = "^(000202)(010211)(.*?)(0014A0000006150001)(?<bankId>010689003)(.*)";
+        String strtext
+            =
+            "00020201021126470014A0000006150001010689003802150000100000105195204539953034585802MY5922FNX";
+        Pattern compile = Pattern.compile(pattern);
+        Matcher matcher = compile.matcher(strtext);
         matcher.find();
-        String myNamedGroup = matcher.group("teste");
+        String myNamedGroup = matcher.group("bankId");
         System.out.printf("This is yout named group: %s", myNamedGroup);
     }
+
+    @Test
+    public void tett() {
+
+        String name = "2023-06-05 johndoe123";
+        Pattern regex = Pattern.compile("(?<date>[0-9-]+) (?<user>\\w+)");
+        Matcher matcher = regex.matcher(name);
+        if (matcher.matches()) {
+            MatchResult matchResult = matcher.toMatchResult();
+            Map<String, String> groups = matcher.namedGroups().keySet().stream()
+                .collect(Collectors.toUnmodifiableMap(
+                    Function.identity(), matcher::group));
+
+            System.out.println(groups); // {date=2023-06-05, user=johndoe123}
+        }
+    }
+
 
 }

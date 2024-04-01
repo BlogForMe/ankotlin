@@ -49,22 +49,22 @@ class GoogleMapActivity : AppCompatActivity() {
 
 
         binding.btnWise.setOnClickListener {
-            try {
-                // Launch Waze to look for Hawaii:
-                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
-//                val url = "https://waze.com/ul?q=$address"
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                startActivity(intent)
-            } catch (ex: ActivityNotFoundException) {
+//            try {
+//                // Launch Waze to look for Hawaii:
+//                val url = "https://waze.com/ul?ll=30.280615,120.003995&navigate=yes"
+////                val url = "https://waze.com/ul?q=$address"
+//                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+//                startActivity(intent)
+//            } catch (ex: ActivityNotFoundException) {
                 // If Waze is not installed, open it in Google Play:
                 val intent = Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=com.waze")
+                    Uri.parse("market://details?id=my.com.tngdigital.ewallet.uat")
 //                    Uri.parse("market://details?id=com.google.android.apps.maps")
                 )
 //                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"))
                 startActivity(intent)
-            }
+//            }
         }
 
         binding.btBrowserMap.setOnClickListener {
@@ -140,8 +140,14 @@ class GoogleMapActivity : AppCompatActivity() {
 
         binding.btnCommonMap.setOnClickListener {
             val uri =
-                Uri.parse("geo:0,0?q=30.280615, 120.003995")
+                Uri.parse("geo:0,0?q=${URLEncoder.encode("欧美金融城", "UTF-8")}")
             showMap(uri)
+        }
+
+        binding.btnCommonTv.setOnClickListener {
+            val regex = Regex("(?<bla>.*)")
+            val groups = regex.matchEntire("abc")?.groups
+            println("*" + groups?.get("bla")?.value + "*")
         }
     }
 

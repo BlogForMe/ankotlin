@@ -4,6 +4,7 @@ import com.android.util.printArray
 import com.kot.util.SpanStringUtils
 import org.junit.Assert
 import org.junit.Test
+import java.util.regex.Pattern
 
 /**
  *
@@ -54,5 +55,22 @@ class RegularTest {
 
     }
 
+    @Test
+    fun bankId() {
+        val pattern = "^(000202)(010211)(.*?)(0014A0000006150001)(?<bankId>010689003)(.*)"
+        val strtext =
+            "00020201021126470014A0000006150001010689003802150000100000105195204539953034585802MY5922FNX"
+        val compile = Pattern.compile(pattern)
+        val matcher = compile.matcher(strtext)
+        matcher.find()
+        val myNamedGroup = matcher.group("bankId")
+        System.out.printf("This is yout named group: %s", myNamedGroup)
+    }
+
+
+    @Test
+    fun testId() {
+
+    }
 
 }
