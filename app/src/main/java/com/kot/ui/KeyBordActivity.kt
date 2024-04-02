@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.util.viewbind.viewBinding
 import com.kot.databinding.ActivityKeyBordBinding
 
-
+// https://skyacer.github.io/2017/09/12/Android-Disable-Emoji-in-Edittext/
 class KeyBordActivity : AppCompatActivity() {
 
     val binding by viewBinding(ActivityKeyBordBinding::inflate)
@@ -14,19 +14,8 @@ class KeyBordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // demo 中默认 LimitEditText 只能输入字母数字和标点符号
-//        binding.letMain
+        binding.etText.filters = arrayOf(filters)
 
-        // 延时主要是更方便观察
-//        window.decorView.postDelayed({
-//            // 注意,获得焦点需要自己再处理下,其实很简单,如下:
-//            binding.letMain.isFocusable = true
-//            binding.letMain.isFocusableInTouchMode = true
-//            binding.letMain.requestFocus()
-//        }, 1000)
-
-        binding.letMain.filters =
-            arrayOf(filter)
     }
     private val blockCharacterSet = "~#^|$%&*!";
 
@@ -38,3 +27,20 @@ class KeyBordActivity : AppCompatActivity() {
             } else null
         }
 }
+
+var EMOJI_FILTER = InputFilter { source, start, end, dest, dstart, dend ->
+    for (index in start until end) {
+        val type = Character.getType(source[index])
+        if (type == Character.SURROGATE.toInt()) {
+            return@InputFilter ""
+        }
+    }
+    null
+}
+
+val filters =
+    InputFilter { source, _, _, _, _, _ ->
+        source.filter {
+            Character.getType(it) != Character.SURROGATE.toInt() && Character.getType(it) != Character.OTHER_SYMBOL.toInt()
+        }
+    }
