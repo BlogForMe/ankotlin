@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.KeyBordActivity">
 
-    <com.kot.ui.LimitEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/let_main"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         android:hint="Hello World!"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
