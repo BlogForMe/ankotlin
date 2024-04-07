@@ -70,6 +70,8 @@ class ShakeActivity : AppCompatActivity() {
 
 
     override fun onResume() {
+        super.onResume()
+
         val sensor = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         if (sensor == null) {
             Log.i("ShakeActivity", "onResume: Failure! No magnetometer.")
@@ -82,7 +84,6 @@ class ShakeActivity : AppCompatActivity() {
             SensorManager.SENSOR_DELAY_NORMAL
         )
         Log.i("TAG", "onResume: $registerListener")
-        super.onResume()
     }
 
     override fun onPause() {
