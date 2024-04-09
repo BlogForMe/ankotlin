@@ -18,7 +18,9 @@ import androidx.core.content.ContextCompat
 import com.android.util.LocationUtils
 import com.android.util.viewbind.viewBinding
 import com.kot.R
+import com.kot.compose.ComposeDialogFragment
 import com.kot.databinding.ActivityLocationBinding
+import com.kot.ui.BottomSheetReview
 
 class GpsActivity : AppCompatActivity() {
     val binding by viewBinding(ActivityLocationBinding::inflate)
@@ -28,7 +30,7 @@ class GpsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_location)
+        setContentView(binding.root)
 
         binding.btLocation.setOnClickListener {
             requestLocationPermission()
@@ -41,6 +43,13 @@ class GpsActivity : AppCompatActivity() {
         }
         binding.btPermission.setOnClickListener {
             settingPermissionPage()
+        }
+
+        binding.btBottomSheet.setOnClickListener {
+            ComposeDialogFragment().show(this.supportFragmentManager, null)
+        }
+        binding.btBottomDialog.setOnClickListener {
+            BottomSheetReview().show(supportFragmentManager, null)
         }
     }
 

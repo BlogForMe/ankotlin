@@ -38,6 +38,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.kot.R
@@ -70,8 +71,8 @@ class ComposeDialogFragment : BottomSheetDialogFragment() {
         return ComposeView(requireActivity()).apply {
             setContent {
                 Surface(modifier = Modifier.fillMaxWidth()) {
-//                    BottomSheetDemo()
-                    BottomNavigationContent(Message("Android", "Jectpack compse"))
+                    BottomSheetDemo()
+//                    BottomNavigationContent(Message("Android", "Jectpack compse"))
                 }
             }
         }
