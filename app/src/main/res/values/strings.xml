@@ -48,4 +48,12 @@
     <string name="title_activity_progress_bar">ProgressBarActivity</string>
     <string name="title_activity_google_maps">GoogleMapsActivity</string>
     <string name="title_activity_android14">Android14Activity</string>
+
+    <string name="cat_textfield_label" translatable="false">test Label</string>
+    <string name="cat_textfield_password" translatable="false">Password</string>
+    <string name="cat_textfield_error" translatable="false">Error</string>
+    <string name="cat_textfield_placeholder_text" translatable="false">Placeholder text</string>
+
+    <string name="cat_textfield_filled_helper_text" translatable="false">Filled text field</string>
+
 </resources>

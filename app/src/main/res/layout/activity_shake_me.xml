@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -24,6 +25,27 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="stop" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="@dimen/material_textinput_default_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
+        android:hint="@string/cat_textfield_label"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:errorEnabled="true"
+        app:boxStrokeColor="#0064FF"
+        app:helperText="@string/cat_textfield_filled_helper_text"
+        app:helperTextEnabled="true"
+        app:placeholderText="@string/cat_textfield_placeholder_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#0064FF" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

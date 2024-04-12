@@ -185,18 +185,22 @@
         <activity
             android:name=".component.service.CheckServiceActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".dialog.dw.ProgressBarActivity" />
         <activity
             android:name=".ui.tab.TabLayoutActivity"
             android:exported="true"></activity>
         <activity android:name=".ui.tab.TabBottomActivity" />
-        <activity android:name=".openlib.rxretrofit.retrofit.RetrofitActivity" />
+        <activity
+            android:name=".openlib.rxretrofit.retrofit.RetrofitActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".anim.gesture.GestureDetectorActivity" />
         <activity android:name=".anim.slide.SlideFirstActivity" />
         <activity
