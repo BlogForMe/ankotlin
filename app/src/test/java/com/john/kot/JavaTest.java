@@ -7,11 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import org.gradle.internal.impldep.org.junit.Test;
 import org.junit.Test;
 
-import static android.opengl.Matrix.length;
-import static com.kot.RegistrationUtilTestKt.SCENE_MONEY_PACKET_CREATED;
 import static com.kot.RegistrationUtilTestKt.SCENE_MONEY_PACKET_ClAIMED;
 
 /**
@@ -83,13 +80,16 @@ public class JavaTest {
         Matcher matcher = regex.matcher(name);
         if (matcher.matches()) {
             MatchResult matchResult = matcher.toMatchResult();
-            Map<String, String> groups = matcher.namedGroups().keySet().stream()
-                .collect(Collectors.toUnmodifiableMap(
-                    Function.identity(), matcher::group));
-
-            System.out.println(groups); // {date=2023-06-05, user=johndoe123}
+            //Map<String, String> groups = matcher.namedGroups().keySet().stream()
+            //    .collect(Collectors.toUnmodifiableMap(
+            //        Function.identity(), matcher::group));
+            //
+            //System.out.println(groups); // {date=2023-06-05, user=johndoe123}
         }
     }
 
+    public static void main(String[] args) {
+
+    }
 
 }
