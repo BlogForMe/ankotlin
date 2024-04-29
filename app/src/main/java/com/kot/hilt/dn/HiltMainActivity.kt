@@ -1,9 +1,11 @@
 package com.kot.hilt.dn
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.kot.databinding.ActivityHiltMainBinding
+import com.kot.hilt.dn.di.InterfaceUser
 import com.kot.hilt.dn.di.MainViewModel
 import com.kot.hilt.dn.di.User
 import com.kot.hilt.dn.di.User1
@@ -23,10 +25,10 @@ class HiltMainActivity : AppCompatActivity() {
     lateinit var user1: User1
 
     @Inject
-    lateinit var user3: User2
+    lateinit var user3: InterfaceUser
 
-    @Inject
-    lateinit var user4: User2
+//    @Inject
+//    lateinit var user4: User2
 
 //    @Inject
 //    lateinit var viewModel: HiltViewModel3
@@ -35,10 +37,11 @@ class HiltMainActivity : AppCompatActivity() {
 //    @Inject
 //    lateinit var viewModel1: HiltViewModel4
 //
-//    @Inject
-//    lateinit var viewModel5: HiltViewModel5
+@Inject
+lateinit var viewModel5: MainViewModel
 
-    private val mainViewModel: MainViewModel by viewModels()
+
+//    private val mainViewModel by viewModels<MainViewModel>()
 
 
     @Inject
@@ -58,10 +61,13 @@ class HiltMainActivity : AppCompatActivity() {
 //        viewModel1.test()
 //        viewModel5.test()
 
-        mainViewModel.test()
+//        mainViewModel.test()
 
         binding.btClick.setOnClickListener {
-            bannerImp.getBanner()
+//            bannerImp.getBanner()
+//            user3.test()
+//            viewModel5.test()
+            Log.i(TAG, "onCreate: ${user}")
         }
 
 

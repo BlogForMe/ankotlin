@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    var user: User3,
+    var user: InterfaceUser,
 //    var application: Application,
 //    @ActivityContext var activity: Context,
 ) : ViewModel() { //这个ViewModel是jetpack库里的。
@@ -28,5 +28,6 @@ class MainViewModel @Inject constructor(
 //        Log.i(TAG, "test: application $application")
 //        Log.i(TAG, "test: activity $activity")
 //        Log.i(TAG, "test: context $context")
+        user.test()
     }
 }
