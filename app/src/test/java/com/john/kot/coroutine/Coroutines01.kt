@@ -1,5 +1,6 @@
-package com.kot.coroutine
+package com.john.kot.coroutine
 
+import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -33,6 +34,9 @@ class Coroutines01 {
         }
         println("word $runBlocking")
     }
+
+
+
 
 
 }
