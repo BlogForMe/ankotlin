@@ -38,7 +38,7 @@ class HiltMainActivity : AppCompatActivity() {
 //    @Inject
 //    lateinit var viewModel5: HiltViewModel5
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel by viewModels<MainViewModel>()
 
 
     @Inject
