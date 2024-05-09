@@ -17,6 +17,15 @@ class KeyBordActivity : AppCompatActivity() {
         binding.etText.filters = arrayOf(filters)
 
     }
+    private val blockCharacterSet = "~#^|$%&*!";
+
+
+    private val filter =
+        InputFilter { source, start, end, dest, dstart, dend ->
+            if (source != null && blockCharacterSet.contains("" + source)) {
+                ""
+            } else null
+        }
 }
 
 var EMOJI_FILTER = InputFilter { source, start, end, dest, dstart, dend ->

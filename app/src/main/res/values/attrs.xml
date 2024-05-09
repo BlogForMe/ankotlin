@@ -51,4 +51,13 @@
     </declare-styleable>
 
 
+    <declare-styleable name="RingCircleImageView">
+        <attr name="ring_width" format="dimension" />
+        <attr name="ring_color" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="reference|color" />
+    </declare-styleable>
 </resources>

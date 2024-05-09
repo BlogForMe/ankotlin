@@ -1,9 +1,13 @@
-package com.kot.coroutine
+package com.john.kot.coroutine
 
+import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import org.junit.Test
 
 /**
  *
@@ -16,14 +20,23 @@ import kotlinx.coroutines.withContext
  * UpdateRemark:   Modify the description
  */
 
-fun main() {
-    GlobalScope.launch {
-        log(1)
-        withContext(Dispatchers.IO) {
-            log(2)
+class Coroutines01 {
+
+    @Test
+    fun testFeature() {
+        println("hello")
+        println("testFeature" + Thread.currentThread().name)
+
+        val runBlocking = runBlocking {
+            println("runBlocking " + Thread.currentThread().name)
+            delay(2000)
+            1
         }
-        log(3)
+        println("word $runBlocking")
     }
 
-    Thread.sleep(2000)
+
+
+
+
 }

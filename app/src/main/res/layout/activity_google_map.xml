@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".tool.GoogleMapActivity">
+
+    <Button
+        android:id="@+id/bt_google_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="googleMap" />
+
+    <Button
+        android:id="@+id/bt_browser_Map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="browserMap" />
+
+    <Button
+        android:id="@+id/bt_office_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Office Map" />
+
+
+    <Button
+        android:id="@+id/bt_turn_by_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Office Turn by turn" />
+
+    <Button
+        android:id="@+id/bt_GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS" />
+
+    <Button
+        android:id="@+id/check_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check app"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_GPS" />
+
+    <Button
+        android:id="@+id/check_app_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check install app open"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_GPS" />
+
+
+    <Button
+        android:id="@+id/btn_intent_android14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=" intent_android14 "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_app_open" />
+
+    <Button
+        android:id="@+id/btn_wise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=" wise direction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_intent_android14" />
+
+
+    <Button
+        android:id="@+id/btn_common_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="CommonIntentMap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_wise" />
+
+
+    <Button
+        android:id="@+id/btn_common_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_wise" />
+
+
+</LinearLayout>

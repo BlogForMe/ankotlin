@@ -43,4 +43,10 @@ public interface IApiStores {
 
     @GET("user/{userid}/share_articles/{pageid}/json")
     Call<List<SharedListBean>> getSharedList(@Path("userid") int it, @Path("pageid") int pageid);
+
+    @GET("posts/{articleId}")
+    Call<ResponseBody> getArticle(@Path("articleId") int it);
+
+    @POST("posts")
+    Call<ResponseBody> addArticle(@Body RequestBody requestBody);
 }

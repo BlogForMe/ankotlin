@@ -33,7 +33,7 @@ class ComposeActivity03 : AppCompatActivity() {
     fun MessageCard(msg: Message) {
         Row {
             Image(
-                painter = painterResource(id = R.drawable.id_korean),
+                painter = painterResource(id = R.drawable.a_logo),
                 contentDescription = "contact profile ",
                 modifier = Modifier
                     .size(40.dp)

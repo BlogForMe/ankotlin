@@ -22,6 +22,7 @@ import android.view.LayoutInflater
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.kot.R
+import kotlin.math.log
 
 /**
  * https://juejin.cn/post/6844903743595479054
@@ -49,25 +50,40 @@ class ShakeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_shake)
         imgHand = findViewById(R.id.imgHand)
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+
+
+
         shakeListener = ShakeSensorListener()
 //        anim = ObjectAnimator.ofFloat(imgHand, "rotation", 0f, 45f, -30f, 0f)
         anim?.duration = 500
         anim?.repeatCount = ValueAnimator.INFINITE
+
+
+//        val deviceSensors: List<Sensor> = sensorManager?.getSensorList(Sensor.TYPE_ALL)
+//
+        Sensor.TYPE_GRAVITY
+        Sensor.TYPE_GYROSCOPE
+        Sensor.TYPE_LINEAR_ACCELERATION
+
+
     }
 
+
     override fun onResume() {
+        super.onResume()
+
         val sensor = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         if (sensor == null) {
             Log.i("ShakeActivity", "onResume: Failure! No magnetometer.")
             return
         }
         //注册监听加速度传感器
-        sensorManager?.registerListener(
+        val registerListener = sensorManager?.registerListener(
             shakeListener,
             sensor,
-            SensorManager.SENSOR_DELAY_FASTEST
+            SensorManager.SENSOR_DELAY_NORMAL
         )
-        super.onResume()
+        Log.i("TAG", "onResume: $registerListener")
     }
 
     override fun onPause() {
@@ -107,11 +123,11 @@ class ShakeActivity : AppCompatActivity() {
 
         override fun onSensorChanged(event: SensorEvent) {
             //避免一直摇
-            if (isShake) {
-                return
-            }
-            // 开始动画
-            anim?.start()
+//            if (isShake) {
+//                return
+//            }
+//            // 开始动画
+//            anim?.start()
             val values = event.values
             /*
 
@@ -122,7 +138,11 @@ class ShakeActivity : AppCompatActivity() {
 //            val x = Math.abs(values[0])
 //            val y = Math.abs(values[1])
 //            val z = Math.abs(values[2])
-//            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
+
+            val x = values[0]
+            val y = values[1]
+            val z = values[2]
+            Log.i("ShakeActivity", "onSensorChanged:  x $x , y  $y , z $z")
 ////            加速度超过19，摇一摇成功
 //            if (x > 19 || y > 19 || z > 19) {
 //                isShake = true
@@ -168,31 +188,33 @@ class ShakeActivity : AppCompatActivity() {
 //            }
 
 
-            val currentTime = System.currentTimeMillis()
-            val diffTime: Long = currentTime - this.mLastUpdateTime
-            if (diffTime >= 100L) {
-                this.mLastUpdateTime = currentTime
-                val x = event.values[0]
-                val y = event.values[1]
-                val z = event.values[2]
-                val deltaX: Float = x - this.mLastX
-                val deltaY: Float = y - this.mLastY
-                val deltaZ: Float = z - this.mLastZ
-                this.mLastX = x
-                this.mLastY = y
-                this.mLastZ = z
-                val delta =
-                    Math.sqrt((deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ).toDouble())
-                        .toFloat() / diffTime.toFloat() * 10000.0f
-                val mIsShaking = delta > this.mShakeThreshold.toFloat()
-                if (mIsShaking) {
-                    startShake()
-                }
-            }
+//            val currentTime = System.currentTimeMillis()
+//            val diffTime: Long = currentTime - this.mLastUpdateTime
+//            if (diffTime >= 100L) {
+//                this.mLastUpdateTime = currentTime
+//                val x = event.values[0]
+//                val y = event.values[1]
+//                val z = event.values[2]
+//                val deltaX: Float = x - this.mLastX
+//                val deltaY: Float = y - this.mLastY
+//                val deltaZ: Float = z - this.mLastZ
+//                this.mLastX = x
+//                this.mLastY = y
+//                this.mLastZ = z
+//                val delta =
+//                    Math.sqrt((deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ).toDouble())
+//                        .toFloat() / diffTime.toFloat() * 10000.0f
+//                val mIsShaking = delta > this.mShakeThreshold.toFloat()
+//                if (mIsShaking) {
+//                    startShake()
+//                }
+//            }
 
         }
 
-        override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+        override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
+            Log.i("TAG", "onAccuracyChanged: ")
+        }
     }
 
 

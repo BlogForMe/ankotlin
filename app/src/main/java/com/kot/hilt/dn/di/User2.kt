@@ -1,5 +1,8 @@
 package com.kot.hilt.dn.di
 
+import android.util.Log
+import dagger.hilt.android.scopes.ActivityRetainedScoped
+
 /**
  *
  * ClassName:      User1
@@ -11,4 +14,13 @@ package com.kot.hilt.dn.di
  * UpdateRemark:   Modify the description
  */
 
-class User2
+@ActivityRetainedScoped
+class User2 : InterfaceUser {
+    override fun test() {
+        Log.i("User2", "test: ")
+    }
+}
+
+interface InterfaceUser {
+    fun test()
+}

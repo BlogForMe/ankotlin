@@ -36,6 +36,7 @@ public class RetrofitFactory {
     public static String trueUrl
         = "https://www.fastmock.site/mock/a883d7ed16db1dd2756088ab99fbbae5/emailapp/";
     public static String CONFIG_URL = "https://registry.casanubeserver.com/";
+    public static String jsonplaceURL = "https://jsonplaceholder.typicode.com/";
     private static volatile OkHttpClient mOkHttpClient;
 
     /**
@@ -83,7 +84,7 @@ public class RetrofitFactory {
      */
     public static <T> T create(Class<T> clazz) {
         Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(trueUrl)
+            .baseUrl(jsonplaceURL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(getOkHttpClient())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();

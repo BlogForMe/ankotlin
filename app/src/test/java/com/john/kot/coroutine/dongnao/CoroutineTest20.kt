@@ -11,11 +11,18 @@
 
 package com.kot.coroutine.dongnao
 
+import android.util.Log
+import io.mockk.verify
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.selects.select
+import kotlinx.coroutines.withContext
 import org.junit.Test
 import kotlin.system.measureTimeMillis
 
@@ -23,19 +30,29 @@ import kotlin.system.measureTimeMillis
 class CoroutineTest20 {
     @Test
     fun `test coroutine join`() = runBlocking {
-        val job1 = launch() {
-            delay(200)
-            println("One")
+//        val job1 = launch() {
+//            delay(200)
+//            println("One")
+//        }
+//        job1.join() // job1执行完，再执行job2 job3
+//        val job2 = launch() {
+//            delay(200)
+//            println("Two")
+//        }
+//        val job3 = launch() {
+//            delay(200)
+//            println("Three")
+//        }
+
+        val deferreds: List<Deferred<Int>> = (1..3).map {
+            async {
+                delay(1000L * it)
+                println("Loading $it")
+                it
+            }
         }
-        job1.join() // job1执行完，再执行job2 job3
-        val job2 = launch() {
-            delay(200)
-            println("Two")
-        }
-        val job3 = launch() {
-            delay(200)
-            println("Three")
-        }
+        val sum = deferreds.awaitAll().sum()
+        println("$sum")
     }
 
     @Test
@@ -101,6 +118,43 @@ class CoroutineTest20 {
     }
 
 
+    @Test
+    fun mainThreadDelayTest() {
+        //在主线程执行协程
+        println("fish before suspend thread:${Thread.currentThread()}")
+        //执行挂起函数
+        GlobalScope.launch {
+            getStuInfo()
+        }
+
+
+//        GlobalScope.launch(Dispatchers.Main) {
+//            coDelay(2000)
+////            在主线程执行协程
+//            Log.d("fish", "before suspend thread:${Thread.currentThread()}")
+////            执行挂起函数
+//        }
+
+        //延迟2s在主线程执行打印
+        println("fish post thread:${Thread.currentThread()}")
+
+
+        Thread.sleep(6000)
+    }
+
+    private suspend fun coDelay(i: Int) {
+        delay(2000)
+    }
+
+    suspend fun getStuInfo() {
+        delay(5000)
+        println("fish after delay thread:${Thread.currentThread()}")
+    }
+
+//    作者：小鱼人爱编程
+//    链接：https://juejin.cn/post/7111246680338464804
+
+
     private suspend fun doRemote(): Int {
         delay(2000)
         println("doOne")
@@ -124,6 +178,34 @@ class CoroutineTest20 {
         println("doTwo")
         return 25
     }
+
+
+
+    @Test
+    fun withContextTest(){
+        verify() {  }
+        GlobalScope.launch() {
+            println("before suspend  ${Thread.currentThread().name}")
+            //挂起函数
+            var studentInfo = getStuInfo2()
+            //挂起函数执行返回
+            println("after suspend student name:${studentInfo}   ${Thread.currentThread().name}")
+        }
+        //防止进程退出
+        Thread.sleep(10000)
+    }
+
+    suspend fun getStuInfo2():String {
+        return withContext(Dispatchers.IO) {
+            println("start get studentInfo  ${Thread.currentThread().name}")
+            //模拟耗时操作
+            Thread.sleep(3000)
+            println("get studentInfo successful")
+            //返回学生信息
+            "StudentInfo()"
+        }
+    }
+
 
 
 }
