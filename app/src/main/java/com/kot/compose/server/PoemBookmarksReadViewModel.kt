@@ -111,7 +111,8 @@ class PoemBookmarksReadViewModel : ViewModel() {
 
 
   fun getList() {
-    Retrofit.Builder().baseUrl(myServerURL).client(disableCertificateVerification()).build()
+    Retrofit.Builder().client(disableCertificateVerification()).baseUrl(myServerURL)
+      .client(disableCertificateVerification()).build()
       .create(IApiStores::class.java).getList()
       ?.enqueue(
         object : Callback<ResponseBody?> {
@@ -128,7 +129,29 @@ class PoemBookmarksReadViewModel : ViewModel() {
           }
         },
       )
+  }
 
+
+  fun getDetail() {
+    Retrofit.Builder().client(disableCertificateVerification()).baseUrl(myServerURL)
+      .client(disableCertificateVerification()).build()
+      .create(IApiStores::class.java).getDetail()
+      ?.enqueue(
+        object : Callback<ResponseBody?> {
+          override fun onResponse(
+            call: Call<ResponseBody?>,
+            response: Response<ResponseBody?>,
+          ) {
+            val body = response.body()?.string()
+
+            Log.i("getList", "onResponse: $body")
+          }
+
+          override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
+
+          }
+        },
+      )
   }
 
 
@@ -148,7 +171,11 @@ interface IApiStores {
   fun getList(): Call<ResponseBody?>?
 
 
+  @GET("poi/detail/1")
+  fun getDetail(): Call<ResponseBody?>?
+
+
 }
 
 val jsonplaceURL = "https://jsonplaceholder.typicoe.com/"
-val myServerURL = "http://172.34.91.94:3306/"
+val myServerURL = "http://192.168.209.190:8080/"

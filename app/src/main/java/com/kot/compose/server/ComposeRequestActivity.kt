@@ -76,6 +76,12 @@ fun jsonplaceholderArticle(
         }) {
             Text(text = "getlist")
         }
+
+        Button(onClick = {
+            viewModel.getDetail()
+        }) {
+            Text(text = "getlist")
+        }
     }
 }
 
