@@ -80,7 +80,7 @@ fun jsonplaceholderArticle(
         Button(onClick = {
             viewModel.getDetail()
         }) {
-            Text(text = "getlist")
+            Text(text = "getDetail")
         }
     }
 }
