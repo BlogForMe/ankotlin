@@ -1,8 +1,9 @@
 package com.comm.util.openlib.rxretrofit.retrofit;
 
+import com.comm.util.BuildConfig;
+
 import java.util.concurrent.TimeUnit;
 
-import com.comm.util.BuildConfig;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -24,7 +25,7 @@ public class RetrofitFactory {
     private static final long READ_TIMEOUT = 60L;
     private static final long WRITE_TIMEOUT = 60L;
     //设缓存有效期为1天
-    private static final long CACHE_STALE_SEC = 60 * 60 * 24 * 1;
+    private static final long CACHE_STALE_SEC = 60 * 60 * 24;
     //查询缓存的Cache-Control设置，为if-only-cache时只查询缓存而不会请求服务器，max-stale可以配合设置缓存失效时间
     public static final String CACHE_CONTROL_CACHE = "only-if-cached, max-stale=" + CACHE_STALE_SEC;
     // 避免出现 HTTP 403 Forbidden，参考：http://stackoverflow.com/questions/13670692/403-forbidden-with-java-but-not-web-browser
@@ -86,8 +87,7 @@ public class RetrofitFactory {
         Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(jsonplaceURL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(getOkHttpClient())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
+                .client(getOkHttpClient()).build();
         return retrofit.create(clazz);
     }
 
