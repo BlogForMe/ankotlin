@@ -11,6 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kot.compose.server.coroutine.theme.RetrofitrootTheme
@@ -75,6 +76,19 @@ fun jsonplaceholderArticle(
             viewModel.getList()
         }) {
             Text(text = "getlist")
+        }
+
+        Button(onClick = {
+            viewModel.getDetail()
+        }) {
+            Text(text = "getDetail")
+        }
+
+        val context = LocalContext.current
+        Button(onClick = {
+            OkHttpRequest().testCache(context)
+        }) {
+            Text(text = "OKHTTP Cache")
         }
     }
 }

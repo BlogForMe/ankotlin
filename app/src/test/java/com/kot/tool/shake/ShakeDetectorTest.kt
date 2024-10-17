@@ -70,5 +70,7 @@ class ShakeDetectorTest {
         assert(q.isShaking)
         q.clear()
         Assert.assertFalse(q.isShaking)
+
+
     }
 }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.kot">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -177,7 +175,15 @@
         <activity android:name=".test.robolec.MyActivity" />
         <activity android:name=".viewgroup.ViewGroupActivity" />
         <activity android:name=".tool.glide.lifecycle.GlideActivity" />
-        <activity android:name=".mvvm.lifecycle.LifeCycleActivity" />
+        <activity
+            android:name=".mvvm.lifecycle.LifeCycleActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData1Activity" />
         <activity android:name=".mvvm.dongnao.viewmodel.ViewModelShareActivity" />
@@ -239,13 +245,10 @@
             android:exported="true" />
 
 
-        <activity android:name=".compose.server.ComposeRequestActivity"
+        <activity
+            android:name=".compose.server.ComposeRequestActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <provider
