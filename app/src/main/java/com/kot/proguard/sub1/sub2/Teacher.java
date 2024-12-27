@@ -1,15 +1,15 @@
 package com.kot.proguard.sub1.sub2;
 
 public class Teacher {
-    @Override
-    public void doSomething() {
-        System.out.println("teaching ...");
-    }
-
-    @MethodLevel(value = 1)
-    private void waking() {
-
-    }
+//    @Override
+//    public void doSomething() {
+//        System.out.println("teaching ...");
+//    }
+//
+//    @MethodLevel(value = 1)
+//    private void waking() {
+//
+//    }
 
 //    作者：萌娃瑜宝爸比
 //    链接：https://juejin.cn/post/7104539442739838983
