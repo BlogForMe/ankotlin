@@ -27,6 +27,8 @@
         android:maxSdkVersion="32" /> <!-- Devices running Android 13 (API level 33) or higher -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
     <!--
     <queries>
         <package android:name="com.google.android.apps.maps" />
@@ -96,7 +98,13 @@
             android:exported="true" />
         <activity
             android:name=".service.ForegroundActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".tool.shake.ShakeMeActivity"
             android:exported="true">
@@ -178,11 +186,7 @@
         <activity
             android:name=".mvvm.lifecycle.LifeCycleActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".mvvm.livedata.xiangxue.LiveData2Activity" />
         <activity android:name=".mvvm.livedata.xiangxue.LiveData1Activity" />
@@ -274,7 +278,8 @@
 
         <receiver android:name=".service.DeviceBroadcastReceiver" />
 
-        <service android:name=".service.DeviceService" />
+        <service android:name=".service.DeviceService"
+            android:foregroundServiceType="dataSync" />
     </application>
 
 </manifest>
