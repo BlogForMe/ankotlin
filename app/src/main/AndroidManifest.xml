@@ -99,11 +99,7 @@
         <activity
             android:name=".service.ForegroundActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".tool.shake.ShakeMeActivity"
@@ -280,6 +276,16 @@
 
         <service android:name=".service.DeviceService"
             android:foregroundServiceType="dataSync" />
+
+        <activity android:name=".service.background.WorkManagerActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>
