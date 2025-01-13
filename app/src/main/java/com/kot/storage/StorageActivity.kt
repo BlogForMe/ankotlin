@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -14,9 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.kot.storage.ui.theme.AnkotlinTheme
-import androidx.compose.foundation.layout.Column
 import com.android.util.storage.StorageUtil
+import com.kot.storage.ui.theme.AnkotlinTheme
 
 
 class StorageActivity : ComponentActivity() {
@@ -46,15 +46,17 @@ fun Greeting2(context: Context, name: String, modifier: Modifier = Modifier) {
         }
 
         Button(onClick = {
+            StorageUtil.externalFilesDir(context)
             // Trigger the Periodic Work when the button is clicked
         }, modifier = Modifier.padding(10.dp)) {
-            Text("Start Periodic Work")
+            Text("externalFilesDir")
         }
 
         Button(onClick = {
+            StorageUtil.externalCacheFile(context)
             // Trigger the Periodic Work when the button is clicked
         }, modifier = Modifier.padding(10.dp)) {
-            Text("Schedule Expedited Work", fontSize = 18.sp)
+            Text("externalCacheFile", fontSize = 18.sp)
         }
 
     }

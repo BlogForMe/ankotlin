@@ -191,7 +191,7 @@ object StorageUtil {
     }
 
     @RequiresApi(Build.VERSION_CODES.FROYO)
-    fun getExternalFilesDir(context: Context){
+    fun externalFilesDir(context: Context) {
         val appSpecificExternalDir = File(context.getExternalFilesDir(null), "ExternalFiles")
         Log.i("StorageUtil", "getExternalFilesDir: ${appSpecificExternalDir.absolutePath}" )
 
