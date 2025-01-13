@@ -19,9 +19,7 @@
     android:id="@+id/item_recycler"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/margin_medium"
     android:layout_marginTop="10dp"
-    android:layout_marginRight="@dimen/margin_medium"
     android:background="@android:color/holo_blue_light"
     android:paddingTop="50dp"
     android:paddingBottom="50dp">

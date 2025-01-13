@@ -2,6 +2,7 @@ package com.android.util.storage
 
 import android.content.Context
 import android.os.Environment
+import android.util.Log
 import com.google.gson.Gson
 import timber.log.Timber
 import java.io.BufferedReader
@@ -180,5 +181,10 @@ object StorageUtil {
         } else {
             f.absolutePath + "/"
         }
+    }
+
+    fun internalFile(context: Context){
+        val file = File(context.filesDir, "internalFile")
+        Log.i("StorageUtil", "internalFile: ${file.absolutePath}" )
     }
 }

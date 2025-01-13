@@ -22,8 +22,6 @@
         <item name="android:colorAccent">@color/heroblue</item>
     </style>
 
-    <style name="HomeTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    </style>
 
 
     <style name="AppThemeGreen">

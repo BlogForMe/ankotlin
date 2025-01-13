@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Demo</string>
+    <string name="title_activity_storage">StorageActivity</string>
+    <string name="app_name">anKotlin</string>
 
     <string name="element_text">Element</string>
     <string name="grid_layout_manager">Grid Layout Manager</string>
@@ -55,5 +56,6 @@
     <string name="cat_textfield_placeholder_text" translatable="false">Placeholder text</string>
 
     <string name="cat_textfield_filled_helper_text" translatable="false">Filled text field</string>
+
 
 </resources>
