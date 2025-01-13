@@ -1,5 +1,6 @@
 package com.kot.storage
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,11 +12,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kot.storage.ui.theme.AnkotlinTheme
 import androidx.compose.foundation.layout.Column
+import com.android.util.storage.StorageUtil
 
 
 class StorageActivity : ComponentActivity() {
@@ -25,7 +26,7 @@ class StorageActivity : ComponentActivity() {
         setContent {
             AnkotlinTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting2(
+                    Greeting2(this,
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -36,10 +37,10 @@ class StorageActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting2(name: String, modifier: Modifier = Modifier) {
+fun Greeting2(context: Context, name: String, modifier: Modifier = Modifier) {
     Column(modifier = Modifier.padding(25.dp)) {
         Button(onClick = {
-            // Create and enqueue the worker
+            StorageUtil.internalFile(context)
         }, modifier = Modifier.padding(10.dp)) {
             Text("internalFile")
         }
@@ -58,12 +59,4 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
 
     }
 
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview2() {
-    AnkotlinTheme {
-        Greeting2("Android")
-    }
 }

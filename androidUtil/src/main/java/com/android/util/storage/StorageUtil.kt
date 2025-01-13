@@ -1,8 +1,10 @@
 package com.android.util.storage
 
 import android.content.Context
+import android.os.Build
 import android.os.Environment
 import android.util.Log
+import androidx.annotation.RequiresApi
 import com.google.gson.Gson
 import timber.log.Timber
 import java.io.BufferedReader
@@ -186,5 +188,18 @@ object StorageUtil {
     fun internalFile(context: Context){
         val file = File(context.filesDir, "internalFile")
         Log.i("StorageUtil", "internalFile: ${file.absolutePath}" )
+    }
+
+    @RequiresApi(Build.VERSION_CODES.FROYO)
+    fun getExternalFilesDir(context: Context){
+        val appSpecificExternalDir = File(context.getExternalFilesDir(null), "ExternalFiles")
+        Log.i("StorageUtil", "getExternalFilesDir: ${appSpecificExternalDir.absolutePath}" )
+
+    }
+    @RequiresApi(Build.VERSION_CODES.FROYO)
+    fun externalCacheFile(context: Context){
+        val externalCacheFile = File(context.externalCacheDir, "externalCacheFile")
+        Log.i("StorageUtil", "externalCacheFile: ${externalCacheFile.absolutePath}" )
+
     }
 }
