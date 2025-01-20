@@ -21,6 +21,29 @@
 #-renamesourcefileattribute SourceFile
 
 
+
+#debugAndroidTest/missing_rules.txt
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn java.lang.instrument.UnmodifiableClassException
+-dontwarn org.junit.jupiter.api.extension.AfterEachCallback
+-dontwarn org.junit.jupiter.api.extension.ExtensionContext
+-dontwarn org.junit.jupiter.api.extension.ParameterContext
+-dontwarn org.junit.jupiter.api.extension.ParameterResolver
+-dontwarn org.junit.jupiter.api.extension.TestInstancePostProcessor
+
+
+
+-dontwarn org.bouncycastle.jsse.BCSSLParameters
+-dontwarn org.bouncycastle.jsse.BCSSLSocket
+-dontwarn org.bouncycastle.jsse.provider.BouncyCastleJsseProvider
+-dontwarn org.conscrypt.Conscrypt$Version
+-dontwarn org.conscrypt.Conscrypt
+-dontwarn org.conscrypt.ConscryptHostnameVerifier
+-dontwarn org.openjsse.javax.net.ssl.SSLParameters
+-dontwarn org.openjsse.javax.net.ssl.SSLSocket
+-dontwarn org.openjsse.net.ssl.OpenJSSE
+
+
 # Keep Hilt-generated components and classes
 -keep class dagger.hilt.** { *; }
 -keep class dagger.hilt.android.** { *; }
@@ -47,26 +70,6 @@
 -keep @dagger.hilt.android.AndroidEntryPoint public class *
 
 
-#debugAndroidTest/missing_rules.txt
--dontwarn com.google.auto.value.AutoValue
--dontwarn java.lang.instrument.UnmodifiableClassException
--dontwarn org.junit.jupiter.api.extension.AfterEachCallback
--dontwarn org.junit.jupiter.api.extension.ExtensionContext
--dontwarn org.junit.jupiter.api.extension.ParameterContext
--dontwarn org.junit.jupiter.api.extension.ParameterResolver
--dontwarn org.junit.jupiter.api.extension.TestInstancePostProcessor
-
-
-
--dontwarn org.bouncycastle.jsse.BCSSLParameters
--dontwarn org.bouncycastle.jsse.BCSSLSocket
--dontwarn org.bouncycastle.jsse.provider.BouncyCastleJsseProvider
--dontwarn org.conscrypt.Conscrypt$Version
--dontwarn org.conscrypt.Conscrypt
--dontwarn org.conscrypt.ConscryptHostnameVerifier
--dontwarn org.openjsse.javax.net.ssl.SSLParameters
--dontwarn org.openjsse.javax.net.ssl.SSLSocket
--dontwarn org.openjsse.net.ssl.OpenJSSE
 
 
 # Keep Status enum class from being obfuscated
