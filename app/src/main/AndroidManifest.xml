@@ -189,7 +189,15 @@
         <activity android:name=".mvvm.dongnao.viewmodel.ViewModelShareActivity" />
         <activity android:name=".mvvm.dongnao.lifecycle.Step2Activity" />
         <activity android:name=".tool.rx.WriteRxjavaActivity" />
-        <activity android:name=".net.OkhtttpActivity" />
+        <activity
+            android:name=".net.OkhtttpActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".permission.PemissionxUseActivity" />
         <activity android:name=".tool.audio.AudioRecordActivity" />
         <activity android:name=".tool.rx.RxJavaActivity" />
@@ -291,11 +299,7 @@
         <activity
             android:name="com.kot.storage.StorageActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
