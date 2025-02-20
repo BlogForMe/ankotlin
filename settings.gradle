@@ -1,4 +1,4 @@
-//include ':app'
+include ':app'
 include ':androidUtil'
 //project(':androidUtil').projectDir = new File('../CasanubeHealth/androidUtil')
 //project(':lottie').projectDir = new File('../lottie-android/lottie')
